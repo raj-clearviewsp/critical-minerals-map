@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:critical-minerals-atlas:scaffold-manifest:v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "release_tag", "data_as_of", "status", "phase", "step", "sources", "tables", "limitations"],
+  "properties": {
+    "schema_version": {"const": "scaffold-v1"},
+    "release_tag": {"type": "string", "pattern": "^[0-9]{4}\\.[0-9]{2}\\.[0-9]{2}$"},
+    "data_as_of": {"type": "null"},
+    "status": {"const": "scaffold"},
+    "phase": {"const": 0},
+    "step": {"const": 1},
+    "sources": {"type": "array", "maxItems": 0},
+    "limitations": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "tables": {
+      "type": "object",
+      "minProperties": 9,
+      "maxProperties": 9,
+      "propertyNames": {"enum": ["source", "source_record", "site", "site_member", "facility", "production", "country_commodity", "export_restriction", "china_official_finance"]},
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["rows", "csv", "parquet", "csv_sha256", "parquet_sha256"],
+        "properties": {
+          "rows": {"const": 0},
+          "csv": {"type": "string", "pattern": "^[a-z_]+\\.csv$"},
+          "parquet": {"type": "string", "pattern": "^[a-z_]+\\.parquet$"},
+          "csv_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "parquet_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    }
+  }
+}

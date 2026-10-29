@@ -1,0 +1,60 @@
+---
+import { loadManifest } from '../lib/manifest.mjs';
+import '../styles/global.css';
+const manifest = loadManifest();
+const tableCount = Object.keys(manifest.tables).length;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Critical Minerals Atlas development scaffold. Source data has not yet been loaded." />
+    <title>Critical Minerals Atlas · Development scaffold</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="masthead">
+      <a class="wordmark" href="/" aria-label="Critical Minerals Atlas home">
+        <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="m14 1 12 7v12l-12 7L2 20V8Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m2 8 12 7 12-7M14 15v12M14 1v14" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span>Critical Minerals <strong>Atlas</strong></span>
+      </a>
+      <span class="environment">Development scaffold</span>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="release-strip" aria-label="Build metadata">
+        <p><span>Data as of</span> <strong>Not yet available</strong></p>
+        <p><span>Build release</span> <strong>{manifest.release_tag}</strong></p>
+      </div>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">Phase 0 · Repository foundation</p>
+        <h1 id="page-title">A sourced view of the<br class="desktop-break" /> world's critical minerals.</h1>
+        <p class="lede">Where deposits are, how mature they are, and who operates them. Starting with rare earth elements, nickel and cobalt.</p>
+      </section>
+      <section class="empty-state" aria-labelledby="empty-title">
+        <div class="survey-mark" aria-hidden="true"><span></span></div>
+        <div>
+          <p class="eyebrow">Data status</p>
+          <h2 id="empty-title">No records loaded</h2>
+          <p>This build verifies the repository and empty data pipeline. No sources have been ingested, and no deposit locations or mineral statistics are available yet.</p>
+          <p class="next-step">Next: register sources and verify download manifests.</p>
+        </div>
+      </section>
+      <section class="foundation" aria-labelledby="foundation-title">
+        <div class="section-heading"><h2 id="foundation-title">Built for traceable evidence</h2><span>Implementation principles</span></div>
+        <div class="principles">
+          <article><span class="index">01</span><h3>Every value has a source</h3><p>Published facts will carry a source URL, retrieval date and evidence grade.</p></article>
+          <article><span class="index">02</span><h3>Maturity stays visible</h3><p>Occurrences, estimates, resources, reserves and operating sites will remain distinguishable.</p></article>
+          <article><span class="index">03</span><h3>Data stays portable</h3><p>The completed Atlas will pair every map view with a table, downloadable data and print exports.</p></article>
+        </div>
+      </section>
+      <details class="build-details">
+        <summary>Build details</summary>
+        <dl><div><dt>Pipeline status</dt><dd>Empty scaffold</dd></div><div><dt>Canonical table structures</dt><dd>{tableCount}</dd></div><div><dt>Loaded records</dt><dd>0</dd></div><div><dt>Sources in this build</dt><dd>0</dd></div></dl>
+        <p>These are build diagnostics, not measures of mineral coverage. Data ingestion and the interactive map are later implementation steps.</p>
+      </details>
+    </main>
+    <footer><p>Critical Minerals Atlas</p><p>Local development · No data release</p></footer>
+  </body>
+</html>
