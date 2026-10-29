@@ -10,7 +10,7 @@ export npm_config_cache ?= $(CURDIR)/.cache/npm
 RUN = $(UV) run --locked
 PIPELINE = $(RUN) python -m pipeline --root . --release-tag $(RELEASE_TAG)
 
-.PHONY: all setup setup-python setup-site hooks lint test check data fetch normalize harmonize link enrich qa publish site preview
+.PHONY: all setup setup-python setup-site hooks lint test check data fetch sources normalize harmonize link enrich qa publish site preview
 
 all: setup check data site
 
@@ -36,7 +36,17 @@ check: lint test
 
 data: fetch normalize harmonize link enrich qa publish
 
-fetch normalize harmonize link enrich qa publish:
+fetch:
+ifdef SOURCE
+	$(RUN) python -m pipeline.fetch --root . --source $(SOURCE) $(FETCH_FLAGS)
+else
+	$(PIPELINE) fetch
+endif
+
+sources:
+	$(RUN) python -m pipeline.fetch --root . --list
+
+normalize harmonize link enrich qa publish:
 	$(PIPELINE) $@
 
 site:

@@ -85,8 +85,15 @@ def ensure_empty_inputs(root: Path) -> None:
             "Raw inputs require the source fetch/normalization steps; scaffold stopped"
         )
     registered = list((root / "sources").glob("*.yaml")) + list((root / "sources").glob("*.yml"))
-    if registered:
-        raise ScaffoldError("Registered sources require Step 2 fetchers; scaffold stopped")
+    for path in registered:
+        from pipeline.fetch.core import FetchError, load_source
+
+        try:
+            if path.suffix != ".yaml":
+                raise FetchError("Source registries must use the .yaml extension")
+            load_source(root, path.stem)
+        except FetchError as error:
+            raise ScaffoldError(f"Invalid source registry: {path.name}") from error
     for area in ("staging", "canonical"):
         for path in artifact_files(root / f"data/{area}"):
             allowed = {"source_record"} if area == "staging" else TABLE_FIELDS

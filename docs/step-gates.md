@@ -5,7 +5,7 @@ The implementation spec is the authority. This file makes the immediate dependen
 | Gate | Required evidence | Current state |
 | --- | --- | --- |
 | Phase 0 Step 1 | `make all`, passing tests, run report, changelog, pushed commit, green GitHub CI | Complete; CI run 40796696656 passed all three jobs |
-| Phase 0 Step 2 | All source registrations, eligible fetchers, immutable manifests, no-op rerun | Not started |
+| Phase 0 Step 2 | All source registrations, eligible fetchers, immutable manifests, no-op rerun | Acquisition checkpoint:9 sources/39 files; manual queue pending |
 | Phase 0 Step 6 | Human-labelled 200-pair gold set, >=97% precision, reported recall | Not started |
 | Phase 0 Step 7 | Human spot-check of 30 sites, at least 27 agreements | Not started |
 | Phase 0 Step 12 | Five timed questions, protected preview, Raj's sign-off | Not started |

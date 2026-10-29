@@ -1,0 +1,33 @@
+{
+  "source_id": "usgs_critical_list_2025",
+  "name": "2025 U.S. List of Critical Minerals",
+  "publisher": "USGS",
+  "url": "https://www.usgs.gov/news/science-snippet/interior-department-releases-final-2025-list-critical-minerals",
+  "license": "U.S. public domain (USGS-authored information)",
+  "spec_license_claim": "public domain",
+  "redistribution_ok": true,
+  "license_status": "confirmed_open",
+  "license_evidence_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+  "access_status": "automated",
+  "cadence": "when updated",
+  "parser": "not_implemented_step_4",
+  "fetcher": {
+    "kind": "files",
+    "files": [
+      {
+        "filename": "critical-minerals-list-2025.html",
+        "url": "https://www.usgs.gov/news/science-snippet/interior-department-releases-final-2025-list-critical-minerals"
+      }
+    ]
+  },
+  "notes": [
+    "Primary article confirms60 minerals. Use list text only, not third-party photos or USGS trademark/logo.",
+    "REE is a grouped commodity in Atlas but individual lanthanides are named in the U.S. list; vocabulary design belongs to Step3.",
+    "Fetch only the source HTML; runtime robots gates apply before acquisition. Do not copy third-party illustrations or USGS branding."
+  ],
+  "license_evidence": "USGS-authored or produced data and information are considered to be in the U.S. Public Domain.",
+  "license_checked_at": "2026-10-28",
+  "currency": "Final list published6 November2025; source article posted14 November2025",
+  "version": "Final 2025 list; 2025-11-06",
+  "evidence_grade": "A"
+}

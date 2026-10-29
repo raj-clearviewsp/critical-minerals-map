@@ -1,0 +1,47 @@
+{
+  "source_id": "usgs_laterites",
+  "name": "Ni-Co laterite deposits of the world",
+  "publisher": "USGS",
+  "url": "https://pubs.usgs.gov/of/2011/1058/",
+  "license": "US-Public-Domain",
+  "spec_license_claim": "public domain",
+  "redistribution_ok": true,
+  "license_status": "confirmed_open",
+  "license_evidence_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+  "access_status": "automated",
+  "cadence": "frozen",
+  "parser": "not_implemented_step_4",
+  "fetcher": {
+    "kind": "files",
+    "files": [
+      {
+        "filename": "of2011-1058_data.csv",
+        "url": "https://pubs.usgs.gov/of/2011/1058/of2011-1058_appendix_a/of2011-1058_data.csv"
+      }
+    ]
+  },
+  "notes": [
+    "120 is deposit database size;117 is the statistical modeling subset.",
+    "Do not classify all coordinates as exact.",
+    "Historical production/status is2011-era; cannot establish current operation."
+  ],
+  "license_evidence": {
+    "url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "source_metadata_url": "https://pubs.usgs.gov/of/2011/1058/of2011-1058_metadata.txt",
+    "note": "USGS published report/data; source access constraints none, no contrary redistribution restriction found."
+  },
+  "metadata_checked_at": "2026-10-29T00:55:43.039174+00:00",
+  "metadata_urls": [
+    "https://pubs.usgs.gov/of/2011/1058/of2011-1058_metadata.txt",
+    "https://pubs.usgs.gov/of/2011/1058/of2011-1058_appendix_a/"
+  ],
+  "evidence_grade": "B",
+  "currency_date": "2011-05-26",
+  "doi": "10.3133/ofr20111058",
+  "access_evidence": {
+    "robots_url": "https://pubs.usgs.gov/robots.txt",
+    "robots_rule": "Only/archive/ disallowed; dataset paths outside that prefix.",
+    "login_required": false,
+    "rate_limit": "No numeric rate stated; conservative serialized fetching recommended."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "source_id": "jasansky",
+  "name": "Open database on global coal and metal mine production",
+  "publisher": "Jasansky et al., Vienna University of Economics and Business via Zenodo",
+  "url": "https://zenodo.org/records/7369478",
+  "license": "CC-BY-4.0",
+  "spec_license_claim": "CC BY 4.0",
+  "redistribution_ok": true,
+  "license_status": "confirmed_open",
+  "license_evidence_url": "https://zenodo.org/api/records/7369478",
+  "access_status": "automated",
+  "cadence": "when updated",
+  "parser": "not_implemented_step_4",
+  "fetcher": {
+    "kind": "files",
+    "files": [
+      {
+        "filename": "open_database_mine_production.zip",
+        "url": "https://zenodo.org/api/records/7369478/files/open_database_mine_production.zip/content",
+        "publisher_checksum": "md5:b1a6e97a264b7ef02527ff1985450254",
+        "publisher_bytes": 1077424
+      }
+    ]
+  },
+  "notes": [
+    "Official Zenodo record directly declares cc-by-4.0; no dataset files acquired during registration.",
+    "Version 1.0.3 was published 2022-11-27 and covers production in 2000–2021.",
+    "Archive contains 12 tables: facilities as GeoPackage and other tables as CSV, plus supporting documentation.",
+    "Historical production and ownership cannot by themselves establish current operating status or ownership."
+  ],
+  "license_evidence": {
+    "url": "https://zenodo.org/api/records/7369478",
+    "json_pointer": "/metadata/license/id",
+    "value": "cc-by-4.0"
+  },
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "metadata_url": "https://zenodo.org/api/records/7369478",
+  "metadata_checked_at": "2026-10-29T00:55:05.279455+00:00",
+  "metadata_snapshot_sha256": "07d9b7ab92f4d85a30f826730ae88f715fd5ec828134a9326c303b3be9506aca",
+  "version": "1.0.3",
+  "currency": "2000-2021",
+  "publication_date": "2022-11-27",
+  "evidence_grade": "C",
+  "attribution": "Jasansky, S., Lieber, M., Giljum, S. and Maus, V. (2022). Open database on global coal and metal mine production, version 1.0.3. https://doi.org/10.5281/zenodo.7369478. CC BY 4.0."
+}

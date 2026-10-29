@@ -1,0 +1,42 @@
+{
+  "source_id": "usgs_mcs_2026",
+  "name": "Mineral Commodity Summaries 2026 data release",
+  "publisher": "USGS",
+  "url": "https://www.sciencebase.gov/catalog/item/696a75d5d4be0228872d3bf8",
+  "license": "CC0-1.0",
+  "spec_license_claim": "public domain",
+  "redistribution_ok": true,
+  "license_status": "confirmed_open",
+  "license_evidence_url": "https://www.sciencebase.gov/catalog/item/696a75d5d4be0228872d3bf8?format=json",
+  "access_status": "manual_required",
+  "cadence": "annual",
+  "parser": "not_implemented_step_4",
+  "fetcher": {
+    "kind": "disabled",
+    "files": []
+  },
+  "notes": [
+    "Spec target ScienceBase item is valid. Search results also point to an alternative catalog item69837e43b66b01367d7ec7c7; retain actual confirmed item and DOI above.",
+    "Metadata body says more than90 nonfuel commodities. CSV includes broader data than pilot country production/reserves; filter later, do not reinterpret prices as in scope.",
+    "No data values downloaded during audit.",
+    "Metadata JSON was obtained before the parallel robots finding reached this agent. No mineral dataset values were downloaded. No alternative official automated data endpoint verified.",
+    "Automated acquisition is disabled because the separate source audit found ScienceBase robots rules disallow automated access. CC0 does not override access restrictions. Use a manually obtained file or a separately verified official permitted endpoint; never bypass with a proxy."
+  ],
+  "license_evidence": "This work is marked with the Creative Commons Zero v1.0 Universal (CC0-1.0) public domain dedication;",
+  "license_checked_at": "2026-10-28",
+  "currency": "2025 observation year; release publication2026-02-06; related report version1.3 May2026",
+  "version": "2026; related report v1.3 May 2026",
+  "evidence_grade": "B",
+  "candidate_files": [
+    {
+      "filename": "MCS2026_Commodities_Data.csv",
+      "url": "https://www.sciencebase.gov/catalog/file/get/696a75d5d4be0228872d3bf8?f=__disk__eb%2F4d%2Fd1%2Feb4dd129d4f08cfba010a8b11cbbd2d88bbefdcb",
+      "publisher_checksum": {
+        "value": "36185ff3742087e1dd90c52fe634fe12",
+        "type": "MD5"
+      },
+      "bytes": 3189010
+    }
+  ],
+  "robots_evidence_url": "https://www.sciencebase.gov/robots.txt"
+}

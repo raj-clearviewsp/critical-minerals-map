@@ -1,0 +1,44 @@
+{
+  "source_id": "gseu_crm",
+  "name": "Dataset for the Map of Critical Raw Materials hard rock deposits of Europe 2024",
+  "publisher": "BRGM / GSEU via Zenodo",
+  "url": "https://zenodo.org/records/15234833",
+  "license": "CC-BY-4.0",
+  "spec_license_claim": "CC BY 4.0",
+  "redistribution_ok": true,
+  "license_status": "confirmed_open",
+  "license_evidence_url": "https://zenodo.org/api/records/15234833",
+  "access_status": "automated",
+  "cadence": "when updated",
+  "parser": "not_implemented_step_4",
+  "fetcher": {
+    "kind": "files",
+    "files": [
+      {
+        "filename": "Data_CRM_deposits_ABC_2024.xlsx",
+        "url": "https://zenodo.org/api/records/15234833/files/Data_CRM_deposits_ABC_2024.xlsx/content",
+        "publisher_checksum": "md5:b6bf7923ee553c24fd77e5fe1421df27",
+        "publisher_bytes": 4215978
+      }
+    ]
+  },
+  "notes": [
+    "Official Zenodo record directly declares cc-by-4.0; metadata only inspected at registration.",
+    "Coverage was collected April–October 2024. Size classes measure total endowment, including cumulative production, resources and reserves; they are not current compliant-resource classifications.",
+    "Workbook row counts will be reconciled during Step 4; no record count is asserted from metadata."
+  ],
+  "license_evidence": {
+    "url": "https://zenodo.org/api/records/15234833",
+    "json_pointer": "/metadata/license/id",
+    "value": "cc-by-4.0"
+  },
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "metadata_url": "https://zenodo.org/api/records/15234833",
+  "metadata_checked_at": "2026-10-29T00:55:05.279455+00:00",
+  "metadata_snapshot_sha256": "b59b1134a5767ed7fc1231e8b56441a0a11e144493c913b4cf24bdc6f24d6c38",
+  "version": "v1",
+  "currency": "2024-04 through 2024-10",
+  "publication_date": "2025-04-17",
+  "evidence_grade": "B",
+  "attribution": "Albert, C. and Bertrand, G. (2025). Dataset for the Map of Critical Raw Materials hard rock deposits of Europe 2024. BRGM / GSEU. https://doi.org/10.5281/zenodo.15234833. CC BY 4.0."
+}

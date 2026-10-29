@@ -1,0 +1,43 @@
+{
+  "source_id": "usgs_global_ree",
+  "name": "Global rare earth element occurrence database",
+  "publisher": "USGS",
+  "url": "https://www.usgs.gov/data/global-rare-earth-element-occurrence-database",
+  "license": "CC0-1.0",
+  "spec_license_claim": "CC0",
+  "redistribution_ok": true,
+  "license_status": "confirmed_open",
+  "license_evidence_url": "https://www.usgs.gov/data/global-rare-earth-element-occurrence-database",
+  "access_status": "manual_required",
+  "cadence": "when updated",
+  "parser": "not_implemented_step_4",
+  "fetcher": {
+    "kind": "disabled",
+    "files": []
+  },
+  "notes": [
+    "Direct binary filenames/URLs could not be verified without requesting blocked ScienceBase pages; do not invent a ZIP URL.",
+    "Publisher XML lists no access restrictions and no fee, but those data terms do not override current site crawler restrictions.",
+    "Keep unlocated table and references when obtaining the archive; a points-only alternative would lose required data.",
+    "Automatic acquisition held: ScienceBase/mrdata disallow crawling or services.arcgis.com robots.txt returns403. No bypass permitted."
+  ],
+  "license_evidence": {
+    "url": "https://www.usgs.gov/data/global-rare-earth-element-occurrence-database",
+    "excerpt": "This work is marked with CC0 1.0 Universal"
+  },
+  "metadata_checked_at": "2026-10-29T00:55:43.039174+00:00",
+  "metadata_urls": [
+    "https://api.datacite.org/dois/10.5066/F7DR2TN4",
+    "https://data.usgs.gov/datacatalog/metadata/USGS.5a0c5a0de4b09af898cd15d2.xml"
+  ],
+  "evidence_grade": "B",
+  "currency_date": "2018",
+  "doi": "10.5066/F7DR2TN4",
+  "access_evidence": {
+    "robots_url": "https://www.sciencebase.gov/robots.txt",
+    "status": "automated_access_blocked",
+    "reason": "Explicit disallow for ChatGPT-User/OAI-SearchBot plus final wildcard disallow. Metadata and datasets on ScienceBase were not requested."
+  },
+  "manual_source_url": "https://www.sciencebase.gov/catalog/item/5a0c5a0de4b09af898cd15d2",
+  "candidate_endpoints": []
+}

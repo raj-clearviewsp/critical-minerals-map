@@ -1,0 +1,46 @@
+{
+  "source_id": "ga_critical_2025",
+  "name": "Australian Critical Minerals Map 2025",
+  "publisher": "Geoscience Australia",
+  "url": "https://data.gov.au/data/dataset/19e884f8-82d5-4fca-9ce3-58acec376b90",
+  "license": "unconfirmed",
+  "spec_license_claim": "confirm",
+  "redistribution_ok": false,
+  "license_status": "unconfirmed",
+  "license_evidence_url": "https://data.gov.au/data/api/3/action/package_show?id=19e884f8-82d5-4fca-9ce3-58acec376b90",
+  "access_status": "automated",
+  "cadence": "when updated",
+  "parser": "not_implemented_step_4",
+  "fetcher": {
+    "kind": "files",
+    "files": [
+      {
+        "filename": "150802_01_0.xlsx",
+        "url": "https://d28rz98at9flks.cloudfront.net/150802/150802_01_0.xlsx"
+      }
+    ]
+  },
+  "notes": [
+    "CKAN reports license_id=notspecified and isopen=false. Workbook redistribution remains unconfirmed; acquisition is disabled.",
+    "A separate entry, ga_critical_2025_arcgis, registers the explicitly CC BY 4.0 licensed service. Its license is not assumed to apply to this workbook.",
+    "Known workbook URL is retained for review only. Original catalogue record lookups by numeric identifier and harvested slug returned HTTP 404 during metadata research.",
+    "Operating mines may contain a critical mineral resource without producing that mineral.",
+    "Raj explicitly approved acquisition/use on2026-10-28 for a free attributed project. Preserve source-specific license facts; approval does not rewrite publisher terms."
+  ],
+  "license_evidence": {
+    "url": "https://data.gov.au/data/api/3/action/package_show?id=19e884f8-82d5-4fca-9ce3-58acec376b90",
+    "json_pointer": "/result/license_id",
+    "value": "notspecified",
+    "isopen": false
+  },
+  "license_url": null,
+  "metadata_url": "https://data.gov.au/data/api/3/action/package_show?id=19e884f8-82d5-4fca-9ce3-58acec376b90",
+  "metadata_checked_at": "2026-10-29T00:55:05.279455+00:00",
+  "metadata_snapshot_sha256": "6fa2ffed47941e6656cd7003fba6e7568c78bf0417abfebc2947b79bf06efc70",
+  "version": "2025 map",
+  "currency": "2025-12",
+  "publication_date": null,
+  "evidence_grade": "B",
+  "attribution": "Geoscience Australia. Australian Critical Minerals Map 2025. Workbook redistribution terms remain unconfirmed; do not publish its values.",
+  "acquisition_approval_ref": "overrides/source_acquisition_approvals.yaml"
+}

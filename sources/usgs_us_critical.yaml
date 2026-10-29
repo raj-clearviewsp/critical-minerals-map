@@ -1,0 +1,50 @@
+{
+  "source_id": "usgs_us_critical",
+  "name": "Critical mineral deposits of the United States",
+  "publisher": "USGS",
+  "url": "https://www.usgs.gov/data/critical-mineral-deposits-united-states-ver-30-september-2026",
+  "license": "CC0-1.0",
+  "spec_license_claim": "public domain",
+  "redistribution_ok": true,
+  "license_status": "confirmed_open",
+  "license_evidence_url": "https://api.datacite.org/dois/10.5066/P9K1HBNT",
+  "access_status": "automated",
+  "cadence": "when updated",
+  "parser": "not_implemented_step_4",
+  "fetcher": {
+    "kind": "arcgis",
+    "url": "https://energy.usgs.gov/arcgis/rest/services/Hosted/Critical_mineral_deposits_of_the_United_States/FeatureServer/0",
+    "page_size": 1000
+  },
+  "notes": [
+    "Dataset web landing abstract and DataCite abstract retain old681-deposit count; current v3 API and Sept29 2026 publisher news confirm1271.",
+    "No source-specific rate ceiling found; use serialized requests with conservative delay and cache.",
+    "Source ranking1\u20136 is not the Atlas maturity ladder; map only in the later maturity step."
+  ],
+  "license_evidence": {
+    "url": "https://api.datacite.org/dois/10.5066/P9K1HBNT",
+    "excerpt": "Creative Commons Zero v1.0 Universal"
+  },
+  "metadata_checked_at": "2026-10-29T00:55:43.039174+00:00",
+  "metadata_urls": [
+    "https://data.usgs.gov/datacatalog/metadata/USGS.6464de5bd34ec179a83d9e6c.xml",
+    "https://api.datacite.org/dois/10.5066/P9K1HBNT",
+    "https://energy.usgs.gov/arcgis/rest/services/Hosted/Critical_mineral_deposits_of_the_United_States/FeatureServer?f=pjson",
+    "https://energy.usgs.gov/arcgis/rest/services/Hosted/Critical_mineral_deposits_of_the_United_States/FeatureServer/0?f=pjson"
+  ],
+  "evidence_grade": "B",
+  "currency_date": "2026-09-09",
+  "doi": "10.5066/P9K1HBNT",
+  "access_evidence": {
+    "recommended": "Official USGS Energy ArcGIS read-only API",
+    "robots_url": "https://energy.usgs.gov/robots.txt",
+    "robots_http_status": 404,
+    "api_auth_required": false,
+    "license_required_attribution": "CC0 does not require attribution; cite USGS and DOI per publisher request.",
+    "blocked_alternative": {
+      "robots_url": "https://www.sciencebase.gov/robots.txt",
+      "status": "automated_access_blocked",
+      "reason": "Explicit disallow for ChatGPT-User/OAI-SearchBot plus final wildcard disallow. Metadata and datasets on ScienceBase were not requested."
+    }
+  }
+}

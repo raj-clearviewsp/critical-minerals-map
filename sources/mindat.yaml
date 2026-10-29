@@ -1,0 +1,29 @@
+{
+  "source_id": "mindat",
+  "name": "Mindat localities",
+  "publisher": "Hudson Institute of Mineralogy",
+  "url": "https://www.mindat.org/",
+  "license": "Restricted; written authorization/separate license needed for systematic extraction",
+  "spec_license_claim": "not redistributable",
+  "redistribution_ok": false,
+  "license_status": "restricted",
+  "license_evidence_url": "https://www.mindat.org/terms.php",
+  "access_status": "excluded",
+  "cadence": "live",
+  "parser": "not_implemented_step_4",
+  "fetcher": {
+    "kind": "disabled",
+    "files": []
+  },
+  "notes": [
+    "Official terms prohibit automated systematic extraction without authorization, including repeated small extracts, and prohibit creating another data product from extracted material.",
+    "API access may have separate terms; the OpenMindat Python package Apache2.0 license does not license the underlying database.",
+    "No locality records accessed or acquired.",
+    "No automated fetcher: written authorization is required even for systematic internal cross-checking."
+  ],
+  "license_evidence": "create or populate another database, website, application, service or data product using material extracted from mindat.org;",
+  "license_checked_at": "2026-10-28",
+  "currency": "Terms effective21 August2026",
+  "version": "Terms effective 2026-08-21",
+  "evidence_grade": "C"
+}

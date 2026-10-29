@@ -1,0 +1,123 @@
+{
+  "source_id": "usgs_mrds",
+  "name": "Mineral Resources Data System",
+  "publisher": "USGS",
+  "url": "https://services.arcgis.com/v01gqwM5QqNysAAi/ArcGIS/rest/services/Mineral_Resources_Data_System_MRDS_Compact_Version/FeatureServer",
+  "license": "US-Public-Domain",
+  "spec_license_claim": "public domain",
+  "redistribution_ok": true,
+  "license_status": "confirmed_open",
+  "license_evidence_url": "https://www.arcgis.com/sharing/rest/content/items/579544a8423e40bbba6c1229082554d1?f=pjson",
+  "access_status": "manual_required",
+  "cadence": "frozen",
+  "parser": "not_implemented_step_4",
+  "fetcher": {
+    "kind": "disabled",
+    "files": []
+  },
+  "notes": [
+    "MRDS Grade A\u2013E means record completeness, not Atlas evidence grade; do not map these letters to A\u2013D evidence grades.",
+    "Compact layer does not carry all detailed reserves/production/reference fields; original URL is the provenance pointer.",
+    "Ownership, production and operating status are stale, even when service metadata is recently edited.",
+    "Page all four resources independently and preserve count and ID checks; result count ceiling is2000.",
+    "Automatic acquisition held: ScienceBase/mrdata disallow crawling or services.arcgis.com robots.txt returns403. No bypass permitted.",
+    "Robots403 alone is unavailable under RFC9309, not Disallow. Bulk automated acquisition remains held because Esri website terms2.3(e) prohibit systematic harvesting; applicability to this source snapshot needs resolution or a permitted original download."
+  ],
+  "license_evidence": {
+    "url": "https://www.arcgis.com/sharing/rest/content/items/579544a8423e40bbba6c1229082554d1?f=pjson",
+    "excerpt": "are free and in the public domain. There are no restrictions"
+  },
+  "metadata_checked_at": "2026-10-29T00:55:43.039174+00:00",
+  "metadata_urls": [
+    "https://services.arcgis.com/v01gqwM5QqNysAAi/ArcGIS/rest/services/Mineral_Resources_Data_System_MRDS_Compact_Version/FeatureServer?f=pjson",
+    "https://services.arcgis.com/v01gqwM5QqNysAAi/ArcGIS/rest/services/Mineral_Resources_Data_System_MRDS_Compact_Version/FeatureServer/0?f=pjson",
+    "https://www.arcgis.com/sharing/rest/content/items/579544a8423e40bbba6c1229082554d1?f=pjson"
+  ],
+  "evidence_grade": "B",
+  "currency_date": "2011",
+  "doi": "10.3133/ds20",
+  "access_evidence": {
+    "robots_url": "https://services.arcgis.com/robots.txt",
+    "robots_http_status": 403,
+    "robots_response": "Invalid URL",
+    "note": "Public read-only ArcGIS API and explicit publisher data permission verified; no site robots policy could be obtained from the services host. Do not treat the403 as a successful policy check.",
+    "login_required": false,
+    "blocked_bulk_alternative": {
+      "robots_url": "https://mrdata.usgs.gov/robots.txt",
+      "status": "automated_access_blocked",
+      "reason": "Initial wildcard Disallow: / applies; later wildcard lists Crawl-delay: 10 and narrower exclusions. MRDS landing was retrieved before robots check; no data files retrieved and no further calls made after discovering restriction."
+    }
+  },
+  "manual_source_url": "https://services.arcgis.com/v01gqwM5QqNysAAi/ArcGIS/rest/services/Mineral_Resources_Data_System_MRDS_Compact_Version/FeatureServer",
+  "candidate_endpoints": [
+    {
+      "kind": "arcgis_query",
+      "url": "https://services.arcgis.com/v01gqwM5QqNysAAi/ArcGIS/rest/services/Mineral_Resources_Data_System_MRDS_Compact_Version/FeatureServer/0/query",
+      "table": "MRDS",
+      "object_id_field": "OBJECTID",
+      "max_record_count": 2000,
+      "supports_pagination": true,
+      "suggested_parameters": {
+        "where": "1=1",
+        "outFields": "*",
+        "orderByFields": "OBJECTID ASC",
+        "resultOffset": 0,
+        "resultRecordCount": 2000,
+        "f": "json"
+      },
+      "verified": "Service and layer/table schema returnedHTTP200; data rows not fetched"
+    },
+    {
+      "kind": "arcgis_query",
+      "url": "https://services.arcgis.com/v01gqwM5QqNysAAi/ArcGIS/rest/services/Mineral_Resources_Data_System_MRDS_Compact_Version/FeatureServer/10/query",
+      "table": "Commodity",
+      "object_id_field": "OBJECTID",
+      "max_record_count": 2000,
+      "supports_pagination": true,
+      "suggested_parameters": {
+        "where": "1=1",
+        "outFields": "*",
+        "orderByFields": "OBJECTID ASC",
+        "resultOffset": 0,
+        "resultRecordCount": 2000,
+        "f": "json"
+      },
+      "verified": "Service and layer/table schema returnedHTTP200; data rows not fetched"
+    },
+    {
+      "kind": "arcgis_query",
+      "url": "https://services.arcgis.com/v01gqwM5QqNysAAi/ArcGIS/rest/services/Mineral_Resources_Data_System_MRDS_Compact_Version/FeatureServer/11/query",
+      "table": "Materials",
+      "object_id_field": "OBJECTID",
+      "max_record_count": 2000,
+      "supports_pagination": true,
+      "suggested_parameters": {
+        "where": "1=1",
+        "outFields": "*",
+        "orderByFields": "OBJECTID ASC",
+        "resultOffset": 0,
+        "resultRecordCount": 2000,
+        "f": "json"
+      },
+      "verified": "Service and layer/table schema returnedHTTP200; data rows not fetched"
+    },
+    {
+      "kind": "arcgis_query",
+      "url": "https://services.arcgis.com/v01gqwM5QqNysAAi/ArcGIS/rest/services/Mineral_Resources_Data_System_MRDS_Compact_Version/FeatureServer/12/query",
+      "table": "Names",
+      "object_id_field": "OBJECTID",
+      "max_record_count": 2000,
+      "supports_pagination": true,
+      "suggested_parameters": {
+        "where": "1=1",
+        "outFields": "*",
+        "orderByFields": "OBJECTID ASC",
+        "resultOffset": 0,
+        "resultRecordCount": 2000,
+        "f": "json"
+      },
+      "verified": "Service and layer/table schema returnedHTTP200; data rows not fetched"
+    }
+  ],
+  "access_review_url": "https://www.esri.com/content/dam/esrisites/en-us/media/legal/terms-and-conditions/website-terms.pdf"
+}

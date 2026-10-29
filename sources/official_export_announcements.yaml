@@ -1,0 +1,26 @@
+{
+  "source_id": "official_export_announcements",
+  "name": "Official export restriction announcements",
+  "publisher": "Issuing government agencies",
+  "url": null,
+  "license": "unconfirmed_per_document",
+  "spec_license_claim": "per document verification required",
+  "redistribution_ok": false,
+  "license_status": "unconfirmed",
+  "license_evidence_url": null,
+  "access_status": "manual_required",
+  "cadence": "weekly manual",
+  "parser": "not_implemented_step_4",
+  "fetcher": {
+    "kind": "disabled",
+    "files": []
+  },
+  "notes": [
+    "Manually curated collection, not a single cleared dataset. Every announcement must first receive its own official URL, retrieval date, license/access review and evidence record.",
+    "Public availability of an official announcement does not establish blanket redistribution permission. No source document has been selected or acquired.",
+    "Only restriction facts and official source links belong in this collection; avoid republishing copyrighted document text."
+  ],
+  "version": "Per document",
+  "currency": "Per document",
+  "evidence_grade": "A"
+}

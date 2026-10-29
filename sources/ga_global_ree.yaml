@@ -1,0 +1,48 @@
+{
+  "source_id": "ga_global_ree",
+  "name": "Global rare earth element deposits - a compilation",
+  "publisher": "Commonwealth of Australia (Geoscience Australia); D.Huston",
+  "url": "https://pid.geoscience.gov.au/dataset/ga/148953",
+  "license": "CC-BY-4.0",
+  "spec_license_claim": "confirm",
+  "redistribution_ok": true,
+  "license_status": "confirmed_open",
+  "license_evidence_url": "https://ecat.ga.gov.au/geonetwork/srv/api/records/bd8553a2-5150-45b3-920f-0ae8d92476bf/formatters/xml",
+  "access_status": "automated",
+  "cadence": "when updated",
+  "parser": "not_implemented_step_4",
+  "fetcher": {
+    "kind": "files",
+    "files": [
+      {
+        "filename": "148953_01_0.xlsx",
+        "url": "https://d28rz98at9flks.cloudfront.net/148953/148953_01_0.xlsx"
+      },
+      {
+        "filename": "148953_00_0.pdf",
+        "url": "https://d28rz98at9flks.cloudfront.net/148953/148953_00_0.pdf"
+      }
+    ]
+  },
+  "notes": [
+    "The original GA resource legal constraints explicitly specify Creative Commons Attribution 4.0 International Licence.",
+    "The spec labels this 2023; metadata distinguishes creation on 2023-10-07 from publication on 2024-05-30, Record 2024/03.",
+    "Selected deposits or districts have substantial endowment or detailed geological information; this is not a comprehensive occurrence inventory.",
+    "Each underlying estimate retains its own source date. Metadata revision in 2026 is not an estimate currency date."
+  ],
+  "license_evidence": {
+    "url": "https://ecat.ga.gov.au/geonetwork/srv/api/records/bd8553a2-5150-45b3-920f-0ae8d92476bf/formatters/xml",
+    "json_pointer": "/mdb:identificationInfo/mri:MD_DataIdentification/mri:resourceConstraints/0/mco:MD_LegalConstraints/mco:reference/cit:CI_Citation/cit:title/gco:CharacterString/#text",
+    "value": "Creative Commons Attribution 4.0 International Licence",
+    "attribution": "© Commonwealth of Australia (Geoscience Australia)2024"
+  },
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "metadata_url": "https://ecat.ga.gov.au/geonetwork/srv/api/records/bd8553a2-5150-45b3-920f-0ae8d92476bf/formatters/xml",
+  "metadata_checked_at": "2026-10-29T00:55:05.279455+00:00",
+  "metadata_snapshot_sha256": "8954fe8848c7b1bf24ea3bed3cebf6918e638d35ba574f1d79301a3865ca0174",
+  "version": "Record2024/03",
+  "currency": "Compilation created2023; published2024; underlying deposits have differing source dates",
+  "publication_date": "2024-05-30",
+  "evidence_grade": "B",
+  "attribution": "Huston, D. (2024). Global rare earth element deposits - a compilation. Record 2024/03. Commonwealth of Australia (Geoscience Australia). https://doi.org/10.26186/148953. CC BY 4.0."
+}

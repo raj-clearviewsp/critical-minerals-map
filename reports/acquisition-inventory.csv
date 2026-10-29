@@ -1,0 +1,10 @@
+source_id,snapshot_utc,files,bytes,raw_arcgis_feature_count,normalized_rows,license,source_url,retrieved_at,evidence_grade
+aiddata_transition_v2,2026-10-29,1,3172579,,0,ODC-By-1.0,https://www.aiddata.org/data/aiddatas-chinese-financing-for-transition-minerals-dataset-version-2-0,2026-10-29T00:58:35.380783+00:00,C
+ga_critical_2025_arcgis,2026-10-29,12,252146,538,0,CC-BY-4.0,https://services.ga.gov.au/gis/rest/services/AustralianCriticalMineralsOperatingMinesAndDeposits/MapServer,2026-10-29T01:05:15.493870+00:00,B
+gseu_crm,2026-10-29,1,4215978,,0,CC-BY-4.0,https://zenodo.org/records/15234833,2026-10-29T01:01:45.941618+00:00,B
+icmm,2026-10-29,1,785242,,0,ICMM website non-commercial informational-use terms; no dataset-specific open license verified,https://www.icmm.com/global-datasets/mining-metals-facilities,2026-10-29T00:58:34.077861+00:00,C
+jasansky,2026-10-29,1,1077424,,0,CC-BY-4.0,https://zenodo.org/records/7369478,2026-10-29T01:02:17.848032+00:00,C
+oecd_export,2026-10-29,17,179809674,,0,"OECD Data Terms (section3, last updated1 July2024); separate CC BY4.0 rule for most written reports since1 July2024",https://www.oecd.org/en/publications/oecd-inventory-of-export-restrictions-on-critical-raw-materials-2026_d5ca8f62-en.html,2026-10-29T01:02:33.599989+00:00,B
+usgs_critical_list_2025,2026-10-29,1,106213,,0,U.S. public domain (USGS-authored information),https://www.usgs.gov/news/science-snippet/interior-department-releases-final-2025-list-critical-minerals,2026-10-29T00:59:01.212622+00:00,A
+usgs_laterites,2026-10-29,1,149375,,0,US-Public-Domain,https://pubs.usgs.gov/of/2011/1058/,2026-10-29T00:58:31.251312+00:00,B
+usgs_us_critical,2026-10-29,4,1056714,1271,0,CC0-1.0,https://www.usgs.gov/data/critical-mineral-deposits-united-states-ver-30-september-2026,2026-10-29T00:58:38.091699+00:00,B

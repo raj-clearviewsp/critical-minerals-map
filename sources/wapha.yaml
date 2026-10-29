@@ -1,0 +1,53 @@
+{
+  "source_id": "wapha",
+  "name": "Water and Planetary Health Analytics (WAPHA) global metal mines database",
+  "publisher": "Hudson-Edwards et al. via Dryad",
+  "url": "https://datadryad.org/dataset/doi:10.5061/dryad.j3tx95xmg",
+  "license": "CC0-1.0",
+  "spec_license_claim": "confirm CC0",
+  "redistribution_ok": true,
+  "license_status": "confirmed_open",
+  "license_evidence_url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.j3tx95xmg",
+  "access_status": "automated",
+  "cadence": "when updated",
+  "parser": "not_implemented_step_4",
+  "fetcher": {
+    "kind": "files",
+    "files": [
+      {
+        "filename": "world_active_mines_17.05.2023.xlsx",
+        "url": "https://datadryad.org/api/v2/files/2559961/download",
+        "publisher_checksum": "sha256:c8741fbae9ad048acb0bc3900be94891b64f6f0383bdee7457ba584f5c18335e",
+        "publisher_bytes": 818717
+      },
+      {
+        "filename": "world_inactive_mines_17.05.2023.xlsx",
+        "url": "https://datadryad.org/api/v2/files/2559963/download",
+        "publisher_checksum": "sha256:9cc4486a964321237e854024b72b04b1c7d0e81ae0753253b2ded52b4a36e78d",
+        "publisher_bytes": 5752565
+      }
+    ]
+  },
+  "notes": [
+    "Dryad dataset metadata explicitly declares CC0-1.0. Only the two public mine spreadsheets are included.",
+    "Active status is defined from sources published or accessed before 2022-08-29, despite filenames dated 2023-05-17. It is historical evidence.",
+    "Public spreadsheets omit proprietary sources; do not apply headline full-database counts to these files.",
+    "Tailings datasets are excluded from this registry entry because they are outside the Atlas scope.",
+    "Exact Dryad version ID 254187, version number 6; preserve file identifiers and verify publisher SHA-256 digests."
+  ],
+  "license_evidence": {
+    "url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.j3tx95xmg",
+    "json_pointer": "/license",
+    "value": "https://spdx.org/licenses/CC0-1.0.html",
+    "additional_policy": "https://datadryad.org/terms"
+  },
+  "license_url": "https://spdx.org/licenses/CC0-1.0.html",
+  "metadata_url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.j3tx95xmg",
+  "metadata_checked_at": "2026-10-29T00:55:05.279455+00:00",
+  "metadata_snapshot_sha256": "6fff8bce7d46187ce96b835428fba305beadf25a058cc1b374c08c54ea9ea269",
+  "version": 6,
+  "currency": "Status defined using sources published/accessed before2022-08-29; files named2023-05-17",
+  "publication_date": "2023-09-07",
+  "evidence_grade": "C",
+  "attribution": "Hudson-Edwards, K. et al. (2023). Water and Planetary Health Analytics (WAPHA) global metal mines database. Dryad. https://doi.org/10.5061/dryad.j3tx95xmg. CC0 1.0."
+}

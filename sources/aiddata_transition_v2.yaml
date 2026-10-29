@@ -1,0 +1,61 @@
+{
+  "source_id": "aiddata_transition_v2",
+  "name": "Chinese Financing for Transition Minerals Dataset version 2.0",
+  "publisher": "AidData",
+  "url": "https://www.aiddata.org/data/aiddatas-chinese-financing-for-transition-minerals-dataset-version-2-0",
+  "license": "ODC-By-1.0",
+  "spec_license_claim": "ODC-By (confirmed by the release-specific License sheet)",
+  "redistribution_ok": true,
+  "license_status": "confirmed_open",
+  "license_evidence_url": "https://docs.aiddata.org/ad4/datasets/AidData_Chinese_Financing_for_Transition_Minerals_Version_2.0.zip",
+  "access_status": "automated",
+  "cadence": "when updated",
+  "parser": "not_implemented_step_4",
+  "fetcher": {
+    "kind": "files",
+    "files": [
+      {
+        "filename": "AidData_Chinese_Financing_for_Transition_Minerals_Version_2.0.zip",
+        "url": "https://docs.aiddata.org/ad4/datasets/AidData_Chinese_Financing_for_Transition_Minerals_Version_2.0.zip"
+      }
+    ]
+  },
+  "notes": [
+    "The downloaded version 2.0 workbook explicitly grants ODC-By at License!A4. This release-specific grant supersedes the initial generic Data User Guide restriction for this dataset; initial_license_audit preserves the original findings.",
+    "License!A6 and A22 require AidData attribution, disclosure of the database license, and preservation of original notices when using or redistributing the database or works produced from it.",
+    "License!A26 describes the accompanying human-readable summary as nonbinding; the full ODC-By 1.0 license is linked in the sheet. It does not withdraw the explicit grant in A4.",
+    "The release ZIP was acquired under the recorded approval and inspected for embedded licensing evidence on 2026-10-29 UTC. Raw archive content remains unchanged.",
+    "Raj explicitly approved acquisition/use on 2026-10-28 for a free attributed project. The original approval record is retained.",
+    "AidData observations are gradeC compilation evidence under the Atlas spec; the primary license grant is separately documented."
+  ],
+  "license_evidence": "The original dataset produced by AidData is licensed using the Open Data Commons Attribution License (ODC-By).",
+  "license_checked_at": "2026-10-29",
+  "currency": "Published30 January2026; financing commitments2000\u20132023",
+  "version": "2.0",
+  "evidence_grade": "C",
+  "candidate_files": [
+    {
+      "filename": "AidData_Chinese_Financing_for_Transition_Minerals_Version_2.0.zip",
+      "url": "https://docs.aiddata.org/ad4/datasets/AidData_Chinese_Financing_for_Transition_Minerals_Version_2.0.zip"
+    }
+  ],
+  "acquisition_approval_ref": "overrides/source_acquisition_approvals.yaml",
+  "initial_license_audit": {
+    "license": "Unconfirmed dataset-specific terms; website Data User Guide restricts downloads to private/personal non-commercial purposes",
+    "license_status": "unconfirmed",
+    "redistribution_ok": false,
+    "license_evidence_url": "https://www.aiddata.org/pages/data-user-guide",
+    "license_evidence": "To use and/or download the data only for private or personal, non-commercial purposes;",
+    "license_checked_at": "2026-10-28",
+    "notes": [
+      "Landing page confirms v2.0 and metadata summary:47 countries,313 loan commitments and1 grant commitment.",
+      "Spec claims ODC-By; no v2-specific open-license statement was found on the landing page. An unrelated generic AidData readme at https://docs.aiddata.org/ad4/files/inline/readme.pdf is ODC-By, but its applicability to this release is not established.",
+      "GeoQuery has ODC-By language but is a different AidData product and also has a commercial-use disclaimer; do not transfer that license automatically.",
+      "ZIP URL was discovered from Download link; no archive was downloaded, opened or ingested.",
+      "License gate: no dataset-specific v2 override of the website non-commercial/private-use restrictions has been verified. Disabled pending clarification.",
+      "Raj explicitly approved acquisition/use on2026-10-28 for a free attributed project. Preserve source-specific license facts; approval does not rewrite publisher terms."
+    ]
+  },
+  "license_locator": "AidData_CFTM_v2/AidData_Chinese_Financing_for_Transition_Minerals_Dataset_Version_2.0.xlsx / License!A4",
+  "license_url": "https://opendatacommons.org/licenses/by/1-0/"
+}

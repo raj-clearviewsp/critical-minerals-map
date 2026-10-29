@@ -1,0 +1,47 @@
+{
+  "source_id": "icmm",
+  "name": "Global mining and metals facilities dataset",
+  "publisher": "ICMM",
+  "url": "https://www.icmm.com/global-datasets/mining-metals-facilities",
+  "license": "ICMM website non-commercial informational-use terms; no dataset-specific open license verified",
+  "spec_license_claim": "confirm",
+  "redistribution_ok": false,
+  "license_status": "restricted",
+  "license_evidence_url": "https://www.icmm.com/en-gb/snippets/footer/terms-and-conditions",
+  "access_status": "automated",
+  "cadence": "when updated",
+  "parser": "not_implemented_step_4",
+  "fetcher": {
+    "kind": "files",
+    "files": [
+      {
+        "filename": "global-mining-dataset-1-5.xlsx",
+        "url": "https://www.icmm.com/website/data/2026/global-mining-dataset-1-5.xlsx?cb=151580"
+      }
+    ]
+  },
+  "notes": [
+    "Primary landing page confirms12,000 total and7,104 publicly available records in v1.5.",
+    "S&P-licensed facilities are withheld. Public availability is not an unrestricted redistribution license.",
+    "General terms exclude third-party copyright from ICMM reuse permission. Specific XLSX terms have not been inspected because no dataset download was authorized under unclear/non-commercial terms.",
+    "Do not use mirrors such as iccmi2024.org as evidence; they appear in search but are not the publisher domain.",
+    "License gate: user approval/publisher clarification is required before use of this non-commercial source. Disabled pending a documented decision.",
+    "Raj explicitly approved acquisition/use on2026-10-28 for a free attributed project. Preserve source-specific license facts; approval does not rewrite publisher terms."
+  ],
+  "license_evidence": "provided it is used for non-commercial, informational purposes only.",
+  "license_checked_at": "2026-10-28",
+  "currency": "v1.5, 22 July2026; next major release announced for late2026",
+  "version": "1.5",
+  "evidence_grade": "C",
+  "candidate_files": [
+    {
+      "filename": "global-mining-dataset-1-5.xlsx",
+      "url": "https://www.icmm.com/website/data/2026/global-mining-dataset-1-5.xlsx?cb=151580"
+    },
+    {
+      "filename": "global-mining-dataset-1-5.kmz",
+      "url": "https://www.icmm.com/website/data/2026/global-mining-dataset-1-5.kmz?cb=142981"
+    }
+  ],
+  "acquisition_approval_ref": "overrides/source_acquisition_approvals.yaml"
+}

@@ -1,0 +1,28 @@
+{
+  "approvals": {
+    "icmm": {
+      "decision": "allow_acquisition",
+      "approved_by": "Raj Sawhney",
+      "approved_at": "2026-10-28",
+      "reason": "User explicitly requests using these sources for a free project with clear citations and labels.",
+      "user_statement": "You should use all of these as I'm not charging anything for this and will clearly cite/label all uses of this data. The licenses are fine as is",
+      "publication_note": "Keep actual source terms and unresolved redistribution metadata; no public deployment authorized by this acquisition decision."
+    },
+    "aiddata_transition_v2": {
+      "decision": "allow_acquisition",
+      "approved_by": "Raj Sawhney",
+      "approved_at": "2026-10-28",
+      "reason": "User explicitly requests using these sources for a free project with clear citations and labels.",
+      "user_statement": "You should use all of these as I'm not charging anything for this and will clearly cite/label all uses of this data. The licenses are fine as is",
+      "publication_note": "Keep actual source terms and unresolved redistribution metadata; no public deployment authorized by this acquisition decision."
+    },
+    "ga_critical_2025": {
+      "decision": "allow_acquisition",
+      "approved_by": "Raj Sawhney",
+      "approved_at": "2026-10-28",
+      "reason": "User explicitly requests using these sources for a free project with clear citations and labels.",
+      "user_statement": "You should use all of these as I'm not charging anything for this and will clearly cite/label all uses of this data. The licenses are fine as is",
+      "publication_note": "Keep actual source terms and unresolved redistribution metadata; no public deployment authorized by this acquisition decision."
+    }
+  }
+}

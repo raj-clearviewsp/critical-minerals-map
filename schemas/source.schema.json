@@ -1,0 +1,19 @@
+{
+ "$schema":"https://json-schema.org/draft/2020-12/schema",
+ "type":"object",
+ "required":["source_id","name","publisher","url","license","redistribution_ok","license_status","license_evidence_url","access_status","cadence","parser","fetcher"],
+ "properties":{
+  "source_id":{"type":"string","pattern":"^[a-z][a-z0-9_]*$"},
+  "name":{"type":"string","minLength":1},"publisher":{"type":"string","minLength":1},
+  "url":{"type":["string","null"]},"license":{"type":"string","minLength":1},
+  "redistribution_ok":{"type":"boolean"},"license_status":{"type":"string","minLength":1},
+  "license_evidence_url":{"type":["string","null"]},"access_status":{"type":"string","minLength":1},
+  "cadence":{"type":"string"},"parser":{"type":["string","null"]},
+  "fetcher":{"type":"object","required":["kind"],"properties":{
+   "kind":{"enum":["disabled","files","arcgis"]},
+   "files":{"type":"array","items":{"type":"object","required":["filename","url"],"properties":{
+    "filename":{"type":"string","pattern":"^[A-Za-z0-9][A-Za-z0-9._-]*$"},"url":{"type":"string","pattern":"^https://"}
+   }}}
+  }}
+ }
+}

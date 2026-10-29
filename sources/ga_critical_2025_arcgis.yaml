@@ -1,0 +1,46 @@
+{
+  "source_id": "ga_critical_2025_arcgis",
+  "name": "Australian Critical Minerals Operating Mines And Deposits",
+  "publisher": "Geoscience Australia",
+  "url": "https://services.ga.gov.au/gis/rest/services/AustralianCriticalMineralsOperatingMinesAndDeposits/MapServer",
+  "license": "CC-BY-4.0",
+  "redistribution_ok": true,
+  "license_status": "confirmed_open",
+  "license_evidence_url": "https://services.ga.gov.au/gis/rest/services/AustralianCriticalMineralsOperatingMinesAndDeposits/MapServer?f=pjson",
+  "license_evidence": {
+    "url": "https://services.ga.gov.au/gis/rest/services/AustralianCriticalMineralsOperatingMinesAndDeposits/MapServer?f=pjson",
+    "json_pointer": "/copyrightText",
+    "value": "© Commonwealth of Australia (Geoscience Australia) 2026. This product is released under the Creative Commons Attribution 4.0 International Licence. http://creativecommons.org/licenses/by/4.0/legalcode"
+  },
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "access_status": "automated",
+  "cadence": "when updated",
+  "parser": "not_implemented_step_4",
+  "metadata_url": "https://services.ga.gov.au/gis/rest/services/AustralianCriticalMineralsOperatingMinesAndDeposits/MapServer?f=pjson",
+  "metadata_checked_at": "2026-10-29T00:55:05.279455+00:00",
+  "metadata_snapshot_sha256": "979faaf307ca21b803df58df152c1d9b65fcccf17f46bd4680d758839364f558",
+  "version": "Service snapshot required; data status December2025",
+  "currency": "2025-12",
+  "publication_date": null,
+  "evidence_grade": "B",
+  "attribution": "© Commonwealth of Australia (Geoscience Australia) 2026. Australian Critical Minerals Operating Mines And Deposits, status as at December 2025. CC BY 4.0.",
+  "notes": [
+    "Service and individual layer metadata explicitly state CC BY 4.0. Copyright year is 2026; status currency is December 2025.",
+    "Layers 4, 5, 6 and 7 are OperatingMines, DevelopingMines, CareMaintenanceMines and MineralDeposit.",
+    "Each layer supports pagination with maxRecordCount=2000 and object-ID field objectid. Request pages of 1000 in stable objectid order and reconcile transfer limits.",
+    "Native coordinates use EPSG:4283 (GDA94); fetch with outSR=4326 for the canonical WGS84 pipeline.",
+    "Operating category does not establish production of every listed critical mineral.",
+    "This explicitly licensed service is an alternative to the separately blocked 2025 workbook."
+  ],
+  "fetcher": {
+    "kind": "arcgis",
+    "url": "https://services.ga.gov.au/gis/rest/services/AustralianCriticalMineralsOperatingMinesAndDeposits/MapServer",
+    "layers": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "page_size": 1000
+  }
+}
