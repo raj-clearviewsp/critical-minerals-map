@@ -62,7 +62,7 @@ jobs:
       - name: Build and validate data artifacts
         run: make data
       - name: Pass validated publish artifacts to the site build
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: atlas-data-${{ github.sha }}
           path: data/publish/
@@ -94,7 +94,7 @@ jobs:
       - name: Check and build the static site
         run: make site
       - name: Save local-preview build artifact
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: atlas-site-${{ github.sha }}
           path: site/dist/
