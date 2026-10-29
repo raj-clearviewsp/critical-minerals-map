@@ -29,7 +29,7 @@ Generated per-stage reports are in `reports/runs/`. They contain row counts, rej
 - Local preview: HTTP 200 and browser inspection passed at a narrow viewport. Full cross-browser, Lighthouse, axe and PDF checks belong to Step 11 and have not been claimed here.
 - `npm audit`: 0 vulnerabilities after updating to Astro 7.3.8.
 - Pre-commit installed with locked Ruff hooks.
-- Initial scaffold pushed as `5dfc8254b871f77417d38b29b4439a01ece5576d`. GitHub rejected a job-level `runner.temp` expression before jobs started; removed that unsupported context and retained Make/setup-uv cache configuration. The repaired workflow is awaiting verification. Step 2 remains gated until it succeeds.
+- Initial scaffold pushed as `5dfc8254b871f77417d38b29b4439a01ece5576d`. GitHub rejected a job-level `runner.temp` expression before jobs started; removed that unsupported context and retained Make/setup-uv cache configuration. The repaired workflow passed all three jobs (Python lint/tests, empty data build, static site build) at commit `aab471eebb51681190728e55601a401f37c70c1e`: [GitHub CI run](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/40796696656). Step 1 is complete.
 
 ## Open issues and deferred requirements
 
