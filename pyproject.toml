@@ -4,7 +4,7 @@ version = "0.0.1"
 description = "Reproducible, provenance-first critical mineral reference"
 requires-python = ">=3.12,<3.13"
 dependencies = [
-  "pandas>=2.2,<3",
+  "pandas>=2.2,<4",
   "pyarrow>=19,<24",
   "pandera[pandas]>=0.26,<0.40",
   "jsonschema>=4.23,<5",
