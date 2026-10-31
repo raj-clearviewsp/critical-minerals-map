@@ -43,6 +43,8 @@ jobs:
         run: make normalize-receipt-check
       - name: Verify pilot selection receipt and count reports
         run: make pilot-receipt-check
+      - name: Verify private review preparation receipt
+        run: make link-review-receipt-check
 
   build-data:
     name: Build empty data pipeline

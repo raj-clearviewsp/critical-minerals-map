@@ -19,4 +19,5 @@ data/raw/**
 data/staging/**
 data/canonical/**
 data/publish/**
+data/review/**
 !data/**/.gitkeep

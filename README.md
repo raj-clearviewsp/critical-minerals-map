@@ -2,7 +2,7 @@
 
 A sourced, static reference for critical mineral deposits, maturity and ownership. The implementation follows [the supplied spec](IMPLEMENTATION_SPEC.md), in numbered order.
 
-**Current status: Phase 0, Steps 1–4 complete; Step 5 pilot filtering passes locally and awaits its remote CI gate.** Step 3 passed [GitHub CI](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41232185905). Sixteen source snapshots are captured. Canonical and published data remain empty, and no website has been deployed. The canonical schema remains provisional.
+**Current status: Phase 0, Steps 1–5 complete; Step 6 has a local 200-pair review packet awaiting human labels.** Step 3 passed [GitHub CI](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41232185905). Sixteen source snapshots are captured. Canonical and published data remain empty, and no website has been deployed. The canonical schema remains provisional.
 
 ## Run locally
 
@@ -61,7 +61,7 @@ Nothing in canonical data is edited by hand. Raw downloads will be immutable and
 
 GitHub Actions separates lint/tests, the data build, and the site build. After Python tests, `make vocab-check` validates the retained terminology audit against the committed vocabularies without downloading raw data. The site job consumes the exact data artifact from the data job. Actions use pinned revisions; uv and npm use committed lockfiles. Dependabot checks uv, npm and action updates weekly. There is no deployment workflow.
 
-A step is complete only when its acceptance checks pass, its report and changelog are written, its commit is pushed, and GitHub CI is green. The next numbered step remains gated until then. Step 3 passed all checks and remote CI; Step 4 passed [remote CI](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41233471095), and Step 5 has passed local checks and awaits its remote CI gate. Phase 1 requires Raj's Phase 0 sign-off. Public deployment and uncertain-license use require the approvals listed in the spec.
+A step is complete only when its acceptance checks pass, its report and changelog are written, its commit is pushed, and GitHub CI is green. The next numbered step remains gated until then. Step 3 passed all checks and remote CI; Step 4 passed [remote CI](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41233471095), and Step 5 passed [remote CI](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41234601740). Step 6 cannot proceed to tuning until the 200-pair review is labelled. Phase 1 requires Raj's Phase 0 sign-off. Public deployment and uncertain-license use require the approvals listed in the spec.
 
 Raj supplied `raj@satnamenergy.com` for the download User-Agent. Error-report inbox and branding remain owner decisions before launch. Local code is not assigned a new license by this scaffold; downstream source data will retain its own license and attribution requirements.
 
@@ -117,3 +117,16 @@ make pilot-receipt-check   # offline reconciliation and count-report verificatio
 ```
 
 The [Step 5 report](reports/phase0-step05.md) and CSV count reports show records by source, mineral, host country and record kind. A record can list several commodities; source overlap remains until entity resolution. Unranked source associations retain their original status, uncertainty and evidence. Financing collateral and waste-only mineral content do not qualify records. The original normalized tables remain intact.
+
+## Review site identity (Step 6 preparation)
+
+```sh
+make link-review                # requires verified local pilot/source data
+make link-review-check          # regenerate and compare the private packet
+make link-review-receipt-check  # aggregate receipt checks only; works in CI
+uv run --locked python -m pipeline.link --labels /absolute/path/to/decisions.csv
+```
+
+Open `data/review/linkage/index.html` in a browser. Compare each pair, select Same site, Different sites or Uncertain, add your reviewer name, and export a new CSV. Partial exports are supported; add `--partial` to validate them. Uncertain labels need adjudication before tuning. Keep exports separate from the immutable original packet. Browser storage is not a backup, so export progress regularly.
+
+The detailed packet stays local and Git-ignored because source reuse terms differ. The committed [preparation receipt](reports/linkage-review-audit.json) contains aggregates and checksums only. There are no model predictions, trained scores, merges or new canonical site IDs. The [Step 6 preparation report](reports/phase0-step06-preparation.md) documents scope, sampling and evaluation limits. Steps 7–12 remain gated by Step 6 acceptance.

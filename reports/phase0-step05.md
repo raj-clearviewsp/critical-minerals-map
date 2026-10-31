@@ -2,7 +2,7 @@
 
 Run date: October 31, 2026, America/Los_Angeles.
 
-**Status: local acceptance passed; the pushed commit’s remote CI gate is required before Step 6.** Step 4 commit `1776a83` passed [CI run 41233471095](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41233471095) before filtering began.
+**Status: complete.** Commit `3206334` passed [CI run 41234601740](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41234601740) before Step 6 review preparation began. Step 4 commit `1776a83` passed [CI run 41233471095](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41233471095) before filtering began.
 
 ## Result and outputs
 
@@ -65,8 +65,8 @@ Five records in the global REE compilation explicitly list nonpilot commodities:
 - Full local `pilot-check` passes: all source totals reconcile, every retained row has eligible pilot evidence, host-country evidence and record counts agree, and input/output hashes and Parquet schemas validate.
 - A full second filtering run reproduces all **22 pilot/report/review artifacts** byte-for-byte without changing modification times. All **16 parent normalization artifacts** and **66 raw file/manifest/marker paths** remain unchanged.
 - Independent direct-field scans agree with retained counts for all fifteen sources. Tests prevent collateral-only and waste-only qualification, country assignment from financiers, inconsistent host-code fallback, changed inherited fields and malformed helper evidence.
-- Code, report and changelog are ready for the corresponding pushed commit’s [GitHub Actions gate](https://github.com/raj-clearviewsp/critical-minerals-map/actions/workflows/ci.yml). The unchanged site build is also checked by that workflow before the next step.
+- Code, report and changelog are committed and pushed; all three jobs in [CI run 41234601740](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41234601740) passed, including the unchanged site build.
 
 The writer reads bounded batches, validates inherited and appended schemas, records every exclusion reason, and stages outputs before receipt-last acceptance. Source fields, native IDs, coordinates, dates and raw evidence are preserved exactly. Local checks verify raw sources, parent staging files, pilot bytes and category counts; offline CI replays reconciliations and regenerates count CSVs from the retained receipt. It does not claim to rebuild unavailable raw datasets.
 
-Step 6 begins only after this commit’s CI passes. Its separate hand-labelled 200-pair gold set must precede linkage tuning and any auto-merge precision claim. No canonical sites, merged entities, maturity assignments or published observations exist at this checkpoint. The cleaner site preview remains unchanged; no public deployment occurred.
+Step 6 began after this commit’s CI passed. Its separate hand-labelled 200-pair gold set must precede linkage tuning and any auto-merge precision claim. No canonical sites, merged entities, maturity assignments or published observations exist at this checkpoint. The cleaner site preview remains unchanged; no public deployment occurred.

@@ -53,3 +53,11 @@ Remote verification is recorded in `reports/phase0-step01.md` and the matching G
 - Preserved MRDS linked commodity importance and source pointers; kept financial collateral and waste-only content out of selection. Explicit source-scope fallbacks remain labelled.
 - Added source/mineral/country/kind counts, row reconciliation, full byte verification and human scope-review records for five conflicting REE-compilation entries.
 - Step 4 passed CI before filtering began; linkage and subsequent steps remain gated on this commit’s checks. No canonical sites or published observations.
+
+## 2026.10.31 — Phase 0, Step 6 review preparation
+
+- Step 5 completed with commit 3206334 and green CI run 41234601740 before this work began.
+- Added explicit mine/deposit point eligibility, exact spatial blocking and deterministic stratified sampling: 10,788 points, 39,148 candidates and 200 blank review pairs.
+- Added a private, self-contained review page with readable desktop/mobile comparisons, expandable provenance, reviewer notes and CSV export. Original precision uncertainty remains visible.
+- Added strict exported-label validation and aggregate-only receipts; detailed source/pair artifacts stay local and Git-ignored.
+- Documented unsampled strata, unknown coordinate precision and evaluation limits. No matching model, tuning, automatic merges, canonical site IDs or later numbered steps have run. Step 6 awaits the spec's human-label gate.
