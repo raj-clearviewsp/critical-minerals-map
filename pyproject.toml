@@ -5,7 +5,7 @@ description = "Reproducible, provenance-first critical mineral reference"
 requires-python = ">=3.12,<3.13"
 dependencies = [
   "pandas>=2.2,<3",
-  "pyarrow>=19,<24",
+  "pyarrow>=19,<27",
   "pandera[pandas]>=0.26,<0.40",
   "jsonschema>=4.23,<5",
   "httpx>=0.28,<1",
