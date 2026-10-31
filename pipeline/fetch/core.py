@@ -24,7 +24,7 @@ from protego import Protego
 from pipeline.scaffold import digest, json_bytes
 
 SOURCE_ID = re.compile(r"[a-z][a-z0-9_]*\Z")
-FILENAME = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]*\Z")
+FILENAME = re.compile(r"[A-Za-z0-9][A-Za-z0-9 ._()-]*\Z")
 MAX_BYTES = 150 * 1024 * 1024
 SCHEMAS = Path(__file__).resolve().parents[2] / "schemas"
 
@@ -67,13 +67,38 @@ def load_source(root: Path, source_id: str) -> dict:
     return value
 
 
-def validate_source(source: dict, acquisition_approved: bool = False) -> None:
+def acquisition_approval(root: Path, source_id: str) -> dict | None:
+    """Return a complete owner decision, without changing the recorded source license."""
+    path = root / "overrides/source_acquisition_approvals.yaml"
+    if not path.exists():
+        return None
+    try:
+        approvals = yaml.safe_load(path.read_text()) or {}
+        approval = approvals.get("approvals", {}).get(source_id)
+        if (
+            isinstance(approval, dict)
+            and approval.get("approved_by")
+            and approval.get("decision") == "allow_acquisition"
+            and approval.get("reason")
+            and approval.get("approved_at")
+        ):
+            return approval
+    except (OSError, yaml.YAMLError, AttributeError) as error:
+        raise FetchError("Invalid source acquisition approvals") from error
+    return None
+
+
+def validate_license(source: dict, acquisition_approved: bool = False) -> None:
     if not acquisition_approved and (
         source["license_status"] != "confirmed_open" or source["redistribution_ok"] is not True
     ):
         raise FetchError(f"{source['source_id']}: license not cleared; no dataset request made")
     if not source["license_evidence_url"]:
         raise FetchError("License decision lacks evidence")
+
+
+def validate_source(source: dict, acquisition_approved: bool = False) -> None:
+    validate_license(source, acquisition_approved)
     if source["access_status"] != "automated":
         raise FetchError(f"{source['source_id']}: automated access not approved")
     fetcher = source["fetcher"]
@@ -263,7 +288,7 @@ def verify_snapshot(directory: Path) -> dict:
             json.loads((SCHEMAS / "raw-manifest.schema.json").read_text()),
             format_checker=jsonschema.FormatChecker(),
         )
-        if manifest.get("schema_version") != "raw-v1" or not manifest.get("files"):
+        if manifest.get("schema_version") not in ("raw-v1", "raw-v2") or not manifest.get("files"):
             raise FetchError("Missing raw manifest version or files")
         names = [entry["path"] for entry in manifest["files"]]
         if len(names) != len(set(names)) or any(not FILENAME.fullmatch(name) for name in names):
@@ -273,12 +298,37 @@ def verify_snapshot(directory: Path) -> dict:
             raise FetchError("Manifest does not cover every raw file")
         for entry in manifest["files"]:
             validate_url(entry["url"])
-            validate_url(entry["final_url"])
+            if entry["final_url"] is not None:
+                validate_url(entry["final_url"])
+            if (directory / entry["path"]).is_symlink():
+                raise FetchError("Raw files must not be symbolic links")
             data = (directory / entry["path"]).read_bytes()
             if len(data) != entry["bytes"] or digest(data) != entry["sha256"]:
                 raise FetchError(f"Raw file checksum or size mismatch: {entry['path']}")
-        if datetime.fromisoformat(manifest["retrieved_at"]).tzinfo is None:
+        if (
+            manifest["retrieved_at"] is not None
+            and datetime.fromisoformat(manifest["retrieved_at"]).tzinfo is None
+        ):
             raise FetchError("Raw retrieval timestamp must include a timezone")
+        if manifest["schema_version"] == "raw-v2":
+            registered = datetime.fromisoformat(manifest["registered_at"])
+            if registered.tzinfo is None:
+                raise FetchError("Raw registration timestamp must include a timezone")
+            retrievals = [entry["retrieved_at"] for entry in manifest["files"]]
+            for entry in manifest["files"]:
+                if entry["retrieved_at"] is not None:
+                    if not entry["retrieval_evidence"]:
+                        raise FetchError("Known retrieval timestamp requires its evidence")
+                    if datetime.fromisoformat(entry["retrieved_at"]) > registered:
+                        raise FetchError("Retrieval timestamp cannot follow registration")
+            aggregate = (
+                max(datetime.fromisoformat(value) for value in retrievals)
+                if all(retrievals)
+                else None
+            )
+            reported = manifest["retrieved_at"]
+            if (datetime.fromisoformat(reported) if reported else None) != aggregate:
+                raise FetchError("Snapshot retrieval time does not match file provenance")
         if not SOURCE_ID.fullmatch(manifest["source_id"]):
             raise FetchError("Invalid manifest source ID")
         validate_url(manifest["source_url"])
@@ -296,18 +346,8 @@ def verify_snapshot(directory: Path) -> dict:
 
 def fetch_source(root: Path, source_id: str, http: PoliteHTTP, *, now=None, refresh=False) -> dict:
     source = load_source(root, source_id)
-    approval_path = root / "overrides/source_acquisition_approvals.yaml"
-    approval = None
-    if approval_path.exists():
-        approvals = yaml.safe_load(approval_path.read_text()) or {}
-        approval = approvals.get("approvals", {}).get(source_id)
-    acquisition_approved = bool(
-        approval
-        and approval.get("approved_by")
-        and approval.get("decision") == "allow_acquisition"
-        and approval.get("reason")
-        and approval.get("approved_at")
-    )
+    approval = acquisition_approval(root, source_id)
+    acquisition_approved = approval is not None
     validate_source(source, acquisition_approved=acquisition_approved)
     now = now or datetime.now(UTC)
     if now.tzinfo is None:
@@ -360,7 +400,13 @@ def fetch_source(root: Path, source_id: str, http: PoliteHTTP, *, now=None, refr
             old = [(row["path"], row["sha256"]) for row in latest["files"]]
             new = [(row["path"], row["sha256"]) for row in entries]
             if old == new:
-                return {"status": "unchanged", "snapshot": str(existing[0]), "manifest": latest}
+                return {
+                    "status": "unchanged",
+                    "snapshot": str(existing[0]),
+                    "manifest": latest,
+                    "registry_metadata_changed": latest["registry_sha256"] != registry_hash,
+                    "current_registry_sha256": registry_hash,
+                }
         target = base / now.date().isoformat()
         if target.exists():
             raise FetchError(

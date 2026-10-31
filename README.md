@@ -2,7 +2,7 @@
 
 A sourced, static reference for critical mineral deposits, maturity and ownership. The implementation follows [the supplied spec](IMPLEMENTATION_SPEC.md), in numbered order.
 
-**Current status: Phase 0, Step 1 complete; Step 2 acquisition underway.** Raw downloads are being captured, while canonical tables and the site remain empty. Empty output files are build artifacts, not evidence that a country or commodity has no deposits. No website has been deployed. The canonical schema remains provisional.
+**Current status: Phase 0, Step 1 complete; Step 2 core source acquisition complete.** Sixteen source snapshots are captured, while canonical tables and the site remain empty. Empty output files are build artifacts, not evidence that a country or commodity has no deposits. No website has been deployed. The canonical schema remains provisional.
 
 ## Run locally
 
@@ -35,7 +35,7 @@ Each required stage is also an independent Make target. It requires the precedin
 - `site/dist/`: local static site build.
 - [Step 1 run report](reports/phase0-step01.md) and [changelog](CHANGELOG.md).
 
-The manifest's `release_tag` defaults to `2026.10.28`, the spec's date. It labels a scaffold build, not a data release. `data_as_of` is null because nothing has been retrieved. Identical reruns preserve bytes and modification times. Conflicting outputs are never overwritten. To experiment with a new build label, use a separate clean checkout; preserve existing outputs first.
+The manifest's `release_tag` defaults to `2026.10.28`, the spec's date. It labels a scaffold build, not a data release. `data_as_of` is null because no observation data has been published by the scaffold. Identical reruns preserve bytes and modification times. Conflicting outputs are never overwritten. To experiment with a new build label, use a separate clean checkout; preserve existing outputs first.
 
 ## Layout
 
@@ -75,3 +75,13 @@ Each source YAML binds its own fetch configuration to the common file or ArcGIS 
 An unchanged rerun verifies the cache without rewriting it. `--refresh` rechecks remote bytes; unchanged content preserves the original manifest and retrieval timestamp, even when registry commentary has changed. Changed data cannot overwrite an existing daily snapshot. Raw dates and retrieval timestamps use UTC; source review dates use the owner's America/Los_Angeles date.
 
 [Source decisions](docs/source-decisions.md), [manual acquisition list](review/manual-acquisition.md), and the [Step 2 report](reports/phase0-step02.md) distinguish successful captures from access blockers. Source acquisition is not normalization or permission to publish all raw materials. Attribution and the actual publisher terms stay attached to each source. No scheduled monitoring or public deployment has been enabled.
+
+## Register browser downloads
+
+At Raj’s request, the manual acquisition queue was completed through publisher browser downloads and one existing file in Downloads. See the [acquisition report](reports/manual-acquisition-2026-10-31.md) and [inventory](reports/manual-acquisition-files.csv). Original files remain in Downloads; checksum-verified copies are organized by source in `data/raw/`.
+
+```sh
+uv run --locked python -m pipeline.fetch --import-local intake.json
+```
+
+The intake follows `schemas/local-intake.schema.json`: source ID, acquisition method, original local files and names, publisher URLs, and actual retrieval times when known. Unknown retrieval times remain null; `registered_at` records when the verified copy entered the archive. No local paths or signed download tokens are retained in raw manifests. The importer validates publisher checksums and sizes where supplied, rejects incomplete files, checks archive CRCs, and accepts all files for a source atomically. Byte-identical reruns preserve the original archive and manifest. Historical manifest license fields describe evidence at acquisition; current registry decisions control future publication.

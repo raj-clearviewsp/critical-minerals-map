@@ -19,7 +19,8 @@
     "Direct binary filenames/URLs could not be verified without requesting blocked ScienceBase pages; do not invent a ZIP URL.",
     "Publisher XML lists no access restrictions and no fee, but those data terms do not override current site crawler restrictions.",
     "Keep unlocated table and references when obtaining the archive; a points-only alternative would lose required data.",
-    "Automatic acquisition held: ScienceBase/mrdata disallow crawling or services.arcgis.com robots.txt returns403. No bypass permitted."
+    "Automatic acquisition held: ScienceBase/mrdata disallow crawling or services.arcgis.com robots.txt returns403. No bypass permitted.",
+    "Browser acquisition follow-up 2026-10-31: existing original archive found in Downloads. macOS download-origin metadata confirms the exact ScienceBase file and record URLs. ZIP CRC passes; located, nonspatial and reference table identifiers are present. No publisher digest was available."
   ],
   "license_evidence": {
     "url": "https://www.usgs.gov/data/global-rare-earth-element-occurrence-database",
@@ -39,5 +40,12 @@
     "reason": "Explicit disallow for ChatGPT-User/OAI-SearchBot plus final wildcard disallow. Metadata and datasets on ScienceBase were not requested."
   },
   "manual_source_url": "https://www.sciencebase.gov/catalog/item/5a0c5a0de4b09af898cd15d2",
-  "candidate_endpoints": []
+  "candidate_endpoints": [],
+  "manual_acquisition_reviewed_on": "2026-10-31",
+  "candidate_files": [
+    {
+      "filename": "USGS_Global_REE.gdb.zip",
+      "url": "https://www.sciencebase.gov/catalog/file/get/5a0c5a0de4b09af898cd15d2?f=__disk__00%2F30%2F0b%2F00300b2643d7f5e54276205a5de1c08c31e66148"
+    }
+  ]
 }

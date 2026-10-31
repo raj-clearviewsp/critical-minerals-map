@@ -3,12 +3,12 @@
   "name": "Australian Critical Minerals Map 2025",
   "publisher": "Geoscience Australia",
   "url": "https://data.gov.au/data/dataset/19e884f8-82d5-4fca-9ce3-58acec376b90",
-  "license": "unconfirmed",
+  "license": "CC-BY-4.0",
   "spec_license_claim": "confirm",
-  "redistribution_ok": false,
-  "license_status": "unconfirmed",
-  "license_evidence_url": "https://data.gov.au/data/api/3/action/package_show?id=19e884f8-82d5-4fca-9ce3-58acec376b90",
-  "access_status": "automated",
+  "redistribution_ok": true,
+  "license_status": "confirmed_open",
+  "license_evidence_url": "https://d28rz98at9flks.cloudfront.net/150802/150802_01_0.xlsx",
+  "access_status": "manual_required",
   "cadence": "when updated",
   "parser": "not_implemented_step_4",
   "fetcher": {
@@ -25,15 +25,21 @@
     "A separate entry, ga_critical_2025_arcgis, registers the explicitly CC BY 4.0 licensed service. Its license is not assumed to apply to this workbook.",
     "Known workbook URL is retained for review only. Original catalogue record lookups by numeric identifier and harvested slug returned HTTP 404 during metadata research.",
     "Operating mines may contain a critical mineral resource without producing that mineral.",
-    "Raj explicitly approved acquisition/use on2026-10-28 for a free attributed project. Preserve source-specific license facts; approval does not rewrite publisher terms."
+    "Raj explicitly approved acquisition/use on2026-10-28 for a free attributed project. Preserve source-specific license facts; approval does not rewrite publisher terms.",
+    "Browser acquisition follow-up 2026-10-31: original workbook obtained via the official data.gov.au download resource under Raj's existing acquisition/use approval. Earlier acquisition-disabled notes describe the initial audit. Actual publisher terms and redistribution flag remain unchanged.",
+    "Embedded license verified 2026-10-31: About!A19 grants CC BY 4.0, with Coat of Arms/otherwise-noted exceptions. This supersedes earlier catalogue uncertainty. Raj's acquisition approval remains audit history; public-use attribution must retain the grant and exceptions."
   ],
   "license_evidence": {
-    "url": "https://data.gov.au/data/api/3/action/package_show?id=19e884f8-82d5-4fca-9ce3-58acec376b90",
-    "json_pointer": "/result/license_id",
-    "value": "notspecified",
-    "isopen": false
+    "url": "https://d28rz98at9flks.cloudfront.net/150802/150802_01_0.xlsx",
+    "location": "About!A19",
+    "value": "With the exception of the Commonwealth Coat of Arms and where otherwise noted, this product is provided under a Creative Commons Attribution 4.0 International Licence.",
+    "copyright_location": "About!A17",
+    "copyright": "© Commonwealth of Australia (Geoscience Australia) 2026",
+    "workbook_sha256": "256048e789565ae1183dbc02ba3b43572a03f25404c2d50d2be56a05cec0200f",
+    "verified_on": "2026-10-31",
+    "supersedes": "Earlier CKAN license_id=notspecified; embedded publisher grant is authoritative for this workbook."
   },
-  "license_url": null,
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "metadata_url": "https://data.gov.au/data/api/3/action/package_show?id=19e884f8-82d5-4fca-9ce3-58acec376b90",
   "metadata_checked_at": "2026-10-29T00:55:05.279455+00:00",
   "metadata_snapshot_sha256": "6fa2ffed47941e6656cd7003fba6e7568c78bf0417abfebc2947b79bf06efc70",
@@ -41,6 +47,7 @@
   "currency": "2025-12",
   "publication_date": null,
   "evidence_grade": "B",
-  "attribution": "Geoscience Australia. Australian Critical Minerals Map 2025. Workbook redistribution terms remain unconfirmed; do not publish its values.",
-  "acquisition_approval_ref": "overrides/source_acquisition_approvals.yaml"
+  "attribution": "Geoscience Australia (2026). Australian Critical Minerals Map 2025, seventh edition, January 2026. Commonwealth of Australia. https://doi.org/10.26186/150802. CC BY 4.0, except Commonwealth Coat of Arms and otherwise noted material.",
+  "acquisition_approval_ref": "overrides/source_acquisition_approvals.yaml",
+  "manual_acquisition_reviewed_on": "2026-10-31"
 }

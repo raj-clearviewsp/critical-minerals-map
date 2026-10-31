@@ -19,3 +19,12 @@ Remote verification is recorded in `reports/phase0-step01.md` and the matching G
 - Verified the embedded AidData release license is ODC-By 1.0 and updated the source decision accordingly.
 - Documented source currency/coverage corrections and a manual acquisition queue for inaccessible bulk files.
 - Raw files stay local and immutable; no observation data has been normalized or published. Step 2 remains incomplete until the required acquisition queue is resolved.
+
+## 2026.10.31 — Browser acquisition and verified local import
+
+- Reused the existing USGS global REE archive and downloaded nine remaining files through publisher browser controls, resolving all seven core manual-source entries.
+- Organized immutable source/date folders with SHA-256 manifests and verified publisher checksums for MCS and WAPHA. Original Downloads files remain intact.
+- Added tested local-import support with honest unknown retrieval times, separate registration times, atomic copies and unchanged reruns.
+- Verified the GA 2025 workbook’s embedded CC BY 4.0 grant and updated its registry decision.
+- Acquired the original MRDS compact relational export with commodity, names, materials and metadata tables.
+- Kept normalization and later numbered steps untouched; no data or site deployed.

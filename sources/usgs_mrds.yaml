@@ -16,12 +16,13 @@
     "files": []
   },
   "notes": [
-    "MRDS Grade A\u2013E means record completeness, not Atlas evidence grade; do not map these letters to A\u2013D evidence grades.",
+    "MRDS Grade A–E means record completeness, not Atlas evidence grade; do not map these letters to A–D evidence grades.",
     "Compact layer does not carry all detailed reserves/production/reference fields; original URL is the provenance pointer.",
     "Ownership, production and operating status are stale, even when service metadata is recently edited.",
     "Page all four resources independently and preserve count and ID checks; result count ceiling is2000.",
     "Automatic acquisition held: ScienceBase/mrdata disallow crawling or services.arcgis.com robots.txt returns403. No bypass permitted.",
-    "Robots403 alone is unavailable under RFC9309, not Disallow. Bulk automated acquisition remains held because Esri website terms2.3(e) prohibit systematic harvesting; applicability to this source snapshot needs resolution or a permitted original download."
+    "Robots403 alone is unavailable under RFC9309, not Disallow. Bulk automated acquisition remains held because Esri website terms2.3(e) prohibit systematic harvesting; applicability to this source snapshot needs resolution or a permitted original download.",
+    "Browser acquisition follow-up 2026-10-31: USGS offers rdbms-tab.zip as an original compact relational export on https://mrdata.usgs.gov/mrds/. Downloaded via that visible link; includes MRDS, Commodity, Names, Materials, Dups, Accession, Place, About, schema.ini and mrds.met. This resolves acquisition through a publisher-provided file without bulk ArcGIS harvesting. Earlier access-review notes concern the API route."
   ],
   "license_evidence": {
     "url": "https://www.arcgis.com/sharing/rest/content/items/579544a8423e40bbba6c1229082554d1?f=pjson",
@@ -48,7 +49,7 @@
       "reason": "Initial wildcard Disallow: / applies; later wildcard lists Crawl-delay: 10 and narrower exclusions. MRDS landing was retrieved before robots check; no data files retrieved and no further calls made after discovering restriction."
     }
   },
-  "manual_source_url": "https://services.arcgis.com/v01gqwM5QqNysAAi/ArcGIS/rest/services/Mineral_Resources_Data_System_MRDS_Compact_Version/FeatureServer",
+  "manual_source_url": "https://mrdata.usgs.gov/mrds/",
   "candidate_endpoints": [
     {
       "kind": "arcgis_query",
@@ -119,5 +120,13 @@
       "verified": "Service and layer/table schema returnedHTTP200; data rows not fetched"
     }
   ],
-  "access_review_url": "https://www.esri.com/content/dam/esrisites/en-us/media/legal/terms-and-conditions/website-terms.pdf"
+  "access_review_url": "https://www.esri.com/content/dam/esrisites/en-us/media/legal/terms-and-conditions/website-terms.pdf",
+  "manual_acquisition_reviewed_on": "2026-10-31",
+  "candidate_files": [
+    {
+      "filename": "rdbms-tab.zip",
+      "url": "https://mrdata.usgs.gov/mrds/rdbms-tab.zip"
+    }
+  ],
+  "acquired_variant": "Original compact relational export; not the ArcGIS FeatureServer snapshot"
 }

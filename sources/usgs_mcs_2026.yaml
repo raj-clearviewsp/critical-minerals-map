@@ -20,7 +20,8 @@
     "Metadata body says more than90 nonfuel commodities. CSV includes broader data than pilot country production/reserves; filter later, do not reinterpret prices as in scope.",
     "No data values downloaded during audit.",
     "Metadata JSON was obtained before the parallel robots finding reached this agent. No mineral dataset values were downloaded. No alternative official automated data endpoint verified.",
-    "Automated acquisition is disabled because the separate source audit found ScienceBase robots rules disallow automated access. CC0 does not override access restrictions. Use a manually obtained file or a separately verified official permitted endpoint; never bypass with a proxy."
+    "Automated acquisition is disabled because the separate source audit found ScienceBase robots rules disallow automated access. CC0 does not override access restrictions. Use a manually obtained file or a separately verified official permitted endpoint; never bypass with a proxy.",
+    "Browser acquisition follow-up 2026-10-31: MCS2026_Commodities_Data.csv obtained through the publisher download control. Its bytes and MD5 are verified on local import. Earlier no-download notes describe the initial automated audit."
   ],
   "license_evidence": "This work is marked with the Creative Commons Zero v1.0 Universal (CC0-1.0) public domain dedication;",
   "license_checked_at": "2026-10-28",
@@ -38,5 +39,6 @@
       "bytes": 3189010
     }
   ],
-  "robots_evidence_url": "https://www.sciencebase.gov/robots.txt"
+  "robots_evidence_url": "https://www.sciencebase.gov/robots.txt",
+  "manual_acquisition_reviewed_on": "2026-10-31"
 }

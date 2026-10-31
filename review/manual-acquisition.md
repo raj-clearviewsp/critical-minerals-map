@@ -1,21 +1,19 @@
 # Manual acquisition queue — Phase 0 Step 2
 
-These sources have publicly readable metadata but their file-hosting rules or access responses prevent the current automated downloader from acquiring the needed files. The downloader does not change identity, use proxies, or invent alternate URLs to bypass those restrictions. Acquire the publisher's original file through a permitted human download, retain the original filename and URL, and provide it for checksum registration. Do not edit the file or place hand-edited data in canonical tables.
+**Core acquisition complete, October 31, 2026 (America/Los_Angeles).** Raj requested computer-use downloads and a check of Downloads. One existing archive was reused; the nine other required files were downloaded using the publishers’ visible browser controls. Verified original copies are organized under `data/raw/<source_id>/2026-10-31/`; originals in Downloads were preserved.
 
-## Core files still required
+| Source | Original files | Outcome |
+| --- | --- | --- |
+| USGS global REE | `USGS_Global_REE.gdb.zip` | Reused existing download; macOS origin metadata matches ScienceBase. Located, nonspatial and reference table identifiers present; ZIP CRC passes. |
+| USGS global critical minerals 2017 | `PP1802_Global_CriticalMinerals_gdb.zip`, `PP1802_CritMin_FGDC_Metadata.xml` | Browser downloads; point and polygon layer identifiers present; ZIP CRC passes. |
+| USGS MCS 2026 | `MCS2026_Commodities_Data.csv` | Browser download; publisher MD5 and byte count match. |
+| GA global REE | `148953_01_0.xlsx`, `148953_00_0.pdf` | Browser downloads; workbook and PDF formats verified. |
+| GA 2025 workbook | `150802_01_0.xlsx` | Browser download; explicit CC BY 4.0 grant verified in `About!A19`, resolving catalogue uncertainty. |
+| USGS MRDS fallback | `rdbms-tab.zip` | Publisher’s original compact relational export, including names, commodities, materials and `mrds.met`; ZIP CRC passes. |
+| WAPHA | `world_active_mines_17.05.2023.xlsx`, `world_inactive_mines_17.05.2023.xlsx` | Browser downloads; both publisher SHA-256 hashes and byte counts match. |
 
-| Source | Publisher page | Required material | Access reason |
-| --- | --- | --- | --- |
-| USGS global REE | [ScienceBase record](https://www.sciencebase.gov/catalog/item/5a0c5a0de4b09af898cd15d2) | Original geodatabase/archive including located records, nonspatial table and references | ScienceBase robots explicitly disallow automated access |
-| USGS global critical minerals 2017 | [ScienceBase record](https://www.sciencebase.gov/catalog/item/594d3c8ee4b062508e39b332) | Original point/polygon dataset and supporting metadata | ScienceBase and the identified mrdata alternative disallow automated access |
-| USGS MCS 2026 | [ScienceBase record](https://www.sciencebase.gov/catalog/item/696a75d5d4be0228872d3bf8) | `MCS2026_Commodities_Data.csv` | ScienceBase robots explicitly disallow automated access |
-| GA global REE | [Official compilation](https://pid.geoscience.gov.au/dataset/ga/148953) | `148953_01_0.xlsx` and report `148953_00_0.pdf` | The official CloudFront file host disallows automated access |
-| GA 2025 workbook | [Official dataset](https://data.gov.au/data/dataset/19e884f8-82d5-4fca-9ce3-58acec376b90) | `150802_01_0.xlsx` | The official CloudFront file host disallows automated access; Raj approved acquisition on October 28 |
-| USGS MRDS fallback | [Publisher service metadata](https://services.arcgis.com/v01gqwM5QqNysAAi/ArcGIS/rest/services/Mineral_Resources_Data_System_MRDS_Compact_Version/FeatureServer) | A publisher-permitted original export with commodity/name support tables where available | Broad Esri website terms on systematic harvesting require clarification for this bulk snapshot; robots403 alone is not a prohibition |
-| WAPHA | [Dryad dataset](https://datadryad.org/dataset/doi:10.5061/dryad.j3tx95xmg) | Public active/inactive mine spreadsheets only | API download requires authentication; public download path is robots-disallowed |
+The [browser acquisition report](../reports/manual-acquisition-2026-10-31.md) lists file checksums and original URLs. Every imported snapshot has complete file coverage, checksums and a separate registration timestamp. Exact original download timestamps are unknown where the browser did not expose them; file modification time is not substituted.
 
-Exact unverified USGS archive filenames have intentionally not been guessed. MCS's known publisher checksum and the WAPHA public spreadsheet SHA-256 values are retained in the source registries/metadata audit for verification after acquisition.
+The programmatic downloader continues to obey host robots rules. Browser acquisition at Raj’s request is recorded separately. MRDS was obtained through its explicitly offered archive, resolving the need for bulk ArcGIS acquisition. Dryad initially delayed the active-mine download at its validation page, then both spreadsheets arrived without login or CAPTCHA interaction.
 
-Individual government export announcements are a manual document collection, not a single downloadable source. Each future row requires its own dated official announcement and checked reuse terms; no announcement facts are invented at this step.
-
-Mindat remains excluded under the spec. Raj's later approval named ICMM, AidData v2 and the GA workbook; it does not authorize extraction of the Mindat database.
+Individual government export announcements remain a per-document collection for the country-context step, not a missing bulk download. Each future row needs its dated official announcement and checked reuse terms. Mindat remains excluded under the spec.

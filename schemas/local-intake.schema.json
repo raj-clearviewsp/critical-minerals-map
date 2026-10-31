@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Local acquisition intake",
+  "description": "Register original browser or existing user downloads without making network requests. Local paths are never retained in the raw manifest.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source_id",
+    "acquisition_method",
+    "files"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "acquisition_method": {
+      "enum": [
+        "browser_download",
+        "user_existing_download"
+      ]
+    },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "local_path",
+          "filename",
+          "url",
+          "retrieved_at"
+        ],
+        "properties": {
+          "local_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "filename": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9 ._()-]*$"
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^https://"
+          },
+          "final_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^https://"
+          },
+          "retrieved_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time",
+            "description": "Actual known download time; null when the original retrieval time is unknown. File modification time alone is not evidence."
+          },
+          "retrieval_evidence": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 2000,
+            "description": "Public explanation of retrieval evidence; do not include local paths or private browser history."
+          }
+        }
+      }
+    }
+  }
+}

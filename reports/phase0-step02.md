@@ -2,7 +2,7 @@
 
 Run date: October 28, 2026, America/Los_Angeles. Raw snapshots use UTC date `2026-10-29`.
 
-**Status: implementation tested; live acquisition partially complete. Step 3 has not started.** Step 1 passed remote CI before Step 2 began. Required bulk files remain in the [manual acquisition queue](../review/manual-acquisition.md).
+**Latest status, October 31, 2026: all core bulk acquisitions are complete. Step 3 has not started.** The browser follow-up resolved all seven manual-source entries: [acquisition report](manual-acquisition-2026-10-31.md). The original October 28 checkpoint below is retained as history. The current archive contains 16 sources, 49 files and 329,863,146 bytes; all seven new imports rerun unchanged.
 
 ## Captured data
 
@@ -32,7 +32,7 @@ Normalized rows: **0**. Published observation rows: **0**. Record rejects: not a
 - Raw manifests account for every captured file. Publisher checksums were also verified where supplied.
 - ArcGIS uses bounded object-ID batches, validates complete ID sets and rejects truncation or mismatches. Multi-layer snapshots are accepted atomically only after all layers succeed.
 - HTTP tests cover declared contact identity, robots rules including wildcard/Allow precedence, redirects, 429 and Retry-After dates, crawl delays, protected datasets, checksum failures and acquisition approvals.
-- GitHub CI for this checkpoint will run on push; Step 2 completion is **not** asserted by green code checks alone.
+- The October 28 acquisition checkpoint passed [GitHub CI run 40798419288](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/40798419288). The browser-import follow-up has a separate validation entry below.
 
 ## Access outcomes and fixes
 
@@ -49,6 +49,8 @@ Raj explicitly approved ICMM, AidData v2 and the GA workbook for a free project 
 
 Mindat stays excluded. Official export announcements remain a per-document manual collection. No contacts were sent to publishers, no deployment occurred, and no monitoring automation was created.
 
-## Remaining gate
+## Browser follow-up
 
-Obtain the required original files through permitted manual downloads or publisher-approved access, register their provenance/checksums, and verify their reruns. Then finish Step 2's report/commit/CI gate before building vocabularies. Do not treat inaccessible sources as empty datasets or silently reduce the spec's coverage.
+The original acquisition gate is resolved. All seven core manual sources now have verified raw manifests, full file coverage and unchanged reruns. One existing REE archive was reused; nine remaining files were downloaded in the browser. The [manual acquisition list](../review/manual-acquisition.md) records each outcome. Unknown exact retrieval timestamps remain explicit nulls with separate archive registration timestamps. The GA 2025 workbook now has an independently verified embedded CC BY 4.0 grant.
+
+Local follow-up validation: 119 Python tests pass; Ruff lint/format checks pass; 3 frontend manifest tests, Astro checks (zero diagnostics), and the static build pass. Independent review prompted stronger duplicate publisher-constraint checks and bounded archive CRC validation. All seven intakes reran through the final importer unchanged; SHA-256 and modification times stayed unchanged for all ten raw files and seven manifests. The follow-up commit must pass remote CI before a later numbered step begins.

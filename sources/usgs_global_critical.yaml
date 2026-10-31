@@ -19,7 +19,8 @@
     "Spec claims this layer supplies Ni and W; publisher enumerated commodities excludes both. Do not promise nickel/tungsten coverage.",
     "This is selected deposits and districts, not an exhaustive global census.",
     "No exact binary URL verified; do not guess.",
-    "Automatic acquisition held: ScienceBase/mrdata disallow crawling or services.arcgis.com robots.txt returns403. No bypass permitted."
+    "Automatic acquisition held: ScienceBase/mrdata disallow crawling or services.arcgis.com robots.txt returns403. No bypass permitted.",
+    "Browser acquisition follow-up 2026-10-31: exact geodatabase ZIP and supporting FGDC XML obtained via publisher download controls at Raj's request. ZIP CRC passes; point and polygon layer identifiers present. Earlier unknown-URL/access notes describe the initial automated audit."
   ],
   "license_evidence": {
     "url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
@@ -50,5 +51,16 @@
     }
   },
   "manual_source_url": "https://www.sciencebase.gov/catalog/item/594d3c8ee4b062508e39b332",
-  "candidate_endpoints": []
+  "candidate_endpoints": [],
+  "manual_acquisition_reviewed_on": "2026-10-31",
+  "candidate_files": [
+    {
+      "filename": "PP1802_Global_CriticalMinerals_gdb.zip",
+      "url": "https://www.sciencebase.gov/catalog/file/get/594d3c8ee4b062508e39b332?f=__disk__06%2Fed%2F4d%2F06ed4d6cda5626aaed1d2a846588dac72a3e5534"
+    },
+    {
+      "filename": "PP1802_CritMin_FGDC_Metadata.xml",
+      "url": "https://www.sciencebase.gov/catalog/file/get/594d3c8ee4b062508e39b332?f=__disk__cb%2F90%2F8c%2Fcb908c057f01f8413bc38a9a883ef6838c8b4070"
+    }
+  ]
 }
