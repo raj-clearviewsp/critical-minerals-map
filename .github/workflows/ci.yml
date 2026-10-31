@@ -39,6 +39,8 @@ jobs:
         run: make test
       - name: Validate retained vocabulary audit
         run: make vocab-check
+      - name: Verify normalization reconciliation receipt
+        run: make normalize-receipt-check
 
   build-data:
     name: Build empty data pipeline

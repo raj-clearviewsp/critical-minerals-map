@@ -1,0 +1,18 @@
+schema_version: normalization-counts-v1
+basis: Independently counted captured release tables; source-native rows before pilot filtering or linkage.
+sources:
+  aiddata_transition_v2: {rows: 4996, rejects: 0, basis: '492 contributions + 331 loan events + 3867 organization roles + 306 ownership rows; duplicates retained'}
+  ga_critical_2025: {rows: 538, rejects: 0, basis: 'Workbook primary data sheet'}
+  ga_critical_2025_arcgis: {rows: 538, rejects: 0, basis: 'Complete captured layer object-ID sets'}
+  ga_global_ree: {rows: 376, rejects: 0, basis: '376 deposit rows; 11 lack coordinates'}
+  gseu_crm: {rows: 842, rejects: 1, basis: '843 nonblank data-sheet rows include one explanatory footnote'}
+  icmm: {rows: 7104, rejects: 0, basis: 'Published v1.5 shareable facility count and workbook rows'}
+  jasansky: {rows: 2413, rejects: 0, basis: 'GeoPackage facilities and subsites; includes 23 source company/region groupings'}
+  oecd_export: {rows: 1182793, rejects: 0, basis: 'All observations in 16 annual files, 2009–2024'}
+  usgs_global_critical: {rows: 2125, rejects: 0, basis: '2121 points + 4 source polygons'}
+  usgs_global_ree: {rows: 3934, rejects: 0, basis: '3114 located + 820 nonspatial source rows'}
+  usgs_laterites: {rows: 120, rejects: 0, basis: 'Published explored-laterite inventory'}
+  usgs_mcs_2026: {rows: 8886, rejects: 0, basis: 'Full captured country/commodity CSV before selecting production/reserves'}
+  usgs_mrds: {rows: 304388, rejects: 0, basis: 'Compact MRDS main table; unmatched child rows accounted separately'}
+  usgs_us_critical: {rows: 1271, rejects: 0, basis: 'Published v3.0 deposits and complete captured object-ID set'}
+  wapha: {rows: 171473, rejects: 0, basis: '21164 active + 150309 inactive worksheet records'}

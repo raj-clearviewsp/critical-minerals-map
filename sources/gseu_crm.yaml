@@ -10,7 +10,7 @@
   "license_evidence_url": "https://zenodo.org/api/records/15234833",
   "access_status": "automated",
   "cadence": "when updated",
-  "parser": "not_implemented_step_4",
+  "parser": "pipeline.normalize.facilities:parse",
   "fetcher": {
     "kind": "files",
     "files": [

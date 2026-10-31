@@ -1,0 +1,2390 @@
+{
+  "canonical_rows": 0,
+  "implementation": {
+    "pipeline/normalize/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pipeline/normalize/__main__.py": "fbb86451443a054c5ce3e757177a2a931f67823536a2b0cd3246fdebe3011feb",
+    "pipeline/normalize/context.py": "daee97b82fd40155786b720674e0fee03b55c537f456d34f7c9027f2d1912ed3",
+    "pipeline/normalize/core.py": "6e6b59698eea3f68b96aa9e96d9c053ab6a2b90e7d4fad9cd722fa66ab62e4fc",
+    "pipeline/normalize/facilities.py": "6dca6ba97cd4b1c25a087fd356f83cf091f505ca528d6f307d46754f327c934a",
+    "pipeline/normalize/geology.py": "7dab69ee16b0d08a2617438c95ea050691a36486069912f775ab8451a038e912",
+    "sources/aiddata_transition_v2.yaml": "39ff8aaf9599f452f90937438a61b258848e45bcea4e37661ffe8df1ef90c460",
+    "sources/ga_critical_2025.yaml": "e25dd63e702762afd22656ecb09a5e4f0e2f1a2db229b78d5594a2639ea63ba9",
+    "sources/ga_critical_2025_arcgis.yaml": "ac0148feba7a82034c8f89b5f6ca6358d58efd978c1b0c881f37114aa949141f",
+    "sources/ga_global_ree.yaml": "8673a7d341df94af8dcadc33dc09b06f4c93e9b7766668076a380682fe211ae2",
+    "sources/gseu_crm.yaml": "da1d83325db7b10d0529512a8a6640c1bcdaba3d9f876381fe809a87acf32d16",
+    "sources/icmm.yaml": "4518f0e904625c5e00f92ef3094e67da315dd64ba4b2bf3176185c65ebded33d",
+    "sources/jasansky.yaml": "35d36bb8b5e1b4d19d2d61c3075282bfbadd5a25e8a7ffdb9947a2d34fec74a2",
+    "sources/mindat.yaml": "a26799d5b409f751971e5ffa74a640512f776aec4b018f3f1519cca4655c5d53",
+    "sources/normalization/expected_counts.yaml": "fea58ae89e23930faf76e3d3746a70fddbf0097a7bcf4547b179e81072ebc934",
+    "sources/oecd_export.yaml": "be80cb23e3ef225963a2dc10683f1034a30f7caf65b15a35538beaf4aca22ffc",
+    "sources/official_export_announcements.yaml": "350130158368be46e9b2dfa5d506f0472e0759c8f10de75c19b15035b5770781",
+    "sources/usgs_critical_list_2025.yaml": "0182a1fd797670160b5563787c0a78996515a1da02b1eec97c64762c18c404ff",
+    "sources/usgs_global_critical.yaml": "6dfb1763eef1e06369da68253afdb5080748a89add384eed141ea8ff6dcf9b81",
+    "sources/usgs_global_ree.yaml": "6c695ccdb897e58de119547e22daeb43a4346fcac190f14acc31aa41b0b7b178",
+    "sources/usgs_laterites.yaml": "b58b34740dba574bb0af1efdcbe9e340b8df9a1ec291f3f0440c8f1b2c740245",
+    "sources/usgs_mcs_2026.yaml": "e7f7914066630be961b7a3276d1f14ad7158d73740b2f6f80efda3c060d01274",
+    "sources/usgs_mrds.yaml": "8198122c2171395800d936a6042a0b35c959de5f85d9fa3b6d75bec310206e23",
+    "sources/usgs_us_critical.yaml": "b8b314d74cc535311f1cfeed2a59df7797afe2a98825491305dfe66a0637cc58",
+    "sources/wapha.yaml": "2b5db8edb8d66c19950e4b171b0d065d880b59af195ce52f0dce8e7676d3246c",
+    "uv.lock": "cd4fe8d1bc077fcac6a467a1ac0b682b56906154dbee726e0837c363618e6ebb"
+  },
+  "not_staged": [
+    {
+      "reason": "Vocabulary authority, not an observation dataset",
+      "source_id": "usgs_critical_list_2025"
+    }
+  ],
+  "phase": 0,
+  "published_rows": 0,
+  "rejects": 1,
+  "rows": 1691797,
+  "schema_version": "normalization-v1",
+  "sources": [
+    {
+      "artifact": "data/staging/aiddata_transition_v2.parquet",
+      "coordinate_issues": {},
+      "files": {
+        "aiddata_transition_v2/2026-10-29/AidData_Chinese_Financing_for_Transition_Minerals_Version_2.0.zip": "4eb3772227b877901d51859d6b154db5574bf73d6bb1fa70840d2c6a2d8d65fb"
+      },
+      "kinds": {
+        "finance": 4690,
+        "finance_asset": 306
+      },
+      "locations": {
+        "unlocated": 4996
+      },
+      "manifest_sha256": "4bc9655a06e0810b866fd0ed06d7384f97aac0b090691ec7519829ce3a44a12b",
+      "notes": [
+        "Rows retain source-native values and are not harmonized, pilot-filtered or mapped. CSV row numbers count logical records including the header; workbook row numbers are Excel row positions. Official critical-list HTML was consumed by the vocabulary step and is not an additional context staging table.",
+        "AidData's four data sheets all emit primary staging records: Financial_Contribution, Loan_Event and Org_Role remain finance records; Mineral_Operation_Ownership remains finance_asset ownership evidence, not a deduplicated site. No sheet contains coordinate columns, so all records are unlocated. Original relationship IDs, tranche values, ownership rows, finance statuses, amounts and currencies remain in raw_fields. Status never becomes mine raw_status. Exact duplicate relationship rows are preserved with content-hash/occurrence IDs; unique financial IDs and loan ID/tranche keys retain their native identity. Missing native IDs fall back to complete-row hashes. Contents and License are counted as reference sheets; the methodology PDF and archive resource forks do not contain input data tables."
+      ],
+      "rejects": [],
+      "rows": 4996,
+      "sha256": "50d1c9d54949df2366175d0668054cf8977ed016b777325085bf5209161079b1",
+      "snapshot": "data/raw/aiddata_transition_v2/2026-10-29",
+      "source_id": "aiddata_transition_v2",
+      "tables": [
+        {
+          "file": "aiddata_transition_v2/2026-10-29/AidData_Chinese_Financing_for_Transition_Minerals_Version_2.0.zip",
+          "role": "reference",
+          "rows": 12,
+          "source_id": "aiddata_transition_v2",
+          "table": "AidData_CFTM_v2/AidData_Chinese_Financing_for_Transition_Minerals_Dataset_Version_2.0.xlsx!Contents"
+        },
+        {
+          "accepted": 492,
+          "file": "aiddata_transition_v2/2026-10-29/AidData_Chinese_Financing_for_Transition_Minerals_Version_2.0.zip",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 492,
+          "source_id": "aiddata_transition_v2",
+          "table": "AidData_CFTM_v2/AidData_Chinese_Financing_for_Transition_Minerals_Dataset_Version_2.0.xlsx!Financial_Contribution"
+        },
+        {
+          "accepted": 331,
+          "file": "aiddata_transition_v2/2026-10-29/AidData_Chinese_Financing_for_Transition_Minerals_Version_2.0.zip",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 331,
+          "source_id": "aiddata_transition_v2",
+          "table": "AidData_CFTM_v2/AidData_Chinese_Financing_for_Transition_Minerals_Dataset_Version_2.0.xlsx!Loan_Event"
+        },
+        {
+          "accepted": 3867,
+          "file": "aiddata_transition_v2/2026-10-29/AidData_Chinese_Financing_for_Transition_Minerals_Version_2.0.zip",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 3867,
+          "source_id": "aiddata_transition_v2",
+          "table": "AidData_CFTM_v2/AidData_Chinese_Financing_for_Transition_Minerals_Dataset_Version_2.0.xlsx!Org_Role"
+        },
+        {
+          "accepted": 306,
+          "file": "aiddata_transition_v2/2026-10-29/AidData_Chinese_Financing_for_Transition_Minerals_Version_2.0.zip",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 306,
+          "source_id": "aiddata_transition_v2",
+          "table": "AidData_CFTM_v2/AidData_Chinese_Financing_for_Transition_Minerals_Dataset_Version_2.0.xlsx!Mineral_Operation_Ownership"
+        },
+        {
+          "file": "aiddata_transition_v2/2026-10-29/AidData_Chinese_Financing_for_Transition_Minerals_Version_2.0.zip",
+          "role": "reference",
+          "rows": 14,
+          "source_id": "aiddata_transition_v2",
+          "table": "AidData_CFTM_v2/AidData_Chinese_Financing_for_Transition_Minerals_Dataset_Version_2.0.xlsx!License"
+        }
+      ]
+    },
+    {
+      "artifact": "data/staging/ga_critical_2025.parquet",
+      "coordinate_issues": {},
+      "files": {
+        "ga_critical_2025/2026-10-31/150802_01_0.xlsx": "256048e789565ae1183dbc02ba3b43572a03f25404c2d50d2be56a05cec0200f"
+      },
+      "kinds": {
+        "deposit": 421,
+        "facility": 117
+      },
+      "locations": {
+        "located": 538
+      },
+      "manifest_sha256": "76526ec274d648d45706f4f7563d4d6574f43cbdf5b309db9c5def12c91462e7",
+      "notes": [
+        "GA workbook rows have no publisher ID or country column; fallback IDs combine full source-file SHA-256, sheet and row position, changing when workbook bytes change. Country stays null. Australia is the declared source scope; State is preserved as a source field. Status does not establish production of every listed critical mineral."
+      ],
+      "rejects": [],
+      "rows": 538,
+      "sha256": "99f1ca5d7605c99da75d83ecd697631779725d12e98fcefcc77c89d20f565e08",
+      "snapshot": "data/raw/ga_critical_2025/2026-10-31",
+      "source_id": "ga_critical_2025",
+      "tables": [
+        {
+          "accepted": 538,
+          "fields": [
+            "Name",
+            "State",
+            "Latitude",
+            "Longitude",
+            "Status",
+            "Commodity Group"
+          ],
+          "file": "ga_critical_2025/2026-10-31/150802_01_0.xlsx",
+          "header_row": 13,
+          "original_headers": [
+            "Name",
+            "State",
+            "Latitude",
+            "Longitude",
+            "Status",
+            "Commodity Group"
+          ],
+          "rejected": 0,
+          "role": "primary",
+          "rows": 538,
+          "source_id": "ga_critical_2025",
+          "table": "CM Mines and Deposits 2025"
+        },
+        {
+          "file": "ga_critical_2025/2026-10-31/150802_01_0.xlsx",
+          "header_row": null,
+          "role": "reference",
+          "rows": 106,
+          "source_id": "ga_critical_2025",
+          "table": "About"
+        }
+      ]
+    },
+    {
+      "artifact": "data/staging/ga_critical_2025_arcgis.parquet",
+      "coordinate_issues": {},
+      "files": {
+        "ga_critical_2025_arcgis/2026-10-29/layer_4_object_ids.json": "924f7590e069d20636bd65ea2025c0e1f1324d7f884ba0710936267fa21beead",
+        "ga_critical_2025_arcgis/2026-10-29/layer_4_page_00000.json": "ba6caff1d22e77521cd8e6d84d81f57d72fcda3d46590bd3960c52adc271b89d",
+        "ga_critical_2025_arcgis/2026-10-29/layer_4_service.json": "577f9072fc5074c1342afef72b1d93909e16b1291a94411ebabe3402fbb71ec0",
+        "ga_critical_2025_arcgis/2026-10-29/layer_5_object_ids.json": "dd3fff21e3ddf92d80adee9f8003f263ff18d73c77555a9d2533367dec90917a",
+        "ga_critical_2025_arcgis/2026-10-29/layer_5_page_00000.json": "3445f368b5cf81f8ae19fde4801cd8f077b3b1ab760bb8506c0f044cf5eea06d",
+        "ga_critical_2025_arcgis/2026-10-29/layer_5_service.json": "55b3bb145c1562f095f7bb12447087e160a159ea372ae9d36fb5e21e882940dd",
+        "ga_critical_2025_arcgis/2026-10-29/layer_6_object_ids.json": "875d7ee3a4edf6d4ccb1f20d812277b5bec34d54cb4bc8d518ffb8580349d2a7",
+        "ga_critical_2025_arcgis/2026-10-29/layer_6_page_00000.json": "da933022e3a0f79c0112bb813e27d5c7c60e7d790a5389a913e8137670fac104",
+        "ga_critical_2025_arcgis/2026-10-29/layer_6_service.json": "8ee5272646d89ee44ec83c1ab8b6fbf6fac800916d4f4578110628ccbc30eaa1",
+        "ga_critical_2025_arcgis/2026-10-29/layer_7_object_ids.json": "5233a064d85c99a022aaa776a48b328155a2f3d76d091283f1ae4ee279f0c6ec",
+        "ga_critical_2025_arcgis/2026-10-29/layer_7_page_00000.json": "e3206144a29bb09b950052b3a5669582c076d485e0b215f55b2960ea70b9da87",
+        "ga_critical_2025_arcgis/2026-10-29/layer_7_service.json": "e08de0bc1fb5242c6812cfdf177d24023a14499f7c25de7058b5dd53f8cbbcbe"
+      },
+      "kinds": {
+        "deposit": 421,
+        "facility": 117
+      },
+      "locations": {
+        "located": 538
+      },
+      "manifest_sha256": "c08b4a74d6acb95c055a249512d1fa2cba25ae61de47c4540dd0f7ffa8af9794",
+      "notes": [
+        "GA ArcGIS IDs include layer ID. Coordinates use retained WGS84 response points where explicitly declared, otherwise original geographic attributes; response geometry, original coordinate fields and spatial reference remain evidence. Country is absent and remains null."
+      ],
+      "rejects": [],
+      "rows": 538,
+      "sha256": "f5ba0ae7f0c1f3b1bee4b9e7d3ffa34a0e8b6a86fe25de57b993f3d0f56c66e6",
+      "snapshot": "data/raw/ga_critical_2025_arcgis/2026-10-29",
+      "source_id": "ga_critical_2025_arcgis",
+      "tables": [
+        {
+          "accepted": 47,
+          "file": "ga_critical_2025_arcgis/2026-10-29/layer_4_page_00000.json",
+          "layer_id": 4,
+          "rejected": 0,
+          "role": "primary",
+          "rows": 47,
+          "source_id": "ga_critical_2025_arcgis",
+          "table": "layer_4_page_00000"
+        },
+        {
+          "accepted": 28,
+          "file": "ga_critical_2025_arcgis/2026-10-29/layer_5_page_00000.json",
+          "layer_id": 5,
+          "rejected": 0,
+          "role": "primary",
+          "rows": 28,
+          "source_id": "ga_critical_2025_arcgis",
+          "table": "layer_5_page_00000"
+        },
+        {
+          "accepted": 42,
+          "file": "ga_critical_2025_arcgis/2026-10-29/layer_6_page_00000.json",
+          "layer_id": 6,
+          "rejected": 0,
+          "role": "primary",
+          "rows": 42,
+          "source_id": "ga_critical_2025_arcgis",
+          "table": "layer_6_page_00000"
+        },
+        {
+          "accepted": 421,
+          "file": "ga_critical_2025_arcgis/2026-10-29/layer_7_page_00000.json",
+          "layer_id": 7,
+          "rejected": 0,
+          "role": "primary",
+          "rows": 421,
+          "source_id": "ga_critical_2025_arcgis",
+          "table": "layer_7_page_00000"
+        },
+        {
+          "file": "ga_critical_2025_arcgis/2026-10-29/layer_4_object_ids.json",
+          "role": "reference",
+          "rows": 1,
+          "source_id": "ga_critical_2025_arcgis",
+          "table": "layer_4_object_ids"
+        },
+        {
+          "file": "ga_critical_2025_arcgis/2026-10-29/layer_4_service.json",
+          "role": "reference",
+          "rows": 1,
+          "source_id": "ga_critical_2025_arcgis",
+          "table": "layer_4_service"
+        },
+        {
+          "file": "ga_critical_2025_arcgis/2026-10-29/layer_5_object_ids.json",
+          "role": "reference",
+          "rows": 1,
+          "source_id": "ga_critical_2025_arcgis",
+          "table": "layer_5_object_ids"
+        },
+        {
+          "file": "ga_critical_2025_arcgis/2026-10-29/layer_5_service.json",
+          "role": "reference",
+          "rows": 1,
+          "source_id": "ga_critical_2025_arcgis",
+          "table": "layer_5_service"
+        },
+        {
+          "file": "ga_critical_2025_arcgis/2026-10-29/layer_6_object_ids.json",
+          "role": "reference",
+          "rows": 1,
+          "source_id": "ga_critical_2025_arcgis",
+          "table": "layer_6_object_ids"
+        },
+        {
+          "file": "ga_critical_2025_arcgis/2026-10-29/layer_6_service.json",
+          "role": "reference",
+          "rows": 1,
+          "source_id": "ga_critical_2025_arcgis",
+          "table": "layer_6_service"
+        },
+        {
+          "file": "ga_critical_2025_arcgis/2026-10-29/layer_7_object_ids.json",
+          "role": "reference",
+          "rows": 1,
+          "source_id": "ga_critical_2025_arcgis",
+          "table": "layer_7_object_ids"
+        },
+        {
+          "file": "ga_critical_2025_arcgis/2026-10-29/layer_7_service.json",
+          "role": "reference",
+          "rows": 1,
+          "source_id": "ga_critical_2025_arcgis",
+          "table": "layer_7_service"
+        }
+      ]
+    },
+    {
+      "artifact": "data/staging/ga_global_ree.parquet",
+      "coordinate_issues": {},
+      "files": {
+        "ga_global_ree/2026-10-31/148953_00_0.pdf": "479bb375c1be191643a9032d86687fb230a48f33af5e453ae9fc925db55f9b8c",
+        "ga_global_ree/2026-10-31/148953_01_0.xlsx": "89caf5e7d78674b9ec47863d505744f8e5edea6bee0f912832ae9278dab704dc"
+      },
+      "kinds": {
+        "deposit": 376
+      },
+      "locations": {
+        "located": 365,
+        "unlocated": 11
+      },
+      "manifest_sha256": "7c95f700c9ded9e082e3e1c8cdc0ebe8082981bd0eaddffcb8d847c2ba059ac0",
+      "notes": [
+        "GA global REE's first column is literally Coastal and contains deposit names. Duplicate headings retain worksheet column suffixes; Element is tectonic geography.",
+        "GA global REE fallback IDs combine full source-file SHA-256, sheet and row position; they are not publisher deposit IDs and change when workbook bytes change.",
+        "raw_commodities.source_scope=REE is the documented compilation scope, not an observed cell or proof of production: Global rare earth element deposits - a compilation, Geoscience Australia Record 2024/03, https://pid.geoscience.gov.au/dataset/ga/148953."
+      ],
+      "rejects": [],
+      "rows": 376,
+      "sha256": "ea60775e307db416e8c62cb5dc576ab2c8b7625f6ac3c5c2aaf15f83451e9abf",
+      "snapshot": "data/raw/ga_global_ree/2026-10-31",
+      "source_id": "ga_global_ree",
+      "tables": [
+        {
+          "accepted": 376,
+          "fields": [
+            "Coastal",
+            "Country",
+            "State/Province",
+            "Longitude",
+            "Latitude",
+            "District",
+            "Element",
+            "Province",
+            "Subprovince",
+            "Zone",
+            "Deposit group ",
+            "Timing [column L]",
+            "Contribution [column M]",
+            "Deposit environment [column N]",
+            "Deposit group [column O]",
+            "Deposit type [column P]",
+            "Age (Ma) [column Q]",
+            "Error (Ma) [column R]",
+            "Age type [column S]",
+            "Age basis [column T]",
+            "Mineral dated [column U]",
+            "Age system [column V]",
+            "Radiometric age type [column W]",
+            "Age instrumentation [column X]",
+            "Age confidence [column Y]",
+            "Timing [column Z]",
+            "Contribution [column AA]",
+            "Deposit environment [column AB]",
+            "Deposit group [column AC]",
+            "Deposit type [column AD]",
+            "Age (Ma) [column AE]",
+            "Error (Ma) [column AF]",
+            "Age type [column AG]",
+            "Age basis [column AH]",
+            "Mineral dated [column AI]",
+            "Age system [column AJ]",
+            "Radiometric age type [column AK]",
+            "Age instrumentation [column AL]",
+            "Age confidence [column AM]",
+            "Timing [column AN]",
+            "Contribution [column AO]",
+            "Deposit environment [column AP]",
+            "Deposit group [column AQ]",
+            "Deposit type [column AR]",
+            "Age (Ma) [column AS]",
+            "Error (Ma) [column AT]",
+            "Age type [column AU]",
+            "Age basis [column AV]",
+            "Mineral dated [column AW]",
+            "Age system [column AX]",
+            "Radiometric age type [column AY]",
+            "Age instrumentation [column AZ]",
+            "Age confidence [column BA]",
+            "Tonnage (Mt)",
+            "Sn (%)",
+            "WO3 (%)",
+            "F (%)",
+            "Ta (ppm)",
+            "Nb (ppm)",
+            "Li2O (%)",
+            "ThO2 (%)",
+            "Sc2O3 (%)",
+            "La2O3 (%)",
+            "Ce2O3 (%)",
+            "Pr2O3 (%)",
+            "Nd2O3 (%)",
+            "Sm2O3 (%)",
+            "Eu2O3 (%)",
+            "Gd2O3 (%)",
+            "Tb4O7 (%)",
+            "Tb2O3 (%)",
+            "Dy2O3 (%)",
+            "Ho2O3 (%)",
+            "Er2O3 (%)",
+            "Tm2O3 (%)",
+            "Yb2O3 (%)",
+            "Lu2O3 (%)",
+            "Lanthanide oxides (%)",
+            "Ln2O3 (%)",
+            "Total rare earth oxides (%)",
+            "Y2O3 (%)",
+            "Y (ppm)",
+            "Hf (ppm)",
+            "U3O8 (%)",
+            "Zr (%)",
+            "Ti (%)",
+            "Heavy minerals (%)",
+            "Monazite (%)",
+            "Xenotime (%)",
+            "P2O5 (%)",
+            "CaF2 (%)",
+            "Sn (kt)",
+            "WO3 (kt)",
+            "F (kt)",
+            "Ta (kt)",
+            "Nb (kt)",
+            "Li (Mt)",
+            "ThO2 (kt)",
+            "Sc2O3 (kt)",
+            "La2O3 (Mt)",
+            "Ce2O3 (Mt)",
+            "Pr2O3 (Mt)",
+            "Nd2O3 (Mt)",
+            "Sm2O3 (Mt)",
+            "Eu2O3 (Mt)",
+            "Gd2O3 (Mt)",
+            "Tb4O7 (Mt)",
+            "Tb2O3 (Mt)",
+            "Dy2O3 (Mt)",
+            "Ho2O3 (Mt)",
+            "Er2O3 (Mt)",
+            "Tm2O3 (Mt)",
+            "Yb2O3 (Mt)",
+            "Lu2O3 (Mt)",
+            "Lanthanide oxides (Mt)",
+            "Ln2O3 (Mt)",
+            "Total rare earth oxides (Mt)",
+            "Y (kt)",
+            "Hf (kt)",
+            "U3O8 (kt)",
+            "Zr (Mt)",
+            "Ti (Mt)",
+            "Heavy minerals (Mt)",
+            "Monazite (Mt)",
+            "Xenotime (Mt)",
+            "P2O5 (Mt)",
+            "CaF2 (kt)",
+            "CRIRSCO-compliant resources or production- REEs",
+            "CRIRSCO-compliant resources or production - other commodities",
+            "Host rock 1 - unit name",
+            "Host rock 1 - lithology",
+            "Host rock 1 - age",
+            "Host rock 2 - unit name",
+            "Host rock 2 - lithology",
+            "Host rock 2 - age",
+            "Host rock 3 - unit name",
+            "Host rock 3 - lithology",
+            "Host rock 3 - age",
+            "Host rock 4 - unit name",
+            "Host rock 4 - lithology",
+            "Host rock 4 - age",
+            "Host rock 5 - unit name",
+            "Host rock 5 - lithology",
+            "Host rock 5 - age",
+            "Host rock 6 - unit name",
+            "Host rock 6 - lithology",
+            "Host rock 6 - age",
+            "Associated igneous rock 1 - unit name",
+            "Associated igneous rock 1 - lithology",
+            "Associated igneous rock 1 - age",
+            "Associated igneous rock 1 - timing relative to mineralisation",
+            "Associated igneous rock 2 - unit name",
+            "Associated igneous rock 2 - lithology",
+            "Associated igneous rock 2 - age",
+            "Associated igneous rock 2 - timing relative to mineralisation",
+            "Associated igneous rock 3 - unit name",
+            "Associated igneous rock 3 - lithology",
+            "Associated igneous rock 3 - age",
+            "Associated igneous rock 3 - timing relative to mineralisation",
+            "Associated igneous rock 4 - unit name",
+            "Associated igneous rock 4 - lithology",
+            "Associated igneous rock 4 - age",
+            "Associated igneous rock 4 - timing relative to mineralisation",
+            "Associated igneous rock 5 - unit name",
+            "Associated igneous rock 5 - lithology",
+            "Associated igneous rock 5 - age",
+            "Associated igneous rock 5 - timing relative to mineralisation",
+            "Associated igneous rock 6 - unit name",
+            "Associated igneous rock 6 - lithology",
+            "Associated igneous rock 6 - age",
+            "Associated igneous rock 6 - timing relative to mineralisation",
+            "Associated igneous rock 7 - unit name",
+            "Associated igneous rock 7 - lithology",
+            "Associated igneous rock 7 - age",
+            "Associated igneous rock 7 - timing relative to mineralisation",
+            "Associated igneous rock 8 - unit name",
+            "Associated igneous rock 8 - lithology",
+            "Associated igneous rock 8 - age",
+            "Associated igneous rock 8 - timing relative to mineralisation",
+            "Associated igneous rock 9 - unit name",
+            "Associated igneous rock 9 - lithology",
+            "Associated igneous rock 9 - age",
+            "Associated igneous rock 9 - timing relative to mineralisation",
+            "Regional alteration assemblages",
+            "Proximal alteration assemblages",
+            "Alteration assemblage group",
+            "REE mineralogy",
+            "Proportion of adsorbed REE (%)",
+            "Fe-S-O mineral 1",
+            "Fe-S-O mineral relationship 1-2",
+            "Fe-S-O mineral 2",
+            "Fe-S-O mineral relationship 2-3",
+            "Fe-S-O mineral 3",
+            "Fe-S-O mineral relationship 3-4",
+            "Fe-S-O mineral 4",
+            "Sulfate mineral 1",
+            "Sulfate mineral 1 - abundance",
+            "Sulfate mineral 2",
+            "Sulfate mineral 2 - abundance",
+            "Sulfate mineral 3",
+            "Sulfate mineral 3 - abundance",
+            "Peak metamorphic grade - lower limit",
+            "Peak metamorphic grade - upper limit",
+            "Timing of peak metamorphism",
+            "Source(s) of data - location",
+            "Source(s) of data - geology",
+            "Source(s) of data - age",
+            "Source(s) of data - resources/endowment",
+            "Source(s) of data - REE deportment",
+            "Comments ",
+            " [column HC]"
+          ],
+          "file": "ga_global_ree/2026-10-31/148953_01_0.xlsx",
+          "header_row": 1,
+          "original_headers": [
+            "Coastal",
+            "Country",
+            "State/Province",
+            "Longitude",
+            "Latitude",
+            "District",
+            "Element",
+            "Province",
+            "Subprovince",
+            "Zone",
+            "Deposit group ",
+            "Timing",
+            "Contribution",
+            "Deposit environment",
+            "Deposit group",
+            "Deposit type",
+            "Age (Ma)",
+            "Error (Ma)",
+            "Age type",
+            "Age basis",
+            "Mineral dated",
+            "Age system",
+            "Radiometric age type",
+            "Age instrumentation",
+            "Age confidence",
+            "Timing",
+            "Contribution",
+            "Deposit environment",
+            "Deposit group",
+            "Deposit type",
+            "Age (Ma)",
+            "Error (Ma)",
+            "Age type",
+            "Age basis",
+            "Mineral dated",
+            "Age system",
+            "Radiometric age type",
+            "Age instrumentation",
+            "Age confidence",
+            "Timing",
+            "Contribution",
+            "Deposit environment",
+            "Deposit group",
+            "Deposit type",
+            "Age (Ma)",
+            "Error (Ma)",
+            "Age type",
+            "Age basis",
+            "Mineral dated",
+            "Age system",
+            "Radiometric age type",
+            "Age instrumentation",
+            "Age confidence",
+            "Tonnage (Mt)",
+            "Sn (%)",
+            "WO3 (%)",
+            "F (%)",
+            "Ta (ppm)",
+            "Nb (ppm)",
+            "Li2O (%)",
+            "ThO2 (%)",
+            "Sc2O3 (%)",
+            "La2O3 (%)",
+            "Ce2O3 (%)",
+            "Pr2O3 (%)",
+            "Nd2O3 (%)",
+            "Sm2O3 (%)",
+            "Eu2O3 (%)",
+            "Gd2O3 (%)",
+            "Tb4O7 (%)",
+            "Tb2O3 (%)",
+            "Dy2O3 (%)",
+            "Ho2O3 (%)",
+            "Er2O3 (%)",
+            "Tm2O3 (%)",
+            "Yb2O3 (%)",
+            "Lu2O3 (%)",
+            "Lanthanide oxides (%)",
+            "Ln2O3 (%)",
+            "Total rare earth oxides (%)",
+            "Y2O3 (%)",
+            "Y (ppm)",
+            "Hf (ppm)",
+            "U3O8 (%)",
+            "Zr (%)",
+            "Ti (%)",
+            "Heavy minerals (%)",
+            "Monazite (%)",
+            "Xenotime (%)",
+            "P2O5 (%)",
+            "CaF2 (%)",
+            "Sn (kt)",
+            "WO3 (kt)",
+            "F (kt)",
+            "Ta (kt)",
+            "Nb (kt)",
+            "Li (Mt)",
+            "ThO2 (kt)",
+            "Sc2O3 (kt)",
+            "La2O3 (Mt)",
+            "Ce2O3 (Mt)",
+            "Pr2O3 (Mt)",
+            "Nd2O3 (Mt)",
+            "Sm2O3 (Mt)",
+            "Eu2O3 (Mt)",
+            "Gd2O3 (Mt)",
+            "Tb4O7 (Mt)",
+            "Tb2O3 (Mt)",
+            "Dy2O3 (Mt)",
+            "Ho2O3 (Mt)",
+            "Er2O3 (Mt)",
+            "Tm2O3 (Mt)",
+            "Yb2O3 (Mt)",
+            "Lu2O3 (Mt)",
+            "Lanthanide oxides (Mt)",
+            "Ln2O3 (Mt)",
+            "Total rare earth oxides (Mt)",
+            "Y (kt)",
+            "Hf (kt)",
+            "U3O8 (kt)",
+            "Zr (Mt)",
+            "Ti (Mt)",
+            "Heavy minerals (Mt)",
+            "Monazite (Mt)",
+            "Xenotime (Mt)",
+            "P2O5 (Mt)",
+            "CaF2 (kt)",
+            "CRIRSCO-compliant resources or production- REEs",
+            "CRIRSCO-compliant resources or production - other commodities",
+            "Host rock 1 - unit name",
+            "Host rock 1 - lithology",
+            "Host rock 1 - age",
+            "Host rock 2 - unit name",
+            "Host rock 2 - lithology",
+            "Host rock 2 - age",
+            "Host rock 3 - unit name",
+            "Host rock 3 - lithology",
+            "Host rock 3 - age",
+            "Host rock 4 - unit name",
+            "Host rock 4 - lithology",
+            "Host rock 4 - age",
+            "Host rock 5 - unit name",
+            "Host rock 5 - lithology",
+            "Host rock 5 - age",
+            "Host rock 6 - unit name",
+            "Host rock 6 - lithology",
+            "Host rock 6 - age",
+            "Associated igneous rock 1 - unit name",
+            "Associated igneous rock 1 - lithology",
+            "Associated igneous rock 1 - age",
+            "Associated igneous rock 1 - timing relative to mineralisation",
+            "Associated igneous rock 2 - unit name",
+            "Associated igneous rock 2 - lithology",
+            "Associated igneous rock 2 - age",
+            "Associated igneous rock 2 - timing relative to mineralisation",
+            "Associated igneous rock 3 - unit name",
+            "Associated igneous rock 3 - lithology",
+            "Associated igneous rock 3 - age",
+            "Associated igneous rock 3 - timing relative to mineralisation",
+            "Associated igneous rock 4 - unit name",
+            "Associated igneous rock 4 - lithology",
+            "Associated igneous rock 4 - age",
+            "Associated igneous rock 4 - timing relative to mineralisation",
+            "Associated igneous rock 5 - unit name",
+            "Associated igneous rock 5 - lithology",
+            "Associated igneous rock 5 - age",
+            "Associated igneous rock 5 - timing relative to mineralisation",
+            "Associated igneous rock 6 - unit name",
+            "Associated igneous rock 6 - lithology",
+            "Associated igneous rock 6 - age",
+            "Associated igneous rock 6 - timing relative to mineralisation",
+            "Associated igneous rock 7 - unit name",
+            "Associated igneous rock 7 - lithology",
+            "Associated igneous rock 7 - age",
+            "Associated igneous rock 7 - timing relative to mineralisation",
+            "Associated igneous rock 8 - unit name",
+            "Associated igneous rock 8 - lithology",
+            "Associated igneous rock 8 - age",
+            "Associated igneous rock 8 - timing relative to mineralisation",
+            "Associated igneous rock 9 - unit name",
+            "Associated igneous rock 9 - lithology",
+            "Associated igneous rock 9 - age",
+            "Associated igneous rock 9 - timing relative to mineralisation",
+            "Regional alteration assemblages",
+            "Proximal alteration assemblages",
+            "Alteration assemblage group",
+            "REE mineralogy",
+            "Proportion of adsorbed REE (%)",
+            "Fe-S-O mineral 1",
+            "Fe-S-O mineral relationship 1-2",
+            "Fe-S-O mineral 2",
+            "Fe-S-O mineral relationship 2-3",
+            "Fe-S-O mineral 3",
+            "Fe-S-O mineral relationship 3-4",
+            "Fe-S-O mineral 4",
+            "Sulfate mineral 1",
+            "Sulfate mineral 1 - abundance",
+            "Sulfate mineral 2",
+            "Sulfate mineral 2 - abundance",
+            "Sulfate mineral 3",
+            "Sulfate mineral 3 - abundance",
+            "Peak metamorphic grade - lower limit",
+            "Peak metamorphic grade - upper limit",
+            "Timing of peak metamorphism",
+            "Source(s) of data - location",
+            "Source(s) of data - geology",
+            "Source(s) of data - age",
+            "Source(s) of data - resources/endowment",
+            "Source(s) of data - REE deportment",
+            "Comments ",
+            null
+          ],
+          "rejected": 0,
+          "role": "primary",
+          "rows": 376,
+          "source_id": "ga_global_ree",
+          "table": "Deposits"
+        },
+        {
+          "file": "ga_global_ree/2026-10-31/148953_01_0.xlsx",
+          "header_row": null,
+          "role": "reference",
+          "rows": 578,
+          "source_id": "ga_global_ree",
+          "table": "References"
+        }
+      ]
+    },
+    {
+      "artifact": "data/staging/gseu_crm.parquet",
+      "coordinate_issues": {},
+      "files": {
+        "gseu_crm/2026-10-29/Data_CRM_deposits_ABC_2024.xlsx": "8a978cb8cbb3de52337ea9c1aaef9980ce816b7ddc6cfff964533cd4fb547658"
+      },
+      "kinds": {
+        "deposit": 842
+      },
+      "locations": {
+        "located": 842
+      },
+      "manifest_sha256": "41c5b7c3d1772d0c115537efaeff2d97a22d637359a7f8a3b6facb00f9d657dd",
+      "notes": [
+        "GSEU fallback IDs combine full source-file SHA-256, sheet and row position; they are not publisher deposit IDs and change when workbook bytes change. Commodity-specific repeated deposits remain separate. Size classes and minimum-estimate thresholds are raw evidence, not computed resources."
+      ],
+      "rejects": [
+        {
+          "raw_fields": {
+            "Are reserves included in resources?": null,
+            "CRM": null,
+            "Confidential?": null,
+            "Country": null,
+            "Deposit mining activity status": null,
+            "Deposit name": null,
+            "Deposit size": null,
+            "Deposit type": null,
+            "ISO3": null,
+            "Minimum estimate?": "* commodity tonnage unavailable for this deposit. Total endowment given in column J corresponds to the lower tonnage threshold value of the deposit size, and is therefore a minimum estimate",
+            "Production - tonnage of commodity (t)": null,
+            "Production - type of commodity reported": null,
+            "Reserves - tonnage of commodity (t)": null,
+            "Reserves - type of commodity reported": null,
+            "Resources - tonnage of commodity (t)": null,
+            "Resources - type of commodity reported": null,
+            "Total endowment (remaining + extracted amount of the commodity)": null,
+            "Type of commodity reported": null,
+            "latitude": null,
+            "longitude": null,
+            "reserve category": null,
+            "reserve classification method": null,
+            "resource category": null,
+            "resource classification method": null
+          },
+          "reason": "Non-record explanatory row: no deposit name",
+          "row_number": 846,
+          "source_file": "gseu_crm/2026-10-29/Data_CRM_deposits_ABC_2024.xlsx",
+          "source_table": "Data"
+        }
+      ],
+      "rows": 842,
+      "sha256": "1ea8fb0dde8ea14a0d3516dad19e52f83741a38b35eb769b1ecd4de11e9ae48f",
+      "snapshot": "data/raw/gseu_crm/2026-10-29",
+      "source_id": "gseu_crm",
+      "tables": [
+        {
+          "accepted": 842,
+          "fields": [
+            "Deposit name",
+            "Country",
+            "ISO3",
+            "Deposit type",
+            "CRM",
+            "Deposit size",
+            "longitude",
+            "latitude",
+            "Confidential?",
+            "Total endowment (remaining + extracted amount of the commodity)",
+            "Type of commodity reported",
+            "Minimum estimate?",
+            "Deposit mining activity status",
+            "Resources - tonnage of commodity (t)",
+            "Resources - type of commodity reported",
+            "resource category",
+            "resource classification method",
+            "Reserves - tonnage of commodity (t)",
+            "Reserves - type of commodity reported",
+            "reserve category",
+            "reserve classification method",
+            "Are reserves included in resources?",
+            "Production - tonnage of commodity (t)",
+            "Production - type of commodity reported"
+          ],
+          "file": "gseu_crm/2026-10-29/Data_CRM_deposits_ABC_2024.xlsx",
+          "header_row": 2,
+          "original_headers": [
+            "Deposit name",
+            "Country",
+            "ISO3",
+            "Deposit type",
+            "CRM",
+            "Deposit size",
+            "longitude",
+            "latitude",
+            "Confidential?",
+            "Total endowment (remaining + extracted amount of the commodity)",
+            "Type of commodity reported",
+            "Minimum estimate?",
+            null,
+            "Resources - tonnage of commodity (t)",
+            "Resources - type of commodity reported",
+            "resource category",
+            "resource classification method",
+            "Reserves - tonnage of commodity (t)",
+            "Reserves - type of commodity reported",
+            "reserve category",
+            "reserve classification method",
+            "Are reserves included in resources?",
+            "Production - tonnage of commodity (t)",
+            "Production - type of commodity reported"
+          ],
+          "rejected": 1,
+          "role": "primary",
+          "rows": 843,
+          "source_id": "gseu_crm",
+          "table": "Data"
+        },
+        {
+          "file": "gseu_crm/2026-10-29/Data_CRM_deposits_ABC_2024.xlsx",
+          "header_row": null,
+          "role": "reference",
+          "rows": 8,
+          "source_id": "gseu_crm",
+          "table": "Sheet1"
+        },
+        {
+          "file": "gseu_crm/2026-10-29/Data_CRM_deposits_ABC_2024.xlsx",
+          "header_row": null,
+          "role": "reference",
+          "rows": 34,
+          "source_id": "gseu_crm",
+          "table": "Deposit sizes"
+        }
+      ]
+    },
+    {
+      "artifact": "data/staging/icmm.parquet",
+      "coordinate_issues": {
+        "Incomplete, nonnumeric or out-of-range coordinates; original retained": 1
+      },
+      "files": {
+        "icmm/2026-10-29/global-mining-dataset-1-5.xlsx": "8e8ac1e703d5bb7d536cea2a26fbf9c26da5fc43c21cb224baa1c79befce18e8"
+      },
+      "kinds": {
+        "facility": 7104
+      },
+      "locations": {
+        "located": 7103,
+        "unlocated": 1
+      },
+      "manifest_sha256": "ac88c36642f7d782e585c77ec4896ec74e9a9ea6c1f3944199e4705a9f30821b",
+      "notes": [
+        "ICMM Asset Type, Confidence Factor and Contains are retained verbatim. Asset type is not mine status or location precision. Group Names are kept as an unsplit source alias field; proprietary comparison tables are reference only."
+      ],
+      "rejects": [],
+      "rows": 7104,
+      "sha256": "99299136d7ea9c12fa3147219704111708d176f722cc1929d18f4d73dd258b76",
+      "snapshot": "data/raw/icmm/2026-10-29",
+      "source_id": "icmm",
+      "tables": [
+        {
+          "accepted": 7104,
+          "fields": [
+            "ICMMID",
+            "Confidence Factor",
+            "Contains",
+            "Mine Name",
+            "Group Names",
+            "Latitude",
+            "Longitude",
+            "Asset Type",
+            "Country",
+            "Region",
+            "Primary Commodity",
+            "Secondary Commodity ",
+            "Other Commodities"
+          ],
+          "file": "icmm/2026-10-29/global-mining-dataset-1-5.xlsx",
+          "header_row": 1,
+          "original_headers": [
+            "ICMMID",
+            "Confidence Factor",
+            "Contains",
+            "Mine Name",
+            "Group Names",
+            "Latitude",
+            "Longitude",
+            "Asset Type",
+            "Country",
+            "Region",
+            "Primary Commodity",
+            "Secondary Commodity ",
+            "Other Commodities"
+          ],
+          "rejected": 0,
+          "role": "primary",
+          "rows": 7104,
+          "source_id": "icmm",
+          "table": "Global Mining Dataset v1.5"
+        },
+        {
+          "file": "icmm/2026-10-29/global-mining-dataset-1-5.xlsx",
+          "header_row": null,
+          "role": "reference",
+          "rows": 59,
+          "source_id": "icmm",
+          "table": "About"
+        },
+        {
+          "file": "icmm/2026-10-29/global-mining-dataset-1-5.xlsx",
+          "header_row": null,
+          "role": "reference",
+          "rows": 156,
+          "source_id": "icmm",
+          "table": "Supplement Sheet"
+        }
+      ]
+    },
+    {
+      "artifact": "data/staging/jasansky.parquet",
+      "coordinate_issues": {},
+      "files": {
+        "jasansky/2026-10-29/open_database_mine_production.zip": "40c733543450341ed65abdcf36a34eb0c79a9979cdd09dc56e3b9e68e570dba6"
+      },
+      "kinds": {
+        "facility": 2390,
+        "source_group": 23
+      },
+      "locations": {
+        "located": 1748,
+        "unlocated": 665
+      },
+      "manifest_sha256": "923f7c839eed1359f8dbb1f2ae9bf1fb17e03bd5883510c13ad30549b68f0671",
+      "notes": [
+        "Jasansky facility_id and sub_site fields remain intact. Region/Company rows are source_group records. Child production, ownership and capacity tables are linked source evidence, not new facilities or current facts. Only point/singleton multipoint geometries provide coordinates."
+      ],
+      "rejects": [],
+      "rows": 2413,
+      "sha256": "624ef178ae8a870b2e56eef9e932ae4aa7d8704c784a75ced0cdf2b8f34b9408",
+      "snapshot": "data/raw/jasansky/2026-10-29",
+      "source_id": "jasansky",
+      "tables": [
+        {
+          "archive_member": "data/capacity.csv",
+          "fields": [
+            "id",
+            "facility_id",
+            "year",
+            "material",
+            "commodity",
+            "value_tpa",
+            "source_id",
+            "comment"
+          ],
+          "file": "jasansky/2026-10-29/open_database_mine_production.zip",
+          "role": "support",
+          "rows": 163,
+          "source_id": "jasansky",
+          "table": "data/capacity.csv"
+        },
+        {
+          "archive_member": "data/coal.csv",
+          "fields": [
+            "id",
+            "facility_id",
+            "year",
+            "type",
+            "material",
+            "value_tonnes",
+            "amount_sold_tonnes",
+            "reporting_period",
+            "source_id",
+            "comment"
+          ],
+          "file": "jasansky/2026-10-29/open_database_mine_production.zip",
+          "role": "support",
+          "rows": 10478,
+          "source_id": "jasansky",
+          "table": "data/coal.csv"
+        },
+        {
+          "archive_member": "data/commodities.csv",
+          "fields": [
+            "id",
+            "facility_id",
+            "year",
+            "material",
+            "commodity",
+            "value_tonnes",
+            "grade_ppm",
+            "recovery_rate",
+            "yield_ppm",
+            "amount_sold_tonnes",
+            "metal_payable_tonnes",
+            "mine_processing",
+            "reporting_period",
+            "source_id",
+            "comment",
+            "id_minerals"
+          ],
+          "file": "jasansky/2026-10-29/open_database_mine_production.zip",
+          "role": "support",
+          "rows": 9426,
+          "source_id": "jasansky",
+          "table": "data/commodities.csv"
+        },
+        {
+          "archive_member": "data/material_ids.csv",
+          "fields": [
+            "material_id",
+            "material_name",
+            "material_category",
+            "material_category_2",
+            "material_id_agg",
+            "material_name_agg",
+            "materials_contained"
+          ],
+          "file": "jasansky/2026-10-29/open_database_mine_production.zip",
+          "role": "reference",
+          "rows": 294,
+          "source_id": "jasansky",
+          "table": "data/material_ids.csv"
+        },
+        {
+          "archive_member": "data/minerals.csv",
+          "fields": [
+            "id",
+            "facility_id",
+            "year",
+            "type",
+            "material",
+            "value_tonnes",
+            "overall_grade_ppm",
+            "amount_sold_tonnes",
+            "mine_processing",
+            "reporting_period",
+            "source_id",
+            "comment"
+          ],
+          "file": "jasansky/2026-10-29/open_database_mine_production.zip",
+          "role": "support",
+          "rows": 12292,
+          "source_id": "jasansky",
+          "table": "data/minerals.csv"
+        },
+        {
+          "archive_member": "data/ownership.csv",
+          "fields": [
+            "id",
+            "facility_id",
+            "year",
+            "owners",
+            "operators",
+            "source_id",
+            "comment"
+          ],
+          "file": "jasansky/2026-10-29/open_database_mine_production.zip",
+          "role": "support",
+          "rows": 699,
+          "source_id": "jasansky",
+          "table": "data/ownership.csv"
+        },
+        {
+          "archive_member": "data/processing.csv",
+          "fields": [
+            "id",
+            "facility_id",
+            "facility_type",
+            "year",
+            "input",
+            "input_value_tonnes",
+            "output",
+            "output_value_tonnes",
+            "grade_ppm",
+            "recovery_rate",
+            "amount_sold_tonnes",
+            "metal_payable_tonnes",
+            "incl_purchased",
+            "reporting_period",
+            "source_id",
+            "comment"
+          ],
+          "file": "jasansky/2026-10-29/open_database_mine_production.zip",
+          "role": "support",
+          "rows": 3979,
+          "source_id": "jasansky",
+          "table": "data/processing.csv"
+        },
+        {
+          "archive_member": "data/reserves.csv",
+          "fields": [
+            "id",
+            "facility_id",
+            "year",
+            "material",
+            "commodity",
+            "mineral_value_tonnes",
+            "commodity_value_tonnes",
+            "grade_ppm",
+            "source_id",
+            "comment"
+          ],
+          "file": "jasansky/2026-10-29/open_database_mine_production.zip",
+          "role": "support",
+          "rows": 1039,
+          "source_id": "jasansky",
+          "table": "data/reserves.csv"
+        },
+        {
+          "archive_member": "data/source_ids.csv",
+          "fields": [
+            "source_id",
+            "sources",
+            "source_urls"
+          ],
+          "file": "jasansky/2026-10-29/open_database_mine_production.zip",
+          "role": "reference",
+          "rows": 2483,
+          "source_id": "jasansky",
+          "table": "data/source_ids.csv"
+        },
+        {
+          "archive_member": "data/transport.csv",
+          "fields": [
+            "id",
+            "facility_id",
+            "year",
+            "product",
+            "value_tonnes",
+            "transport_to",
+            "transport_by",
+            "export",
+            "export_to",
+            "reporting_period",
+            "source_id",
+            "comment"
+          ],
+          "file": "jasansky/2026-10-29/open_database_mine_production.zip",
+          "role": "support",
+          "rows": 941,
+          "source_id": "jasansky",
+          "table": "data/transport.csv"
+        },
+        {
+          "archive_member": "data/waste.csv",
+          "fields": [
+            "id",
+            "facility_id",
+            "year",
+            "type_mining",
+            "waste_type",
+            "material",
+            "commodity",
+            "value_tonnes",
+            "total_material_tonnes",
+            "stripping_ratio",
+            "reporting_period",
+            "source_id",
+            "comment"
+          ],
+          "file": "jasansky/2026-10-29/open_database_mine_production.zip",
+          "role": "support",
+          "rows": 1119,
+          "source_id": "jasansky",
+          "table": "data/waste.csv"
+        },
+        {
+          "archive_member": "materials_covered.xlsx",
+          "file": "jasansky/2026-10-29/open_database_mine_production.zip",
+          "role": "reference",
+          "rows": 81,
+          "source_id": "jasansky",
+          "table": "materials_covered.xlsx!Sheet1"
+        },
+        {
+          "archive_member": "variables_descriptions.xlsx",
+          "file": "jasansky/2026-10-29/open_database_mine_production.zip",
+          "role": "reference",
+          "rows": 138,
+          "source_id": "jasansky",
+          "table": "variables_descriptions.xlsx!Sheet1"
+        },
+        {
+          "accepted": 2413,
+          "archive_member": "data/facilities.gpkg",
+          "fields": [
+            "fid",
+            "facility_id",
+            "facility_name",
+            "facility_other_names",
+            "sub_site_name",
+            "sub_site_other_names",
+            "facility_type",
+            "primary_commodity",
+            "commodities_products",
+            "facility_equipment",
+            "production_start",
+            "production_end",
+            "activity_status",
+            "activity_status_year",
+            "surface_area_sq_km",
+            "concession_area_sq_km",
+            "country",
+            "GID_0",
+            "GID_1",
+            "GID_2",
+            "GID_3",
+            "GID_4",
+            "source_id",
+            "comment",
+            "geom"
+          ],
+          "file": "jasansky/2026-10-29/open_database_mine_production.zip",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 2413,
+          "source_id": "jasansky",
+          "table": "data/facilities.gpkg:facilities"
+        }
+      ]
+    },
+    {
+      "artifact": "data/staging/oecd_export.parquet",
+      "coordinate_issues": {},
+      "files": {
+        "oecd_export/2026-10-29/oecd_export_restrictions_2009.csv": "ea8623eb0faa9c3357c92e517bff93921959e4ccd2ea1f930b3c8558fb22d01e",
+        "oecd_export/2026-10-29/oecd_export_restrictions_2010.csv": "29f44f49da19ab6980a67f3303eb002761141e60236caed1ba3bf4f5cb764ea1",
+        "oecd_export/2026-10-29/oecd_export_restrictions_2011.csv": "231ddffa048eeb930ca870d58a27cb8fbafde228fa4ab20d8a5dacca9a046df1",
+        "oecd_export/2026-10-29/oecd_export_restrictions_2012.csv": "97a66fd63cea76b652e44c71b90da6eb90ef0d344d5176fc3a1d830772f588bd",
+        "oecd_export/2026-10-29/oecd_export_restrictions_2013.csv": "27603832bd48585584c23d6a03c6eea78594dd30ef995340c3c3da400ffd6832",
+        "oecd_export/2026-10-29/oecd_export_restrictions_2014.csv": "513922bb1b62241619b447f639fd46e97395329656e5a402536a2c418787065c",
+        "oecd_export/2026-10-29/oecd_export_restrictions_2015.csv": "f99a1e43234a0db7d9d064986d91b4ff4795e846399b704230291bd743205987",
+        "oecd_export/2026-10-29/oecd_export_restrictions_2016.csv": "3d7bd0f8f253e06e375bd4535ff13d46220f70805fc0466c6467b828850a09d9",
+        "oecd_export/2026-10-29/oecd_export_restrictions_2017.csv": "e07c8828a4b3f2abfd64c58fc364d79c8d4317a201e45582fdb8e4237a0d8851",
+        "oecd_export/2026-10-29/oecd_export_restrictions_2018.csv": "f3dd392ea4a6106888322df6093380380c60a380183efed665aee4335ff96617",
+        "oecd_export/2026-10-29/oecd_export_restrictions_2019.csv": "9733bb02f2367dbf841e90658efa6fa5ea27b2e791d01b46ca1c5e4548cdd14f",
+        "oecd_export/2026-10-29/oecd_export_restrictions_2020.csv": "5b452cd133253de2082122f9264ca4c234b73c23d0837e05f4673a88e90c7ffd",
+        "oecd_export/2026-10-29/oecd_export_restrictions_2021.csv": "4f0ab20344dab98d23e0f937881f356f55eac83434f8b0cf42be5c8ebb713fdb",
+        "oecd_export/2026-10-29/oecd_export_restrictions_2022.csv": "ae40299d8d2dbd2e4493e25712cbbf33e1731e3da8c213298aecfe0f4208853b",
+        "oecd_export/2026-10-29/oecd_export_restrictions_2023.csv": "ac33b6430dd880fb1b3f5a0a9a10093345cd6f80f9f5b7e0aec67a76df965489",
+        "oecd_export/2026-10-29/oecd_export_restrictions_2024.csv": "5bc64c0b0c6efc2550b1352ce382c19c7b1148605afb5b5597c194797ec4fc20",
+        "oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml": "35541218a1c481114c188b90cc0199396c06fe279b4b70b9276d18d2cd00ace8"
+      },
+      "kinds": {
+        "export_restriction": 1182793
+      },
+      "locations": {
+        "unlocated": 1182793
+      },
+      "manifest_sha256": "ed08aebd97014fa5a544ce215132d0b266cb88ad0e318ccde44d758b8969ac9e",
+      "notes": [
+        "Rows retain source-native values and are not harmonized, pilot-filtered or mapped. CSV row numbers count logical records including the header; workbook row numbers are Excel row positions. Official critical-list HTML was consumed by the vocabulary step and is not an additional context staging table.",
+        "Every OECD observation in all 16 annual partitions is retained, including no/blank observation values. IDs hash DATAFLOW and all six source dimensions; measurement values and observation-status attributes are not identity or mine status. CSVs stream one row at a time without retaining an observation list or identity set. SDMX codelists are reference tables, not additional export-restriction records."
+      ],
+      "rejects": [],
+      "rows": 1182793,
+      "sha256": "955746c40c16ed3c698ce2cd5df152e0b7af3b8bbbd9351fd64bbc2e6489e7d1",
+      "snapshot": "data/raw/oecd_export/2026-10-29",
+      "source_id": "oecd_export",
+      "tables": [
+        {
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml",
+          "role": "reference",
+          "rows": 560,
+          "source_id": "oecd_export",
+          "table": "CL_AREA"
+        },
+        {
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml",
+          "role": "reference",
+          "rows": 7498,
+          "source_id": "oecd_export",
+          "table": "CL_PRODUCT_HS2007"
+        },
+        {
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml",
+          "role": "reference",
+          "rows": 20,
+          "source_id": "oecd_export",
+          "table": "CL_POLDESCRIP_EXP_RESTRIC"
+        },
+        {
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml",
+          "role": "reference",
+          "rows": 15,
+          "source_id": "oecd_export",
+          "table": "CL_POLTYPE_EXP_RESTRIC"
+        },
+        {
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml",
+          "role": "reference",
+          "rows": 522,
+          "source_id": "oecd_export",
+          "table": "CL_POLVAR_EXP_RESTRIC"
+        },
+        {
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml",
+          "role": "reference",
+          "rows": 20,
+          "source_id": "oecd_export",
+          "table": "CL_OBS_STATUS"
+        },
+        {
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml",
+          "role": "reference",
+          "rows": 31,
+          "source_id": "oecd_export",
+          "table": "CL_UNIT_MULT"
+        },
+        {
+          "accepted": 53396,
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_2009.csv",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 53396,
+          "source_id": "oecd_export",
+          "table": "oecd_export_restrictions_2009.csv"
+        },
+        {
+          "accepted": 60417,
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_2010.csv",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 60417,
+          "source_id": "oecd_export",
+          "table": "oecd_export_restrictions_2010.csv"
+        },
+        {
+          "accepted": 63604,
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_2011.csv",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 63604,
+          "source_id": "oecd_export",
+          "table": "oecd_export_restrictions_2011.csv"
+        },
+        {
+          "accepted": 67369,
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_2012.csv",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 67369,
+          "source_id": "oecd_export",
+          "table": "oecd_export_restrictions_2012.csv"
+        },
+        {
+          "accepted": 73089,
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_2013.csv",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 73089,
+          "source_id": "oecd_export",
+          "table": "oecd_export_restrictions_2013.csv"
+        },
+        {
+          "accepted": 71679,
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_2014.csv",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 71679,
+          "source_id": "oecd_export",
+          "table": "oecd_export_restrictions_2014.csv"
+        },
+        {
+          "accepted": 79845,
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_2015.csv",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 79845,
+          "source_id": "oecd_export",
+          "table": "oecd_export_restrictions_2015.csv"
+        },
+        {
+          "accepted": 80968,
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_2016.csv",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 80968,
+          "source_id": "oecd_export",
+          "table": "oecd_export_restrictions_2016.csv"
+        },
+        {
+          "accepted": 73988,
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_2017.csv",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 73988,
+          "source_id": "oecd_export",
+          "table": "oecd_export_restrictions_2017.csv"
+        },
+        {
+          "accepted": 76336,
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_2018.csv",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 76336,
+          "source_id": "oecd_export",
+          "table": "oecd_export_restrictions_2018.csv"
+        },
+        {
+          "accepted": 76627,
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_2019.csv",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 76627,
+          "source_id": "oecd_export",
+          "table": "oecd_export_restrictions_2019.csv"
+        },
+        {
+          "accepted": 81126,
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_2020.csv",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 81126,
+          "source_id": "oecd_export",
+          "table": "oecd_export_restrictions_2020.csv"
+        },
+        {
+          "accepted": 80167,
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_2021.csv",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 80167,
+          "source_id": "oecd_export",
+          "table": "oecd_export_restrictions_2021.csv"
+        },
+        {
+          "accepted": 76994,
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_2022.csv",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 76994,
+          "source_id": "oecd_export",
+          "table": "oecd_export_restrictions_2022.csv"
+        },
+        {
+          "accepted": 83269,
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_2023.csv",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 83269,
+          "source_id": "oecd_export",
+          "table": "oecd_export_restrictions_2023.csv"
+        },
+        {
+          "accepted": 83919,
+          "file": "oecd_export/2026-10-29/oecd_export_restrictions_2024.csv",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 83919,
+          "source_id": "oecd_export",
+          "table": "oecd_export_restrictions_2024.csv"
+        }
+      ]
+    },
+    {
+      "artifact": "data/staging/usgs_global_critical.parquet",
+      "coordinate_issues": {},
+      "files": {
+        "usgs_global_critical/2026-10-31/PP1802_CritMin_FGDC_Metadata.xml": "60cedfec2147f5e0787a5a1b475abb982fc94c0481d7e6a95b76b30952e39c01",
+        "usgs_global_critical/2026-10-31/PP1802_Global_CriticalMinerals_gdb.zip": "5eb3155e7724e1740af0194a71fd6b49f7c9ed5ca1c9e3636e4224012f8e162e"
+      },
+      "kinds": {
+        "deposit": 2125
+      },
+      "locations": {
+        "located": 2125
+      },
+      "manifest_sha256": "fbdaf5abb05ff9874d1515eaf6557e7fa936acb245fc7eb97236d7781a5dc034",
+      "notes": [
+        "GDB source coordinates and WKB geometry are retained without precision inference. Polygon latitude/longitude fields are publisher-supplied; no centroid is computed.",
+        "REE nonspatial records are retained with no map coordinates. Reference joins use exact semicolon-delimited citation labels; unmatched citation text remains intact.",
+        "Native GDB OBJECTID with table prefix identifies each record. REE ID_No is kept as a source business identifier because it is not unique in the located table; duplicate-business-ID groups are reported without merging or discarding rows."
+      ],
+      "rejects": [],
+      "rows": 2125,
+      "sha256": "160c69575048a4291fc650ca05b3cccf0260a730df72a37536f9ddf8bc932350",
+      "snapshot": "data/raw/usgs_global_critical/2026-10-31",
+      "source_id": "usgs_global_critical",
+      "tables": [
+        {
+          "accepted": 4,
+          "fields": [
+            "DEPOSIT_NAME",
+            "CRITICAL_MINERAL",
+            "DEPOSIT_TYPE",
+            "LATITUDE",
+            "LONGITUDE",
+            "LOCATION",
+            "LOC_DETAIL",
+            "SHAPE_Length",
+            "SHAPE_Area"
+          ],
+          "file": "usgs_global_critical/2026-10-31/PP1802_Global_CriticalMinerals_gdb.zip",
+          "geometry_type": "MultiPolygon",
+          "native_id_field": "OBJECTID",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 4,
+          "table": "PP1802_CritMin_polys"
+        },
+        {
+          "accepted": 2121,
+          "fields": [
+            "DEPOSIT_NAME",
+            "CRITICAL_MINERAL",
+            "DEPOSIT_TYPE",
+            "LATITUDE",
+            "LONGITUDE",
+            "LOCATION",
+            "LOC_DETAIL"
+          ],
+          "file": "usgs_global_critical/2026-10-31/PP1802_Global_CriticalMinerals_gdb.zip",
+          "geometry_type": "Point",
+          "native_id_field": "OBJECTID",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 2121,
+          "table": "PP1802_CritMin_pts"
+        },
+        {
+          "fields": [],
+          "file": "usgs_global_critical/2026-10-31/PP1802_CritMin_FGDC_Metadata.xml",
+          "role": "reference",
+          "row_unit": "metadata document",
+          "rows": 1,
+          "table": "PP1802_CritMin_FGDC_Metadata.xml"
+        }
+      ]
+    },
+    {
+      "artifact": "data/staging/usgs_global_ree.parquet",
+      "coordinate_issues": {},
+      "files": {
+        "usgs_global_ree/2026-10-31/USGS_Global_REE.gdb.zip": "a2a472deed6647de3c0bd9d3120c283fc387b95b3d2857c08f11bf94ba83fc1b"
+      },
+      "kinds": {
+        "deposit": 3934
+      },
+      "locations": {
+        "located": 3114,
+        "unlocated": 820
+      },
+      "manifest_sha256": "ffff8e4df808b6c5ceaf64c552495dc74878b0ca541d8b43d4d9772ebf97e149",
+      "notes": [
+        "GDB source coordinates and WKB geometry are retained without precision inference. Polygon latitude/longitude fields are publisher-supplied; no centroid is computed.",
+        "REE nonspatial records are retained with no map coordinates. Reference joins use exact semicolon-delimited citation labels; unmatched citation text remains intact.",
+        "Native GDB OBJECTID with table prefix identifies each record. REE ID_No is kept as a source business identifier because it is not unique in the located table; duplicate-business-ID groups are reported without merging or discarding rows."
+      ],
+      "rejects": [],
+      "rows": 3934,
+      "sha256": "fdaad56a0e2c092a11d90cdc0ecd6f344f423326f36b37618d6cde2494745f93",
+      "snapshot": "data/raw/usgs_global_ree/2026-10-31",
+      "source_id": "usgs_global_ree",
+      "tables": [
+        {
+          "fields": [
+            "CC",
+            "NAME",
+            "REGION",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "file": "usgs_global_ree/2026-10-31/USGS_Global_REE.gdb.zip",
+          "geometry_type": "MultiPolygon",
+          "role": "support",
+          "rows": 288,
+          "table": "SSIB_World"
+        },
+        {
+          "fields": [
+            "NAME",
+            "COUNTRY",
+            "ISO_CODE",
+            "ISO_CC",
+            "ISO_SUB",
+            "ADMINTYPE",
+            "DISPUTED",
+            "NOTES",
+            "AUTONOMOUS",
+            "COUNTRYAFF",
+            "CONTINENT",
+            "LAND_TYPE",
+            "LAND_RANK",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "file": "usgs_global_ree/2026-10-31/USGS_Global_REE.gdb.zip",
+          "geometry_type": "MultiPolygon",
+          "role": "support",
+          "rows": 5586,
+          "table": "World_Administrative_Divisions"
+        },
+        {
+          "fields": [
+            "short_ref",
+            "full_ref"
+          ],
+          "file": "usgs_global_ree/2026-10-31/USGS_Global_REE.gdb.zip",
+          "geometry_type": null,
+          "role": "reference",
+          "rows": 1591,
+          "table": "All_Global_REE_references"
+        },
+        {
+          "accepted": 820,
+          "duplicate_business_ids": [],
+          "fields": [
+            "ID_No",
+            "Name",
+            "Name_Other",
+            "Components",
+            "Part_of",
+            "Rec_Type",
+            "Rec_Note",
+            "Country",
+            "State_Prov",
+            "Latitude",
+            "Longitude",
+            "Loc_Note",
+            "Dep_Type",
+            "Dep_Note",
+            "Dep_Form",
+            "Commods",
+            "HREE_Note",
+            "LREE_Note",
+            "REE_Ratio",
+            "REE",
+            "Status",
+            "Stat_Note",
+            "REE_Mins",
+            "Sig_Mins",
+            "Oth_Mins",
+            "Age_Mzn",
+            "Age_Ma",
+            "Host_Age",
+            "HAge_Ma",
+            "Host_Lith",
+            "Host_Unit",
+            "Assoc_Rock",
+            "Alteration",
+            "Company",
+            "Comments",
+            "Ref_List",
+            "Discov_Yr",
+            "Expl_Note",
+            "Mine_Meth",
+            "P_Status",
+            "PStat_Note",
+            "P_Years",
+            "P_Refs",
+            "P_Note",
+            "RR_Ore_Mt",
+            "RR_TREO_Mt",
+            "RR_TREOgrd",
+            "RR_REE_grd",
+            "RR_Cutoff",
+            "RR_HM_Mt",
+            "RR_HM_pct",
+            "RR_min_MT",
+            "RR_min_pct",
+            "RR_mon_Mt",
+            "RR_mon_pct",
+            "RR_oth_grd",
+            "RR_Yr_Est",
+            "RR_Refs",
+            "RR_RegCode",
+            "RR_Note",
+            "Region"
+          ],
+          "file": "usgs_global_ree/2026-10-31/USGS_Global_REE.gdb.zip",
+          "geometry_type": null,
+          "native_id_field": "OBJECTID",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 820,
+          "table": "Global_REE_nonspatial_table"
+        },
+        {
+          "accepted": 3114,
+          "duplicate_business_ids": [
+            {
+              "ID_No": 3352.0,
+              "rows": 2
+            }
+          ],
+          "fields": [
+            "ID_No",
+            "Name",
+            "Name_Other",
+            "Components",
+            "Part_of",
+            "Rec_Type",
+            "Rec_Note",
+            "Country",
+            "State_Prov",
+            "Latitude",
+            "Longitude",
+            "Loc_Note",
+            "Dep_Type",
+            "Dep_Note",
+            "Dep_Form",
+            "Commods",
+            "HREE_Note",
+            "LREE_Note",
+            "REE_Ratio",
+            "REE",
+            "Status",
+            "Stat_Note",
+            "REE_Mins",
+            "Sig_Mins",
+            "Oth_Mins",
+            "Age_Mzn",
+            "Age_Ma",
+            "Host_Age",
+            "HAge_Ma",
+            "Host_Lith",
+            "Host_Unit",
+            "Assoc_Rock",
+            "Alteration",
+            "Company",
+            "Comments",
+            "Ref_List",
+            "Discov_Yr",
+            "Expl_Note",
+            "Mine_Meth",
+            "P_Status",
+            "PStat_Note",
+            "P_Years",
+            "P_refs",
+            "P_Note",
+            "RR_Ore_Mt",
+            "RR_TREO_Mt",
+            "RR_TREOgrd",
+            "RR_REE_grd",
+            "RR_Cutoff",
+            "RR_HM_Mt",
+            "RR_HM_pct",
+            "RR_min_Mt",
+            "RR_min_pct",
+            "RR_mon_Mt",
+            "RR_mon_pct",
+            "RR_oth_grd",
+            "RR_Yr_Est",
+            "RR_Refs",
+            "RR_RegCode",
+            "RR_Note",
+            "Region"
+          ],
+          "file": "usgs_global_ree/2026-10-31/USGS_Global_REE.gdb.zip",
+          "geometry_type": "Point",
+          "native_id_field": "OBJECTID",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 3114,
+          "table": "Global_REE"
+        },
+        {
+          "fields": [
+            "Abbrev",
+            "Meaning"
+          ],
+          "file": "usgs_global_ree/2026-10-31/USGS_Global_REE.gdb.zip",
+          "geometry_type": null,
+          "role": "support",
+          "rows": 179,
+          "table": "Abbreviations_table"
+        }
+      ]
+    },
+    {
+      "artifact": "data/staging/usgs_laterites.parquet",
+      "coordinate_issues": {},
+      "files": {
+        "usgs_laterites/2026-10-29/of2011-1058_data.csv": "42ebeab321c9ce00255224fe25e110af765d64194b5cee32b96e71d803f2e6c6"
+      },
+      "kinds": {
+        "deposit": 120
+      },
+      "locations": {
+        "located": 120
+      },
+      "manifest_sha256": "c6060f3073472661bad13952e704f6535e1c51d784404c80c9e16a967c91bd8d",
+      "notes": [
+        "Source has no native record key; the fallback ID combines the table name, full source-file SHA-256, and 1-based source record order. Revised or reordered file bytes receive distinct IDs. Alias cells are not generically split.",
+        "MacRoman decoding and quoted CR line endings preserve accented names and grade inequalities. Numeric grades stay raw text; zero/blank grades do not prove cobalt inclusion. Publisher-truncated ##### text is preserved, not reconstructed."
+      ],
+      "rejects": [],
+      "rows": 120,
+      "sha256": "73e8d8e61b3e0303739bb8ac77e3bf9af4d23a2abe1865defea2b6fc79d79497",
+      "snapshot": "data/raw/usgs_laterites/2026-10-29",
+      "source_id": "usgs_laterites",
+      "tables": [
+        {
+          "accepted": 120,
+          "encoding": "mac_roman",
+          "fields": [
+            "Age Group",
+            "Assoc Deposits less 10km",
+            "AtmLeach?",
+            "Caron?",
+            "Co grade",
+            "Co pr grade%",
+            "Co re grade%",
+            "Co to grade%",
+            "Comments",
+            "Country",
+            "CountryCode",
+            "DepositArea",
+            "DepositLength km",
+            "DepositShape",
+            "DepositThick m",
+            "DepositWidth km",
+            "DiscoveryDate",
+            "FeNi smelt?",
+            "Hill",
+            "HPAL?",
+            "Includes",
+            "Karst?",
+            "LateriteRockProfile",
+            "LateriteThick m",
+            "LatitudeDecimal",
+            "LatitudeDegrees",
+            "LatitudeMinutes",
+            "LatitudeSeconds",
+            "Linear?",
+            "LongitudeDecimal",
+            "LongitudeDegrees",
+            "LongitudeMinutes",
+            "LongitudeSeconds",
+            "LowRelief?",
+            "NameDeposit",
+            "Ni CutoffGrade%",
+            "Ni grade",
+            "Ni pr grade%",
+            "Ni re CutoffGrade%",
+            "Ni to CutoffGrade%",
+            "Ni to grade%",
+            "NiBearingMinerals",
+            "Nire grade%",
+            "OtherBedrock",
+            "OtherMinerals",
+            "OtherNames",
+            "Overburden m",
+            "OwnerOperator",
+            "Plateau?",
+            "ProductionTonnage",
+            "Recovery Ni%",
+            "References",
+            "ReserveStandard",
+            "ReserveTonnage",
+            "ResourceStandard",
+            "ResourceTonnage",
+            "Source TonnGrade",
+            "SourceBedrock",
+            "StartupDate",
+            "StateProvince",
+            "Status",
+            "Subtype",
+            "Tectonic setting",
+            "TotalTonnage",
+            "Weathering Age"
+          ],
+          "file": "usgs_laterites/2026-10-29/of2011-1058_data.csv",
+          "identity_basis": "full source-file SHA-256 and 1-based source record order",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 120,
+          "source_sha256": "42ebeab321c9ce00255224fe25e110af765d64194b5cee32b96e71d803f2e6c6",
+          "table": "laterites"
+        }
+      ]
+    },
+    {
+      "artifact": "data/staging/usgs_mcs_2026.parquet",
+      "coordinate_issues": {},
+      "files": {
+        "usgs_mcs_2026/2026-10-31/MCS2026_Commodities_Data.csv": "582a0aa231aea53d8a97dc8d1cd3dfa5f885cf3760353e3d029d7f0ae4fbaaf5"
+      },
+      "kinds": {
+        "country_commodity": 8886
+      },
+      "locations": {
+        "unlocated": 8886
+      },
+      "manifest_sha256": "f7d36405a106d4e2254bf2c8b075f50c4b89fe029008743a78c1c6fff3ad576f",
+      "notes": [
+        "Rows retain source-native values and are not harmonized, pilot-filtered or mapped. CSV row numbers count logical records including the header; workbook row numbers are Excel row positions. Official critical-list HTML was consumed by the vocabulary step and is not an additional context staging table.",
+        "MCS IDs use the complete native-row SHA256 and occurrence ordinal: some statistical context keys repeat with different native content. All statistics, aggregates, years, units, symbols and comma-formatted values remain unchanged. CSV decoding is Windows-1252."
+      ],
+      "rejects": [],
+      "rows": 8886,
+      "sha256": "8adb5f63a8749261b15881a497998e53064242937179f8f3a5403210ca06ef82",
+      "snapshot": "data/raw/usgs_mcs_2026/2026-10-31",
+      "source_id": "usgs_mcs_2026",
+      "tables": [
+        {
+          "accepted": 8886,
+          "file": "usgs_mcs_2026/2026-10-31/MCS2026_Commodities_Data.csv",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 8886,
+          "source_id": "usgs_mcs_2026",
+          "table": "MCS2026_Commodities_Data.csv"
+        }
+      ]
+    },
+    {
+      "artifact": "data/staging/usgs_mrds.parquet",
+      "coordinate_issues": {},
+      "files": {
+        "usgs_mrds/2026-10-31/rdbms-tab.zip": "bf3cc4387772c72212e7a853b15ea9a724033a0e5ed66913e0ce6b043d7b6c65"
+      },
+      "kinds": {
+        "deposit": 301383,
+        "facility": 3005
+      },
+      "locations": {
+        "located": 304388
+      },
+      "manifest_sha256": "a24d0e10a15a5ef68beeba937dbbe721c03938f100667a933e66f0fbe3b72811",
+      "notes": [
+        "The compact export has 304,388 main records and 304,632 Place rows; these are different raw table counts, not silently dropped primary records. Per-child linked/unmatched-parent counts explain reconciliation; unmatched support rows remain in the immutable archive.",
+        "Names, Commodity, Materials, Place and Dups are joined by exact dep_id and retained with original child row numbers. Dups remains source evidence, not Atlas linkage.",
+        "Place.fips is not a country name or ISO code, so country remains null. Compact export lacks detailed reserve/production/reference tables; source record URLs and export Accession metadata retain that provenance boundary.",
+        "Plant is an explicit facility record kind; Producer/Past Producer are historical source status labels and are not converted into current operation or maturity."
+      ],
+      "rejects": [],
+      "rows": 304388,
+      "sha256": "639de6afaa8e08d0ea8e973acef68bfb430925a7bff2504e76bb347cfce7f989",
+      "snapshot": "data/raw/usgs_mrds/2026-10-31",
+      "source_id": "usgs_mrds",
+      "tables": [
+        {
+          "fields": [
+            "i",
+            "table",
+            "field",
+            "description"
+          ],
+          "file": "usgs_mrds/2026-10-31/rdbms-tab.zip",
+          "role": "support",
+          "rows": 48,
+          "table": "About.txt"
+        },
+        {
+          "fields": [
+            "i",
+            "xmin",
+            "ymin",
+            "xmax",
+            "ymax",
+            "onlink",
+            "when"
+          ],
+          "file": "usgs_mrds/2026-10-31/rdbms-tab.zip",
+          "role": "support",
+          "rows": 1,
+          "table": "Accession.txt"
+        },
+        {
+          "fields": [
+            "i",
+            "dep_id",
+            "line",
+            "commod",
+            "code",
+            "commod_tp",
+            "commod_group",
+            "import",
+            "inserted_by",
+            "insert_date",
+            "updated_by",
+            "update_date"
+          ],
+          "file": "usgs_mrds/2026-10-31/rdbms-tab.zip",
+          "linked_rows": 488829,
+          "role": "support",
+          "rows": 489082,
+          "table": "Commodity.txt",
+          "unmatched_parent_examples": [
+            {
+              "dep_id": "10400648",
+              "row_number": 23735
+            },
+            {
+              "dep_id": "10400649",
+              "row_number": 23778
+            },
+            {
+              "dep_id": "10400651",
+              "row_number": 23846
+            },
+            {
+              "dep_id": "10400652",
+              "row_number": 23876
+            },
+            {
+              "dep_id": "10400652",
+              "row_number": 23888
+            }
+          ],
+          "unmatched_parent_rows": 253
+        },
+        {
+          "fields": [
+            "i",
+            "dep_id",
+            "dep_id_dup",
+            "rel_type",
+            "notes"
+          ],
+          "file": "usgs_mrds/2026-10-31/rdbms-tab.zip",
+          "linked_rows": 84300,
+          "role": "support",
+          "rows": 84300,
+          "table": "Dups.txt",
+          "unmatched_parent_examples": [],
+          "unmatched_parent_rows": 0
+        },
+        {
+          "accepted": 304388,
+          "fields": [
+            "i",
+            "dep_id",
+            "name",
+            "dev_stat",
+            "url",
+            "code_list",
+            "longitude",
+            "latitude"
+          ],
+          "file": "usgs_mrds/2026-10-31/rdbms-tab.zip",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 304388,
+          "table": "MRDS.txt"
+        },
+        {
+          "fields": [
+            "i",
+            "dep_id",
+            "rec",
+            "ore_gangue",
+            "material",
+            "inserted_by",
+            "insert_date",
+            "updated_by",
+            "update_date"
+          ],
+          "file": "usgs_mrds/2026-10-31/rdbms-tab.zip",
+          "linked_rows": 261161,
+          "role": "support",
+          "rows": 261177,
+          "table": "Materials.txt",
+          "unmatched_parent_examples": [
+            {
+              "dep_id": "10400653",
+              "row_number": 1572
+            },
+            {
+              "dep_id": "10400653",
+              "row_number": 1573
+            },
+            {
+              "dep_id": "10400655",
+              "row_number": 1597
+            },
+            {
+              "dep_id": "10400656",
+              "row_number": 1655
+            },
+            {
+              "dep_id": "10400656",
+              "row_number": 1656
+            }
+          ],
+          "unmatched_parent_rows": 16
+        },
+        {
+          "fields": [
+            "i",
+            "dep_id",
+            "line",
+            "name",
+            "status",
+            "inserted_by",
+            "insert_date",
+            "updated_by",
+            "update_date"
+          ],
+          "file": "usgs_mrds/2026-10-31/rdbms-tab.zip",
+          "linked_rows": 430514,
+          "role": "support",
+          "rows": 430801,
+          "table": "Names.txt",
+          "unmatched_parent_examples": [
+            {
+              "dep_id": "10400611",
+              "row_number": 36785
+            },
+            {
+              "dep_id": "55555555",
+              "row_number": 88295
+            },
+            {
+              "dep_id": "55555555",
+              "row_number": 89447
+            },
+            {
+              "dep_id": "55555555",
+              "row_number": 312431
+            },
+            {
+              "dep_id": "55555555",
+              "row_number": 418946
+            }
+          ],
+          "unmatched_parent_rows": 287
+        },
+        {
+          "fields": [
+            "dep_id",
+            "fips",
+            "quad",
+            "huc"
+          ],
+          "file": "usgs_mrds/2026-10-31/rdbms-tab.zip",
+          "linked_rows": 304388,
+          "role": "support",
+          "rows": 304632,
+          "table": "Place.txt",
+          "unmatched_parent_examples": [
+            {
+              "dep_id": "10400648",
+              "row_number": 304385
+            },
+            {
+              "dep_id": "10400649",
+              "row_number": 304386
+            },
+            {
+              "dep_id": "10400651",
+              "row_number": 304387
+            },
+            {
+              "dep_id": "10400652",
+              "row_number": 304388
+            },
+            {
+              "dep_id": "10400653",
+              "row_number": 304389
+            }
+          ],
+          "unmatched_parent_rows": 244
+        },
+        {
+          "fields": [],
+          "file": "usgs_mrds/2026-10-31/rdbms-tab.zip",
+          "role": "reference",
+          "row_unit": "metadata document",
+          "rows": 1,
+          "table": "mrds.met"
+        },
+        {
+          "fields": [],
+          "file": "usgs_mrds/2026-10-31/rdbms-tab.zip",
+          "role": "reference",
+          "row_unit": "metadata document",
+          "rows": 1,
+          "table": "schema.ini"
+        }
+      ]
+    },
+    {
+      "artifact": "data/staging/usgs_us_critical.parquet",
+      "coordinate_issues": {},
+      "files": {
+        "usgs_us_critical/2026-10-29/object_ids.json": "acb6d06c46b94e3dc706fae6ca51f5976df0d29fc81753d53adca88dc4319ce1",
+        "usgs_us_critical/2026-10-29/page_00000.json": "b653bc44d44fd2b0acc708e64559aa132bb3f8a27a8eea7693bb926ccf54764a",
+        "usgs_us_critical/2026-10-29/page_00001.json": "48ed4992c6ce2b437343b8fe933f8b3bcb9aae85f7b35ab626528de5d16679f8",
+        "usgs_us_critical/2026-10-29/service.json": "4f05e5e8af771241640a3b4a51f56916b1513a58d6fa3379dfc4e096456e80f9"
+      },
+      "kinds": {
+        "deposit": 1271
+      },
+      "locations": {
+        "located": 1271
+      },
+      "manifest_sha256": "cb1dac5a0e322d4461bd93dce06675f9f099a0c6ac837922254f9da80155ce66",
+      "notes": [
+        "Original ranking, mineral-system, producer category and production/resource text are retained. No maturity or production measure is inferred.",
+        "The source has state labels but no country column; country remains null rather than assigning every U.S.-scope territory an inferred ISO jurisdiction."
+      ],
+      "rejects": [],
+      "rows": 1271,
+      "sha256": "d2a19a29969e0ce29fe7d89b3c5c59d34a01b0ca35321fa2d1c818a8bf577050",
+      "snapshot": "data/raw/usgs_us_critical/2026-10-29",
+      "source_id": "usgs_us_critical",
+      "tables": [
+        {
+          "file": "usgs_us_critical/2026-10-29/service.json",
+          "role": "support",
+          "rows": 1,
+          "table": "service.json"
+        },
+        {
+          "file": "usgs_us_critical/2026-10-29/object_ids.json",
+          "role": "support",
+          "rows": 1271,
+          "table": "object_ids.json"
+        },
+        {
+          "accepted": 1000,
+          "file": "usgs_us_critical/2026-10-29/page_00000.json",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 1000,
+          "table": "deposits"
+        },
+        {
+          "accepted": 271,
+          "file": "usgs_us_critical/2026-10-29/page_00001.json",
+          "rejected": 0,
+          "role": "primary",
+          "rows": 271,
+          "table": "deposits"
+        }
+      ]
+    },
+    {
+      "artifact": "data/staging/wapha.parquet",
+      "coordinate_issues": {},
+      "files": {
+        "wapha/2026-10-31/world_active_mines_17.05.2023.xlsx": "c8741fbae9ad048acb0bc3900be94891b64f6f0383bdee7457ba584f5c18335e",
+        "wapha/2026-10-31/world_inactive_mines_17.05.2023.xlsx": "9cc4486a964321237e854024b72b04b1c7d0e81ae0753253b2ded52b4a36e78d"
+      },
+      "kinds": {
+        "facility": 171473
+      },
+      "locations": {
+        "located": 171473
+      },
+      "manifest_sha256": "471e84b1e49a38d33bfcb223e40be48806818a9fc5ea9b4cb9e9e47f97f57309",
+      "notes": [
+        "WAPHA source files have no native ID or country. Fallback IDs combine active/inactive scope, full source-file SHA-256, sheet and row position; IDs change when workbook bytes change. Repeated names and coordinates remain separate. Status is historical source wording."
+      ],
+      "rejects": [],
+      "rows": 171473,
+      "sha256": "0cb728a1ab5f753f4006f51a3f93c4281afdf612c0355107ad1cdce55c07a74d",
+      "snapshot": "data/raw/wapha/2026-10-31",
+      "source_id": "wapha",
+      "tables": [
+        {
+          "accepted": 21164,
+          "fields": [
+            "Mine Name",
+            "Status",
+            "Commodity",
+            "Longitude",
+            "Latitude"
+          ],
+          "file": "wapha/2026-10-31/world_active_mines_17.05.2023.xlsx",
+          "header_row": 1,
+          "original_headers": [
+            "Mine Name",
+            "Status",
+            "Commodity",
+            "Longitude",
+            "Latitude"
+          ],
+          "rejected": 0,
+          "role": "primary",
+          "rows": 21164,
+          "source_id": "wapha",
+          "table": "Sheet1"
+        },
+        {
+          "accepted": 150309,
+          "fields": [
+            "Mine name",
+            "Status",
+            "Commodity",
+            "Longitude",
+            "Latitude"
+          ],
+          "file": "wapha/2026-10-31/world_inactive_mines_17.05.2023.xlsx",
+          "header_row": 1,
+          "original_headers": [
+            "Mine name",
+            "Status",
+            "Commodity",
+            "Longitude",
+            "Latitude"
+          ],
+          "rejected": 0,
+          "role": "primary",
+          "rows": 150309,
+          "source_id": "wapha",
+          "table": "Sheet1"
+        }
+      ]
+    }
+  ],
+  "stage": "normalize",
+  "status": "pass",
+  "step": 4,
+  "vocabulary_audit_sha256": "97e0a2efef74bce42a4dd5b72029c84c8667fa9b4e1c4a373a3b49c57bd65a5a"
+}

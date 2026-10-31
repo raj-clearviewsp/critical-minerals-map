@@ -10,7 +10,7 @@
   "license_evidence_url": "https://www.oecd.org/en/about/terms-conditions.html",
   "access_status": "automated",
   "cadence": "annual",
-  "parser": "not_implemented_step_4",
+  "parser": "pipeline.normalize.context:parse",
   "fetcher": {
     "kind": "files",
     "files": [
@@ -108,12 +108,12 @@
     "Structure response is6,371,450 bytes, no observations.",
     "Exact API path and 3.0 dataflow are exposed by the official Data Explorer; format=csvfile is documented by the official OECD API explainer. CSV observations were not downloaded during registry review. Runtime robots and rate-limit checks still apply.",
     "Do not substitute the currently linked _2025.xlsx spreadsheet without checking its actual coverage. This fetcher pins the verified 3.0 API instead.",
-    "Acquisition partitions the complete 2009\u20132024 coverage into 16 annual files, each using /all with inclusive startPeriod=year and endPeriod=year. This preserves every dimension and all covered years. The single all-years response exceeded the local 150 MiB download limit before a raw snapshot was committed.",
+    "Acquisition partitions the complete 2009–2024 coverage into 16 annual files, each using /all with inclusive startPeriod=year and endPeriod=year. This preserves every dimension and all covered years. The single all-years response exceeded the local 150 MiB download limit before a raw snapshot was committed.",
     "The official OECD API guide documents inclusive startPeriod/endPeriod, /all for unfiltered dimensions, and format=csvfile. Annual query syntax is documentation-verified; individual responses are verified during acquisition."
   ],
   "license_evidence": "you can extract from, download, copy, adapt, print, distribute, share and embed Data for any purpose, even for commercial use.",
   "license_checked_at": "2026-10-28",
-  "currency": "Report28 April2026; SDMX dataflow3.0; coverage2009\u20132024; Data Explorer indexed update25 September2026",
+  "currency": "Report28 April2026; SDMX dataflow3.0; coverage2009–2024; Data Explorer indexed update25 September2026",
   "version": "SDMX dataflow 3.0 / 2026 edition",
   "evidence_grade": "B",
   "api_evidence_url": "https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html",

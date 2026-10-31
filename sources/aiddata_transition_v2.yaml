@@ -10,7 +10,7 @@
   "license_evidence_url": "https://docs.aiddata.org/ad4/datasets/AidData_Chinese_Financing_for_Transition_Minerals_Version_2.0.zip",
   "access_status": "automated",
   "cadence": "when updated",
-  "parser": "not_implemented_step_4",
+  "parser": "pipeline.normalize.context:parse",
   "fetcher": {
     "kind": "files",
     "files": [
@@ -30,7 +30,7 @@
   ],
   "license_evidence": "The original dataset produced by AidData is licensed using the Open Data Commons Attribution License (ODC-By).",
   "license_checked_at": "2026-10-29",
-  "currency": "Published30 January2026; financing commitments2000\u20132023",
+  "currency": "Published30 January2026; financing commitments2000–2023",
   "version": "2.0",
   "evidence_grade": "C",
   "candidate_files": [

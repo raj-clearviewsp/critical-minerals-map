@@ -15,7 +15,7 @@
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "access_status": "automated",
   "cadence": "when updated",
-  "parser": "not_implemented_step_4",
+  "parser": "pipeline.normalize.facilities:parse",
   "metadata_url": "https://services.ga.gov.au/gis/rest/services/AustralianCriticalMineralsOperatingMinesAndDeposits/MapServer?f=pjson",
   "metadata_checked_at": "2026-10-29T00:55:05.279455+00:00",
   "metadata_snapshot_sha256": "979faaf307ca21b803df58df152c1d9b65fcccf17f46bd4680d758839364f558",

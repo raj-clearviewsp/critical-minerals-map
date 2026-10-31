@@ -10,7 +10,7 @@
   "license_evidence_url": "https://ecat.ga.gov.au/geonetwork/srv/api/records/bd8553a2-5150-45b3-920f-0ae8d92476bf/formatters/xml",
   "access_status": "manual_required",
   "cadence": "when updated",
-  "parser": "not_implemented_step_4",
+  "parser": "pipeline.normalize.facilities:parse",
   "fetcher": {
     "kind": "files",
     "files": [

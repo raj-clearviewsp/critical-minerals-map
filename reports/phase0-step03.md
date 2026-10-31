@@ -2,7 +2,7 @@
 
 Run date: October 31, 2026, America/Los_Angeles.
 
-**Status: local acceptance checks pass.** The vocabulary definitions, source-format readers and retained audit validate. This checkpoint must pass the corresponding pushed commit’s GitHub Actions run before Step 4 begins. Step 4 normalization has not started in this commit.
+**Status: complete.** Commit `8f0d02e` passed [GitHub CI run 41232185905](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41232185905). The vocabulary definitions, source-format readers and retained audit validate. Step 4 began only after this remote gate passed.
 
 ## Scope and outputs
 
@@ -62,7 +62,7 @@ The full audit requires the verified raw archive. The CI check validates vocabul
 | Raw archive unchanged by vocabulary audit | All 66 local raw files, including manifests/auxiliary files, preserve bytes and modification times |
 | Frontend tests, Astro diagnostics and build | 3 tests pass; zero Astro errors/warnings/hints; static build passes |
 | Browser review, responsive layout and links | Browser checked at 390, 641 and 1280 px; no horizontal overflow; anchor navigation works |
-| Step 3 commit and GitHub Actions run | [Corresponding pushed commit’s CI](https://github.com/raj-clearviewsp/critical-minerals-map/actions/workflows/ci.yml); remote gate required before Step 4 |
+| Step 3 commit and GitHub Actions run | Commit `8f0d02e`; [CI run 41232185905](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41232185905) passed |
 
 ## Preview redesign
 

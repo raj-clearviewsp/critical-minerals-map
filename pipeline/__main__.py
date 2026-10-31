@@ -15,7 +15,14 @@ def main() -> int:
     parser.add_argument("stage", choices=STAGES)
     args = parser.parse_args()
     try:
-        report = run_stage(args.root, args.stage, args.release_tag)
+        if args.stage == "normalize" and any(
+            (args.root / "data/raw").glob("*/????-??-??/manifest.json")
+        ):
+            from pipeline.normalize.core import normalize
+
+            report = normalize(args.root)
+        else:
+            report = run_stage(args.root, args.stage, args.release_tag)
     except ScaffoldError as error:
         print(f"Atlas stopped: {error}", file=sys.stderr)
         return 2

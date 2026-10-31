@@ -1,14 +1,14 @@
 # Changelog
 
-## 2026.10.31 — Phase 0, Step 3 vocabulary review (gate pending)
+## 2026.10.31 — Phase 0, Step 3 vocabulary review
 
 - Added source-aware commodity, deposit-type and status vocabularies, ISO country definitions and explained country overrides.
-- Added source-field terminology audits, retained source-format evidence, an unmapped-term queue and a reproducible coverage receipt. Pilot coverage and final validation results are pending in the Step 3 report.
+- Added source-field terminology audits, retained source-format evidence, an unmapped-term queue and a reproducible coverage receipt. All 2,640 observed pilot field values and 589 explicit code expectations pass; full validation is recorded in the Step 3 report.
 - Kept historical production, active labels, uncertain classifications, facility kinds and finance milestones distinct; vocabulary matching does not assign maturity or current operating status.
 - Added `make vocab` for the full local-source audit and `make vocab-check` for retained-audit validation in CI without raw downloads.
 - Refreshed the empty Astro preview with readable typography, straightforward navigation and a clear unpublished-data message; removed decorative numbering and implementation-oriented copy.
 - Fixed the preview Make target to use the host already configured by the npm script.
-- Step 3 remains open until its acceptance checks, final report, pushed commit and remote CI pass. Step 4 normalization has not started; no data or site has been deployed.
+- Step 3 completed with commit 8f0d02e and green CI run 41232185905. Step 4 began only after that gate. No data or site has been deployed.
 
 ## 2026.10.28 — Phase 0, Step 1 scaffold
 
@@ -38,3 +38,11 @@ Remote verification is recorded in `reports/phase0-step01.md` and the matching G
 - Verified the GA 2025 workbook’s embedded CC BY 4.0 grant and updated its registry decision.
 - Acquired the original MRDS compact relational export with commodity, names, materials and metadata tables.
 - Kept normalization and later numbered steps untouched; no data or site deployed.
+
+## 2026.10.31 — Phase 0, Step 4 source normalization
+
+- Added fifteen source parsers with a strict, provenance-preserving Parquet staging contract and complete primary-table reconciliation.
+- Preserved unlocated REE records, raw rank/size/status/facility fields, source geometry, Jasansky subsites and linked evidence. Kept country/policy and finance observations distinct from physical assets.
+- Added stable source-content fallback identities, native/physical-row duplicate checks, explicit footnote and coordinate issue accounting, and independent release counts.
+- Added bounded-memory parsing/writing, immutable-output conflict checks, unchanged reruns, failure rollback and local/CI receipt verification.
+- Step 3 passed CI before normalization began; pilot filtering and subsequent steps remain gated on this commit’s checks. No public deployment.

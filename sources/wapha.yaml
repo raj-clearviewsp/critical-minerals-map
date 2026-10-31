@@ -10,7 +10,7 @@
   "license_evidence_url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.j3tx95xmg",
   "access_status": "manual_required",
   "cadence": "when updated",
-  "parser": "not_implemented_step_4",
+  "parser": "pipeline.normalize.facilities:parse",
   "fetcher": {
     "kind": "files",
     "files": [

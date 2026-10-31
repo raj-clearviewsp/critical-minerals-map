@@ -2,7 +2,7 @@
 
 A sourced, static reference for critical mineral deposits, maturity and ownership. The implementation follows [the supplied spec](IMPLEMENTATION_SPEC.md), in numbered order.
 
-**Current status: Phase 0, Step 3 vocabulary checks pass locally; its acceptance gate is pending.** Step 1 and core Step 2 acquisition are complete. Sixteen source snapshots are captured, while canonical tables and the site remain empty. The vocabulary audit reviews source terminology without creating normalized records. Empty output files are build artifacts, not evidence that a country or commodity has no deposits. No website has been deployed. The canonical schema remains provisional.
+**Current status: Phase 0, Steps 1–3 complete; Step 4 normalization passes locally and awaits its remote CI gate.** Step 3 passed [GitHub CI](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41232185905). Sixteen source snapshots are captured. Canonical and published data remain empty, and no website has been deployed. The canonical schema remains provisional.
 
 ## Run locally
 
@@ -26,18 +26,18 @@ make data            # fetch → normalize → harmonize → link → enrich →
 make site            # frontend tests/type checks/build; requires make data first
 ```
 
-Each required stage is also an independent Make target. It requires the preceding stage's receipt. Invalid, populated, unexpected, changed or missing inputs stop the scaffold. Use `make fetch SOURCE=<source_id>` for Step 2 acquisition. Normalization, linkage and production QA remain gated to later steps. Once raw data exists, the empty scaffold correctly refuses to normalize it; use `make check site` to validate code and the existing empty preview.
+Each required stage is also an independent Make target. It requires the preceding stage's receipt. Invalid, populated, unexpected, changed or missing inputs stop the scaffold. Use `make fetch SOURCE=<source_id>` for Step 2 acquisition. `make normalize` selects the real source parsers when verified raw snapshots exist. Linkage and production QA remain gated to later steps; `make data` still refuses populated inputs. Use `make check site` to validate code and the empty public preview.
 
 ## Outputs and provenance
 
-- `data/staging/source_record.parquet`: zero-row staging contract.
+- `data/staging/<source_id>.parquet`: source-specific staging records, named and checksummed by `reports/normalization-audit.json`. The old zero-row `source_record.parquet` scaffold artifact is retained separately from this active inventory.
 - `data/canonical/*.parquet`: nine zero-row Phase 0 table contracts.
 - `data/publish/`: CSV/Parquet mirrors and a JSON-schema-validated manifest with SHA-256 checksums. Plain Parquet at this step; GeoParquet and real PMTiles arrive in Step 10.
 - `reports/runs/`: per-stage JSON receipts with rows, rejects, hashes and explicit scaffold status.
 - `reports/vocabulary-audit.json`, `vocabulary-observations.csv`, and `vocabulary-source-fields.json`: Step 3 audit receipt, source-field terminology and format evidence.
 - `review/unmapped-vocabulary.csv`: observed terms requiring review, including deliberately unresolved geology and status labels.
 - `site/dist/`: local static site build.
-- [Step 1 run report](reports/phase0-step01.md), [Step 3 draft report](reports/phase0-step03.md), and [changelog](CHANGELOG.md).
+- [Step 1 run report](reports/phase0-step01.md), [Step 3 report](reports/phase0-step03.md), and [changelog](CHANGELOG.md).
 
 The manifest's `release_tag` defaults to `2026.10.28`, the spec's date. It labels a scaffold build, not a data release. `data_as_of` is null because no observation data has been published by the scaffold. Identical reruns preserve bytes and modification times. Conflicting outputs are never overwritten. To experiment with a new build label, use a separate clean checkout; preserve existing outputs first.
 
@@ -61,7 +61,7 @@ Nothing in canonical data is edited by hand. Raw downloads will be immutable and
 
 GitHub Actions separates lint/tests, the data build, and the site build. After Python tests, `make vocab-check` validates the retained terminology audit against the committed vocabularies without downloading raw data. The site job consumes the exact data artifact from the data job. Actions use pinned revisions; uv and npm use committed lockfiles. Dependabot checks uv, npm and action updates weekly. There is no deployment workflow.
 
-A step is complete only when its acceptance checks pass, its report and changelog are written, its commit is pushed, and GitHub CI is green. The next numbered step remains gated until then. Step 3 still needs its final coverage results, validation record and remote CI; Step 4 normalization has not started. Phase 1 requires Raj's Phase 0 sign-off. Public deployment and uncertain-license use require the approvals listed in the spec.
+A step is complete only when its acceptance checks pass, its report and changelog are written, its commit is pushed, and GitHub CI is green. The next numbered step remains gated until then. Step 3 passed all checks and remote CI; Step 4 has passed local validation and awaits its remote CI gate. Phase 1 requires Raj's Phase 0 sign-off. Public deployment and uncertain-license use require the approvals listed in the spec.
 
 Raj supplied `raj@satnamenergy.com` for the download User-Agent. Error-report inbox and branding remain owner decisions before launch. Local code is not assigned a new license by this scaffold; downstream source data will retain its own license and attribution requirements.
 
@@ -96,4 +96,14 @@ The intake follows `schemas/local-intake.schema.json`: source ID, acquisition me
 
 Aliases are exact and source-aware after Unicode, whitespace and case normalization. Only reviewed field-specific delimiters and explicit composite mappings split commodity values. Raw wording and uncertainty qualifiers remain evidence. Generic clay does not imply ion adsorption; historical Producer and Active labels do not imply present operation. ISO country mappings use pinned `pycountry` and explained overrides; ambiguous geography remains unresolved.
 
-After changing vocabularies, rerun `make vocab` against the verified archive before `make vocab-check`. The latter checks vocabulary and observation hashes and replays resolution from the retained audit, so CI can detect stale mappings without raw files. It cannot replace local verification of the original source snapshots. The Step 3 gate requires no unmapped pilot commodity associations; unresolved nonpilot terminology remains visible in the review queue. Final counts and validation are tracked in the [draft Step 3 report](reports/phase0-step03.md).
+After changing vocabularies, rerun `make vocab` against the verified archive before `make vocab-check`. The latter checks vocabulary and observation hashes and replays resolution from the retained audit, so CI can detect stale mappings without raw files. It cannot replace local verification of the original source snapshots. The Step 3 gate requires no unmapped pilot commodity associations; unresolved nonpilot terminology remains visible in the review queue. Final counts and validation are tracked in the [Step 3 report](reports/phase0-step03.md).
+
+## Normalize source records
+
+```sh
+make normalize                 # local verified raw sources → per-source Parquet
+make normalize-check           # verify local raw/staging hashes, schemas and counts
+make normalize-receipt-check   # offline definitions/reconciliation check for CI
+```
+
+The [Step 4 report](reports/phase0-step04.md) distinguishes deposits, facilities, source groupings, financial records and country/policy observations. All original fields and row provenance are retained. Unlocated records stay unlocated; unknown retrieval times and coordinate accuracy remain explicit. The staging contract is in `pipeline/normalize/core.py`. No pilot filter, inferred maturity, entity merge or published observation is introduced by normalization.

@@ -10,7 +10,7 @@
   "license_evidence_url": "https://api.datacite.org/dois/10.5066/P9K1HBNT",
   "access_status": "automated",
   "cadence": "when updated",
-  "parser": "not_implemented_step_4",
+  "parser": "pipeline.normalize.geology:parse",
   "fetcher": {
     "kind": "arcgis",
     "url": "https://energy.usgs.gov/arcgis/rest/services/Hosted/Critical_mineral_deposits_of_the_United_States/FeatureServer/0",
@@ -19,7 +19,7 @@
   "notes": [
     "Dataset web landing abstract and DataCite abstract retain old681-deposit count; current v3 API and Sept29 2026 publisher news confirm1271.",
     "No source-specific rate ceiling found; use serialized requests with conservative delay and cache.",
-    "Source ranking1\u20136 is not the Atlas maturity ladder; map only in the later maturity step."
+    "Source ranking1–6 is not the Atlas maturity ladder; map only in the later maturity step."
   ],
   "license_evidence": {
     "url": "https://api.datacite.org/dois/10.5066/P9K1HBNT",

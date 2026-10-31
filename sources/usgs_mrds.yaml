@@ -10,7 +10,7 @@
   "license_evidence_url": "https://www.arcgis.com/sharing/rest/content/items/579544a8423e40bbba6c1229082554d1?f=pjson",
   "access_status": "manual_required",
   "cadence": "frozen",
-  "parser": "not_implemented_step_4",
+  "parser": "pipeline.normalize.geology:parse",
   "fetcher": {
     "kind": "disabled",
     "files": []

@@ -10,7 +10,7 @@
   "license_evidence_url": "https://www.icmm.com/en-gb/snippets/footer/terms-and-conditions",
   "access_status": "automated",
   "cadence": "when updated",
-  "parser": "not_implemented_step_4",
+  "parser": "pipeline.normalize.facilities:parse",
   "fetcher": {
     "kind": "files",
     "files": [

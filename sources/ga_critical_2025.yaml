@@ -10,7 +10,7 @@
   "license_evidence_url": "https://d28rz98at9flks.cloudfront.net/150802/150802_01_0.xlsx",
   "access_status": "manual_required",
   "cadence": "when updated",
-  "parser": "not_implemented_step_4",
+  "parser": "pipeline.normalize.facilities:parse",
   "fetcher": {
     "kind": "files",
     "files": [

@@ -10,7 +10,7 @@ export npm_config_cache ?= $(CURDIR)/.cache/npm
 RUN = $(UV) run --locked
 PIPELINE = $(RUN) python -m pipeline --root . --release-tag $(RELEASE_TAG)
 
-.PHONY: all setup setup-python setup-site hooks lint test check data fetch sources vocab vocab-check normalize harmonize link enrich qa publish site preview
+.PHONY: all setup setup-python setup-site hooks lint test check data fetch sources vocab vocab-check normalize-check normalize-receipt-check normalize harmonize link enrich qa publish site preview
 
 all: setup check data site
 
@@ -51,6 +51,12 @@ vocab:
 
 vocab-check:
 	$(RUN) python -m pipeline.vocab --root . --check
+
+normalize-check:
+	$(RUN) python -m pipeline.normalize --root . --check --raw
+
+normalize-receipt-check:
+	$(RUN) python -m pipeline.normalize --root . --check
 
 normalize harmonize link enrich qa publish:
 	$(PIPELINE) $@

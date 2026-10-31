@@ -10,7 +10,7 @@
   "license_evidence_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
   "access_status": "automated",
   "cadence": "frozen",
-  "parser": "not_implemented_step_4",
+  "parser": "pipeline.normalize.geology:parse",
   "fetcher": {
     "kind": "files",
     "files": [
