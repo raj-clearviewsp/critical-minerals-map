@@ -1,0 +1,1182 @@
+schema_version: vocab-v1
+kind: countries
+authority:
+  package: pycountry
+  version: 26.2.16
+  standard: ISO 3166-1 alpha-3
+  url: https://github.com/pycountry/pycountry
+notes:
+- Country codes and names reproduce the pinned pycountry ISO database; they do not
+  express a position on sovereignty.
+- Unresolved historic, aggregate, border-spanning and non-ISO source labels are retained
+  for review. No fuzzy country matching.
+entries:
+- code: ABW
+  alpha_2: AW
+  numeric: '533'
+  name: Aruba
+- code: AFG
+  alpha_2: AF
+  numeric: '004'
+  name: Afghanistan
+  official_name: Islamic Republic of Afghanistan
+- code: AGO
+  alpha_2: AO
+  numeric: '024'
+  name: Angola
+  official_name: Republic of Angola
+- code: AIA
+  alpha_2: AI
+  numeric: '660'
+  name: Anguilla
+- code: ALA
+  alpha_2: AX
+  numeric: '248'
+  name: Åland Islands
+- code: ALB
+  alpha_2: AL
+  numeric: 008
+  name: Albania
+  official_name: Republic of Albania
+- code: AND
+  alpha_2: AD
+  numeric: '020'
+  name: Andorra
+  official_name: Principality of Andorra
+- code: ARE
+  alpha_2: AE
+  numeric: '784'
+  name: United Arab Emirates
+- code: ARG
+  alpha_2: AR
+  numeric: '032'
+  name: Argentina
+  official_name: Argentine Republic
+- code: ARM
+  alpha_2: AM
+  numeric: '051'
+  name: Armenia
+  official_name: Republic of Armenia
+- code: ASM
+  alpha_2: AS
+  numeric: '016'
+  name: American Samoa
+- code: ATA
+  alpha_2: AQ
+  numeric: '010'
+  name: Antarctica
+- code: ATF
+  alpha_2: TF
+  numeric: '260'
+  name: French Southern Territories
+- code: ATG
+  alpha_2: AG
+  numeric: 028
+  name: Antigua and Barbuda
+- code: AUS
+  alpha_2: AU
+  numeric: '036'
+  name: Australia
+- code: AUT
+  alpha_2: AT
+  numeric: '040'
+  name: Austria
+  official_name: Republic of Austria
+- code: AZE
+  alpha_2: AZ
+  numeric: '031'
+  name: Azerbaijan
+  official_name: Republic of Azerbaijan
+- code: BDI
+  alpha_2: BI
+  numeric: '108'
+  name: Burundi
+  official_name: Republic of Burundi
+- code: BEL
+  alpha_2: BE
+  numeric: '056'
+  name: Belgium
+  official_name: Kingdom of Belgium
+- code: BEN
+  alpha_2: BJ
+  numeric: '204'
+  name: Benin
+  official_name: Republic of Benin
+- code: BES
+  alpha_2: BQ
+  numeric: '535'
+  name: Bonaire, Sint Eustatius and Saba
+  official_name: Bonaire, Sint Eustatius and Saba
+- code: BFA
+  alpha_2: BF
+  numeric: '854'
+  name: Burkina Faso
+- code: BGD
+  alpha_2: BD
+  numeric: '050'
+  name: Bangladesh
+  official_name: People's Republic of Bangladesh
+- code: BGR
+  alpha_2: BG
+  numeric: '100'
+  name: Bulgaria
+  official_name: Republic of Bulgaria
+- code: BHR
+  alpha_2: BH
+  numeric: 048
+  name: Bahrain
+  official_name: Kingdom of Bahrain
+- code: BHS
+  alpha_2: BS
+  numeric: '044'
+  name: Bahamas
+  official_name: Commonwealth of the Bahamas
+- code: BIH
+  alpha_2: BA
+  numeric: '070'
+  name: Bosnia and Herzegovina
+  official_name: Republic of Bosnia and Herzegovina
+- code: BLM
+  alpha_2: BL
+  numeric: '652'
+  name: Saint Barthélemy
+- code: BLR
+  alpha_2: BY
+  numeric: '112'
+  name: Belarus
+  official_name: Republic of Belarus
+- code: BLZ
+  alpha_2: BZ
+  numeric: 084
+  name: Belize
+- code: BMU
+  alpha_2: BM
+  numeric: '060'
+  name: Bermuda
+- code: BOL
+  alpha_2: BO
+  numeric: 068
+  name: Bolivia, Plurinational State of
+  official_name: Plurinational State of Bolivia
+- code: BRA
+  alpha_2: BR
+  numeric: '076'
+  name: Brazil
+  official_name: Federative Republic of Brazil
+- code: BRB
+  alpha_2: BB
+  numeric: '052'
+  name: Barbados
+- code: BRN
+  alpha_2: BN
+  numeric: 096
+  name: Brunei Darussalam
+- code: BTN
+  alpha_2: BT
+  numeric: '064'
+  name: Bhutan
+  official_name: Kingdom of Bhutan
+- code: BVT
+  alpha_2: BV
+  numeric: '074'
+  name: Bouvet Island
+- code: BWA
+  alpha_2: BW
+  numeric: '072'
+  name: Botswana
+  official_name: Republic of Botswana
+- code: CAF
+  alpha_2: CF
+  numeric: '140'
+  name: Central African Republic
+- code: CAN
+  alpha_2: CA
+  numeric: '124'
+  name: Canada
+- code: CCK
+  alpha_2: CC
+  numeric: '166'
+  name: Cocos (Keeling) Islands
+- code: CHE
+  alpha_2: CH
+  numeric: '756'
+  name: Switzerland
+  official_name: Swiss Confederation
+- code: CHL
+  alpha_2: CL
+  numeric: '152'
+  name: Chile
+  official_name: Republic of Chile
+- code: CHN
+  alpha_2: CN
+  numeric: '156'
+  name: China
+  official_name: People's Republic of China
+- code: CIV
+  alpha_2: CI
+  numeric: '384'
+  name: Côte d'Ivoire
+  official_name: Republic of Côte d'Ivoire
+- code: CMR
+  alpha_2: CM
+  numeric: '120'
+  name: Cameroon
+  official_name: Republic of Cameroon
+- code: COD
+  alpha_2: CD
+  numeric: '180'
+  name: Congo, The Democratic Republic of the
+- code: COG
+  alpha_2: CG
+  numeric: '178'
+  name: Congo
+  official_name: Republic of the Congo
+- code: COK
+  alpha_2: CK
+  numeric: '184'
+  name: Cook Islands
+- code: COL
+  alpha_2: CO
+  numeric: '170'
+  name: Colombia
+  official_name: Republic of Colombia
+- code: COM
+  alpha_2: KM
+  numeric: '174'
+  name: Comoros
+  official_name: Union of the Comoros
+- code: CPV
+  alpha_2: CV
+  numeric: '132'
+  name: Cabo Verde
+  official_name: Republic of Cabo Verde
+- code: CRI
+  alpha_2: CR
+  numeric: '188'
+  name: Costa Rica
+  official_name: Republic of Costa Rica
+- code: CUB
+  alpha_2: CU
+  numeric: '192'
+  name: Cuba
+  official_name: Republic of Cuba
+- code: CUW
+  alpha_2: CW
+  numeric: '531'
+  name: Curaçao
+  official_name: Curaçao
+- code: CXR
+  alpha_2: CX
+  numeric: '162'
+  name: Christmas Island
+- code: CYM
+  alpha_2: KY
+  numeric: '136'
+  name: Cayman Islands
+- code: CYP
+  alpha_2: CY
+  numeric: '196'
+  name: Cyprus
+  official_name: Republic of Cyprus
+- code: CZE
+  alpha_2: CZ
+  numeric: '203'
+  name: Czechia
+  official_name: Czech Republic
+- code: DEU
+  alpha_2: DE
+  numeric: '276'
+  name: Germany
+  official_name: Federal Republic of Germany
+- code: DJI
+  alpha_2: DJ
+  numeric: '262'
+  name: Djibouti
+  official_name: Republic of Djibouti
+- code: DMA
+  alpha_2: DM
+  numeric: '212'
+  name: Dominica
+  official_name: Commonwealth of Dominica
+- code: DNK
+  alpha_2: DK
+  numeric: '208'
+  name: Denmark
+  official_name: Kingdom of Denmark
+- code: DOM
+  alpha_2: DO
+  numeric: '214'
+  name: Dominican Republic
+- code: DZA
+  alpha_2: DZ
+  numeric: '012'
+  name: Algeria
+  official_name: People's Democratic Republic of Algeria
+- code: ECU
+  alpha_2: EC
+  numeric: '218'
+  name: Ecuador
+  official_name: Republic of Ecuador
+- code: EGY
+  alpha_2: EG
+  numeric: '818'
+  name: Egypt
+  official_name: Arab Republic of Egypt
+- code: ERI
+  alpha_2: ER
+  numeric: '232'
+  name: Eritrea
+  official_name: the State of Eritrea
+- code: ESH
+  alpha_2: EH
+  numeric: '732'
+  name: Western Sahara
+- code: ESP
+  alpha_2: ES
+  numeric: '724'
+  name: Spain
+  official_name: Kingdom of Spain
+- code: EST
+  alpha_2: EE
+  numeric: '233'
+  name: Estonia
+  official_name: Republic of Estonia
+- code: ETH
+  alpha_2: ET
+  numeric: '231'
+  name: Ethiopia
+  official_name: Federal Democratic Republic of Ethiopia
+- code: FIN
+  alpha_2: FI
+  numeric: '246'
+  name: Finland
+  official_name: Republic of Finland
+- code: FJI
+  alpha_2: FJ
+  numeric: '242'
+  name: Fiji
+  official_name: Republic of Fiji
+- code: FLK
+  alpha_2: FK
+  numeric: '238'
+  name: Falkland Islands (Malvinas)
+- code: FRA
+  alpha_2: FR
+  numeric: '250'
+  name: France
+  official_name: French Republic
+- code: FRO
+  alpha_2: FO
+  numeric: '234'
+  name: Faroe Islands
+- code: FSM
+  alpha_2: FM
+  numeric: '583'
+  name: Micronesia, Federated States of
+  official_name: Federated States of Micronesia
+- code: GAB
+  alpha_2: GA
+  numeric: '266'
+  name: Gabon
+  official_name: Gabonese Republic
+- code: GBR
+  alpha_2: GB
+  numeric: '826'
+  name: United Kingdom
+  official_name: United Kingdom of Great Britain and Northern Ireland
+- code: GEO
+  alpha_2: GE
+  numeric: '268'
+  name: Georgia
+- code: GGY
+  alpha_2: GG
+  numeric: '831'
+  name: Guernsey
+- code: GHA
+  alpha_2: GH
+  numeric: '288'
+  name: Ghana
+  official_name: Republic of Ghana
+- code: GIB
+  alpha_2: GI
+  numeric: '292'
+  name: Gibraltar
+- code: GIN
+  alpha_2: GN
+  numeric: '324'
+  name: Guinea
+  official_name: Republic of Guinea
+- code: GLP
+  alpha_2: GP
+  numeric: '312'
+  name: Guadeloupe
+- code: GMB
+  alpha_2: GM
+  numeric: '270'
+  name: Gambia
+  official_name: Republic of the Gambia
+- code: GNB
+  alpha_2: GW
+  numeric: '624'
+  name: Guinea-Bissau
+  official_name: Republic of Guinea-Bissau
+- code: GNQ
+  alpha_2: GQ
+  numeric: '226'
+  name: Equatorial Guinea
+  official_name: Republic of Equatorial Guinea
+- code: GRC
+  alpha_2: GR
+  numeric: '300'
+  name: Greece
+  official_name: Hellenic Republic
+- code: GRD
+  alpha_2: GD
+  numeric: '308'
+  name: Grenada
+- code: GRL
+  alpha_2: GL
+  numeric: '304'
+  name: Greenland
+- code: GTM
+  alpha_2: GT
+  numeric: '320'
+  name: Guatemala
+  official_name: Republic of Guatemala
+- code: GUF
+  alpha_2: GF
+  numeric: '254'
+  name: French Guiana
+- code: GUM
+  alpha_2: GU
+  numeric: '316'
+  name: Guam
+- code: GUY
+  alpha_2: GY
+  numeric: '328'
+  name: Guyana
+  official_name: Republic of Guyana
+- code: HKG
+  alpha_2: HK
+  numeric: '344'
+  name: Hong Kong
+  official_name: Hong Kong Special Administrative Region of China
+- code: HMD
+  alpha_2: HM
+  numeric: '334'
+  name: Heard Island and McDonald Islands
+- code: HND
+  alpha_2: HN
+  numeric: '340'
+  name: Honduras
+  official_name: Republic of Honduras
+- code: HRV
+  alpha_2: HR
+  numeric: '191'
+  name: Croatia
+  official_name: Republic of Croatia
+- code: HTI
+  alpha_2: HT
+  numeric: '332'
+  name: Haiti
+  official_name: Republic of Haiti
+- code: HUN
+  alpha_2: HU
+  numeric: '348'
+  name: Hungary
+  official_name: Hungary
+- code: IDN
+  alpha_2: ID
+  numeric: '360'
+  name: Indonesia
+  official_name: Republic of Indonesia
+- code: IMN
+  alpha_2: IM
+  numeric: '833'
+  name: Isle of Man
+- code: IND
+  alpha_2: IN
+  numeric: '356'
+  name: India
+  official_name: Republic of India
+- code: IOT
+  alpha_2: IO
+  numeric: 086
+  name: British Indian Ocean Territory
+- code: IRL
+  alpha_2: IE
+  numeric: '372'
+  name: Ireland
+- code: IRN
+  alpha_2: IR
+  numeric: '364'
+  name: Iran, Islamic Republic of
+  official_name: Islamic Republic of Iran
+- code: IRQ
+  alpha_2: IQ
+  numeric: '368'
+  name: Iraq
+  official_name: Republic of Iraq
+- code: ISL
+  alpha_2: IS
+  numeric: '352'
+  name: Iceland
+  official_name: Republic of Iceland
+- code: ISR
+  alpha_2: IL
+  numeric: '376'
+  name: Israel
+  official_name: State of Israel
+- code: ITA
+  alpha_2: IT
+  numeric: '380'
+  name: Italy
+  official_name: Italian Republic
+- code: JAM
+  alpha_2: JM
+  numeric: '388'
+  name: Jamaica
+- code: JEY
+  alpha_2: JE
+  numeric: '832'
+  name: Jersey
+- code: JOR
+  alpha_2: JO
+  numeric: '400'
+  name: Jordan
+  official_name: Hashemite Kingdom of Jordan
+- code: JPN
+  alpha_2: JP
+  numeric: '392'
+  name: Japan
+- code: KAZ
+  alpha_2: KZ
+  numeric: '398'
+  name: Kazakhstan
+  official_name: Republic of Kazakhstan
+- code: KEN
+  alpha_2: KE
+  numeric: '404'
+  name: Kenya
+  official_name: Republic of Kenya
+- code: KGZ
+  alpha_2: KG
+  numeric: '417'
+  name: Kyrgyzstan
+  official_name: Kyrgyz Republic
+- code: KHM
+  alpha_2: KH
+  numeric: '116'
+  name: Cambodia
+  official_name: Kingdom of Cambodia
+- code: KIR
+  alpha_2: KI
+  numeric: '296'
+  name: Kiribati
+  official_name: Republic of Kiribati
+- code: KNA
+  alpha_2: KN
+  numeric: '659'
+  name: Saint Kitts and Nevis
+- code: KOR
+  alpha_2: KR
+  numeric: '410'
+  name: Korea, Republic of
+- code: KWT
+  alpha_2: KW
+  numeric: '414'
+  name: Kuwait
+  official_name: State of Kuwait
+- code: LAO
+  alpha_2: LA
+  numeric: '418'
+  name: Lao People's Democratic Republic
+- code: LBN
+  alpha_2: LB
+  numeric: '422'
+  name: Lebanon
+  official_name: Lebanese Republic
+- code: LBR
+  alpha_2: LR
+  numeric: '430'
+  name: Liberia
+  official_name: Republic of Liberia
+- code: LBY
+  alpha_2: LY
+  numeric: '434'
+  name: Libya
+  official_name: Libya
+- code: LCA
+  alpha_2: LC
+  numeric: '662'
+  name: Saint Lucia
+- code: LIE
+  alpha_2: LI
+  numeric: '438'
+  name: Liechtenstein
+  official_name: Principality of Liechtenstein
+- code: LKA
+  alpha_2: LK
+  numeric: '144'
+  name: Sri Lanka
+  official_name: Democratic Socialist Republic of Sri Lanka
+- code: LSO
+  alpha_2: LS
+  numeric: '426'
+  name: Lesotho
+  official_name: Kingdom of Lesotho
+- code: LTU
+  alpha_2: LT
+  numeric: '440'
+  name: Lithuania
+  official_name: Republic of Lithuania
+- code: LUX
+  alpha_2: LU
+  numeric: '442'
+  name: Luxembourg
+  official_name: Grand Duchy of Luxembourg
+- code: LVA
+  alpha_2: LV
+  numeric: '428'
+  name: Latvia
+  official_name: Republic of Latvia
+- code: MAC
+  alpha_2: MO
+  numeric: '446'
+  name: Macao
+  official_name: Macao Special Administrative Region of China
+- code: MAF
+  alpha_2: MF
+  numeric: '663'
+  name: Saint Martin (French part)
+- code: MAR
+  alpha_2: MA
+  numeric: '504'
+  name: Morocco
+  official_name: Kingdom of Morocco
+- code: MCO
+  alpha_2: MC
+  numeric: '492'
+  name: Monaco
+  official_name: Principality of Monaco
+- code: MDA
+  alpha_2: MD
+  numeric: '498'
+  name: Moldova, Republic of
+  official_name: Republic of Moldova
+- code: MDG
+  alpha_2: MG
+  numeric: '450'
+  name: Madagascar
+  official_name: Republic of Madagascar
+- code: MDV
+  alpha_2: MV
+  numeric: '462'
+  name: Maldives
+  official_name: Republic of Maldives
+- code: MEX
+  alpha_2: MX
+  numeric: '484'
+  name: Mexico
+  official_name: United Mexican States
+- code: MHL
+  alpha_2: MH
+  numeric: '584'
+  name: Marshall Islands
+  official_name: Republic of the Marshall Islands
+- code: MKD
+  alpha_2: MK
+  numeric: '807'
+  name: North Macedonia
+  official_name: Republic of North Macedonia
+- code: MLI
+  alpha_2: ML
+  numeric: '466'
+  name: Mali
+  official_name: Republic of Mali
+- code: MLT
+  alpha_2: MT
+  numeric: '470'
+  name: Malta
+  official_name: Republic of Malta
+- code: MMR
+  alpha_2: MM
+  numeric: '104'
+  name: Myanmar
+  official_name: Republic of Myanmar
+- code: MNE
+  alpha_2: ME
+  numeric: '499'
+  name: Montenegro
+  official_name: Montenegro
+- code: MNG
+  alpha_2: MN
+  numeric: '496'
+  name: Mongolia
+- code: MNP
+  alpha_2: MP
+  numeric: '580'
+  name: Northern Mariana Islands
+  official_name: Commonwealth of the Northern Mariana Islands
+- code: MOZ
+  alpha_2: MZ
+  numeric: '508'
+  name: Mozambique
+  official_name: Republic of Mozambique
+- code: MRT
+  alpha_2: MR
+  numeric: '478'
+  name: Mauritania
+  official_name: Islamic Republic of Mauritania
+- code: MSR
+  alpha_2: MS
+  numeric: '500'
+  name: Montserrat
+- code: MTQ
+  alpha_2: MQ
+  numeric: '474'
+  name: Martinique
+- code: MUS
+  alpha_2: MU
+  numeric: '480'
+  name: Mauritius
+  official_name: Republic of Mauritius
+- code: MWI
+  alpha_2: MW
+  numeric: '454'
+  name: Malawi
+  official_name: Republic of Malawi
+- code: MYS
+  alpha_2: MY
+  numeric: '458'
+  name: Malaysia
+- code: MYT
+  alpha_2: YT
+  numeric: '175'
+  name: Mayotte
+- code: NAM
+  alpha_2: NA
+  numeric: '516'
+  name: Namibia
+  official_name: Republic of Namibia
+- code: NCL
+  alpha_2: NC
+  numeric: '540'
+  name: New Caledonia
+- code: NER
+  alpha_2: NE
+  numeric: '562'
+  name: Niger
+  official_name: Republic of the Niger
+- code: NFK
+  alpha_2: NF
+  numeric: '574'
+  name: Norfolk Island
+- code: NGA
+  alpha_2: NG
+  numeric: '566'
+  name: Nigeria
+  official_name: Federal Republic of Nigeria
+- code: NIC
+  alpha_2: NI
+  numeric: '558'
+  name: Nicaragua
+  official_name: Republic of Nicaragua
+- code: NIU
+  alpha_2: NU
+  numeric: '570'
+  name: Niue
+  official_name: Niue
+- code: NLD
+  alpha_2: NL
+  numeric: '528'
+  name: Netherlands
+  official_name: Kingdom of the Netherlands
+- code: NOR
+  alpha_2: 'NO'
+  numeric: '578'
+  name: Norway
+  official_name: Kingdom of Norway
+- code: NPL
+  alpha_2: NP
+  numeric: '524'
+  name: Nepal
+  official_name: Federal Democratic Republic of Nepal
+- code: NRU
+  alpha_2: NR
+  numeric: '520'
+  name: Nauru
+  official_name: Republic of Nauru
+- code: NZL
+  alpha_2: NZ
+  numeric: '554'
+  name: New Zealand
+- code: OMN
+  alpha_2: OM
+  numeric: '512'
+  name: Oman
+  official_name: Sultanate of Oman
+- code: PAK
+  alpha_2: PK
+  numeric: '586'
+  name: Pakistan
+  official_name: Islamic Republic of Pakistan
+- code: PAN
+  alpha_2: PA
+  numeric: '591'
+  name: Panama
+  official_name: Republic of Panama
+- code: PCN
+  alpha_2: PN
+  numeric: '612'
+  name: Pitcairn
+- code: PER
+  alpha_2: PE
+  numeric: '604'
+  name: Peru
+  official_name: Republic of Peru
+- code: PHL
+  alpha_2: PH
+  numeric: '608'
+  name: Philippines
+  official_name: Republic of the Philippines
+- code: PLW
+  alpha_2: PW
+  numeric: '585'
+  name: Palau
+  official_name: Republic of Palau
+- code: PNG
+  alpha_2: PG
+  numeric: '598'
+  name: Papua New Guinea
+  official_name: Independent State of Papua New Guinea
+- code: POL
+  alpha_2: PL
+  numeric: '616'
+  name: Poland
+  official_name: Republic of Poland
+- code: PRI
+  alpha_2: PR
+  numeric: '630'
+  name: Puerto Rico
+- code: PRK
+  alpha_2: KP
+  numeric: '408'
+  name: Korea, Democratic People's Republic of
+  official_name: Democratic People's Republic of Korea
+- code: PRT
+  alpha_2: PT
+  numeric: '620'
+  name: Portugal
+  official_name: Portuguese Republic
+- code: PRY
+  alpha_2: PY
+  numeric: '600'
+  name: Paraguay
+  official_name: Republic of Paraguay
+- code: PSE
+  alpha_2: PS
+  numeric: '275'
+  name: Palestine, State of
+  official_name: the State of Palestine
+- code: PYF
+  alpha_2: PF
+  numeric: '258'
+  name: French Polynesia
+- code: QAT
+  alpha_2: QA
+  numeric: '634'
+  name: Qatar
+  official_name: State of Qatar
+- code: REU
+  alpha_2: RE
+  numeric: '638'
+  name: Réunion
+- code: ROU
+  alpha_2: RO
+  numeric: '642'
+  name: Romania
+- code: RUS
+  alpha_2: RU
+  numeric: '643'
+  name: Russian Federation
+- code: RWA
+  alpha_2: RW
+  numeric: '646'
+  name: Rwanda
+  official_name: Rwandese Republic
+- code: SAU
+  alpha_2: SA
+  numeric: '682'
+  name: Saudi Arabia
+  official_name: Kingdom of Saudi Arabia
+- code: SDN
+  alpha_2: SD
+  numeric: '729'
+  name: Sudan
+  official_name: Republic of the Sudan
+- code: SEN
+  alpha_2: SN
+  numeric: '686'
+  name: Senegal
+  official_name: Republic of Senegal
+- code: SGP
+  alpha_2: SG
+  numeric: '702'
+  name: Singapore
+  official_name: Republic of Singapore
+- code: SGS
+  alpha_2: GS
+  numeric: '239'
+  name: South Georgia and the South Sandwich Islands
+- code: SHN
+  alpha_2: SH
+  numeric: '654'
+  name: Saint Helena, Ascension and Tristan da Cunha
+- code: SJM
+  alpha_2: SJ
+  numeric: '744'
+  name: Svalbard and Jan Mayen
+- code: SLB
+  alpha_2: SB
+  numeric: 090
+  name: Solomon Islands
+- code: SLE
+  alpha_2: SL
+  numeric: '694'
+  name: Sierra Leone
+  official_name: Republic of Sierra Leone
+- code: SLV
+  alpha_2: SV
+  numeric: '222'
+  name: El Salvador
+  official_name: Republic of El Salvador
+- code: SMR
+  alpha_2: SM
+  numeric: '674'
+  name: San Marino
+  official_name: Republic of San Marino
+- code: SOM
+  alpha_2: SO
+  numeric: '706'
+  name: Somalia
+  official_name: Federal Republic of Somalia
+- code: SPM
+  alpha_2: PM
+  numeric: '666'
+  name: Saint Pierre and Miquelon
+- code: SRB
+  alpha_2: RS
+  numeric: '688'
+  name: Serbia
+  official_name: Republic of Serbia
+- code: SSD
+  alpha_2: SS
+  numeric: '728'
+  name: South Sudan
+  official_name: Republic of South Sudan
+- code: STP
+  alpha_2: ST
+  numeric: '678'
+  name: Sao Tome and Principe
+  official_name: Democratic Republic of Sao Tome and Principe
+- code: SUR
+  alpha_2: SR
+  numeric: '740'
+  name: Suriname
+  official_name: Republic of Suriname
+- code: SVK
+  alpha_2: SK
+  numeric: '703'
+  name: Slovakia
+  official_name: Slovak Republic
+- code: SVN
+  alpha_2: SI
+  numeric: '705'
+  name: Slovenia
+  official_name: Republic of Slovenia
+- code: SWE
+  alpha_2: SE
+  numeric: '752'
+  name: Sweden
+  official_name: Kingdom of Sweden
+- code: SWZ
+  alpha_2: SZ
+  numeric: '748'
+  name: Eswatini
+  official_name: Kingdom of Eswatini
+- code: SXM
+  alpha_2: SX
+  numeric: '534'
+  name: Sint Maarten (Dutch part)
+  official_name: Sint Maarten (Dutch part)
+- code: SYC
+  alpha_2: SC
+  numeric: '690'
+  name: Seychelles
+  official_name: Republic of Seychelles
+- code: SYR
+  alpha_2: SY
+  numeric: '760'
+  name: Syrian Arab Republic
+- code: TCA
+  alpha_2: TC
+  numeric: '796'
+  name: Turks and Caicos Islands
+- code: TCD
+  alpha_2: TD
+  numeric: '148'
+  name: Chad
+  official_name: Republic of Chad
+- code: TGO
+  alpha_2: TG
+  numeric: '768'
+  name: Togo
+  official_name: Togolese Republic
+- code: THA
+  alpha_2: TH
+  numeric: '764'
+  name: Thailand
+  official_name: Kingdom of Thailand
+- code: TJK
+  alpha_2: TJ
+  numeric: '762'
+  name: Tajikistan
+  official_name: Republic of Tajikistan
+- code: TKL
+  alpha_2: TK
+  numeric: '772'
+  name: Tokelau
+- code: TKM
+  alpha_2: TM
+  numeric: '795'
+  name: Turkmenistan
+- code: TLS
+  alpha_2: TL
+  numeric: '626'
+  name: Timor-Leste
+  official_name: Democratic Republic of Timor-Leste
+- code: TON
+  alpha_2: TO
+  numeric: '776'
+  name: Tonga
+  official_name: Kingdom of Tonga
+- code: TTO
+  alpha_2: TT
+  numeric: '780'
+  name: Trinidad and Tobago
+  official_name: Republic of Trinidad and Tobago
+- code: TUN
+  alpha_2: TN
+  numeric: '788'
+  name: Tunisia
+  official_name: Republic of Tunisia
+- code: TUR
+  alpha_2: TR
+  numeric: '792'
+  name: Türkiye
+  official_name: Republic of Türkiye
+- code: TUV
+  alpha_2: TV
+  numeric: '798'
+  name: Tuvalu
+- code: TWN
+  alpha_2: TW
+  numeric: '158'
+  name: Taiwan, Province of China
+  official_name: Taiwan, Province of China
+- code: TZA
+  alpha_2: TZ
+  numeric: '834'
+  name: Tanzania, United Republic of
+  official_name: United Republic of Tanzania
+- code: UGA
+  alpha_2: UG
+  numeric: '800'
+  name: Uganda
+  official_name: Republic of Uganda
+- code: UKR
+  alpha_2: UA
+  numeric: '804'
+  name: Ukraine
+- code: UMI
+  alpha_2: UM
+  numeric: '581'
+  name: United States Minor Outlying Islands
+- code: URY
+  alpha_2: UY
+  numeric: '858'
+  name: Uruguay
+  official_name: Eastern Republic of Uruguay
+- code: USA
+  alpha_2: US
+  numeric: '840'
+  name: United States
+  official_name: United States of America
+- code: UZB
+  alpha_2: UZ
+  numeric: '860'
+  name: Uzbekistan
+  official_name: Republic of Uzbekistan
+- code: VAT
+  alpha_2: VA
+  numeric: '336'
+  name: Holy See (Vatican City State)
+- code: VCT
+  alpha_2: VC
+  numeric: '670'
+  name: Saint Vincent and the Grenadines
+- code: VEN
+  alpha_2: VE
+  numeric: '862'
+  name: Venezuela, Bolivarian Republic of
+  official_name: Bolivarian Republic of Venezuela
+- code: VGB
+  alpha_2: VG
+  numeric: 092
+  name: Virgin Islands, British
+  official_name: British Virgin Islands
+- code: VIR
+  alpha_2: VI
+  numeric: '850'
+  name: Virgin Islands, U.S.
+  official_name: Virgin Islands of the United States
+- code: VNM
+  alpha_2: VN
+  numeric: '704'
+  name: Viet Nam
+  official_name: Socialist Republic of Viet Nam
+- code: VUT
+  alpha_2: VU
+  numeric: '548'
+  name: Vanuatu
+  official_name: Republic of Vanuatu
+- code: WLF
+  alpha_2: WF
+  numeric: '876'
+  name: Wallis and Futuna
+- code: WSM
+  alpha_2: WS
+  numeric: '882'
+  name: Samoa
+  official_name: Independent State of Samoa
+- code: YEM
+  alpha_2: YE
+  numeric: '887'
+  name: Yemen
+  official_name: Republic of Yemen
+- code: ZAF
+  alpha_2: ZA
+  numeric: '710'
+  name: South Africa
+  official_name: Republic of South Africa
+- code: ZMB
+  alpha_2: ZM
+  numeric: '894'
+  name: Zambia
+  official_name: Republic of Zambia
+- code: ZWE
+  alpha_2: ZW
+  numeric: '716'
+  name: Zimbabwe
+  official_name: Republic of Zimbabwe

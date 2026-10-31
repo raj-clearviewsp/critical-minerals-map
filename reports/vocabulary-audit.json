@@ -1,0 +1,326 @@
+{
+  "definition_hashes": {
+    "pipeline/vocab/__init__.py": "afc5bc74c12ce5e60c3f5265d0fe128c092511d5f1086c877b17e8c79b15cae1",
+    "pipeline/vocab/__main__.py": "36cef17a33f39d934ba724571e141e086610752119bb8e8a2ef5d73f5cd32295",
+    "pipeline/vocab/audit.py": "c8e01af9db16aa84024e1491d3a9b3eccb47c9874f8b1cbb99ba5c9b4594297e",
+    "pipeline/vocab/authority.py": "7bb3435fc0f50f620e39aecc7bd0d90b815fb09871248411c2a4e0f4176c68e0",
+    "pipeline/vocab/core.py": "6296452183a2d88ad6a5408e9e3e717f979a915d5a4de94158aa5ef591d6b419",
+    "pipeline/vocab/geology.py": "e8d9cb7daf71e203ea1856803a55d2d1fd4a05565fda836501f528051620ffe4",
+    "pipeline/vocab/tabular.py": "3581181223a538f97fbda587eac4355c3231ae7622290b523edb7f1f5413f9b4",
+    "schemas/vocabulary.schema.json": "2bfcfd4085ffb6d204538dcdb8b7e1cd6851938752b76d92f12ab9965ce6f535",
+    "sources/vocab/commodities.yaml": "eb8ec07478363a8ff76db48db4781e0d1d5583f703f5000980c502b8d964aea5",
+    "sources/vocab/countries.yaml": "4b218eebb14856d6f9a36376fa007ea4e709954c681459404ca9207f3b5d1414",
+    "sources/vocab/country_overrides.yaml": "51dcc3dbe918bb151cc0e8d9ea167b1538fbb935f74423627cda8a40d3a6b79d",
+    "sources/vocab/deposit_types.yaml": "162bfbe97c52fad02ba54538ad2dcff6c9d4e5c9b8f28c51f2df40e48a4977cc",
+    "sources/vocab/field_rules.yaml": "bd1f5c05a08e5a598383ac60ad441ce6ee0aca7e4a03e447b05a09c10e7df0ba",
+    "sources/vocab/statuses.yaml": "29c624213356ef29c02cbf966018b1b668d7a3a61b4e41f156def5e9f253ea55",
+    "uv.lock": "cd4fe8d1bc077fcac6a467a1ac0b682b56906154dbee726e0837c363618e6ebb"
+  },
+  "expectations": {
+    "cases": 589,
+    "failures": []
+  },
+  "input_files": {
+    "aiddata_transition_v2/2026-10-29/AidData_Chinese_Financing_for_Transition_Minerals_Version_2.0.zip": "4eb3772227b877901d51859d6b154db5574bf73d6bb1fa70840d2c6a2d8d65fb",
+    "ga_critical_2025/2026-10-31/150802_01_0.xlsx": "256048e789565ae1183dbc02ba3b43572a03f25404c2d50d2be56a05cec0200f",
+    "ga_critical_2025_arcgis/2026-10-29/layer_4_object_ids.json": "924f7590e069d20636bd65ea2025c0e1f1324d7f884ba0710936267fa21beead",
+    "ga_critical_2025_arcgis/2026-10-29/layer_4_page_00000.json": "ba6caff1d22e77521cd8e6d84d81f57d72fcda3d46590bd3960c52adc271b89d",
+    "ga_critical_2025_arcgis/2026-10-29/layer_4_service.json": "577f9072fc5074c1342afef72b1d93909e16b1291a94411ebabe3402fbb71ec0",
+    "ga_critical_2025_arcgis/2026-10-29/layer_5_object_ids.json": "dd3fff21e3ddf92d80adee9f8003f263ff18d73c77555a9d2533367dec90917a",
+    "ga_critical_2025_arcgis/2026-10-29/layer_5_page_00000.json": "3445f368b5cf81f8ae19fde4801cd8f077b3b1ab760bb8506c0f044cf5eea06d",
+    "ga_critical_2025_arcgis/2026-10-29/layer_5_service.json": "55b3bb145c1562f095f7bb12447087e160a159ea372ae9d36fb5e21e882940dd",
+    "ga_critical_2025_arcgis/2026-10-29/layer_6_object_ids.json": "875d7ee3a4edf6d4ccb1f20d812277b5bec34d54cb4bc8d518ffb8580349d2a7",
+    "ga_critical_2025_arcgis/2026-10-29/layer_6_page_00000.json": "da933022e3a0f79c0112bb813e27d5c7c60e7d790a5389a913e8137670fac104",
+    "ga_critical_2025_arcgis/2026-10-29/layer_6_service.json": "8ee5272646d89ee44ec83c1ab8b6fbf6fac800916d4f4578110628ccbc30eaa1",
+    "ga_critical_2025_arcgis/2026-10-29/layer_7_object_ids.json": "5233a064d85c99a022aaa776a48b328155a2f3d76d091283f1ae4ee279f0c6ec",
+    "ga_critical_2025_arcgis/2026-10-29/layer_7_page_00000.json": "e3206144a29bb09b950052b3a5669582c076d485e0b215f55b2960ea70b9da87",
+    "ga_critical_2025_arcgis/2026-10-29/layer_7_service.json": "e08de0bc1fb5242c6812cfdf177d24023a14499f7c25de7058b5dd53f8cbbcbe",
+    "ga_global_ree/2026-10-31/148953_00_0.pdf": "479bb375c1be191643a9032d86687fb230a48f33af5e453ae9fc925db55f9b8c",
+    "ga_global_ree/2026-10-31/148953_01_0.xlsx": "89caf5e7d78674b9ec47863d505744f8e5edea6bee0f912832ae9278dab704dc",
+    "gseu_crm/2026-10-29/Data_CRM_deposits_ABC_2024.xlsx": "8a978cb8cbb3de52337ea9c1aaef9980ce816b7ddc6cfff964533cd4fb547658",
+    "icmm/2026-10-29/global-mining-dataset-1-5.xlsx": "8e8ac1e703d5bb7d536cea2a26fbf9c26da5fc43c21cb224baa1c79befce18e8",
+    "jasansky/2026-10-29/open_database_mine_production.zip": "40c733543450341ed65abdcf36a34eb0c79a9979cdd09dc56e3b9e68e570dba6",
+    "oecd_export/2026-10-29/oecd_export_restrictions_2009.csv": "ea8623eb0faa9c3357c92e517bff93921959e4ccd2ea1f930b3c8558fb22d01e",
+    "oecd_export/2026-10-29/oecd_export_restrictions_2010.csv": "29f44f49da19ab6980a67f3303eb002761141e60236caed1ba3bf4f5cb764ea1",
+    "oecd_export/2026-10-29/oecd_export_restrictions_2011.csv": "231ddffa048eeb930ca870d58a27cb8fbafde228fa4ab20d8a5dacca9a046df1",
+    "oecd_export/2026-10-29/oecd_export_restrictions_2012.csv": "97a66fd63cea76b652e44c71b90da6eb90ef0d344d5176fc3a1d830772f588bd",
+    "oecd_export/2026-10-29/oecd_export_restrictions_2013.csv": "27603832bd48585584c23d6a03c6eea78594dd30ef995340c3c3da400ffd6832",
+    "oecd_export/2026-10-29/oecd_export_restrictions_2014.csv": "513922bb1b62241619b447f639fd46e97395329656e5a402536a2c418787065c",
+    "oecd_export/2026-10-29/oecd_export_restrictions_2015.csv": "f99a1e43234a0db7d9d064986d91b4ff4795e846399b704230291bd743205987",
+    "oecd_export/2026-10-29/oecd_export_restrictions_2016.csv": "3d7bd0f8f253e06e375bd4535ff13d46220f70805fc0466c6467b828850a09d9",
+    "oecd_export/2026-10-29/oecd_export_restrictions_2017.csv": "e07c8828a4b3f2abfd64c58fc364d79c8d4317a201e45582fdb8e4237a0d8851",
+    "oecd_export/2026-10-29/oecd_export_restrictions_2018.csv": "f3dd392ea4a6106888322df6093380380c60a380183efed665aee4335ff96617",
+    "oecd_export/2026-10-29/oecd_export_restrictions_2019.csv": "9733bb02f2367dbf841e90658efa6fa5ea27b2e791d01b46ca1c5e4548cdd14f",
+    "oecd_export/2026-10-29/oecd_export_restrictions_2020.csv": "5b452cd133253de2082122f9264ca4c234b73c23d0837e05f4673a88e90c7ffd",
+    "oecd_export/2026-10-29/oecd_export_restrictions_2021.csv": "4f0ab20344dab98d23e0f937881f356f55eac83434f8b0cf42be5c8ebb713fdb",
+    "oecd_export/2026-10-29/oecd_export_restrictions_2022.csv": "ae40299d8d2dbd2e4493e25712cbbf33e1731e3da8c213298aecfe0f4208853b",
+    "oecd_export/2026-10-29/oecd_export_restrictions_2023.csv": "ac33b6430dd880fb1b3f5a0a9a10093345cd6f80f9f5b7e0aec67a76df965489",
+    "oecd_export/2026-10-29/oecd_export_restrictions_2024.csv": "5bc64c0b0c6efc2550b1352ce382c19c7b1148605afb5b5597c194797ec4fc20",
+    "oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml": "35541218a1c481114c188b90cc0199396c06fe279b4b70b9276d18d2cd00ace8",
+    "usgs_critical_list_2025/2026-10-29/critical-minerals-list-2025.html": "159329949344a9fc2b7506b5429cdbe81e5f726dd4fd0ae33c2acff38ae63ea6",
+    "usgs_global_critical/2026-10-31/PP1802_CritMin_FGDC_Metadata.xml": "60cedfec2147f5e0787a5a1b475abb982fc94c0481d7e6a95b76b30952e39c01",
+    "usgs_global_critical/2026-10-31/PP1802_Global_CriticalMinerals_gdb.zip": "5eb3155e7724e1740af0194a71fd6b49f7c9ed5ca1c9e3636e4224012f8e162e",
+    "usgs_global_ree/2026-10-31/USGS_Global_REE.gdb.zip": "a2a472deed6647de3c0bd9d3120c283fc387b95b3d2857c08f11bf94ba83fc1b",
+    "usgs_laterites/2026-10-29/of2011-1058_data.csv": "42ebeab321c9ce00255224fe25e110af765d64194b5cee32b96e71d803f2e6c6",
+    "usgs_mcs_2026/2026-10-31/MCS2026_Commodities_Data.csv": "582a0aa231aea53d8a97dc8d1cd3dfa5f885cf3760353e3d029d7f0ae4fbaaf5",
+    "usgs_mrds/2026-10-31/rdbms-tab.zip": "bf3cc4387772c72212e7a853b15ea9a724033a0e5ed66913e0ce6b043d7b6c65",
+    "usgs_us_critical/2026-10-29/object_ids.json": "acb6d06c46b94e3dc706fae6ca51f5976df0d29fc81753d53adca88dc4319ce1",
+    "usgs_us_critical/2026-10-29/page_00000.json": "b653bc44d44fd2b0acc708e64559aa132bb3f8a27a8eea7693bb926ccf54764a",
+    "usgs_us_critical/2026-10-29/page_00001.json": "48ed4992c6ce2b437343b8fe933f8b3bcb9aae85f7b35ab626528de5d16679f8",
+    "usgs_us_critical/2026-10-29/service.json": "4f05e5e8af771241640a3b4a51f56916b1513a58d6fa3379dfc4e096456e80f9",
+    "wapha/2026-10-31/world_active_mines_17.05.2023.xlsx": "c8741fbae9ad048acb0bc3900be94891b64f6f0383bdee7457ba584f5c18335e",
+    "wapha/2026-10-31/world_inactive_mines_17.05.2023.xlsx": "9cc4486a964321237e854024b72b04b1c7d0e81ae0753253b2ded52b4a36e78d"
+  },
+  "normalized_rows": 0,
+  "observations_sha256": "81785c736e7cc273058a9ba36d53ffc6337cc876eef3883afcc6ff23549c9902",
+  "phase": 0,
+  "pilot_unmapped": 0,
+  "profiles_sha256": "5bf79076185eca9f1f015ec59e98470144450aa25027aeb4511cf7d721e43651",
+  "schema_version": "vocabulary-audit-v1",
+  "source_summary": {
+    "aiddata_transition_v2": {
+      "distinct_field_values": 816,
+      "observed_cells": 13550,
+      "pilot_field_values": 100,
+      "pilot_unmapped": 0,
+      "unmapped_field_values": 50
+    },
+    "ga_critical_2025": {
+      "distinct_field_values": 31,
+      "observed_cells": 1076,
+      "pilot_field_values": 10,
+      "pilot_unmapped": 0,
+      "unmapped_field_values": 0
+    },
+    "ga_critical_2025_arcgis": {
+      "distinct_field_values": 74,
+      "observed_cells": 1076,
+      "pilot_field_values": 25,
+      "pilot_unmapped": 0,
+      "unmapped_field_values": 0
+    },
+    "ga_global_ree": {
+      "distinct_field_values": 80,
+      "observed_cells": 920,
+      "pilot_field_values": 0,
+      "pilot_unmapped": 0,
+      "unmapped_field_values": 7
+    },
+    "gseu_crm": {
+      "distinct_field_values": 365,
+      "observed_cells": 5472,
+      "pilot_field_values": 26,
+      "pilot_unmapped": 0,
+      "unmapped_field_values": 155
+    },
+    "icmm": {
+      "distinct_field_values": 698,
+      "observed_cells": 17373,
+      "pilot_field_values": 134,
+      "pilot_unmapped": 0,
+      "unmapped_field_values": 91
+    },
+    "jasansky": {
+      "distinct_field_values": 1710,
+      "observed_cells": 60618,
+      "pilot_field_values": 153,
+      "pilot_unmapped": 0,
+      "unmapped_field_values": 1177
+    },
+    "oecd_export": {
+      "distinct_field_values": 9016,
+      "observed_cells": 2365586,
+      "pilot_field_values": 432,
+      "pilot_unmapped": 0,
+      "unmapped_field_values": 7311
+    },
+    "usgs_global_critical": {
+      "distinct_field_values": 413,
+      "observed_cells": 6375,
+      "pilot_field_values": 16,
+      "pilot_unmapped": 0,
+      "unmapped_field_values": 151
+    },
+    "usgs_global_ree": {
+      "distinct_field_values": 1614,
+      "observed_cells": 19670,
+      "pilot_field_values": 1235,
+      "pilot_unmapped": 0,
+      "unmapped_field_values": 367
+    },
+    "usgs_laterites": {
+      "distinct_field_values": 153,
+      "observed_cells": 491,
+      "pilot_field_values": 11,
+      "pilot_unmapped": 0,
+      "unmapped_field_values": 43
+    },
+    "usgs_mcs_2026": {
+      "distinct_field_values": 253,
+      "observed_cells": 17772,
+      "pilot_field_values": 19,
+      "pilot_unmapped": 0,
+      "unmapped_field_values": 62
+    },
+    "usgs_mrds": {
+      "distinct_field_values": 7035,
+      "observed_cells": 1890462,
+      "pilot_field_values": 329,
+      "pilot_unmapped": 0,
+      "unmapped_field_values": 5151
+    },
+    "usgs_us_critical": {
+      "distinct_field_values": 376,
+      "observed_cells": 3813,
+      "pilot_field_values": 52,
+      "pilot_unmapped": 0,
+      "unmapped_field_values": 100
+    },
+    "wapha": {
+      "distinct_field_values": 1156,
+      "observed_cells": 342925,
+      "pilot_field_values": 98,
+      "pilot_unmapped": 0,
+      "unmapped_field_values": 282
+    }
+  },
+  "sources": {
+    "aiddata_transition_v2": {
+      "manifest_sha256": "4bc9655a06e0810b866fd0ed06d7384f97aac0b090691ec7519829ce3a44a12b",
+      "snapshot": "data/raw/aiddata_transition_v2/2026-10-29"
+    },
+    "ga_critical_2025": {
+      "manifest_sha256": "76526ec274d648d45706f4f7563d4d6574f43cbdf5b309db9c5def12c91462e7",
+      "snapshot": "data/raw/ga_critical_2025/2026-10-31"
+    },
+    "ga_critical_2025_arcgis": {
+      "manifest_sha256": "c08b4a74d6acb95c055a249512d1fa2cba25ae61de47c4540dd0f7ffa8af9794",
+      "snapshot": "data/raw/ga_critical_2025_arcgis/2026-10-29"
+    },
+    "ga_global_ree": {
+      "manifest_sha256": "7c95f700c9ded9e082e3e1c8cdc0ebe8082981bd0eaddffcb8d847c2ba059ac0",
+      "snapshot": "data/raw/ga_global_ree/2026-10-31"
+    },
+    "gseu_crm": {
+      "manifest_sha256": "41c5b7c3d1772d0c115537efaeff2d97a22d637359a7f8a3b6facb00f9d657dd",
+      "snapshot": "data/raw/gseu_crm/2026-10-29"
+    },
+    "icmm": {
+      "manifest_sha256": "ac88c36642f7d782e585c77ec4896ec74e9a9ea6c1f3944199e4705a9f30821b",
+      "snapshot": "data/raw/icmm/2026-10-29"
+    },
+    "jasansky": {
+      "manifest_sha256": "923f7c839eed1359f8dbb1f2ae9bf1fb17e03bd5883510c13ad30549b68f0671",
+      "snapshot": "data/raw/jasansky/2026-10-29"
+    },
+    "oecd_export": {
+      "manifest_sha256": "ed08aebd97014fa5a544ce215132d0b266cb88ad0e318ccde44d758b8969ac9e",
+      "snapshot": "data/raw/oecd_export/2026-10-29"
+    },
+    "usgs_critical_list_2025": {
+      "manifest_sha256": "ca4c644050d5af2838b48d16b76d4295b8e1be3b8a91f50a1537d3c1bd99f920",
+      "snapshot": "data/raw/usgs_critical_list_2025/2026-10-29"
+    },
+    "usgs_global_critical": {
+      "manifest_sha256": "fbdaf5abb05ff9874d1515eaf6557e7fa936acb245fc7eb97236d7781a5dc034",
+      "snapshot": "data/raw/usgs_global_critical/2026-10-31"
+    },
+    "usgs_global_ree": {
+      "manifest_sha256": "ffff8e4df808b6c5ceaf64c552495dc74878b0ca541d8b43d4d9772ebf97e149",
+      "snapshot": "data/raw/usgs_global_ree/2026-10-31"
+    },
+    "usgs_laterites": {
+      "manifest_sha256": "c6060f3073472661bad13952e704f6535e1c51d784404c80c9e16a967c91bd8d",
+      "snapshot": "data/raw/usgs_laterites/2026-10-29"
+    },
+    "usgs_mcs_2026": {
+      "manifest_sha256": "f7d36405a106d4e2254bf2c8b075f50c4b89fe029008743a78c1c6fff3ad576f",
+      "snapshot": "data/raw/usgs_mcs_2026/2026-10-31"
+    },
+    "usgs_mrds": {
+      "manifest_sha256": "a24d0e10a15a5ef68beeba937dbbe721c03938f100667a933e66f0fbe3b72811",
+      "snapshot": "data/raw/usgs_mrds/2026-10-31"
+    },
+    "usgs_us_critical": {
+      "manifest_sha256": "cb1dac5a0e322d4461bd93dce06675f9f099a0c6ac837922254f9da80155ce66",
+      "snapshot": "data/raw/usgs_us_critical/2026-10-29"
+    },
+    "wapha": {
+      "manifest_sha256": "471e84b1e49a38d33bfcb223e40be48806818a9fc5ea9b4cb9e9e47f97f57309",
+      "snapshot": "data/raw/wapha/2026-10-31"
+    }
+  },
+  "status": "pass",
+  "step": 3,
+  "unmapped_sha256": "fd5a9f50109b7856ff60252adc713cff12bdac9a5039ce226692492972d21c62",
+  "us_list_names": [
+    "Aluminum",
+    "Antimony",
+    "Arsenic",
+    "Barite",
+    "Beryllium",
+    "Bismuth",
+    "Boron",
+    "Cerium",
+    "Cesium",
+    "Chromium",
+    "Cobalt",
+    "Copper",
+    "Dysprosium",
+    "Erbium",
+    "Europium",
+    "Fluorspar",
+    "Gadolinium",
+    "Gallium",
+    "Germanium",
+    "Graphite",
+    "Hafnium",
+    "Holmium",
+    "Indium",
+    "Iridium",
+    "Lanthanum",
+    "Lead",
+    "Lithium",
+    "Lutetium",
+    "Magnesium",
+    "Manganese",
+    "Metallurgical coal",
+    "Neodymium",
+    "Nickel",
+    "Niobium",
+    "Palladium",
+    "Phosphate",
+    "Platinum",
+    "Potash",
+    "Praseodymium",
+    "Rhenium",
+    "Rhodium",
+    "Rubidium",
+    "Ruthenium",
+    "Samarium",
+    "Scandium",
+    "Silicon",
+    "Silver",
+    "Tantalum",
+    "Tellurium",
+    "Terbium",
+    "Thulium",
+    "Tin",
+    "Titanium",
+    "Tungsten",
+    "Uranium",
+    "Vanadium",
+    "Ytterbium",
+    "Yttrium",
+    "Zinc",
+    "Zirconium"
+  ],
+  "vocab_files": {
+    "commodities.yaml": "eb8ec07478363a8ff76db48db4781e0d1d5583f703f5000980c502b8d964aea5",
+    "countries.yaml": "4b218eebb14856d6f9a36376fa007ea4e709954c681459404ca9207f3b5d1414",
+    "country_overrides.yaml": "51dcc3dbe918bb151cc0e8d9ea167b1538fbb935f74423627cda8a40d3a6b79d",
+    "deposit_types.yaml": "162bfbe97c52fad02ba54538ad2dcff6c9d4e5c9b8f28c51f2df40e48a4977cc",
+    "field_rules.yaml": "bd1f5c05a08e5a598383ac60ad441ce6ee0aca7e4a03e447b05a09c10e7df0ba",
+    "statuses.yaml": "29c624213356ef29c02cbf966018b1b668d7a3a61b4e41f156def5e9f253ea55"
+  }
+}

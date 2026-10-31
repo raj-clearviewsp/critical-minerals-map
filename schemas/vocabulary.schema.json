@@ -1,0 +1,321 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "kind",
+    "entries",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "vocab-v1"
+    },
+    "kind": {
+      "enum": [
+        "commodities",
+        "deposit_types",
+        "statuses"
+      ]
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "name",
+          "synonyms"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "synonyms": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "commodities"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "entries": {
+            "items": {
+              "required": [
+                "group",
+                "on_us_list",
+                "pilot",
+                "excluded",
+                "list_basis"
+              ],
+              "properties": {
+                "group": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "on_us_list": {
+                  "type": "boolean"
+                },
+                "pilot": {
+                  "type": "boolean"
+                },
+                "excluded": {
+                  "type": "boolean"
+                },
+                "list_basis": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "entries": {
+            "items": {
+              "required": [
+                "definition"
+              ],
+              "properties": {
+                "definition": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "countries": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "vocab-v1"
+        },
+        "kind": {
+          "const": "countries"
+        },
+        "authority": {
+          "type": "object"
+        },
+        "entries": {
+          "type": "array",
+          "minItems": 249,
+          "maxItems": 249,
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "^[A-Z]{3}$"
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "alpha_2": {
+                "type": "string",
+                "pattern": "^[A-Z]{2}$"
+              },
+              "numeric": {
+                "type": "string",
+                "pattern": "^[0-9]{3}$"
+              }
+            },
+            "required": [
+              "code",
+              "name",
+              "alpha_2",
+              "numeric"
+            ]
+          }
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "authority",
+        "entries"
+      ]
+    },
+    "overrides": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "country-overrides-v1"
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "aliases": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "code": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "source_id",
+              "aliases",
+              "code",
+              "reason"
+            ]
+          }
+        }
+      },
+      "required": [
+        "schema_version",
+        "entries"
+      ]
+    },
+    "rules": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "vocab-rules-v1"
+        },
+        "commodity_fields": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "split": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "values": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "notes": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": []
+            }
+          }
+        },
+        "country_fields": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "enum": [
+                "iso_name_or_code",
+                "non_iso_source_code"
+              ]
+            }
+          }
+        },
+        "pilot_code_expectations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "source_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "field": {
+                "type": "string",
+                "minLength": 1
+              },
+              "raw_value": {
+                "type": "string",
+                "minLength": 1
+              },
+              "codes": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "source_id",
+              "field",
+              "raw_value",
+              "codes",
+              "reason"
+            ]
+          }
+        }
+      },
+      "required": [
+        "schema_version",
+        "commodity_fields",
+        "country_fields",
+        "pilot_code_expectations"
+      ]
+    }
+  }
+}

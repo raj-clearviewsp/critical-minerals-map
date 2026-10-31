@@ -1,0 +1,1314 @@
+schema_version: vocab-v1
+kind: commodities
+authority:
+  source_id: usgs_critical_list_2025
+  file: critical-minerals-list-2025.html
+  list_year: 2025
+  url: https://www.usgs.gov/news/science-snippet/interior-department-releases-final-2025-list-critical-minerals
+notes:
+- on_us_list means individually named on the official list; grouped REE/PGE labels are not list entries
+  themselves.
+- Rare-earth family follows the USGS NMIC 17-element definition (lanthanides, scandium and yttrium). Source-group
+  totals retain their own definitions; individual elements are never inferred from a grouped REE total.
+- Oxide aliases identify a commodity only. They do not convert oxide tonnage to elemental mass, sum grouped
+  and individual quantities, or supply missing grades.
+- Synonyms identify terminology; they do not establish a commodity is produced or a possible byproduct
+  is certain. Source raw strings and qualifiers must be retained.
+entries:
+- code: Al
+  name: Aluminum
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Aluminum
+    - Al
+    - Aluminium
+- code: Sb
+  name: Antimony
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Antimony
+    - Sb
+- code: As
+  name: Arsenic
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Arsenic
+    - As
+- code: Barite
+  name: Barite
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Barite
+    - Barite
+    usgs_global_ree:
+    - Ba
+- code: Be
+  name: Beryllium
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Beryllium
+    - Be
+- code: Bi
+  name: Bismuth
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Bismuth
+    - Bi
+- code: B
+  name: Boron
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Boron
+    - B
+- code: Ce
+  name: Cerium
+  group: rare_earth
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Cerium
+    - Ce
+    usgs_global_ree:
+    - Ce
+    - Ce2O3
+    - CeO
+    - CeO2
+    usgs_mrds:
+    - REE_CE
+    - Cerium
+    jasansky:
+    - Cerium
+    - Cerium(III) oxide
+    - Me.Ce
+    - Me.Ce2O3
+- code: Cs
+  name: Cesium
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Cesium
+    - Cs
+- code: Cr
+  name: Chromium
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Chromium
+    - Cr
+- code: Co
+  name: Cobalt
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Cobalt
+    - Co
+    - CoO
+    - Cobalt oxide
+    usgs_global_ree:
+    - Co
+    usgs_us_critical:
+    - cobalt
+    usgs_global_critical:
+    - Cobalt
+    usgs_mrds:
+    - CO
+    - Cobalt
+    usgs_laterites:
+    - Co grade
+    - Co pr grade%
+    - Co re grade%
+    - Co to grade%
+    jasansky:
+    - Cobalt
+    - Cobalt hydroxide
+    - Refined Cobalt
+    - Cobalt concentrate
+    - Cobalt ore
+    - Con.Co
+    - Me.Co
+    - O.Co
+    gseu_crm:
+    - Co (metal)
+    - Cobalt (Co metal)
+- code: Cu
+  name: Copper
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Copper
+    - Cu
+- code: Dy
+  name: Dysprosium
+  group: rare_earth
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Dysprosium
+    - Dy
+    - Dy2O3
+    - Dysprosium oxide
+    usgs_global_ree:
+    - Dy
+    - Dy2O3
+    jasansky:
+    - Dysprosium
+    - Dysprosium(III) oxide
+    - Me.Dy
+    - Me.Dy2O3
+- code: Er
+  name: Erbium
+  group: rare_earth
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Erbium
+    - Er
+    usgs_global_ree:
+    - Er
+    jasansky:
+    - Erbium
+    - Erbium(III) oxide
+    - Me.Er
+    - Me.Er2O3
+- code: Eu
+  name: Europium
+  group: rare_earth
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Europium
+    - Eu
+    usgs_global_ree:
+    - Eu
+    - Eu2O3
+    jasansky:
+    - Europium
+    - Europium(III) oxide
+    - Me.Eu
+    - Me.Eu2O3
+- code: Fluorspar
+  name: Fluorspar
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Fluorspar
+    - Fluorspar
+    - Fluorite
+    usgs_global_ree:
+    - F
+- code: Gd
+  name: Gadolinium
+  group: rare_earth
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Gadolinium
+    - Gd
+    usgs_global_ree:
+    - Gd
+    jasansky:
+    - Gadolinium
+    - Gadolinium(III) oxide
+    - Me.Gd
+    - Me.Gd2O3
+- code: Ga
+  name: Gallium
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Gallium
+    - Ga
+- code: Ge
+  name: Germanium
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Germanium
+    - Ge
+- code: Graphite
+  name: Graphite
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Graphite
+    - Graphite
+    - Graphite (natural)
+    usgs_global_ree:
+    - GRF
+- code: Hf
+  name: Hafnium
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Hafnium
+    - Hf
+- code: Ho
+  name: Holmium
+  group: rare_earth
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Holmium
+    - Ho
+    usgs_global_ree:
+    - Ho
+    jasansky:
+    - Holmium
+    - Holmium(III) oxide
+    - Me.Ho
+    - Me.Ho2O3
+- code: In
+  name: Indium
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Indium
+    - In
+- code: Ir
+  name: Iridium
+  group: platinum_group
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Iridium
+    - Ir
+- code: La
+  name: Lanthanum
+  group: rare_earth
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Lanthanum
+    - La
+    usgs_global_ree:
+    - La
+    - La2O3
+    - LaO
+    jasansky:
+    - Lanthanum
+    - Lanthanum(III) oxide
+    - Me.La
+    - Me.La2O3
+- code: Pb
+  name: Lead
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Lead
+    - Pb
+- code: Li
+  name: Lithium
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Lithium
+    - Li
+- code: Lu
+  name: Lutetium
+  group: rare_earth
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Lutetium
+    - Lu
+    usgs_global_ree:
+    - Lu
+    jasansky:
+    - Lutetium
+    - Lutetium(III) oxide
+    - Me.Lu
+    - Me.Lu2O3
+- code: Mg
+  name: Magnesium
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Magnesium
+    - Mg
+- code: Mn
+  name: Manganese
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Manganese
+    - Mn
+- code: MetCoal
+  name: Metallurgical coal
+  group: excluded
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: true
+  synonyms:
+    '*':
+    - Metallurgical coal
+    - MetCoal
+- code: Nd
+  name: Neodymium
+  group: rare_earth
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Neodymium
+    - Nd
+    - Nd2O3
+    - Neodymium oxide
+    usgs_global_ree:
+    - Nd
+    - Nd2O3
+    jasansky:
+    - Me.Nd
+    - Me.Nd2O3
+    - Neodymium
+    - Neodymium(III) oxide
+- code: Ni
+  name: Nickel
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Nickel
+    - Ni
+    - NiO
+    - Nickel oxide
+    usgs_global_ree:
+    - Ni
+    usgs_us_critical:
+    - nickel
+    usgs_mrds:
+    - NI
+    - NI_L
+    - NI_R
+    - NI_S
+    - Nickel
+    - Nickel Laterite
+    - Nickel, Refiner
+    - Nickel, Smelter
+    usgs_laterites:
+    - Ni CutoffGrade%
+    - Ni grade
+    - Ni pr grade%
+    - Ni re CutoffGrade%
+    - Ni to CutoffGrade%
+    - Ni to grade%
+    - Nire grade%
+    jasansky:
+    - Nickel
+    - Nickel Sulphate
+    - Ferronickel
+    - Nickel briquette
+    - nickel powder
+    - Nickel matte
+    - Refined Nickel
+    - All.FeNi
+    - Con.FeNi
+    - Con.Ni
+    - Ferronickel concentrate
+    - Me.Ni
+    - Nickel concentrate
+    - Nickel dominant ore
+    - O.Ni
+    - Cathode nickel and briquettes
+    - Nickel in ferronickel
+    - Nickel in matte
+    gseu_crm:
+    - Ni (metal)
+    - Nickel (Ni metal)
+    icmm:
+    - ferronickel
+- code: Nb
+  name: Niobium
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Niobium
+    - Nb
+- code: Pd
+  name: Palladium
+  group: platinum_group
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Palladium
+    - Pd
+- code: Phosphate
+  name: Phosphate
+  group: excluded
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: true
+  synonyms:
+    '*':
+    - Phosphate
+    - Phosphate
+    usgs_global_ree:
+    - P
+- code: Pt
+  name: Platinum
+  group: platinum_group
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Platinum
+    - Pt
+- code: Potash
+  name: Potash
+  group: excluded
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: true
+  synonyms:
+    '*':
+    - Potash
+    - Potash
+- code: Pr
+  name: Praseodymium
+  group: rare_earth
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Praseodymium
+    - Pr
+    - Pr6O11
+    - Pr2O3
+    - Praseodymium oxide
+    usgs_global_ree:
+    - Pr
+    - Pr2O3
+    jasansky:
+    - Me.Pr
+    - Me.Pr2O3
+    - Praseodymium
+    - Praseodymium(III) oxide
+- code: Re
+  name: Rhenium
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Rhenium
+    - Re
+    usgs_global_ree:
+    - Re
+    usgs_mrds:
+    - RE
+    - Rhenium
+- code: Rh
+  name: Rhodium
+  group: platinum_group
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Rhodium
+    - Rh
+- code: Rb
+  name: Rubidium
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Rubidium
+    - Rb
+- code: Ru
+  name: Ruthenium
+  group: platinum_group
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Ruthenium
+    - Ru
+- code: Sm
+  name: Samarium
+  group: rare_earth
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Samarium
+    - Sm
+    usgs_global_ree:
+    - Sm
+    jasansky:
+    - Me.Sm
+    - Me.Sm2O3
+    - Samarium
+    - Samarium(III) oxide
+- code: Sc
+  name: Scandium
+  group: rare_earth
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Scandium
+    - Sc
+    usgs_global_ree:
+    - Sc
+    - Sc2O3
+    usgs_us_critical:
+    - scandium
+    usgs_mrds:
+    - SC
+    - Scandium
+    gseu_crm:
+    - Sc (metal)
+    - Scandium (Sc metal)
+    jasansky:
+    - Me.Sc
+    - Me.Sc2O3
+    - Scandium
+    - Scandium(III) oxide
+- code: Si
+  name: Silicon
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Silicon
+    - Si
+- code: Ag
+  name: Silver
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Silver
+    - Ag
+- code: Ta
+  name: Tantalum
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Tantalum
+    - Ta
+- code: Te
+  name: Tellurium
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Tellurium
+    - Te
+- code: Tb
+  name: Terbium
+  group: rare_earth
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Terbium
+    - Tb
+    - Tb4O7
+    - Terbium oxide
+    usgs_global_ree:
+    - Tb
+    jasansky:
+    - Me.Tb
+    - Me.Tb2O3
+    - Terbium
+    - Terbium(III) oxide
+- code: Tm
+  name: Thulium
+  group: rare_earth
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Thulium
+    - Tm
+    usgs_global_ree:
+    - Tm
+    jasansky:
+    - Me.Tm
+    - Me.Tm2O3
+    - Thulium
+    - Thulium(III) oxide
+- code: Sn
+  name: Tin
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Tin
+    - Sn
+- code: Ti
+  name: Titanium
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Titanium
+    - Ti
+- code: W
+  name: Tungsten
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Tungsten
+    - W
+- code: U
+  name: Uranium
+  group: excluded
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: true
+  synonyms:
+    '*':
+    - Uranium
+    - U
+- code: V
+  name: Vanadium
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Vanadium
+    - V
+- code: Yb
+  name: Ytterbium
+  group: rare_earth
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Ytterbium
+    - Yb
+    usgs_global_ree:
+    - Yb
+    jasansky:
+    - Me.Yb
+    - Me.Yb2O3
+    - Ytterbium
+    - Ytterbium(III) oxide
+- code: Y
+  name: Yttrium
+  group: rare_earth
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Yttrium
+    - Y
+    usgs_global_ree:
+    - Y
+    - Y2O3
+    usgs_us_critical:
+    - yttrium
+    usgs_mrds:
+    - REE_Y
+    - Yttrium
+    jasansky:
+    - Me.Y
+    - Me.Y2O3
+    - Yttrium
+    - Yttrium(III) oxide
+- code: Zn
+  name: Zinc
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Zinc
+    - Zn
+- code: Zr
+  name: Zirconium
+  group: metal_or_mineral
+  on_us_list: true
+  list_basis: Named individually on the final 2025 U.S. critical minerals list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Zirconium
+    - Zr
+- code: REE
+  name: Rare earth elements
+  group: rare_earth_group
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Rare earth elements
+    - REE
+    - Rare earth
+    - Rare earths
+    - REO
+    - REOs
+    - TREO
+    - Total rare earth oxides
+    - Rare earth oxide
+    - Rare earth oxides
+    - Rare-earth elements
+    - Rare-earths
+    - Rare Earth Elements (REE)
+    - LREE
+    - HREE
+    usgs_global_ree:
+    - REE
+    - REE(?)
+    - REE?
+    - HREE
+    - HREO
+    - LREE
+    - LREO
+    - REM
+    - REO
+    - SRE2O3
+    - TR
+    - TRE
+    - TREE
+    - TREO
+    usgs_us_critical:
+    - REE
+    usgs_global_critical:
+    - Rare-Earth Elements
+    usgs_mrds:
+    - REE
+    jasansky:
+    - Monazite
+    - Con.rem
+    - Me.rem
+    - Me.reo
+    - O.CeLaPO4
+    - O.rem
+    - Rare-earth concentrate
+    - Rare-earth metals
+    - Rare-earth mineral
+    - Rare-earth oxides
+    aiddata_transition_v2:
+    - Rare earth
+    - Rare earth elements
+    gseu_crm:
+    - RE2O3
+    - REE
+    - TREO (REE2O3)
+    icmm:
+    - REE
+    - lanthanides
+    - monazite
+    usgs_mcs_2026:
+    - Rare Earths
+    - Rare Earths (Heavy)
+    wapha:
+    - REE
+    - monazite
+- code: PGE
+  name: Platinum group elements
+  group: platinum_group
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Platinum group elements
+    - PGE
+    - PGM
+    - Platinum group metals
+    - Platinum-group elements
+- code: Au
+  name: Gold
+  group: metal
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Gold
+    - Au
+- code: Fe
+  name: Iron
+  group: metal
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Iron
+    - Fe
+    - Iron ore
+- code: Mo
+  name: Molybdenum
+  group: metal
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Molybdenum
+    - Mo
+- code: Se
+  name: Selenium
+  group: nonmetal
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Selenium
+    - Se
+- code: Th
+  name: Thorium
+  group: excluded
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: true
+  synonyms:
+    '*':
+    - Thorium
+    - Th
+- code: Coal
+  name: Coal
+  group: excluded
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: true
+  synonyms:
+    '*':
+    - Coal
+    - Coal
+    usgs_global_ree:
+    - COAL
+- code: Oil
+  name: Petroleum
+  group: excluded
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: true
+  synonyms:
+    '*':
+    - Petroleum
+    - Oil
+- code: Gas
+  name: Natural gas
+  group: excluded
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: true
+  synonyms:
+    '*':
+    - Natural gas
+    - Gas
+- code: Sand
+  name: Sand
+  group: industrial_mineral
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Sand
+    - Sand
+- code: Gravel
+  name: Gravel
+  group: industrial_mineral
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Gravel
+    - Gravel
+- code: Limestone
+  name: Limestone
+  group: industrial_mineral
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Limestone
+    - Limestone
+- code: Clay
+  name: Clay
+  group: industrial_mineral
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Clay
+    - Clay
+- code: Silica
+  name: Silica
+  group: industrial_mineral
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Silica
+    - Silica
+- code: Hg
+  name: Mercury
+  group: metal
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Mercury
+    - Hg
+- code: Cd
+  name: Cadmium
+  group: metal
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Cadmium
+    - Cd
+- code: S
+  name: Sulfur
+  group: nonmetal
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Sulfur
+    - S
+- code: Diamond
+  name: Diamond
+  group: industrial_mineral
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Diamond
+    - Diamond
+    usgs_global_ree:
+    - DIA
+- code: Salt
+  name: Salt
+  group: industrial_mineral
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Salt
+    - Salt
+- code: Gypsum
+  name: Gypsum
+  group: industrial_mineral
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Gypsum
+    - Gypsum
+- code: Bauxite
+  name: Bauxite
+  group: industrial_mineral
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Bauxite
+    - Bauxite
+    - Aluminum ore
+- code: Alumina
+  name: Alumina
+  group: industrial_mineral
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Alumina
+    - Alumina
+- code: Ba
+  name: Barium
+  group: metal
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Barium
+    - Ba
+- code: F
+  name: Fluorine
+  group: nonmetal
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Fluorine
+    - F
+- code: K
+  name: Potassium
+  group: metal
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Potassium
+    - K
+- code: P
+  name: Phosphorus
+  group: nonmetal
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Phosphorus
+    - P
+- code: Os
+  name: Osmium
+  group: platinum_group
+  on_us_list: false
+  list_basis: Aggregate label or not individually named in the final 2025 list.
+  pilot: false
+  excluded: false
+  synonyms:
+    '*':
+    - Osmium
+    - Os
+- code: Pm
+  name: Promethium
+  group: rare_earth
+  on_us_list: false
+  list_basis: Not individually named on the 2025 critical minerals list.
+  pilot: true
+  excluded: false
+  synonyms:
+    '*':
+    - Pm
+    - Promethium
+    usgs_global_ree:
+    - Pm
+    jasansky:
+    - Me.Pm
+    - Me.Pm2O3
+    - Promethium
+    - Promethium(III) oxide
+group_authority_url: https://www.usgs.gov/centers/national-minerals-information-center/rare-earths-statistics-and-information

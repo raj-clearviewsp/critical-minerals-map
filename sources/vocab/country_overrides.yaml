@@ -1,0 +1,556 @@
+schema_version: country-overrides-v1
+notes:
+- ISO 3166-1 alpha-3 only. Null codes preserve unresolved geography for review. Exact source aliases,
+  never fuzzy matching.
+entries:
+- source_id: usgs_global_ree
+  aliases:
+  - Turkey
+  code: TUR
+  reason: Historical English country name for current ISO Türkiye.
+- source_id: usgs_global_critical
+  aliases:
+  - Turkey
+  code: TUR
+  reason: Historical English country name for current ISO Türkiye.
+- source_id: usgs_laterites
+  aliases:
+  - Turkey
+  code: TUR
+  reason: Historical English country name for current ISO Türkiye.
+- source_id: jasansky
+  aliases:
+  - Turkey
+  code: TUR
+  reason: Historical English country name for current ISO Türkiye.
+- source_id: usgs_global_ree
+  aliases:
+  - Democratic Republic of Congo
+  code: COD
+  reason: Unambiguous explicit Democratic Republic designation or its historical country name; plain Congo
+    would remain ambiguous.
+- source_id: usgs_global_ree
+  aliases:
+  - Democratic Republic of the Congo
+  code: COD
+  reason: Unambiguous explicit Democratic Republic designation or its historical country name; plain Congo
+    would remain ambiguous.
+- source_id: usgs_global_ree
+  aliases:
+  - Zaire
+  code: COD
+  reason: Unambiguous explicit Democratic Republic designation or its historical country name; plain Congo
+    would remain ambiguous.
+- source_id: usgs_global_ree
+  aliases:
+  - Saint Helena, Ascension, and Tristan da Cunha
+  code: SHN
+  reason: Punctuation-only variant of the ISO territory name.
+- source_id: usgs_global_ree
+  aliases:
+  - Swaziland
+  code: SWZ
+  reason: Former country name of Eswatini.
+- source_id: usgs_global_ree
+  aliases:
+  - Russian Federation(?)
+  code: null
+  reason: The source explicitly qualifies the country assignment as uncertain; do not remove that uncertainty.
+- source_id: usgs_global_ree
+  aliases:
+  - Tibet
+  code: null
+  reason: Regional label; no country assignment inferred from a politically sensitive region name.
+- source_id: usgs_global_critical
+  aliases:
+  - Democratic Republic of the Congo
+  code: COD
+  reason: Unambiguous explicit Democratic Republic country name.
+- source_id: usgs_global_critical
+  aliases:
+  - Burkina Fasso
+  code: BFA
+  reason: Obvious source spelling variant of Burkina Faso.
+- source_id: usgs_global_critical
+  aliases:
+  - Côte d’Ivoire
+  code: CIV
+  reason: Typographic apostrophe variant of Côte d'Ivoire.
+- source_id: usgs_global_critical
+  aliases:
+  - French Guyana
+  code: GUF
+  reason: Source spelling variant of French Guiana; French qualifier distinguishes it from Guyana.
+- source_id: usgs_global_critical
+  aliases:
+  - England
+  code: GBR
+  reason: Source uses constituent/geographic country labels; resolve to the ISO country United Kingdom
+    while retaining original locality wording.
+- source_id: usgs_global_critical
+  aliases:
+  - Great Britain
+  code: GBR
+  reason: Source uses constituent/geographic country labels; resolve to the ISO country United Kingdom
+    while retaining original locality wording.
+- source_id: usgs_global_critical
+  aliases:
+  - Macedonia
+  code: MKD
+  reason: Country-level source label predates the North Macedonia name change; retain original historical
+    wording.
+- source_id: usgs_global_critical
+  aliases:
+  - Russia
+  code: RUS
+  reason: Common country name for ISO Russian Federation.
+- source_id: usgs_global_critical
+  aliases:
+  - Atlantic Ocean
+  code: null
+  reason: Open-ocean location is not a country; no territorial allocation inferred.
+- source_id: usgs_global_critical
+  aliases:
+  - Indian Ocean
+  code: null
+  reason: Open-ocean location is not a country; no territorial allocation inferred.
+- source_id: usgs_global_critical
+  aliases:
+  - Pacific Ocean
+  code: null
+  reason: Open-ocean location is not a country; no territorial allocation inferred.
+- source_id: usgs_global_critical
+  aliases:
+  - Kosovo
+  code: null
+  reason: No assigned ISO 3166-1 alpha-3 code in pycountry; do not substitute Serbia or fabricate an ISO
+    code.
+- source_id: usgs_global_critical
+  aliases:
+  - Tibet
+  code: null
+  reason: Regional label; no country assignment inferred.
+- source_id: usgs_laterites
+  aliases:
+  - Côte d’Ivoire (Ivory  Coast)
+  code: CIV
+  reason: Explicit French and English names identify the same country; preserve raw double space and parenthetical
+    form.
+- source_id: usgs_laterites
+  aliases:
+  - Kosovo (Serbia)
+  code: null
+  reason: Historical/politically qualified locality label; do not silently adopt its parenthetical territorial
+    claim.
+- source_id: usgs_laterites
+  aliases:
+  - Macedonia
+  code: MKD
+  reason: Country-level source label predates North Macedonia name change.
+- source_id: usgs_laterites
+  aliases:
+  - Myanmar (Burma)
+  code: MMR
+  reason: Explicit current and former country names identify Myanmar.
+- source_id: usgs_laterites
+  aliases:
+  - Russia
+  code: RUS
+  reason: Common country name for ISO Russian Federation.
+- source_id: jasansky
+  aliases:
+  - Cote d'Ivoire
+  code: CIV
+  reason: ASCII accent variant of Côte d'Ivoire.
+- source_id: jasansky
+  aliases:
+  - DR Congo
+  code: COD
+  reason: DR explicitly identifies the Democratic Republic of the Congo, unlike ambiguous plain Congo.
+- source_id: jasansky
+  aliases:
+  - Fiji Islands
+  code: FJI
+  reason: Country-name variant for Fiji.
+- source_id: aiddata_transition_v2
+  aliases:
+  - Russia
+  code: RUS
+  reason: Unambiguous short name for Russian Federation.
+- source_id: ga_global_ree
+  aliases:
+  - Russia
+  code: RUS
+  reason: Unambiguous short name for Russian Federation.
+- source_id: icmm
+  aliases:
+  - Russia
+  code: RUS
+  reason: Unambiguous short name for Russian Federation.
+- source_id: usgs_mcs_2026
+  aliases:
+  - Russia
+  code: RUS
+  reason: Unambiguous short name for Russian Federation.
+- source_id: aiddata_transition_v2
+  aliases:
+  - China (People's Republic of)
+  code: CHN
+  reason: Publisher country label for China.
+- source_id: aiddata_transition_v2
+  aliases:
+  - Democratic Republic of the Congo
+  code: COD
+  reason: Unambiguous long name for ISO COD.
+- source_id: aiddata_transition_v2
+  aliases:
+  - Hong Kong (China)
+  code: HKG
+  reason: Publisher label for Hong Kong; preserve country role.
+- source_id: aiddata_transition_v2
+  aliases:
+  - Korea
+  code: KOR
+  reason: Country_of_Activity and DRA_Country_of_Inc are paired with explicit KOR in Financial_Contribution
+    row400 and Loan_Event row200.
+- source_id: aiddata_transition_v2
+  aliases:
+  - Africa, regional
+  code: null
+  reason: Regional, multiple-jurisdiction or missing-value marker; not a single ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - Multiple Jurisdictions
+  code: null
+  reason: Regional, multiple-jurisdiction or missing-value marker; not a single ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - '0'
+  code: null
+  reason: Regional, multiple-jurisdiction or missing-value marker; not a single ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - AUS|
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - CHE|FRA|GBR
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - CHL|CYM
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - CHN|CHN|CHN|GBR
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - CHN|CHN|CHN|MAC|HKG|CHN|CHN|CHN|HKG
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - CHN|CHN|GBR|CHN
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - CHN|GBR
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - CYM|PAN|AUS
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - GBR|CHE
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - GBR|CHN
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - HKG|CHN
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - HKG|CHN|CHN|CHN|CHN|HKG
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - HKG|CYM
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - HUN|HKG|
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - IDN|||||||MAC|SGP|IDN|
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - KAZ|KAZ|
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - KOR|
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - KOR|RUS|MAC|RUS|HUN
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - PAN|PER
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - POL|POL
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - RUS|RUS|RUS
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - USA||||
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - '|IDN'
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - '||HKG'
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - '||HKG|'
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - '||HKG||'
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - '||MAC|AUS'
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: aiddata_transition_v2
+  aliases:
+  - '|||AUS'
+  code: null
+  reason: Pipe-delimited overseas-jurisdiction list, sometimes with empty positions; retain raw roles
+    rather than coerce to one ISO country.
+- source_id: ga_global_ree
+  aliases:
+  - Congo (Zaire)
+  code: COD
+  reason: Zaire is the former name of the present Democratic Republic of the Congo; the source label explicitly
+    disambiguates Congo.
+- source_id: gseu_crm
+  aliases:
+  - Macedonia
+  code: MKD
+  reason: Source refers to the present North Macedonia and supplies MKD in the paired ISO3 field.
+- source_id: gseu_crm
+  aliases:
+  - The Netherlands
+  code: NLD
+  reason: Unambiguous name variant for Netherlands.
+- source_id: gseu_crm
+  aliases:
+  - UK
+  code: GBR
+  reason: United Kingdom abbreviation; source supplies GBR.
+- source_id: gseu_crm
+  aliases:
+  - Kosovo
+  code: null
+  reason: Kosovo/XKX is not an assigned ISO3166-1 entry in pycountry; retain source label without relabelling
+    it as another country.
+- source_id: gseu_crm
+  aliases:
+  - XKX
+  code: null
+  reason: Kosovo/XKX is not an assigned ISO3166-1 entry in pycountry; retain source label without relabelling
+    it as another country.
+- source_id: icmm
+  aliases:
+  - CÃ´te d'Ivoire
+  code: CIV
+  reason: Recognizable mojibake of Côte d’Ivoire in the source country field.
+- source_id: icmm
+  aliases:
+  - Democratic Republic of the Congo
+  code: COD
+  reason: Unambiguous long name for ISO COD.
+- source_id: icmm
+  aliases:
+  - Turkey
+  code: TUR
+  reason: Former English short name for Türkiye.
+- source_id: icmm
+  aliases:
+  - Kosovo
+  code: null
+  reason: Kosovo has no assigned ISO3166-1 code in pycountry; retain source label.
+- source_id: usgs_mcs_2026
+  aliases:
+  - Burma
+  code: MMR
+  reason: Alternative historical English country name for Myanmar.
+- source_id: usgs_mcs_2026
+  aliases:
+  - Congo (Kinshasa)
+  code: COD
+  reason: Kinshasa explicitly distinguishes Democratic Republic of the Congo from Republic of the Congo.
+- source_id: usgs_mcs_2026
+  aliases:
+  - Côte d’Ivoire
+  code: CIV
+  reason: Typographic apostrophe variant of the ISO country name.
+- source_id: usgs_mcs_2026
+  aliases:
+  - Korea, North
+  code: PRK
+  reason: Unambiguous publisher name for Democratic People’s Republic of Korea.
+- source_id: usgs_mcs_2026
+  aliases:
+  - The Bahamas
+  code: BHS
+  reason: Unambiguous name variant for Bahamas.
+- source_id: usgs_mcs_2026
+  aliases:
+  - Turkey
+  code: TUR
+  reason: Former English short name for Türkiye.
+- source_id: usgs_mcs_2026
+  aliases:
+  - China, Germany, and Russia
+  code: null
+  reason: Multi-country or world aggregate, not a single country.
+- source_id: usgs_mcs_2026
+  aliases:
+  - Other countries
+  code: null
+  reason: Multi-country or world aggregate, not a single country.
+- source_id: usgs_mcs_2026
+  aliases:
+  - World total
+  code: null
+  reason: Multi-country or world aggregate, not a single country.
+- source_id: jasansky
+  aliases:
+  - Asia, Europe
+  code: null
+  reason: export_to contains destinations, multiple countries, regions, or ambiguous Korea. Do not infer
+    a single site country from transport text.
+- source_id: jasansky
+  aliases:
+  - China, Chile, India, Japan, Brazil, South Korea, Spain, Sweden, Phillipines, Romania, Finland
+  code: null
+  reason: export_to contains destinations, multiple countries, regions, or ambiguous Korea. Do not infer
+    a single site country from transport text.
+- source_id: jasansky
+  aliases:
+  - China, South Korea, Italy
+  code: null
+  reason: export_to contains destinations, multiple countries, regions, or ambiguous Korea. Do not infer
+    a single site country from transport text.
+- source_id: jasansky
+  aliases:
+  - Europe
+  code: null
+  reason: export_to contains destinations, multiple countries, regions, or ambiguous Korea. Do not infer
+    a single site country from transport text.
+- source_id: jasansky
+  aliases:
+  - Europe, Asia
+  code: null
+  reason: export_to contains destinations, multiple countries, regions, or ambiguous Korea. Do not infer
+    a single site country from transport text.
+- source_id: jasansky
+  aliases:
+  - Gold refinery in Australia
+  code: null
+  reason: export_to contains destinations, multiple countries, regions, or ambiguous Korea. Do not infer
+    a single site country from transport text.
+- source_id: jasansky
+  aliases:
+  - Korea
+  code: null
+  reason: export_to contains destinations, multiple countries, regions, or ambiguous Korea. Do not infer
+    a single site country from transport text.
+- source_id: jasansky
+  aliases:
+  - North America
+  code: null
+  reason: export_to contains destinations, multiple countries, regions, or ambiguous Korea. Do not infer
+    a single site country from transport text.
+- source_id: jasansky
+  aliases:
+  - Smelters in Europe, Australia, Asia
+  code: null
+  reason: export_to contains destinations, multiple countries, regions, or ambiguous Korea. Do not infer
+    a single site country from transport text.
+- source_id: usgs_global_ree
+  aliases:
+  - Congo
+  code: null
+  reason: Bare historical Congo is ambiguous between the two modern republics; require a named republic
+    or source-specific evidence.

@@ -1,0 +1,546 @@
+schema_version: vocab-v1
+kind: deposit_types
+notes:
+- Reviewed against work/vocab-geology-audit.json and work/vocab-tabular-audit.json on 2026-10-31. Source-specific
+  synonyms reproduce encountered raw values, including whitespace and uncertainty marks.
+- Mappings are conservative terminology groups, not resource, genetic-confidence or maturity determinations.
+  Keep raw deposit type and source reference alongside the controlled code.
+- Unknown is only an explicit source statement; unmatched strings remain in the unmapped report. No substring
+  matching or blanket split of composite deposit types is authorized.
+- Uncertainty marks such as (?) remain in raw aliases and must be retained as uncertainty annotations
+  by the resolver. A matched code does not remove uncertainty.
+- USGS laterites Subtype I/II/III oxide, Mg-silicate and clay-silicate combinations map only within that
+  nickel-cobalt laterite source to the broad laterite type. They must not become ion-adsorption REE deposits.
+- REE in clays, Li-Clay and Lithium clay are not ion-adsorption aliases. Commodity/mineral names, host
+  rock alone, Non-pegmatite, mixed deposit models and unclear abbreviations remain unmapped unless explicitly
+  reviewed here.
+- Source-specific carbonatite and alkaline igneous labels with residual enrichment retain their primary
+  named association; the enrichment qualifier remains raw. Tailings is a material context, distinct from
+  a primary deposit model.
+entries:
+- code: carbonatite
+  name: Carbonatite
+  definition: A source explicitly identifies a carbonatite or carbonatite-related deposit. Residual enrichment,
+    where stated, remains in the raw label.
+  synonyms:
+    '*':
+    - Carbonatite
+    - Carbonatite-related
+    usgs_global_critical:
+    - Carbonatite
+    - Carbonatite-Related F
+    - Carbonatite-related F
+    usgs_global_ree:
+    - carbonatite
+    - carbonatite with residual enrichment
+    - carbonatite with residual enrichment(?)
+    - carbonatite(?)
+    usgs_us_critical:
+    - Carbonatite
+    ga_global_ree:
+    - Carbonatite and related rare earth elements
+    gseu_crm:
+    - carbonatite
+    - carbonatite breccia
+- code: laterite
+  name: Laterite
+  definition: A source explicitly identifies lateritic mineralization; source-specific nickel-cobalt laterite
+    subtype labels are grouped here without assigning an REE adsorption mechanism.
+  synonyms:
+    '*':
+    - Laterite
+    - Lateritic
+    usgs_global_critical:
+    - Laterite
+    - Ni-Co laterite
+    usgs_us_critical:
+    - Nickel-cobalt laterite
+    gseu_crm:
+    - In-situ & karst_x0002_type laterite
+    - In-situ laterite
+    - laterite
+    - supergene oxide-silicate (lateritic) nickel ore
+    usgs_laterites:
+    - (I) clay silicate
+    - (I) clay silicate (Mg silicate)
+    - '(I) clay silicate (Mg silicate) '
+    - (I) clay silicate (oxide)
+    - (I) clay silicate (oxide, Mg silicate)
+    - '(I) clay silicate (oxide, Mg silicate) '
+    - (I) clay silicate, Mg silicate
+    - '(I) clay silicate, Mg silicate '
+    - '(I) clay silicate, Mg silicate, (oxide) '
+    - (I) clay silicate, oxide
+    - '(I) clay silicate, oxide '
+    - (II) Mg silicate
+    - '(II) Mg silicate '
+    - '(II) Mg silicate  (oxide) '
+    - (II) Mg silicate (clay silicate)
+    - '(II) Mg silicate (clay silicate) '
+    - (II) Mg silicate (clay silicate, oxide)
+    - (II) Mg silicate (oxide)
+    - '(II) Mg silicate (oxide) '
+    - (II) Mg silicate (oxide, clay silicate)
+    - '(II) Mg silicate (oxide, clay silicate)  '
+    - (II) Mg silicate, clay silicate
+    - '(II) Mg silicate, clay silicate (oxide) '
+    - (II) Mg silicate, oxide
+    - '(II) Mg silicate, oxide '
+    - '(III) Mg silicate (oxide) '
+    - (III) oxide
+    - (III) oxide (Mg silicate)
+    - (III) oxide (clay silicate)
+    - '(III) oxide (clay silicate, Mg silicate) '
+    - (III) oxide ?
+    - '(III) oxide ? '
+    - (III) oxide, Mg silicate
+    - '(III) oxide, Mg silicate '
+    - '(III) oxide, Mg silicate  '
+    - (III) oxide, clay silicate
+- code: ion_adsorption_clay
+  name: Ion adsorption clay
+  definition: The source explicitly describes ionic adsorption mineralization. A clay-hosted or weathered
+    deposit alone does not qualify.
+  synonyms:
+    '*':
+    - Ion adsorption clay
+    - Ion-adsorption clay
+    - Ionic adsorption clay
+    ga_global_ree:
+    - Ionic adsorption rare-earth-elements - HREE-enriched
+    - Ionic adsorption rare-earth-elements - LREE-enriched
+    - Ionic adsorption rare-earth-elements - highly LREE-enriched
+- code: placer
+  name: Placer
+  definition: Mechanical sedimentary concentration described explicitly as placer, paleoplacer, or heavy
+    mineral sands. The source subtype and reworking history remain raw.
+  synonyms:
+    '*':
+    - Placer
+    - Paleoplacer
+    - Alluvial placer
+    - Shoreline placer
+    - Heavy mineral sands
+    usgs_global_critical:
+    - Coastal placer or paleoplacer
+    - Heavy-mineral sand
+    - Lithified paleo-placers (fluvial and [or] beach)
+    - Placer
+    - Placer/alluvial
+    usgs_global_ree:
+    - alluvial placer
+    - alluvial placer(?)
+    - paleoplacer
+    - paleoplacer(?)
+    - placer of unknown origin
+    - placer of unknown origin(?)
+    - shoreline placer
+    - shoreline placer(?)
+    ga_global_ree:
+    - Fluvial placer rare earth elements
+    - Heavy mineral sands
+    - Paleoplacer heavy mineral sands
+    - Paleoplacer rare earth elements
+    gseu_crm:
+    - alluvial placer
+    - alluvialPlacer
+    - paleoplacer
+    - shoreline / marine placer
+- code: magmatic_sulfide
+  name: Magmatic sulfide
+  definition: The source explicitly identifies a magmatic sulfide deposit or a reviewed nickel-copper-PGE
+    sulfide deposit type. Intrusive host rock alone is insufficient.
+  synonyms:
+    '*':
+    - Magmatic sulfide
+    - Magmatic sulphide
+    usgs_global_critical:
+    - Magmatic Ni-Cu(-Co-PGE) sulfide
+    usgs_us_critical:
+    - Nickel-copper-PGE sulfide
+- code: pegmatite
+  name: Pegmatite
+  definition: A source explicitly identifies pegmatite mineralization. Composite granite-pegmatite labels
+    are not forced into this category.
+  synonyms:
+    '*':
+    - Pegmatite
+    - Pegmatitic
+    usgs_global_critical:
+    - Be Type Rare-Metal Pegmatite
+    - Li-Cs-Ta type pegmatite
+    - Lithium-Cesium-Tantalum type pegmatite
+    - Pegmatite
+    - Rare-metal pegmatite
+    usgs_us_critical:
+    - Pegmatite
+    - Pegmatite LCT
+    - Pegmatite NYF
+    ga_global_ree:
+    - NYF pegmatite
+    gseu_crm:
+    - Pegmatitic
+- code: brine
+  name: Brine
+  definition: A source identifies mineral-bearing brine; the label does not imply a resource estimate
+    or extraction method.
+  synonyms:
+    '*':
+    - Brine
+    - Basin brine
+    - Residual brine
+    usgs_global_critical:
+    - Li Basin Brines
+    usgs_us_critical:
+    - Basin brine
+    - Brine
+    - Residual brine
+- code: alkaline_igneous
+  name: Alkaline igneous
+  definition: A source explicitly identifies alkaline or peralkaline igneous association. Mixed carbonatite
+    and alkaline labels remain unmapped.
+  synonyms:
+    '*':
+    - Alkaline igneous
+    - Peralkaline igneous
+    usgs_global_critical:
+    - Alkaline granite and syenite
+    - Peralkaline igneous
+    - Peralkaline intrusion Be
+    usgs_global_ree:
+    - alkaline igneous
+    - alkaline igneous with residual enrichment
+    - alkaline igneous with residual enrichment(?)
+    - alkaline igneous(?)
+    usgs_us_critical:
+    - Peralkaline syenite/granite/rhyolite/alaskite/pegmatites
+    ga_global_ree:
+    - Peralkaline intrusion HFSE-REE
+    - Peralkaline volcanic HFSE-REE
+    gseu_crm:
+    - feldspar-rich rock (alkaline)
+    - unsaturated and saturated syenitic and alkali granitic igneous rocks and pegmatites
+    - unsaturatedAndSaturatedSyeniticAlkaliGraniticIgneousRocksPegmatites
+- code: hydrothermal
+  name: Hydrothermal
+  definition: The source explicitly identifies hydrothermal mineralization without a narrower mapped model.
+    Ambiguous host-rock or metal associations alone are not enough.
+  synonyms:
+    '*':
+    - Hydrothermal
+    - Magmatic hydrothermal
+    usgs_global_critical:
+    - Hydrothermal
+    usgs_global_ree:
+    - hydrothermal Fe-oxide deposit ± Cu, Au
+    - hydrothermal Fe-oxide deposit ± Cu, Au (?)
+    - hydrothermal Fe-oxide deposit ± Cu, Au(?)
+    gseu_crm:
+    - Hydrothermal
+    - intrusiv rock (hydrotermal)
+    - magmatic hydrothermal
+    - magmaticHydrothermal
+    - 'magmaticHydrothermal '
+- code: vein
+  name: Vein
+  definition: The source explicitly describes vein or vein-stockwork mineralization; its commodity, host
+    and genesis qualifiers remain raw.
+  synonyms:
+    '*':
+    - Vein
+    - Veins
+    - Vein deposit
+    usgs_global_critical:
+    - Hydrothermal, vein swarm
+    - Pb-Zn-Ag-In Vein
+    - Plutonic related mesothermal sn veins
+    - Polymetallic Sn veins
+    - Sn-polymetallic vein or polymetallic vein
+    - Veins
+    usgs_us_critical:
+    - Five element veins
+    ga_global_ree:
+    - Vein fluorite
+    - Vein rare earth element
+    - Vein/stockwork rare earth element
+    gseu_crm:
+    - Peri-batholithic polymetallic veins
+    - Silicied vein
+    - Vein Pb-Zn in carbonates
+    - magnesite veins in weathered serpentinite massif
+    - 'vein,  including polymetallic '
+    - vein,  including polymetallic and 5 element vein (Bi, Co, Ni, Ag, U)
+    - vein,  including polymetallic between ultramafic and mafic rock
+    - vein,  including polymetallic in syn-orogenic system
+    - vein,  including polymetallic in volcanic system
+    - veinPolymetallic
+    - 'veinPolymetallic '
+- code: porphyry
+  name: Porphyry
+  definition: The source explicitly names a porphyry deposit. Combined porphyry/skarn labels are retained
+    unmapped rather than assigned one model.
+  synonyms:
+    '*':
+    - Porphyry
+    usgs_global_critical:
+    - Porphyry Cu
+    - Porphyry Cu-(Mo-Au)
+    - Porphyry Cu-Au
+    - Porphyry Cu-Mo
+    - Porphyry Mo
+    - Te in Porphyry Cu
+    usgs_us_critical:
+    - Porphyry molybdenum
+    gseu_crm:
+    - porphyry
+- code: skarn
+  name: Skarn
+  definition: The source explicitly identifies skarn mineralization. Mixed skarn/carbonate-replacement
+    labels remain unmapped.
+  synonyms:
+    '*':
+    - Skarn
+    usgs_global_critical:
+    - Co in Fe-Cu-Co skarn
+    - Cu-Zn-Mo skarn
+    - Skarn
+    - "Zn-Cu Skarn\r\n"
+    usgs_us_critical:
+    - Skarn magnesite
+    ga_global_ree:
+    - Skarn rare earth element
+    - Skarn undifferentiated
+    - Skarn uranium
+    gseu_crm:
+    - polymetalic skarn
+    - skarn
+- code: volcanogenic_massive_sulfide
+  name: Volcanogenic massive sulfide
+  definition: The source explicitly names volcanogenic massive sulfide mineralization. Mixed VMS and transitional
+    magmatic labels remain unmapped.
+  synonyms:
+    '*':
+    - Volcanogenic massive sulfide
+    - Volcanogenic massive sulphide
+    - VMS
+    usgs_global_critical:
+    - Ga in Volcanogenic Massive Sulfide, Cypress type
+    - Ga in Volcanogenic Massive Sulfide, Kuroko type
+    - Ga, Ge, and In in Volcanogenic Massive Sulfide, Kuroko type
+    - Volcanogenic Cu(-Zn-Co-Ag-Au) massive sulfide
+    - Volcanogenic Massive Sulfide
+    gseu_crm:
+    - mafic volcanism Cu–Zn massive sulphide deposits
+    - volcanogenic massive Ssulphide (VMS)
+    - 'volcanogenicMassiveSulphide '
+- code: mississippi_valley_type
+  name: Mississippi Valley type
+  definition: The source explicitly identifies a Mississippi Valley-type deposit; mixed MVT/SEDEX labels
+    remain unmapped.
+  synonyms:
+    '*':
+    - Mississippi Valley-type
+    - MVT
+    usgs_global_critical:
+    - Ga and Ge in Mississippi Valley-type
+    - Ga in Mississippi Valley-type
+    - Ga in Mississippi Valley-type Pb-Zn
+    - Mississippi Valley-type
+    - Mississippi Valley-type F
+    gseu_crm:
+    - MVT
+- code: greisen
+  name: Greisen
+  definition: The source explicitly identifies greisen mineralization. Mixed greisen and other deposit
+    types remain unmapped.
+  synonyms:
+    '*':
+    - Greisen
+    usgs_global_critical:
+    - Sn greisen
+    usgs_global_ree:
+    - greisen
+    usgs_us_critical:
+    - Greisen
+    gseu_crm:
+    - greisen
+- code: sedimentary
+  name: Sedimentary
+  definition: The source explicitly describes a sedimentary or sediment-hosted deposit or association.
+    This broad grouping does not assert one genetic mechanism.
+  synonyms:
+    '*':
+    - Sedimentary
+    - Sedimentary related
+    - Sediment-hosted
+    usgs_global_critical:
+    - Bedded-sedimentary
+    - Marine sedimentary
+    - Marine sedimentary Mn
+    - Reduced-facies stratabound Cu
+    - Roll-front sandstone U
+    - Sandstone stratabound Cu
+    - Sandstone-Hosted V
+    - Sedimentary exhalative Pb-Zn
+    - Sedimentary related
+    - Shale-Hosted V
+    - Stratiform sediment-hosted Cu-Co
+    usgs_global_ree:
+    - coal deposit
+    - metalliferous black shale
+    - sedimentary
+    - sedimentary(?)
+    usgs_us_critical:
+    - Black shale
+    - Sandstone uranium
+    - Sedimentary magnesite
+    ga_global_ree:
+    - Black shale rare earth element
+    - Siliciclastic rock
+    gseu_crm:
+    - Coking coal
+    - Exhalative sedimentary deposit
+    - Sediment-hosted stratiform
+    - Sedimentary
+    - banded iron formation (BIF)
+    - oolitic iron / ironstone
+    - sandstone-hosted
+    - sediment-hosted stratiform Cu-Ag
+    - sedimentary
+    - sedimentary manganese
+    - shale-hosted (incl. SEDEX)
+- code: igneous
+  name: Other igneous
+  definition: The source explicitly describes an igneous deposit or association without a more specific
+    mapped deposit type. This is not evidence of magmatic sulfide mineralization.
+  synonyms:
+    '*':
+    - Igneous
+    - Other igneous
+    usgs_global_critical:
+    - Anorthosite-gabbro
+    - Igneous
+    - Layered mafic intrusion
+    - Magmatic deposits in igneous and related rocks
+    - Rare-metal granite
+    - Synvolcanic gabbroic body
+    - Tin granite
+    - Troctolite/ultramafic
+    usgs_global_ree:
+    - other igneous
+    - other igneous deposit
+    - other igneous deposit(?)
+    ga_global_ree:
+    - Dolerite
+    - Granite
+    - Granite REE
+    - Quartz monzonite
+    - Rhyolite
+    - Rhyolitic tuff
+    - Syenite
+    gseu_crm:
+    - intrusiv rock
+    - komatiite
+    - layered complex
+    - mafic to ultramafic effusive volcanism
+    - mafic to ultramafic intrusion
+- code: metamorphic
+  name: Metamorphic
+  definition: The source explicitly identifies metamorphic association; graphite form alone does not establish
+    this classification.
+  synonyms:
+    '*':
+    - Metamorphic
+    usgs_global_critical:
+    - Metamorphic
+    usgs_global_ree:
+    - metamorphic
+    - metamorphic(?)
+    gseu_crm:
+    - Metamorphic
+    - metamorphic
+- code: supergene
+  name: Supergene or residual
+  definition: The source explicitly identifies supergene or residual enrichment. This does not imply a
+    specific adsorption mechanism, laterite subtype, or primary deposit type.
+  synonyms:
+    '*':
+    - Supergene
+    - Residual
+    - Secondary enrichment
+    usgs_global_critical:
+    - Residual
+    - Secondary enrichment
+    usgs_global_ree:
+    - supergene
+    - supergene(?)
+    usgs_us_critical:
+    - Exotic copper
+    - Supergene (and exotic) copper
+    - Supergene manganese
+    ga_global_ree:
+    - Supergene phosphate
+    - Supergene rare earth elements
+    - Supergene vermiculite
+    - Supergene/oxide copper
+    - Supergene/oxide gold
+    - Supergene/oxide rare earth elements
+- code: bauxite
+  name: Bauxite
+  definition: The source explicitly identifies bauxite as the deposit context; generic bauxite is not
+    assumed to be a specific laterite subtype.
+  synonyms:
+    '*':
+    - Bauxite
+    usgs_global_critical:
+    - Ga in Bauxite
+    usgs_global_ree:
+    - bauxite
+    usgs_us_critical:
+    - Bauxite
+    gseu_crm:
+    - bauxite
+    - bauxite (karst-type stratiform mass, laterite)
+- code: phosphorite
+  name: Phosphorite
+  definition: The source explicitly identifies phosphorite. Generic phosphate commodity labels alone do
+    not establish this deposit type.
+  synonyms:
+    '*':
+    - Phosphorite
+    usgs_global_ree:
+    - phosphorite
+    ga_global_ree:
+    - Phosphorite
+    gseu_crm:
+    - phosphorite
+- code: tailings
+  name: Tailings
+  definition: The source explicitly identifies tailings as the material context. This is an anthropogenic
+    material category, not a primary geological deposit model.
+  synonyms:
+    '*':
+    - Tailings
+    usgs_global_critical:
+    - Tailings
+    usgs_global_ree:
+    - bauxite tailings
+    - tailings
+- code: unknown
+  name: Unknown or unclassified
+  definition: The source explicitly leaves the deposit type unknown, uncertain, other or unclassified.
+    Unrecognized source labels are separately logged, not silently assigned here.
+  synonyms:
+    '*':
+    - Unknown
+    - Unclassified
+    - Deposit type unclassified
+    - Uncertain
+    usgs_global_critical:
+    - Deposit type unclassified
+    usgs_global_ree:
+    - other
+    - unclassified
+    - unknown
+    ga_global_ree:
+    - Uncertain

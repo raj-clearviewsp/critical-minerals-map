@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026.10.31 — Phase 0, Step 3 vocabulary review (gate pending)
+
+- Added source-aware commodity, deposit-type and status vocabularies, ISO country definitions and explained country overrides.
+- Added source-field terminology audits, retained source-format evidence, an unmapped-term queue and a reproducible coverage receipt. Pilot coverage and final validation results are pending in the Step 3 report.
+- Kept historical production, active labels, uncertain classifications, facility kinds and finance milestones distinct; vocabulary matching does not assign maturity or current operating status.
+- Added `make vocab` for the full local-source audit and `make vocab-check` for retained-audit validation in CI without raw downloads.
+- Refreshed the empty Astro preview with readable typography, straightforward navigation and a clear unpublished-data message; removed decorative numbering and implementation-oriented copy.
+- Fixed the preview Make target to use the host already configured by the npm script.
+- Step 3 remains open until its acceptance checks, final report, pushed commit and remote CI pass. Step 4 normalization has not started; no data or site has been deployed.
+
 ## 2026.10.28 — Phase 0, Step 1 scaffold
 
 - Added the specified repository layout and ordered Make targets.

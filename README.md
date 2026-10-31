@@ -2,7 +2,7 @@
 
 A sourced, static reference for critical mineral deposits, maturity and ownership. The implementation follows [the supplied spec](IMPLEMENTATION_SPEC.md), in numbered order.
 
-**Current status: Phase 0, Step 1 complete; Step 2 core source acquisition complete.** Sixteen source snapshots are captured, while canonical tables and the site remain empty. Empty output files are build artifacts, not evidence that a country or commodity has no deposits. No website has been deployed. The canonical schema remains provisional.
+**Current status: Phase 0, Step 3 vocabulary checks pass locally; its acceptance gate is pending.** Step 1 and core Step 2 acquisition are complete. Sixteen source snapshots are captured, while canonical tables and the site remain empty. The vocabulary audit reviews source terminology without creating normalized records. Empty output files are build artifacts, not evidence that a country or commodity has no deposits. No website has been deployed. The canonical schema remains provisional.
 
 ## Run locally
 
@@ -20,6 +20,8 @@ On a fresh checkout with no raw downloads, `make all` installs locked dependenci
 make setup-python    # uv sync --locked
 make setup-site      # npm ci
 make check           # Ruff and pytest
+make vocab           # full terminology audit; requires verified local raw snapshots
+make vocab-check     # validate retained audit and mappings; no raw files or network needed
 make data            # fetch → normalize → harmonize → link → enrich → qa → publish
 make site            # frontend tests/type checks/build; requires make data first
 ```
@@ -32,8 +34,10 @@ Each required stage is also an independent Make target. It requires the precedin
 - `data/canonical/*.parquet`: nine zero-row Phase 0 table contracts.
 - `data/publish/`: CSV/Parquet mirrors and a JSON-schema-validated manifest with SHA-256 checksums. Plain Parquet at this step; GeoParquet and real PMTiles arrive in Step 10.
 - `reports/runs/`: per-stage JSON receipts with rows, rejects, hashes and explicit scaffold status.
+- `reports/vocabulary-audit.json`, `vocabulary-observations.csv`, and `vocabulary-source-fields.json`: Step 3 audit receipt, source-field terminology and format evidence.
+- `review/unmapped-vocabulary.csv`: observed terms requiring review, including deliberately unresolved geology and status labels.
 - `site/dist/`: local static site build.
-- [Step 1 run report](reports/phase0-step01.md) and [changelog](CHANGELOG.md).
+- [Step 1 run report](reports/phase0-step01.md), [Step 3 draft report](reports/phase0-step03.md), and [changelog](CHANGELOG.md).
 
 The manifest's `release_tag` defaults to `2026.10.28`, the spec's date. It labels a scaffold build, not a data release. `data_as_of` is null because no observation data has been published by the scaffold. Identical reruns preserve bytes and modification times. Conflicting outputs are never overwritten. To experiment with a new build label, use a separate clean checkout; preserve existing outputs first.
 
@@ -55,9 +59,9 @@ Nothing in canonical data is edited by hand. Raw downloads will be immutable and
 
 ## CI and step gates
 
-GitHub Actions separates lint/tests, the data build, and the site build. The site job consumes the exact data artifact from the data job. Actions use pinned revisions; uv and npm use committed lockfiles. Dependabot checks uv, npm and action updates weekly. There is no deployment workflow.
+GitHub Actions separates lint/tests, the data build, and the site build. After Python tests, `make vocab-check` validates the retained terminology audit against the committed vocabularies without downloading raw data. The site job consumes the exact data artifact from the data job. Actions use pinned revisions; uv and npm use committed lockfiles. Dependabot checks uv, npm and action updates weekly. There is no deployment workflow.
 
-A step is complete only when its acceptance checks pass, its report and changelog are written, its commit is pushed, and GitHub CI is green. Step 2 does not begin before that gate. Phase 1 requires Raj's Phase 0 sign-off. Public deployment and uncertain-license use require the approvals listed in the spec.
+A step is complete only when its acceptance checks pass, its report and changelog are written, its commit is pushed, and GitHub CI is green. The next numbered step remains gated until then. Step 3 still needs its final coverage results, validation record and remote CI; Step 4 normalization has not started. Phase 1 requires Raj's Phase 0 sign-off. Public deployment and uncertain-license use require the approvals listed in the spec.
 
 Raj supplied `raj@satnamenergy.com` for the download User-Agent. Error-report inbox and branding remain owner decisions before launch. Local code is not assigned a new license by this scaffold; downstream source data will retain its own license and attribution requirements.
 
@@ -85,3 +89,11 @@ uv run --locked python -m pipeline.fetch --import-local intake.json
 ```
 
 The intake follows `schemas/local-intake.schema.json`: source ID, acquisition method, original local files and names, publisher URLs, and actual retrieval times when known. Unknown retrieval times remain null; `registered_at` records when the verified copy entered the archive. No local paths or signed download tokens are retained in raw manifests. The importer validates publisher checksums and sizes where supplied, rejects incomplete files, checks archive CRCs, and accepts all files for a source atomically. Byte-identical reruns preserve the original archive and manifest. Historical manifest license fields describe evidence at acquisition; current registry decisions control future publication.
+
+## Review source terminology
+
+`make vocab` verifies the local raw snapshots and reads the observed commodity, country, deposit-type and status fields. It writes a reproducible audit and the unmapped-term review queue. It does not create staging or canonical records, assign maturity, convert resource units or publish source observations. The official retained USGS 2025 list supplies the individually named `on_us_list` membership.
+
+Aliases are exact and source-aware after Unicode, whitespace and case normalization. Only reviewed field-specific delimiters and explicit composite mappings split commodity values. Raw wording and uncertainty qualifiers remain evidence. Generic clay does not imply ion adsorption; historical Producer and Active labels do not imply present operation. ISO country mappings use pinned `pycountry` and explained overrides; ambiguous geography remains unresolved.
+
+After changing vocabularies, rerun `make vocab` against the verified archive before `make vocab-check`. The latter checks vocabulary and observation hashes and replays resolution from the retained audit, so CI can detect stale mappings without raw files. It cannot replace local verification of the original source snapshots. The Step 3 gate requires no unmapped pilot commodity associations; unresolved nonpilot terminology remains visible in the review queue. Final counts and validation are tracked in the [draft Step 3 report](reports/phase0-step03.md).

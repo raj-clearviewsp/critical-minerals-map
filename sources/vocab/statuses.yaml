@@ -1,0 +1,322 @@
+schema_version: vocab-v1
+kind: statuses
+notes:
+- Reviewed against work/vocab-geology-audit.json and work/vocab-tabular-audit.json on 2026-10-31. Source-specific
+  synonyms reproduce encountered raw values.
+- Status vocabulary resolution never assigns a maturity rung or makes a present-day operation claim. Dates,
+  commodity-specific production evidence and overlays are handled separately in the later maturity step.
+- MRDS Producer, USGS REE Producer and USGS U.S. recent-producer categories are producer_reported, not
+  operating. Resources qualifiers in USGS U.S. categories remain raw; CM resources alone is left unmapped.
+- Jasansky and WAPHA Active map to active_reported, not operating. GA Operating mine and other explicit
+  operational labels describe the source reference date and do not establish that a particular critical
+  mineral is produced.
+- Uncertainty marks such as (?) remain in raw aliases and must be retained as uncertainty annotations
+  by the resolver. No produciton(?) is a reviewed USGS REE spelling error for an uncertain no-production
+  statement.
+- USGS REE occurrence/showing/deposit terminology is distinct from its production-status field; both raw
+  fields must be retained. These labels do not independently establish resource confidence.
+- MRDS Plant is a facility kind and remains unmapped. Jasansky Project lacks a clear activity stage and
+  remains unmapped. AidData finance/project milestones Completion, Implementation, Pipeline and Cancelled
+  remain unmapped as mine statuses.
+- Composite labels with incompatible historical and later activity remain unmapped. Exploration with an
+  explicitly named study maps only to exploration reported; the study qualifier remains raw, with no maturity
+  inference.
+entries:
+- code: producer_reported
+  name: Producer reported
+  definition: The source reports production or a producer category at its historical reference date. This
+    label never establishes present operation or a maturity rung.
+  synonyms:
+    '*':
+    - Producer
+    - Byproduct producer
+    usgs_global_ree:
+    - Byproduct producer
+    - Byproduct producer(?)
+    - Producer
+    - Producer(?)
+    usgs_mrds:
+    - Producer
+    usgs_us_critical:
+    - CM-recent producer+resources
+- code: past_producer
+  name: Past producer
+  definition: The source explicitly reports past production. Closure reason, resources and subsequent
+    activity remain in source fields; no current operation is inferred.
+  synonyms:
+    '*':
+    - Past producer
+    - Past byproduct producer
+    - Past production
+    usgs_global_ree:
+    - Past byproduct producer
+    - Past byproduct producer(?)
+    - Past producer
+    - Past producer(?)
+    usgs_laterites:
+    - past producer
+    - past production
+    - past production (stopped 1999)
+    - past production till 1999
+    usgs_mrds:
+    - Past Producer
+    usgs_us_critical:
+    - CM-past producer
+    - CM-past producer+resources
+    - Past producer+CM resources
+- code: no_production
+  name: No production reported
+  definition: The source explicitly reports no production or that a deposit has not been exploited; this
+    is not a statement about resource size or maturity.
+  synonyms:
+    '*':
+    - No production
+    - Not exploited
+    usgs_global_ree:
+    - No Production
+    - No produciton(?)
+    - No production
+    - No production(?)
+    gseu_crm:
+    - not exploited
+- code: occurrence
+  name: Occurrence
+  definition: The source calls the record an occurrence. The word is retained as a source category and
+    does not independently assign a maturity rung.
+  synonyms:
+    '*':
+    - Occurrence
+    usgs_global_ree:
+    - Occurrence
+    - Occurrence(?)
+    usgs_mrds:
+    - Occurrence
+- code: showing
+  name: Showing
+  definition: The source calls the record a showing. The word does not establish resources or present
+    activity.
+  synonyms:
+    '*':
+    - Showing
+    usgs_global_ree:
+    - Showing
+    - Showing(?)
+- code: deposit
+  name: Deposit
+  definition: The source calls the record a deposit. The word alone establishes neither resource confidence
+    nor mine status.
+  synonyms:
+    '*':
+    - Deposit
+    - Mineral deposit
+    usgs_global_ree:
+    - Deposit
+    - 'Deposit '
+    - Deposit(?)
+    ga_critical_2025:
+    - Mineral deposit
+    ga_critical_2025_arcgis:
+    - Mineral deposit
+- code: prospect
+  name: Prospect
+  definition: The source calls the record a prospect; no maturity rung is inferred from the label alone.
+  synonyms:
+    '*':
+    - Prospect
+    usgs_global_ree:
+    - Prospect
+    usgs_laterites:
+    - prospect
+    usgs_mrds:
+    - Prospect
+- code: exploration
+  name: Exploration reported
+  definition: The source reports exploration activity, including explicitly historical exploration. Date
+    and study qualifiers remain raw; no current activity is implied.
+  synonyms:
+    '*':
+    - Exploration
+    - Advanced exploration
+    jasansky:
+    - Advanced exploration
+    - Exploration
+    - exploration
+    usgs_laterites:
+    - exploration
+    - exploration, feasibility study
+    - exploration, pre-feasibility study
+    - 'exploration, pre-feasibility study '
+    - exploration, scoping study in 2008
+    - explored
+    - explored, feasibility study
+    - explored, post-feasibility study
+    - grass root exploration
+    - past exploration
+    - past grass root exploration
+- code: feasibility
+  name: Feasibility study reported
+  definition: The source labels the project as feasibility or prefeasibility. This terminology alone does
+    not validate a study or establish a maturity rung.
+  synonyms:
+    '*':
+    - Feasibility
+    - Prefeasibility
+    usgs_laterites:
+    - prefeasibility study (?)
+    gseu_crm:
+    - feasibility
+- code: developing
+  name: Under development
+  definition: The source explicitly reports development or construction at its reference date. Approval
+    and construction qualifiers remain raw.
+  synonyms:
+    '*':
+    - Under development
+    - In development
+    - Development
+    - Under construction
+    - Construction
+    jasansky:
+    - Under construction
+    - construction
+    - in development
+    usgs_laterites:
+    - development
+    - 'development preparation '
+    - development, approved project
+    ga_critical_2025:
+    - Mine - under development
+    ga_critical_2025_arcgis:
+    - Mine - under development
+    gseu_crm:
+    - construction
+    - underDevelopment
+- code: pending_approval
+  name: Pending approval
+  definition: The source explicitly reports pending approval. This does not establish that approval was
+    later granted or that construction began.
+  synonyms:
+    '*':
+    - Pending approval
+    gseu_crm:
+    - pendingApproval
+- code: operating
+  name: Operating reported
+  definition: The source explicitly describes mining operations at its reference date. Current operation,
+    target-commodity production and maturity require separate dated evidence.
+  synonyms:
+    '*':
+    - Operating
+    - Operating mine
+    - Mining operations
+    usgs_laterites:
+    - intermittent mining operations
+    - mining operation (open pit and underground)
+    - mining operations
+    - 'mining operations '
+    - open-cast mining operations
+    ga_critical_2025:
+    - Operating mine
+    ga_critical_2025_arcgis:
+    - Operating mine
+    gseu_crm:
+    - operating
+    - operatingContinuously
+    - operatingIntermittently
+- code: active_reported
+  name: Active reported
+  definition: The source uses active without establishing current operation or the production of a particular
+    commodity. Historical Active values remain historical.
+  synonyms:
+    '*':
+    - Active
+    jasansky:
+    - active
+    wapha:
+    - Active
+- code: care_and_maintenance
+  name: Care and maintenance
+  definition: The source explicitly reports care and maintenance; the label is an operational overlay
+    and does not establish a maturity rung.
+  synonyms:
+    '*':
+    - Care and maintenance
+    - Care & maintenance
+    jasansky:
+    - care and maintenance
+    ga_critical_2025:
+    - Mine - care and maintenance
+    ga_critical_2025_arcgis:
+    - Mine - care and maintenance
+    gseu_crm:
+    - careAndMaintenance
+- code: closed
+  name: Closed
+  definition: The source explicitly reports closure or an exhausted/mined-out operation. Closure dates
+    and reasons remain raw.
+  synonyms:
+    '*':
+    - Closed
+    - Mined out
+    usgs_laterites:
+    - mined out
+    - 'mined out '
+    - mined out (closure 2004)
+    - mined out, 1995 mining ceased
+    - past production (closed 1983)
+    gseu_crm:
+    - closed
+- code: abandoned
+  name: Abandoned
+  definition: The source explicitly reports abandonment. Prior production and the reason for abandonment
+    are not inferred.
+  synonyms:
+    '*':
+    - Abandoned
+    usgs_laterites:
+    - abandoned in late 1970s
+    gseu_crm:
+    - abandoned
+- code: inactive
+  name: Inactive
+  definition: The source explicitly reports inactivity, idle or suspended operations. Inactivity alone
+    does not imply permanent closure or past production.
+  synonyms:
+    '*':
+    - Inactive
+    - Idle
+    - Suspended
+    - Not operating
+    jasansky:
+    - inactive
+    - stopped 31.12.2013
+    usgs_laterites:
+    - idle
+    - idle?
+    - mining operations halted in 2001
+    - open-cast mining operations, currently suspended
+    gseu_crm:
+    - notOperating
+    wapha:
+    - Inactive
+- code: historic
+  name: Historic activity
+  definition: The source labels mining activity historic without specifying a production or closure history;
+    those details are not inferred.
+  synonyms:
+    '*':
+    - Historic
+    gseu_crm:
+    - historic
+- code: unknown
+  name: Unknown status
+  definition: The source explicitly reports unknown or not-known status. Unmapped terminology, including
+    facility type and finance milestones, is logged separately.
+  synonyms:
+    '*':
+    - Unknown
+    - Not known
+    usgs_global_ree:
+    - Not known
+    usgs_mrds:
+    - Unknown

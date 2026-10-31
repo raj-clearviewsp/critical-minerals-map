@@ -37,6 +37,8 @@ jobs:
         run: make lint
       - name: Run tests
         run: make test
+      - name: Validate retained vocabulary audit
+        run: make vocab-check
 
   build-data:
     name: Build empty data pipeline

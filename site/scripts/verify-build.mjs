@@ -5,13 +5,16 @@ import assert from 'node:assert/strict';
 
 const directory = new URL('../dist/', import.meta.url);
 const html = readFileSync(new URL('index.html', directory), 'utf8');
-assert.match(html, /No records loaded/);
+assert.match(html, /No records have been published/);
 assert.match(html, /Data as of/);
 assert.match(html, /<html[^>]+lang="en"/);
 assert.match(html, /<main[^>]+id="main"/);
 assert.doesNotMatch(html, /<script\b/);
 assert.doesNotMatch(html, /(?:src|href)=["']https?:\/\//);
 assert.doesNotMatch(html, /<iframe\b/);
+for (const [, anchor] of html.matchAll(/href="#([^"]+)"/g)) {
+  assert.ok(html.includes(`id="${anchor}"`), `Missing destination for #${anchor}`);
+}
 function inspect(path) {
   for (const item of readdirSync(path, { withFileTypes: true })) {
     const entry = join(path, item.name);

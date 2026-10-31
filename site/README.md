@@ -19,7 +19,9 @@ Inside `site/`:
 - `npm run build` generates `dist/` and verifies the static output.
 - `npm run preview -- --port 4321` serves the build on loopback only.
 
-The Step 1 page includes no client JavaScript, analytics, remote fonts or images.
+The preview page uses plain navigation to real sections, readable type, and a clear
+notice that no records are published. Build diagnostics stay out of the page. It
+includes no client JavaScript, analytics, remote fonts or images.
 Responsive and print styles are self-hosted. Build telemetry is disabled in npm
 scripts. The generated page has `noindex, nofollow`; it is a local development
 artifact, not a public data release or the Phase 0 map application.

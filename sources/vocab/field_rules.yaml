@@ -1,0 +1,5116 @@
+schema_version: vocab-rules-v1
+commodity_fields:
+  usgs_global_ree:
+    Commods:
+      split: \s*,\s*
+      values:
+        REE. Nb:
+        - REE
+        - Nb
+        Nb. REE:
+        - Nb
+        - REE
+        Zr. REE:
+        - Zr
+        - REE
+        Sn REE:
+        - Sn
+        - REE
+      notes: Comma lists only. Exact value overrides must apply to the whole cell first and to individual
+        tokens after splitting. Four explicitly reviewed punctuation/missing-delimiter tokens are expanded;
+        no generic whitespace/dot splitting. Abbreviations_table gives Re=rhenium, P=phosphate, F=fluorite
+        and Ba=barite. Unknown nonpilot tokens remain in the unmapped report. Qualifiers remain in raw
+        evidence.
+  usgs_us_critical:
+    critmin:
+      split: \s*,\s*
+      notes: Comma-delimited commodity names; preserve raw cells, ignore empty split tokens only. Source
+        rank/depcat are separate fields and do not assert present operation.
+  usgs_global_critical:
+    CRITICAL_MINERAL:
+      split: \s*;\s*
+      values:
+        Niobium and Tantalum:
+        - Nb
+        - Ta
+        Zirconium and Hafnium:
+        - Zr
+        - Hf
+      notes: Only semicolons separate commodity categories. Retain compound source categories until explicit
+        reviewed multi-code expansion; do not split every occurrence of and in generic fields.
+  usgs_mrds:
+    code_list:
+      split: \s+
+      notes: About.txt explicitly defines space-delimited source codes. Source code RE is Rhenium, REE
+        is rare earths. Match source-qualified codes before any global casefolded alias.
+    code:
+      notes: Atomic Commodity.txt code; no delimiter splitting. NI_L/NI_R/NI_S are nickel categories and
+        RE is rhenium.
+    commod:
+      notes: 'Atomic Commodity.txt name. NEVER comma-split: Nickel, Refiner and Nickel, Smelter are whole
+        source categories. Mapping signifies commodity association, not evidence of current production.'
+  usgs_laterites:
+    Ni CutoffGrade%:
+      values:
+        Ni CutoffGrade%:
+        - Ni
+      notes: Header-origin observation, counted once. Identifies the column commodity only; zero/missing
+        values do not establish a resource or byproduct for every record.
+    Ni grade:
+      values:
+        Ni grade:
+        - Ni
+      notes: Header-origin observation, counted once. Identifies the column commodity only; zero/missing
+        values do not establish a resource or byproduct for every record.
+    Ni pr grade%:
+      values:
+        Ni pr grade%:
+        - Ni
+      notes: Header-origin observation, counted once. Identifies the column commodity only; zero/missing
+        values do not establish a resource or byproduct for every record.
+    Ni re CutoffGrade%:
+      values:
+        Ni re CutoffGrade%:
+        - Ni
+      notes: Header-origin observation, counted once. Identifies the column commodity only; zero/missing
+        values do not establish a resource or byproduct for every record.
+    Ni to CutoffGrade%:
+      values:
+        Ni to CutoffGrade%:
+        - Ni
+      notes: Header-origin observation, counted once. Identifies the column commodity only; zero/missing
+        values do not establish a resource or byproduct for every record.
+    Ni to grade%:
+      values:
+        Ni to grade%:
+        - Ni
+      notes: Header-origin observation, counted once. Identifies the column commodity only; zero/missing
+        values do not establish a resource or byproduct for every record.
+    Nire grade%:
+      values:
+        Nire grade%:
+        - Ni
+      notes: Header-origin observation, counted once. Identifies the column commodity only; zero/missing
+        values do not establish a resource or byproduct for every record.
+    Co grade:
+      values:
+        Co grade:
+        - Co
+      notes: Header-origin observation, counted once. Identifies the column commodity only; zero/missing
+        values do not establish a resource or byproduct for every record.
+    Co pr grade%:
+      values:
+        Co pr grade%:
+        - Co
+      notes: Header-origin observation, counted once. Identifies the column commodity only; zero/missing
+        values do not establish a resource or byproduct for every record.
+    Co re grade%:
+      values:
+        Co re grade%:
+        - Co
+      notes: Header-origin observation, counted once. Identifies the column commodity only; zero/missing
+        values do not establish a resource or byproduct for every record.
+    Co to grade%:
+      values:
+        Co to grade%:
+        - Co
+      notes: Header-origin observation, counted once. Identifies the column commodity only; zero/missing
+        values do not establish a resource or byproduct for every record.
+  jasansky:
+    primary_commodity:
+      notes: Atomic facility primary-commodity field. Generic facility classes such as Other mine and
+        Processing are not guessed into commodities.
+    commodities_products:
+      split: \s*,\s*
+      values:
+        Nickel-Cobalt Mixed Sulfide:
+        - Ni
+        - Co
+      notes: This source uses comma lists of products; do not reuse this rule for MRDS commodity labels.
+        Explicit product tokens may map to commodity associations, never converted masses or present operating
+        status. Monazite is a rare-earth-bearing mineral form, not a claim of separated rare-earth production.
+        Unknown industrial product tokens remain unmapped.
+    commodity:
+      split: ;
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+    material:
+      split: ;
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+    material_id:
+      split: ;
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+    material_id_agg:
+      split: ;
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+    material_name:
+      split: ;
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+    material_name_agg:
+      split: ;
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+    materials_contained:
+      split: ;
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+    input:
+      split: ;
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+    output:
+      split: ;
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+    product:
+      split: ;
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+  aiddata_transition_v2:
+    Commodity:
+      split: \|
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+        This field describes financial collateral/repayment commodities, not necessarily the financed
+        mine output.
+    Transition_Minerals:
+      split: \|
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+    Primary_Minerals:
+      split: \|
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+    Subsidiary_Minerals:
+      split: \|
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+  ga_critical_2025:
+    Commodity Group:
+      values:
+        Antimony:
+        - Sb
+        Bismuth +/- Cobalt +/- Indium:
+        - Bi
+        - Co
+        - In
+        Chromium +/- Cobalt +/- PGE +/- Nickel:
+        - Cr
+        - Co
+        - PGE
+        - Ni
+        Cobalt:
+        - Co
+        Fluorine:
+        - F
+        Graphite:
+        - Graphite
+        Heavy mineral sands - Titanium, Zirconium:
+        - Ti
+        - Zr
+        Heavy mineral sands - Titanium, Zirconium, REE:
+        - Ti
+        - Zr
+        - REE
+        High Purity Alumina:
+        - Alumina
+        Indium:
+        - In
+        Lithium +/- Tantalum +/- Niobium:
+        - Li
+        - Ta
+        - Nb
+        Magnesium:
+        - Mg
+        Manganese Ore:
+        - Mn
+        Molybdenum +/- Rhenium:
+        - Mo
+        - Re
+        Nickel +/- Cobalt +/- PGE:
+        - Ni
+        - Co
+        - PGE
+        Platinum Group Elements (PGE) +/- Cobalt +/- Nickel:
+        - PGE
+        - Co
+        - Ni
+        REE, Niobium +/- Zirconium, Hafnium, Tantalum, Gallium:
+        - REE
+        - Nb
+        - Zr
+        - Hf
+        - Ta
+        - Ga
+        Rare Earth Elements (REE):
+        - REE
+        Scandium +/- Cobalt +/- PGE +/- Nickel:
+        - Sc
+        - Co
+        - PGE
+        - Ni
+        Silicon (High purity silica/quartz):
+        - Si
+        Titanium:
+        - Ti
+        Titanium, Vanadium:
+        - Ti
+        - V
+        Tungsten:
+        - W
+        Tungsten, Molybdenum:
+        - W
+        - Mo
+        Vanadium:
+        - V
+        Vanadium +/- REE +/- Gallium:
+        - V
+        - REE
+        - Ga
+        Vanadium, Molybdenum:
+        - V
+        - Mo
+      notes: Exact publisher commodity groups. +/- denotes possible association; preserve qualifiers and
+        do not assert production or certain byproducts.
+  ga_critical_2025_arcgis:
+    commodities:
+      values:
+        Antimony:
+        - Sb
+        Bismuth +/- Cobalt +/- Indium:
+        - Bi
+        - Co
+        - In
+        Chromium +/- Cobalt +/- PGE +/- Nickel:
+        - Cr
+        - Co
+        - PGE
+        - Ni
+        Cobalt:
+        - Co
+        Fluorine:
+        - F
+        Graphite:
+        - Graphite
+        Heavy mineral sands - Titanium, Zirconium:
+        - Ti
+        - Zr
+        Heavy mineral sands - Titanium, Zirconium, REE:
+        - Ti
+        - Zr
+        - REE
+        High Purity Alumina:
+        - Alumina
+        Indium:
+        - In
+        Lithium +/- Tantalum +/- Niobium:
+        - Li
+        - Ta
+        - Nb
+        Magnesium:
+        - Mg
+        Manganese Ore:
+        - Mn
+        Molybdenum +/- Rhenium:
+        - Mo
+        - Re
+        Nickel +/- Cobalt +/- PGE:
+        - Ni
+        - Co
+        - PGE
+        Platinum Group Elements (PGE) +/- Cobalt +/- Nickel:
+        - PGE
+        - Co
+        - Ni
+        REE, Niobium +/- Zirconium, Hafnium, Tantalum, Gallium:
+        - REE
+        - Nb
+        - Zr
+        - Hf
+        - Ta
+        - Ga
+        Rare Earth Elements (REE):
+        - REE
+        Scandium +/- Cobalt +/- PGE +/- Nickel:
+        - Sc
+        - Co
+        - PGE
+        - Ni
+        Silicon (High purity silica/quartz):
+        - Si
+        Titanium:
+        - Ti
+        Titanium, Vanadium:
+        - Ti
+        - V
+        Tungsten:
+        - W
+        Tungsten, Molybdenum:
+        - W
+        - Mo
+        Vanadium:
+        - V
+        Vanadium +/- REE +/- Gallium:
+        - V
+        - REE
+        - Ga
+        Vanadium, Molybdenum:
+        - V
+        - Mo
+      notes: Exact publisher commodity groups. +/- denotes possible association; preserve qualifiers and
+        do not assert production or certain byproducts.
+  gseu_crm:
+    CRM:
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+    Production - type of commodity reported:
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+    Reserves - type of commodity reported:
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+    Resources - type of commodity reported:
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+    Type of commodity reported:
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+    Abbreviation:
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+    Commodity (*):
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+  icmm:
+    Other Commodities:
+      split: ;
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+    Primary Commodity:
+      split: ;
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+    'Secondary Commodity ':
+      split: ;
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+  oecd_export:
+    COMMODITY:
+      values:
+        HS07_260400:
+        - Ni
+        HS07_260500:
+        - Co
+        HS07_280530:
+        - REE
+        - Sc
+        - Y
+        HS07_282200:
+        - Co
+        HS07_282540:
+        - Ni
+        HS07_282735:
+        - Ni
+        HS07_283324:
+        - Ni
+        HS07_284610:
+        - Ce
+        HS07_284690:
+        - REE
+        - Y
+        - Sc
+        HS07_720260:
+        - Ni
+        HS07_740822:
+        - Cu
+        - Ni
+        HS07_740940:
+        - Cu
+        - Ni
+        HS07_750110:
+        - Ni
+        HS07_750120:
+        - Ni
+        HS07_750210:
+        - Ni
+        HS07_750220:
+        - Ni
+        HS07_750300:
+        - Ni
+        HS07_750400:
+        - Ni
+        HS07_750511:
+        - Ni
+        HS07_750512:
+        - Ni
+        HS07_750521:
+        - Ni
+        HS07_750522:
+        - Ni
+        HS07_750610:
+        - Ni
+        HS07_750620:
+        - Ni
+        HS07_810520:
+        - Co
+        HS07_810530:
+        - Co
+        HS07_810590:
+        - Co
+      notes: Positive meanings reviewed against CL_PRODUCT_HS2007 English labels. Do not match commodity
+        names in exclusions. Other product codes remain unmapped for later non-pilot review.
+  usgs_mcs_2026:
+    Commodity:
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+  wapha:
+    Commodity:
+      split: '[;,]'
+      notes: Preserve raw source text; tokenization identifies commodities, not quantities or production.
+        Explicit values cover undelimited combinations. Gsp is retained as uninterpreted source text in
+        Ni Cu Gsp; no commodity is assigned to Gsp. Monazite identifies the REE group, not elemental quantities.
+      values:
+        Copper Gold (Uranium Cobalt Silver):
+        - Ag
+        - Au
+        - Co
+        - Cu
+        - U
+        Ni Co:
+        - Co
+        - Ni
+        Ni Cu:
+        - Cu
+        - Ni
+        Ni Cu Co:
+        - Co
+        - Cu
+        - Ni
+        Ni Cu Co Pt Pd:
+        - Co
+        - Cu
+        - Ni
+        - Pd
+        - Pt
+        Ni Cu Gsp:
+        - Cu
+        - Ni
+        Nickel Cobalt:
+        - Co
+        - Ni
+        Nickel Copper Cobalt Platinum group elements:
+        - Co
+        - Cu
+        - Ni
+        - PGE
+country_fields:
+  usgs_mrds:
+    fips: non_iso_source_code
+  usgs_laterites:
+    CountryCode: non_iso_source_code
+pilot_code_expectations:
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Ce
+  codes:
+  - Ce
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Ce2O3
+  codes:
+  - Ce
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: CeO
+  codes:
+  - Ce
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: CeO2
+  codes:
+  - Ce
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Dy
+  codes:
+  - Dy
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Dy2O3
+  codes:
+  - Dy
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Er
+  codes:
+  - Er
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Eu
+  codes:
+  - Eu
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Eu2O3
+  codes:
+  - Eu
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Gd
+  codes:
+  - Gd
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Ho
+  codes:
+  - Ho
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: La
+  codes:
+  - La
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: La2O3
+  codes:
+  - La
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: LaO
+  codes:
+  - La
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Lu
+  codes:
+  - Lu
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Nd
+  codes:
+  - Nd
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Nd2O3
+  codes:
+  - Nd
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Pm
+  codes:
+  - Pm
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Pr
+  codes:
+  - Pr
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Pr2O3
+  codes:
+  - Pr
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Sc
+  codes:
+  - Sc
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Sc2O3
+  codes:
+  - Sc
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Sm
+  codes:
+  - Sm
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Tb
+  codes:
+  - Tb
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Tm
+  codes:
+  - Tm
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Y
+  codes:
+  - Y
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Y2O3
+  codes:
+  - Y
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Yb
+  codes:
+  - Yb
+  reason: Native Abbreviations_table defines this element or oxide; source dictionary coverage, even if
+    not encountered in current Commods cells. Oxide mapping is terminology only, never a mass conversion.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: REE
+  codes:
+  - REE
+  reason: Group abbreviation from native dictionary, or explicitly encountered uncertainty spelling. Retain
+    the raw qualifier and do not turn tentative occurrence into confirmed production.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: REE(?)
+  codes:
+  - REE
+  reason: Group abbreviation from native dictionary, or explicitly encountered uncertainty spelling. Retain
+    the raw qualifier and do not turn tentative occurrence into confirmed production.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: REE?
+  codes:
+  - REE
+  reason: Group abbreviation from native dictionary, or explicitly encountered uncertainty spelling. Retain
+    the raw qualifier and do not turn tentative occurrence into confirmed production.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: HREE
+  codes:
+  - REE
+  reason: Group abbreviation from native dictionary, or explicitly encountered uncertainty spelling. Retain
+    the raw qualifier and do not turn tentative occurrence into confirmed production.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: HREO
+  codes:
+  - REE
+  reason: Group abbreviation from native dictionary, or explicitly encountered uncertainty spelling. Retain
+    the raw qualifier and do not turn tentative occurrence into confirmed production.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: LREE
+  codes:
+  - REE
+  reason: Group abbreviation from native dictionary, or explicitly encountered uncertainty spelling. Retain
+    the raw qualifier and do not turn tentative occurrence into confirmed production.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: LREO
+  codes:
+  - REE
+  reason: Group abbreviation from native dictionary, or explicitly encountered uncertainty spelling. Retain
+    the raw qualifier and do not turn tentative occurrence into confirmed production.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: REM
+  codes:
+  - REE
+  reason: Group abbreviation from native dictionary, or explicitly encountered uncertainty spelling. Retain
+    the raw qualifier and do not turn tentative occurrence into confirmed production.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: REO
+  codes:
+  - REE
+  reason: Group abbreviation from native dictionary, or explicitly encountered uncertainty spelling. Retain
+    the raw qualifier and do not turn tentative occurrence into confirmed production.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: SRE2O3
+  codes:
+  - REE
+  reason: Group abbreviation from native dictionary, or explicitly encountered uncertainty spelling. Retain
+    the raw qualifier and do not turn tentative occurrence into confirmed production.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: TR
+  codes:
+  - REE
+  reason: Group abbreviation from native dictionary, or explicitly encountered uncertainty spelling. Retain
+    the raw qualifier and do not turn tentative occurrence into confirmed production.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: TRE
+  codes:
+  - REE
+  reason: Group abbreviation from native dictionary, or explicitly encountered uncertainty spelling. Retain
+    the raw qualifier and do not turn tentative occurrence into confirmed production.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: TREE
+  codes:
+  - REE
+  reason: Group abbreviation from native dictionary, or explicitly encountered uncertainty spelling. Retain
+    the raw qualifier and do not turn tentative occurrence into confirmed production.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: TREO
+  codes:
+  - REE
+  reason: Group abbreviation from native dictionary, or explicitly encountered uncertainty spelling. Retain
+    the raw qualifier and do not turn tentative occurrence into confirmed production.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Ni
+  codes:
+  - Ni
+  reason: Explicit source abbreviation. Re is rhenium; uppercase NI is an encountered nickel spelling.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: NI
+  codes:
+  - Ni
+  reason: Explicit source abbreviation. Re is rhenium; uppercase NI is an encountered nickel spelling.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Co
+  codes:
+  - Co
+  reason: Explicit source abbreviation. Re is rhenium; uppercase NI is an encountered nickel spelling.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Re
+  codes:
+  - Re
+  reason: Explicit source abbreviation. Re is rhenium; uppercase NI is an encountered nickel spelling.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: REE. Nb
+  codes:
+  - REE
+  - Nb
+  reason: Explicit correction of an encountered malformed token; resolve both recognized codes without
+    discarding other cell tokens.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Nb. REE
+  codes:
+  - Nb
+  - REE
+  reason: Explicit correction of an encountered malformed token; resolve both recognized codes without
+    discarding other cell tokens.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Zr. REE
+  codes:
+  - Zr
+  - REE
+  reason: Explicit correction of an encountered malformed token; resolve both recognized codes without
+    discarding other cell tokens.
+- source_id: usgs_global_ree
+  field: Commods
+  raw_value: Sn REE
+  codes:
+  - Sn
+  - REE
+  reason: Explicit correction of an encountered malformed token; resolve both recognized codes without
+    discarding other cell tokens.
+- source_id: usgs_us_critical
+  field: critmin
+  raw_value: REE
+  codes:
+  - REE
+  reason: Explicit term observed in the source critical-mineral list field.
+- source_id: usgs_us_critical
+  field: critmin
+  raw_value: nickel
+  codes:
+  - Ni
+  reason: Explicit term observed in the source critical-mineral list field.
+- source_id: usgs_us_critical
+  field: critmin
+  raw_value: cobalt
+  codes:
+  - Co
+  reason: Explicit term observed in the source critical-mineral list field.
+- source_id: usgs_us_critical
+  field: critmin
+  raw_value: scandium
+  codes:
+  - Sc
+  reason: Explicit term observed in the source critical-mineral list field.
+- source_id: usgs_us_critical
+  field: critmin
+  raw_value: yttrium
+  codes:
+  - Y
+  reason: Explicit term observed in the source critical-mineral list field.
+- source_id: usgs_global_critical
+  field: CRITICAL_MINERAL
+  raw_value: Rare-Earth Elements
+  codes:
+  - REE
+  reason: Explicit source commodity category; the 2017 source has no Nickel category.
+- source_id: usgs_global_critical
+  field: CRITICAL_MINERAL
+  raw_value: Cobalt
+  codes:
+  - Co
+  reason: Explicit source commodity category; the 2017 source has no Nickel category.
+- source_id: usgs_mrds
+  field: code
+  raw_value: CO
+  codes:
+  - Co
+  reason: 'Source Commodity.txt code/name dictionary evidence: Cobalt'
+- source_id: usgs_mrds
+  field: commod
+  raw_value: Cobalt
+  codes:
+  - Co
+  reason: Whole commodity label from the same source dictionary; preserve comma modifiers.
+- source_id: usgs_mrds
+  field: code
+  raw_value: NI
+  codes:
+  - Ni
+  reason: 'Source Commodity.txt code/name dictionary evidence: Nickel'
+- source_id: usgs_mrds
+  field: commod
+  raw_value: Nickel
+  codes:
+  - Ni
+  reason: Whole commodity label from the same source dictionary; preserve comma modifiers.
+- source_id: usgs_mrds
+  field: code
+  raw_value: NI_L
+  codes:
+  - Ni
+  reason: 'Source Commodity.txt code/name dictionary evidence: Nickel Laterite'
+- source_id: usgs_mrds
+  field: commod
+  raw_value: Nickel Laterite
+  codes:
+  - Ni
+  reason: Whole commodity label from the same source dictionary; preserve comma modifiers.
+- source_id: usgs_mrds
+  field: code
+  raw_value: NI_R
+  codes:
+  - Ni
+  reason: 'Source Commodity.txt code/name dictionary evidence: Nickel, Refiner'
+- source_id: usgs_mrds
+  field: commod
+  raw_value: Nickel, Refiner
+  codes:
+  - Ni
+  reason: Whole commodity label from the same source dictionary; preserve comma modifiers.
+- source_id: usgs_mrds
+  field: code
+  raw_value: NI_S
+  codes:
+  - Ni
+  reason: 'Source Commodity.txt code/name dictionary evidence: Nickel, Smelter'
+- source_id: usgs_mrds
+  field: commod
+  raw_value: Nickel, Smelter
+  codes:
+  - Ni
+  reason: Whole commodity label from the same source dictionary; preserve comma modifiers.
+- source_id: usgs_mrds
+  field: code
+  raw_value: RE
+  codes:
+  - Re
+  reason: 'Source Commodity.txt code/name dictionary evidence: Rhenium'
+- source_id: usgs_mrds
+  field: commod
+  raw_value: Rhenium
+  codes:
+  - Re
+  reason: Whole commodity label from the same source dictionary; preserve comma modifiers.
+- source_id: usgs_mrds
+  field: code
+  raw_value: REE
+  codes:
+  - REE
+  reason: 'Source Commodity.txt code/name dictionary evidence: REE'
+- source_id: usgs_mrds
+  field: commod
+  raw_value: REE
+  codes:
+  - REE
+  reason: Whole commodity label from the same source dictionary; preserve comma modifiers.
+- source_id: usgs_mrds
+  field: code
+  raw_value: REE_CE
+  codes:
+  - Ce
+  reason: 'Source Commodity.txt code/name dictionary evidence: Cerium'
+- source_id: usgs_mrds
+  field: commod
+  raw_value: Cerium
+  codes:
+  - Ce
+  reason: Whole commodity label from the same source dictionary; preserve comma modifiers.
+- source_id: usgs_mrds
+  field: code
+  raw_value: REE_Y
+  codes:
+  - Y
+  reason: 'Source Commodity.txt code/name dictionary evidence: Yttrium'
+- source_id: usgs_mrds
+  field: commod
+  raw_value: Yttrium
+  codes:
+  - Y
+  reason: Whole commodity label from the same source dictionary; preserve comma modifiers.
+- source_id: usgs_mrds
+  field: code
+  raw_value: SC
+  codes:
+  - Sc
+  reason: 'Source Commodity.txt code/name dictionary evidence: Scandium'
+- source_id: usgs_mrds
+  field: commod
+  raw_value: Scandium
+  codes:
+  - Sc
+  reason: Whole commodity label from the same source dictionary; preserve comma modifiers.
+- source_id: usgs_mrds
+  field: code_list
+  raw_value: ' NI_R CO RE REE '
+  codes:
+  - Ni
+  - Co
+  - Re
+  - REE
+  reason: Space-delimited regression fixture verifies nickel category plus cobalt and separates rhenium
+    from rare earths.
+- source_id: usgs_laterites
+  field: Ni CutoffGrade%
+  raw_value: Ni CutoffGrade%
+  codes:
+  - Ni
+  reason: Exact source grade-column label, including Nire grade% nickel header spelling. Header evidence
+    is not a row-level mineral inclusion decision.
+- source_id: usgs_laterites
+  field: Ni grade
+  raw_value: Ni grade
+  codes:
+  - Ni
+  reason: Exact source grade-column label, including Nire grade% nickel header spelling. Header evidence
+    is not a row-level mineral inclusion decision.
+- source_id: usgs_laterites
+  field: Ni pr grade%
+  raw_value: Ni pr grade%
+  codes:
+  - Ni
+  reason: Exact source grade-column label, including Nire grade% nickel header spelling. Header evidence
+    is not a row-level mineral inclusion decision.
+- source_id: usgs_laterites
+  field: Ni re CutoffGrade%
+  raw_value: Ni re CutoffGrade%
+  codes:
+  - Ni
+  reason: Exact source grade-column label, including Nire grade% nickel header spelling. Header evidence
+    is not a row-level mineral inclusion decision.
+- source_id: usgs_laterites
+  field: Ni to CutoffGrade%
+  raw_value: Ni to CutoffGrade%
+  codes:
+  - Ni
+  reason: Exact source grade-column label, including Nire grade% nickel header spelling. Header evidence
+    is not a row-level mineral inclusion decision.
+- source_id: usgs_laterites
+  field: Ni to grade%
+  raw_value: Ni to grade%
+  codes:
+  - Ni
+  reason: Exact source grade-column label, including Nire grade% nickel header spelling. Header evidence
+    is not a row-level mineral inclusion decision.
+- source_id: usgs_laterites
+  field: Nire grade%
+  raw_value: Nire grade%
+  codes:
+  - Ni
+  reason: Exact source grade-column label, including Nire grade% nickel header spelling. Header evidence
+    is not a row-level mineral inclusion decision.
+- source_id: usgs_laterites
+  field: Co grade
+  raw_value: Co grade
+  codes:
+  - Co
+  reason: Exact source grade-column label, including Nire grade% nickel header spelling. Header evidence
+    is not a row-level mineral inclusion decision.
+- source_id: usgs_laterites
+  field: Co pr grade%
+  raw_value: Co pr grade%
+  codes:
+  - Co
+  reason: Exact source grade-column label, including Nire grade% nickel header spelling. Header evidence
+    is not a row-level mineral inclusion decision.
+- source_id: usgs_laterites
+  field: Co re grade%
+  raw_value: Co re grade%
+  codes:
+  - Co
+  reason: Exact source grade-column label, including Nire grade% nickel header spelling. Header evidence
+    is not a row-level mineral inclusion decision.
+- source_id: usgs_laterites
+  field: Co to grade%
+  raw_value: Co to grade%
+  codes:
+  - Co
+  reason: Exact source grade-column label, including Nire grade% nickel header spelling. Header evidence
+    is not a row-level mineral inclusion decision.
+- source_id: jasansky
+  field: commodities_products
+  raw_value: Nickel
+  codes:
+  - Ni
+  reason: Explicit product/mineral form associated with the commodity; no conversion to contained-element
+    quantity or inference that current refined metal production occurs.
+- source_id: jasansky
+  field: commodities_products
+  raw_value: Nickel Sulphate
+  codes:
+  - Ni
+  reason: Explicit product/mineral form associated with the commodity; no conversion to contained-element
+    quantity or inference that current refined metal production occurs.
+- source_id: jasansky
+  field: commodities_products
+  raw_value: Ferronickel
+  codes:
+  - Ni
+  reason: Explicit product/mineral form associated with the commodity; no conversion to contained-element
+    quantity or inference that current refined metal production occurs.
+- source_id: jasansky
+  field: commodities_products
+  raw_value: Nickel briquette
+  codes:
+  - Ni
+  reason: Explicit product/mineral form associated with the commodity; no conversion to contained-element
+    quantity or inference that current refined metal production occurs.
+- source_id: jasansky
+  field: commodities_products
+  raw_value: nickel powder
+  codes:
+  - Ni
+  reason: Explicit product/mineral form associated with the commodity; no conversion to contained-element
+    quantity or inference that current refined metal production occurs.
+- source_id: jasansky
+  field: commodities_products
+  raw_value: Nickel matte
+  codes:
+  - Ni
+  reason: Explicit product/mineral form associated with the commodity; no conversion to contained-element
+    quantity or inference that current refined metal production occurs.
+- source_id: jasansky
+  field: commodities_products
+  raw_value: Refined Nickel
+  codes:
+  - Ni
+  reason: Explicit product/mineral form associated with the commodity; no conversion to contained-element
+    quantity or inference that current refined metal production occurs.
+- source_id: jasansky
+  field: commodities_products
+  raw_value: Cobalt
+  codes:
+  - Co
+  reason: Explicit product/mineral form associated with the commodity; no conversion to contained-element
+    quantity or inference that current refined metal production occurs.
+- source_id: jasansky
+  field: commodities_products
+  raw_value: Cobalt hydroxide
+  codes:
+  - Co
+  reason: Explicit product/mineral form associated with the commodity; no conversion to contained-element
+    quantity or inference that current refined metal production occurs.
+- source_id: jasansky
+  field: commodities_products
+  raw_value: Refined Cobalt
+  codes:
+  - Co
+  reason: Explicit product/mineral form associated with the commodity; no conversion to contained-element
+    quantity or inference that current refined metal production occurs.
+- source_id: jasansky
+  field: commodities_products
+  raw_value: Monazite
+  codes:
+  - REE
+  reason: Source explicitly lists Monazite as a commodity/product. Map its rare-earth mineral association
+    only; do not infer separated REE production, recoverability or grade.
+- source_id: jasansky
+  field: primary_commodity
+  raw_value: Nickel
+  codes:
+  - Ni
+  reason: Atomic primary commodity label.
+- source_id: jasansky
+  field: commodities_products
+  raw_value: Nickel-Cobalt Mixed Sulfide
+  codes:
+  - Ni
+  - Co
+  reason: Explicit mixed product names both pilot commodities; retain mixed-sulfide form.
+- source_id: aiddata_transition_v2
+  field: Commodity
+  raw_value: Cobalt|Copper
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Commodity
+  raw_value: Cobalt|Other
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Primary_Minerals
+  raw_value: Aluminum|Antimony|Arsenic|Bauxite|Cadmium|Chromium|Cobalt|Copper|Gallium|Germanium|Graphite|Hafnium|Indium|Lead|Lithium|Magnesium|Manganese|Molybdenum|Nickel|Niobium|Rare
+    earth elements|Silicon|Tantalum|Tellurium|Tin|Titanium|Tungsten|Uranium|Vanadium|Zinc|Zirconium
+  codes:
+  - Co
+  - Ni
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Primary_Minerals
+  raw_value: Aluminum|Cobalt|Copper|Lead|Nickel|Niobium|Zinc
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Primary_Minerals
+  raw_value: Cobalt|Copper
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Primary_Minerals
+  raw_value: Cobalt|Copper|Nickel|Platinum
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Primary_Minerals
+  raw_value: Cobalt|Nickel
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Primary_Minerals
+  raw_value: Copper|Gold|Lead|Molybdenum|Silver|Zinc|Nickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Primary_Minerals
+  raw_value: Copper|Gold|Silver|Gold|Nickel|Uranium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Primary_Minerals
+  raw_value: Copper|Nickel|Platinum|Zinc
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Primary_Minerals
+  raw_value: Gold|Nickel|Silver|Bauxite
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Primary_Minerals
+  raw_value: Iron|Nickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Primary_Minerals
+  raw_value: Iron|Nickel|Copper|Manganese
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Primary_Minerals
+  raw_value: Nickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Primary_Minerals
+  raw_value: Nickel|Cobalt
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Primary_Minerals
+  raw_value: Nickel|Gold|Bauxite
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Primary_Minerals
+  raw_value: Uranium|Cobalt|Nickel
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Primary_Minerals
+  raw_value: Zinc | Copper | Lead | Nickel | Gold | Silver
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Subsidiary_Minerals
+  raw_value: Aluminum|Antimony|Cobalt|Copper|Gold|Lead|Lithium|Molybdenum|Nickel|Silver|Tin|Tungsten|Zinc
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Subsidiary_Minerals
+  raw_value: Aluminum|Bauxite|Coal|Cobalt|Copper|Manganese
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Subsidiary_Minerals
+  raw_value: Antimony|Arsenic|Bismuth|Gold|Iron|Lead|Nickel|Selenium|Silver|Tellurium|Vermiculite
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Subsidiary_Minerals
+  raw_value: Bauxite|Coal|Cobalt|Copper|Platinum|Manganese|Nickel|Silver|Gold
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Subsidiary_Minerals
+  raw_value: Coal|Diamonds|Iron|Manganese|Nickel|Platinum
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Subsidiary_Minerals
+  raw_value: Coal|Diamonds|Iron|Manganese|Nickel|Platinum|Niobium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Subsidiary_Minerals
+  raw_value: Cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Subsidiary_Minerals
+  raw_value: Cobalt|Gold|Iridium|Palladium|Rhodium|Ruthenium|Selenium|Silver|Tellurium
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Subsidiary_Minerals
+  raw_value: Copper|Iron|Lead|Nickel|Zinc
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Subsidiary_Minerals
+  raw_value: Fertilizer Minerals (Potash)|Gold|Nickel|Silver|Uranium|Zinc
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Subsidiary_Minerals
+  raw_value: Gold|Iron|Niobium|Rare earth elements
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Subsidiary_Minerals
+  raw_value: Gold|Nickel|Zinc
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Subsidiary_Minerals
+  raw_value: Nickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Subsidiary_Minerals
+  raw_value: Palladium|Copper|Gold|Nickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Cobalt|Copper
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Cobalt|Copper|Lithium|Nickel|Lead|Molybdenum|Silver|Tin|Tungsten|Zinc
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Cobalt|Copper|Lithium|Nickel|Rare earth|Arsenic|Cadmium|Chromium|Gallium|Germanium|Graphite|Hafnium|Indium|Lead|Magnesium|Manganese|Molybdenum|Niobium|Silicon|Tantalum|Tellurium|Tin|Titanium|Tungsten|Vanadium|Zinc|Zirconium
+  codes:
+  - Co
+  - Ni
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Cobalt|Copper|Manganese
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Cobalt|Copper|Nickel|Iridium|Platinum|Selenium|Silver|Tellurium|Tin
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Cobalt|Copper|Nickel|Lead|Niobium|Zinc
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Cobalt|Copper|Nickel|Manganese|Platinum|Silver
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Cobalt|Nickel
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Copper|Nickel|Arsenic|Lead|Selenium|Silver|Tellurium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Copper|Nickel|Germanium|Lead|Platinum|Silver|Tin|Zinc
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Copper|Nickel|Lead|Molybdenum|Silver|Zinc
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Copper|Nickel|Lead|Silver|Zinc
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Copper|Nickel|Lead|Zinc
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Copper|Nickel|Manganese|Niobium|Platinum|Tin
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Copper|Nickel|Manganese|Platinum|Tin
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Copper|Nickel|Platinum|Tin
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Copper|Nickel|Silver
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Copper|Nickel|Silver|Zinc
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Nickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Nickel|Silver
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Rare earth|Niobium
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: aiddata_transition_v2
+  field: Transition_Minerals
+  raw_value: Zinc | Copper | Lead | Nickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025
+  field: Commodity Group
+  raw_value: Bismuth +/- Cobalt +/- Indium
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025
+  field: Commodity Group
+  raw_value: Chromium +/- Cobalt +/- PGE +/- Nickel
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025
+  field: Commodity Group
+  raw_value: Cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025
+  field: Commodity Group
+  raw_value: Heavy mineral sands - Titanium, Zirconium, REE
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025
+  field: Commodity Group
+  raw_value: Nickel +/- Cobalt +/- PGE
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025
+  field: Commodity Group
+  raw_value: Platinum Group Elements (PGE) +/- Cobalt +/- Nickel
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025
+  field: Commodity Group
+  raw_value: REE, Niobium +/- Zirconium, Hafnium, Tantalum, Gallium
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025
+  field: Commodity Group
+  raw_value: Rare Earth Elements (REE)
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025
+  field: Commodity Group
+  raw_value: Scandium +/- Cobalt +/- PGE +/- Nickel
+  codes:
+  - Co
+  - Ni
+  - Sc
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025
+  field: Commodity Group
+  raw_value: Vanadium +/- REE +/- Gallium
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025_arcgis
+  field: commodities
+  raw_value: Bismuth +/- Cobalt +/- Indium
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025_arcgis
+  field: commodities
+  raw_value: Chromium +/- Cobalt +/- PGE +/- Nickel
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025_arcgis
+  field: commodities
+  raw_value: Cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025_arcgis
+  field: commodities
+  raw_value: Heavy mineral sands - Titanium, Zirconium, REE
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025_arcgis
+  field: commodities
+  raw_value: Nickel +/- Cobalt +/- PGE
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025_arcgis
+  field: commodities
+  raw_value: Platinum Group Elements (PGE) +/- Cobalt +/- Nickel
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025_arcgis
+  field: commodities
+  raw_value: REE, Niobium +/- Zirconium, Hafnium, Tantalum, Gallium
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025_arcgis
+  field: commodities
+  raw_value: Rare Earth Elements (REE)
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025_arcgis
+  field: commodities
+  raw_value: Scandium +/- Cobalt +/- PGE +/- Nickel
+  codes:
+  - Co
+  - Ni
+  - Sc
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: ga_critical_2025_arcgis
+  field: commodities
+  raw_value: Vanadium +/- REE +/- Gallium
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Abbreviation
+  raw_value: Co
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Abbreviation
+  raw_value: Ni
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Abbreviation
+  raw_value: REE
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Abbreviation
+  raw_value: Sc
+  codes:
+  - Sc
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: CRM
+  raw_value: Co
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: CRM
+  raw_value: Ni
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: CRM
+  raw_value: REE
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: CRM
+  raw_value: Sc
+  codes:
+  - Sc
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Commodity (*)
+  raw_value: Cobalt (Co metal)
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Commodity (*)
+  raw_value: Nickel (Ni metal)
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Commodity (*)
+  raw_value: Scandium (Sc metal)
+  codes:
+  - Sc
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Commodity (*)
+  raw_value: TREO (REE2O3)
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Production - type of commodity reported
+  raw_value: Co (metal)
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Production - type of commodity reported
+  raw_value: Ni (metal)
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Reserves - type of commodity reported
+  raw_value: Co (metal)
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Reserves - type of commodity reported
+  raw_value: Ni
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Reserves - type of commodity reported
+  raw_value: Ni (metal)
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Reserves - type of commodity reported
+  raw_value: RE2O3
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Resources - type of commodity reported
+  raw_value: Co (metal)
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Resources - type of commodity reported
+  raw_value: Ni (metal)
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Resources - type of commodity reported
+  raw_value: RE2O3
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Resources - type of commodity reported
+  raw_value: Sc (metal)
+  codes:
+  - Sc
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Type of commodity reported
+  raw_value: Co (metal)
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Type of commodity reported
+  raw_value: Ni (metal)
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Type of commodity reported
+  raw_value: RE2O3
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: gseu_crm
+  field: Type of commodity reported
+  raw_value: Sc (metal)
+  codes:
+  - Sc
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: bauxite;lanthanides;scandium
+  codes:
+  - REE
+  - Sc
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: bismuth;cobalt;iron ore;silver;arsenic
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cadmium;ferronickel;copper;manganese;nickel;cobalt
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cadmium;mercury;silver;cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: chromite;scandium;;
+  codes:
+  - Sc
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt; gold;silver;platinum;palladium;rhodium;ruthenium;iridium
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt; iridium
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;cadmium
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;copper;bismuth;lanthanides;lead;lithium;nickel;silver;caesium;tungsten;zinc
+  codes:
+  - Co
+  - Ni
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;copper;ferrochrome;gold;iridium;nickel;chromium;chromite;platinum group metals;rhodium;ruthenium;iron
+    ore;titanium;vanadium
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;copper;gold;iridium;iron ore;nickel;osmium;palladium;platinum;rhodium;ruthenium
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;copper;gold;iron ore;lead;silver;zinc
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;copper;gold;lithium;nickel;palladium;platinum
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;ferrochrome
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;gold;palladium;platinum;platinum group metals;rhodium;silver
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;gold;silver
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;iron ore
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;iron ore;lanthanides;lithium;nickel;niobium;palladium;platinum;silver;tantalum;tin;uranium
+  codes:
+  - Co
+  - Ni
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;iron ore;silver;
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;lithium;nickel;silver;tantalum
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;manganese;nickel
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;nickel
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;nickel;palladium;platinum;rhodium;silver
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;nickel;platinum;silver
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;palladium;platinum
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;palladium;platinum;rhodium
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;platinum
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;platinum;gold;silver;palladium;rhodium;ruthenium;iridium
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;platinum;silver
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;silver
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;silver;gold
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;silver;uranium
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;tungsten
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: cobalt;zinc
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: copper;antimony;iridium;lead;nickel;palladium;platinum;rhodium;ruthenium;silver;tellurium;zinc
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: copper;antimony;lithium;nickel;palladium;platinum;silver
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: copper;cadmium;manganese;silver;vanadium;cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: copper;cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: copper;cobalt;cadmium;
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: copper;cobalt;mercury;silver;cadmium
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: copper;cobalt;nickel;palladium;platinum;platinum group metals;rhodium;silver
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: copper;ferrochrome;chromite;iridium;nickel;palladium;chromium;platinum group metals;rhodium;ruthenium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: copper;ferrochrome;gold;iridium;lead;nickel;chromium;cobalt;platinum group metals;rhodium;ruthenium;zinc
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: copper;ferrochrome;gold;iridium;nickel;chromite;copper;rhodium;ruthenium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: copper;gold;iridium;nickel;chromite;chromium;rhodium;ruthenium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: copper;gold;iridium;nickel;chromite;cobalt;rhodium;ruthenium
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: copper;gold;iridium;nickel;osmium;palladium;platinum;rhodium;rubidium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: copper;gold;iridium;nickel;palladium;platinum;rhodium;ruthenium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: copper;gold;lanthanides;beryllium;niobium;silver;sulphuric acid;tantalum;uranium;cadmium
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: diamond;gold;copper;barium;lanthanides;silver
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: diamond;gold;iron ore;cobalt;silver;zinc
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: ferromolybdenum;cadmium;nickel;scandium;ferromanganese
+  codes:
+  - Ni
+  - Sc
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: ferronickel;
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: ferronickel;molybdenum;nickel;palladium;platinum;silver
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: germanium;copper;silver;cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;cobalt;copper;platinum
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;cobalt;palladium;platinum
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;cobalt;palladium;platinum;platinum group metals;rhodium
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;cobalt;palladium;platinum;rhodium;silver
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;cobalt;palladium;platinum;silver
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;cobalt;palladium;silver; platinum; rhodium
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;cobalt;platinum
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;cobalt;platinum group metals
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;cobalt;silver;copper
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;cobalt;silver;nickel
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;cobalt;silver;platinum;palladium;rhodium;ruthenium;iridium
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;cobalt;silver;zinc
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;copper;palladium;cobalt;rhodium
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;copper;silver;cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;iridium;cobalt;osmium;palladium;platinum;rhodium;ruthenium;selenium;silver;tellurium
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;iridium;copper;palladium;cobalt;platinum group metals;rhodium;ruthenium
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;iridium;nickel;chromite;bopper;rhodium;ruthenium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;iridium;nickel;copper;chromite;rhodium;ruthenium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;iron ore;cobalt;palladium;platinum;rhodium;silver
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;iron ore;nickel;palladium;clay;platinum;rhodium;silver;titanium;uranium;vermiculite;
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;lanthanides;nickel;silver;arsenic
+  codes:
+  - Ni
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;lead;cobalt;platinum
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;lead;nickel;silver;zinc
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;nickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;nickel;palladium;platinum
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;nickel;palladium;platinum;platinum group metals;rhodium;selenium;silver;tellurium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: gold;nickel;zinc
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: graphite;iron ore;cobalt;platinum group elements;titanium;vanadium
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: ilmenite;lanthanum;leucoxene;monazite;neodymium;praseodymium;rutile;titanium;zircon
+  codes:
+  - La
+  - Nd
+  - Pr
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: iridium;lanthanides;europium;platinum;silver;terbium;thulium
+  codes:
+  - Eu
+  - REE
+  - Tb
+  - Tm
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: iridium;nickel;chromite;gold;rhodium;rubidium;ruthenium;copper
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: iridium;nickel;rhodium;ruthenium;copper;gold
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: iridium;rhodium;copper;gold;nickel;ruthenium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: iron ore;chormite;scandium
+  codes:
+  - Sc
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: iron ore;cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: iron ore;cobalt;opal;silver;tungsten
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: iron ore;molybdenum;silver;cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: lanthanides
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: lanthanides;silver;gold
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: lead;gold;uranium;zinc;cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: lead;nickel;silver;tantalum;tin;tungsten;zinc
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: lithium;cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: lithium;nickel;niobium;rubidium;silver;tantalum;tin
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: magnesium;nickel;tantalum
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: manganese;cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: nickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: nickel;cadimium;aluminium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: nickel;copper;gold;rhodium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: nickel;lithium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: nickel;palladium;platinum;selenium;silver
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: nickel;platinum
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: nickel;platinum group metals;rhodium;silver;copper;gold
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: nickel;silver
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: nickel;silver;sulphate;sulphuric acid
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: platinum;cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: rhodium;copper;gold;iridium;nickel;ruthenium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: rhodium;copper;nickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: rhodium;iridium;nickel;chromite;copper;gold;ruthenium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: rhodium;nickel;copper;gold
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: rhodium;nickel;gold;copper;iridium;ruthenium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: scandium
+  codes:
+  - Sc
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: silver;copper;nickel;cadmium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: silver;nickel;zinc;titanium;cadmium
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: tantalum;thorium;lanthanides;uranium
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: zinc;cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Other Commodities
+  raw_value: zinc;lanthanides;lanthanum;cadmium;scandium;copper;tellurium;yttrium;gold
+  codes:
+  - La
+  - REE
+  - Sc
+  - Y
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Primary Commodity
+  raw_value: REE
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Primary Commodity
+  raw_value: cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Primary Commodity
+  raw_value: ferronickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Primary Commodity
+  raw_value: nickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: Primary Commodity
+  raw_value: 'nickel '
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: 'Secondary Commodity '
+  raw_value: REE
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: 'Secondary Commodity '
+  raw_value: cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: 'Secondary Commodity '
+  raw_value: ferronickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: 'Secondary Commodity '
+  raw_value: nickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: icmm
+  field: 'Secondary Commodity '
+  raw_value: 'nickel '
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: commodity
+  raw_value: Me.Co
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: commodity
+  raw_value: Me.Ni
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: input
+  raw_value: Nickel concentrate
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material
+  raw_value: Con.Ni
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material
+  raw_value: O.Ni
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_id
+  raw_value: All.FeNi
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: All.FeNi
+    label: Ferronickel
+- source_id: jasansky
+  field: material_id
+  raw_value: Con.Co
+  codes:
+  - Co
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Con.Co
+    label: Cobalt concentrate
+- source_id: jasansky
+  field: material_id
+  raw_value: Con.FeNi
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Con.FeNi
+    label: Ferronickel concentrate
+- source_id: jasansky
+  field: material_id
+  raw_value: Con.Ni
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Con.Ni
+    label: Nickel concentrate
+- source_id: jasansky
+  field: material_id
+  raw_value: Con.rem
+  codes:
+  - REE
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Con.rem
+    label: Rare-earth concentrate
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Ce
+  codes:
+  - Ce
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Ce
+    label: Cerium
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Ce2O3
+  codes:
+  - Ce
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Ce2O3
+    label: Cerium(III) oxide
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Co
+  codes:
+  - Co
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Co
+    label: Cobalt
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Dy
+  codes:
+  - Dy
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Dy
+    label: Dysprosium
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Dy2O3
+  codes:
+  - Dy
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Dy2O3
+    label: Dysprosium(III) oxide
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Er
+  codes:
+  - Er
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Er
+    label: Erbium
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Er2O3
+  codes:
+  - Er
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Er2O3
+    label: Erbium(III) oxide
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Eu
+  codes:
+  - Eu
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Eu
+    label: Europium
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Eu2O3
+  codes:
+  - Eu
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Eu2O3
+    label: Europium(III) oxide
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Gd
+  codes:
+  - Gd
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Gd
+    label: Gadolinium
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Gd2O3
+  codes:
+  - Gd
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Gd2O3
+    label: Gadolinium(III) oxide
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Ho
+  codes:
+  - Ho
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Ho
+    label: Holmium
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Ho2O3
+  codes:
+  - Ho
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Ho2O3
+    label: Holmium(III) oxide
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.La
+  codes:
+  - La
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.La
+    label: Lanthanum
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.La2O3
+  codes:
+  - La
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.La2O3
+    label: Lanthanum(III) oxide
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Lu
+  codes:
+  - Lu
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Lu
+    label: Lutetium
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Lu2O3
+  codes:
+  - Lu
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Lu2O3
+    label: Lutetium(III) oxide
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Nd
+  codes:
+  - Nd
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Nd
+    label: Neodymium
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Nd2O3
+  codes:
+  - Nd
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Nd2O3
+    label: Neodymium(III) oxide
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Ni
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Ni
+    label: Nickel
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Pm
+  codes:
+  - Pm
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Pm
+    label: Promethium
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Pm2O3
+  codes:
+  - Pm
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Pm2O3
+    label: Promethium(III) oxide
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Pr
+  codes:
+  - Pr
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Pr
+    label: Praseodymium
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Pr2O3
+  codes:
+  - Pr
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Pr2O3
+    label: Praseodymium(III) oxide
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Sc
+  codes:
+  - Sc
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Sc
+    label: Scandium
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Sc2O3
+  codes:
+  - Sc
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Sc2O3
+    label: Scandium(III) oxide
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Sm
+  codes:
+  - Sm
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Sm
+    label: Samarium
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Sm2O3
+  codes:
+  - Sm
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Sm2O3
+    label: Samarium(III) oxide
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Tb
+  codes:
+  - Tb
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Tb
+    label: Terbium
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Tb2O3
+  codes:
+  - Tb
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Tb2O3
+    label: Terbium(III) oxide
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Tm
+  codes:
+  - Tm
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Tm
+    label: Thulium
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Tm2O3
+  codes:
+  - Tm
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Tm2O3
+    label: Thulium(III) oxide
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Y
+  codes:
+  - Y
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Y
+    label: Yttrium
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Y2O3
+  codes:
+  - Y
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Y2O3
+    label: Yttrium(III) oxide
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Yb
+  codes:
+  - Yb
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Yb
+    label: Ytterbium
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.Yb2O3
+  codes:
+  - Yb
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.Yb2O3
+    label: Ytterbium(III) oxide
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.rem
+  codes:
+  - REE
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.rem
+    label: Rare-earth metals
+- source_id: jasansky
+  field: material_id
+  raw_value: Me.reo
+  codes:
+  - REE
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: Me.reo
+    label: Rare-earth oxides
+- source_id: jasansky
+  field: material_id
+  raw_value: O.CeLaPO4
+  codes:
+  - REE
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: O.CeLaPO4
+    label: Monazite
+- source_id: jasansky
+  field: material_id
+  raw_value: O.Co
+  codes:
+  - Co
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: O.Co
+    label: Cobalt ore
+- source_id: jasansky
+  field: material_id
+  raw_value: O.Ni
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: O.Ni
+    label: Nickel dominant ore
+- source_id: jasansky
+  field: material_id
+  raw_value: O.rem
+  codes:
+  - REE
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: jasansky/2026-10-29/open_database_mine_production.zip
+    table: data/material_ids.csv
+    code: O.rem
+    label: Rare-earth mineral
+- source_id: jasansky
+  field: material_id_agg
+  raw_value: Me.rem
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_id_agg
+  raw_value: Me.reo
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Cerium
+  codes:
+  - Ce
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Cerium(III) oxide
+  codes:
+  - Ce
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Cobalt concentrate
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Cobalt ore
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Dysprosium
+  codes:
+  - Dy
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Dysprosium(III) oxide
+  codes:
+  - Dy
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Erbium
+  codes:
+  - Er
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Erbium(III) oxide
+  codes:
+  - Er
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Europium
+  codes:
+  - Eu
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Europium(III) oxide
+  codes:
+  - Eu
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Ferronickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Ferronickel concentrate
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Gadolinium
+  codes:
+  - Gd
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Gadolinium(III) oxide
+  codes:
+  - Gd
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Holmium
+  codes:
+  - Ho
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Holmium(III) oxide
+  codes:
+  - Ho
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Lanthanum
+  codes:
+  - La
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Lanthanum(III) oxide
+  codes:
+  - La
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Lutetium
+  codes:
+  - Lu
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Lutetium(III) oxide
+  codes:
+  - Lu
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Monazite
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Neodymium
+  codes:
+  - Nd
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Neodymium(III) oxide
+  codes:
+  - Nd
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Nickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Nickel concentrate
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Nickel dominant ore
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Praseodymium
+  codes:
+  - Pr
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Praseodymium(III) oxide
+  codes:
+  - Pr
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Promethium
+  codes:
+  - Pm
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Promethium(III) oxide
+  codes:
+  - Pm
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Rare-earth concentrate
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Rare-earth metals
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Rare-earth mineral
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Rare-earth oxides
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Samarium
+  codes:
+  - Sm
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Samarium(III) oxide
+  codes:
+  - Sm
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Scandium
+  codes:
+  - Sc
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Scandium(III) oxide
+  codes:
+  - Sc
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Terbium
+  codes:
+  - Tb
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Terbium(III) oxide
+  codes:
+  - Tb
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Thulium
+  codes:
+  - Tm
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Thulium(III) oxide
+  codes:
+  - Tm
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Ytterbium
+  codes:
+  - Yb
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Ytterbium(III) oxide
+  codes:
+  - Yb
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Yttrium
+  codes:
+  - Y
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name
+  raw_value: Yttrium(III) oxide
+  codes:
+  - Y
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name_agg
+  raw_value: Rare-earth metals
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: material_name_agg
+  raw_value: Rare-earth oxides
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: materials_contained
+  raw_value: Me.Ce2O3; Me.Dy2O3; Me.Er2O3; Me.Eu2O3; Me.Gd2O3; Me.Ho2O3; Me.La2O3; Me.Lu2O3; Me.Nd2O3;
+    Me.Pr2O3; Me.Pm2O3; Me.Sm2O3; Me.Sc2O3; Me.Tb2O3; Me.Tm2O3; Me.Yb2O3; Me.Y2O3
+  codes:
+  - Ce
+  - Dy
+  - Er
+  - Eu
+  - Gd
+  - Ho
+  - La
+  - Lu
+  - Nd
+  - Pm
+  - Pr
+  - Sc
+  - Sm
+  - Tb
+  - Tm
+  - Y
+  - Yb
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: materials_contained
+  raw_value: Me.Ce; Me.Dy; Me.Er; Me.Eu; Me.Gd; Me.Ho; Me.La; Me.Lu; Me.Nd; Me.Pr; Me.Pm; Me.Sm; Me.Sc;
+    Me.Tb; Me.Tm; Me.Yb; Me.Y
+  codes:
+  - Ce
+  - Dy
+  - Er
+  - Eu
+  - Gd
+  - Ho
+  - La
+  - Lu
+  - Nd
+  - Pm
+  - Pr
+  - Sc
+  - Sm
+  - Tb
+  - Tm
+  - Y
+  - Yb
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: product
+  raw_value: Con.Ni
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: product
+  raw_value: O.Ni
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_260400
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_260400
+    label: Nickel Ores And Concentrates
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_260500
+  codes:
+  - Co
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_260500
+    label: Cobalt Ores And Concentrates
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_261790
+  codes: []
+  reason: Pilot mineral words occur only within exclusion/other-than qualifications, not a positive identification.
+    Ores And Concentrates (Excl. Iron, Manganese, Copper, Nickel, Cobalt, Aluminium, Lead, Zinc, Tin,
+    Chromium, Tungsten, Uranium, Thorium, Molybdenum, Titanium, Niobium, Tantalum, Vanadium, Zirconium,
+    Precious-Metal Or Antimony Ores And Concentrates)
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_280530
+  codes:
+  - REE
+  - Sc
+  - Y
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_280530
+    label: Rare-Earth Metals, Scandium And Yttrium, Whether Or Not Intermixed Or Interalloyed
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_282200
+  codes:
+  - Co
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_282200
+    label: Cobalt Oxides And Hydroxides; Commercial Cobalt Oxides
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_282540
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_282540
+    label: Nickel Oxides And Hydroxides
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_282735
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_282735
+    label: Nickel Chloride
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_283324
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_283324
+    label: Sulphates Of Nickel
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_284610
+  codes:
+  - Ce
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_284610
+    label: Cerium Compounds
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_284690
+  codes:
+  - REE
+  - Sc
+  - Y
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_284690
+    label: Compounds, Inorganic Or Organic, Of Rare-Earth Metals, Of Yttrium Or Of Scandium Or Of Mixtures
+      Of These Metals (Excl. Cerium)
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_720260
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_720260
+    label: Ferro-Nickel
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_720299
+  codes: []
+  reason: Pilot mineral words occur only within exclusion/other-than qualifications, not a positive identification.
+    Ferro-Alloys (Excl. Ferro-Manganese, Ferro-Silicon, Ferro-Silico-Manganese, Ferro-Chromium, Ferro-Silico-Chromium,
+    Ferro-Nickel, Ferro-Molybdenum, Ferro-Tungsten, Ferro-Silico-Tungsten, Ferro-Titanium, Ferro-Silico-Titanium,
+    Ferro-Vanadium And Ferro-Niobium)
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_740822
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_740822
+    label: Wire Of Copper-Nickel Alloys "Cupro-Nickel" Or Copper-Nickel-Zinc Alloys "Nickel Silver"
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_740829
+  codes: []
+  reason: Pilot mineral words occur only within exclusion/other-than qualifications, not a positive identification.
+    Wire Of Copper Alloys (Other Than Copper-Zinc Alloys [Brass], Copper-Nickel Alloys [Cupro-Nickel]
+    Or Copper-Nickel-Zinc Alloys [Nickel Silver])
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_740940
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_740940
+    label: Plates, Sheets And Strip, Of Copper-Nickel Base Alloys "Cupro-Nickel" Or Copper-Nickel-Zinc
+      Base Alloys "Nickel Silver", Of A Thickness Of > 0,15 Mm, Not In Coils (Excl. Expanded Sheet And
+      Strip And Electrically Insulated Strip)
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_740990
+  codes: []
+  reason: Pilot mineral words occur only within exclusion/other-than qualifications, not a positive identification.
+    Plates, Sheets And Strip, Of Copper Alloys, Of A Thickness Of > 0,15 Mm (Excl. Copper-Zinc Base Alloys
+    "Brass", Copper-Zinc Base Alloys "Bronze", Copper-Nickel Base Alloys "Cupro-Nickel", Copper-Nickel-Zinc
+    Base Alloys "Nickel Silver", And Expanded Sheet And Strip And Electrically Insulated Strip)
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_750110
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_750110
+    label: Nickel Mattes
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_750120
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_750120
+    label: Nickel Oxide Sinters And Other Intermediate Products Of Nickel Metallurgy (Excl. Nickel Mattes)
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_750210
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_750210
+    label: Nickel, Not Alloyed, Unwrought
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_750220
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_750220
+    label: Unwrought Nickel Alloys
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_750300
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_750300
+    label: Waste And Scrap, Of Nickel (Excl. Ingots Or Other Similar Unwrought Shapes, Of Remelted Nickel
+      Waste And Scrap, Ashes And Residues Containing Nickel And Waste And Scrap Of Primary Cells, Primary
+      Batteries And Electric Accumulators)
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_750400
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_750400
+    label: Powders And Flakes, Of Nickel (Excl. Nickel Oxide Sinters)
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_750511
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_750511
+    label: Bars, Rods, Profiles And Wire, Of Non-Alloy Nickel, N.E.S. (Excl. Electrically Insulated Products)
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_750512
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_750512
+    label: Bars, Rods, Profiles And Wire, Of Nickel Alloys, N.E.S. (Excl. Electrically Insulated Products)
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_750521
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_750521
+    label: Wire Of Non-Alloy Nickel (Excl. Electrically Insulated Products)
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_750522
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_750522
+    label: Wire Of Nickel Alloys (Excl. Electrically Insulated Products)
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_750610
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_750610
+    label: Plates, Sheets, Strip And Foil, Of Non-Alloy Nickel (Excl. Expanded Plates, Sheets Or Strip)
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_750620
+  codes:
+  - Ni
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_750620
+    label: Plates, Sheets, Strip And Foil, Of Nickel Alloys (Excl. Expanded Plates, Sheets Or Strip)
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_810520
+  codes:
+  - Co
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_810520
+    label: Cobalt Mattes And Other Intermediate Products Of Cobalt Metallurgy; Unwrought Cobalt; Cobalt
+      Powders
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_810530
+  codes:
+  - Co
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_810530
+    label: Cobalt Waste And Scrap (Excl. Ash And Residues Containing Cobalt)
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_810590
+  codes:
+  - Co
+  reason: Independently reviewed positive publisher codebook label; exclusion clauses were excluded from
+    identification.
+  codebook_evidence:
+    file: oecd_export/2026-10-29/oecd_export_restrictions_structure_3_0.xml
+    table: CL_PRODUCT_HS2007
+    code: HS07_810590
+    label: Articles Of Cobalt, N.E.S.
+- source_id: oecd_export
+  field: COMMODITY
+  raw_value: HS07_811222
+  codes: []
+  reason: Pilot mineral words occur only within exclusion/other-than qualifications, not a positive identification.
+    Chromium Waste And Scrap (Excl. Ash And Residues Containing Chromium And Chromium Alloys Containing
+    > 10% By Weight Of Nickel)
+- source_id: usgs_mcs_2026
+  field: Commodity
+  raw_value: Cerium
+  codes:
+  - Ce
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: usgs_mcs_2026
+  field: Commodity
+  raw_value: Cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: usgs_mcs_2026
+  field: Commodity
+  raw_value: Dysprosium
+  codes:
+  - Dy
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: usgs_mcs_2026
+  field: Commodity
+  raw_value: Erbium
+  codes:
+  - Er
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: usgs_mcs_2026
+  field: Commodity
+  raw_value: Europium
+  codes:
+  - Eu
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: usgs_mcs_2026
+  field: Commodity
+  raw_value: Gadolinium
+  codes:
+  - Gd
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: usgs_mcs_2026
+  field: Commodity
+  raw_value: Holmium
+  codes:
+  - Ho
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: usgs_mcs_2026
+  field: Commodity
+  raw_value: Lanthanum
+  codes:
+  - La
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: usgs_mcs_2026
+  field: Commodity
+  raw_value: Lutetium
+  codes:
+  - Lu
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: usgs_mcs_2026
+  field: Commodity
+  raw_value: Neodymium
+  codes:
+  - Nd
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: usgs_mcs_2026
+  field: Commodity
+  raw_value: Nickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: usgs_mcs_2026
+  field: Commodity
+  raw_value: Praseodymium
+  codes:
+  - Pr
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: usgs_mcs_2026
+  field: Commodity
+  raw_value: Rare Earths
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: usgs_mcs_2026
+  field: Commodity
+  raw_value: Rare Earths (Heavy)
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: usgs_mcs_2026
+  field: Commodity
+  raw_value: Samarium
+  codes:
+  - Sm
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: usgs_mcs_2026
+  field: Commodity
+  raw_value: Scandium
+  codes:
+  - Sc
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: usgs_mcs_2026
+  field: Commodity
+  raw_value: Terbium
+  codes:
+  - Tb
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: usgs_mcs_2026
+  field: Commodity
+  raw_value: Ytterbium
+  codes:
+  - Yb
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: usgs_mcs_2026
+  field: Commodity
+  raw_value: Yttrium
+  codes:
+  - Y
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Au, Ag, Cu, Co
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Au, Ag, PGE, Ni
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Au, Co, Cu
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Au, Cu, Co, Bi
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Au, Ni
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Au, monazite
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: COBALT
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Co
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Co, Ag, Cu, Ni
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Co, Ag, Pb
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Co, As, Ni
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Co, Au, U, Cu
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Co, Cu
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Co, Ni, Cu, Zn
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Copper Gold (Uranium Cobalt Silver)
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Copper, Arsenic, Bismuth, Silver, Nickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Copper, Nickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Copper, Nickel,
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Copper, Silver, Gold, Cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, ASBT, Co
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, Ag, Au, Co
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, Ag, Au, Co, Mo, Zn
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, Ag, Au, Co, Ni
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, Ag, Au, Ni, W
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, Ag, Co
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, Ag, Co, Pb
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, As, Co, Au, Ag
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, Au, Co
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, Au, Co, S
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, Au, REE, RHYO
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, Co
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, Co, Ag, Pb, Zn, CuSpec
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, Co, Ni, WOLL
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, Co, U, WOLL
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, Co, Zn
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, Ni
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, Ni, Au, Ag, PGE, Co
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, Pt, Pd, Ni
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, REE
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Cu, REE, U
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Gold, Cobalt
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Gold, Copper, Nickel, Lead, Zinc,
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Lead, Nickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Lead, Nickel, Silver, Zinc
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Mn, Co
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Mn, Co, REE
+  codes:
+  - Co
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni Co
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni Cu
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni Cu Co
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni Cu Co Pt Pd
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni Cu Gsp
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni, Ag, Au
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni, Au
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni, Co
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni, Co, Chrp
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni, Co, Cu
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni, Co, FeOre, Al, Mg, Ca, Carb, Cu, Zn
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni, Co, Mg
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni, Co, Sc
+  codes:
+  - Co
+  - Ni
+  - Sc
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni, Co, Sc, Fe
+  codes:
+  - Co
+  - Ni
+  - Sc
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni, Cr
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni, Cr, unprocessed construction materials, coarse aggregate - hard rock
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni, Cu
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni, Cu, Co
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni, Cu, Co, Pt, Pd
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni, Cu, Gsp
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni, Cu, Pd, Pt
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni, Cu, Pt, Pd
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni, Gsp
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Ni, Magnesium minerals - magnesite
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Nickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Nickel Cobalt
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Nickel Copper Cobalt Platinum group elements
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Nickel,
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Nickel, Copper
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Nickel, Lead, Zinc
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Nickel, Platinoids
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Pb, Ag, Au, Co, Cu
+  codes:
+  - Co
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Pt, Co, Ni
+  codes:
+  - Co
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Pt, Cu, Ni
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Sc, Co, Ni
+  codes:
+  - Co
+  - Ni
+  - Sc
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Silver, Lead, Nickel
+  codes:
+  - Ni
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Sn, W, monazite
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Sn, monazite
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: Sn, monazite, ilmenite
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: U, MIC, REE, Ra, U3O8
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: U, Ni, Co, REE, Sc, Cu, V, Zn, Au
+  codes:
+  - Co
+  - Ni
+  - REE
+  - Sc
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: W, Bi, monazite
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: W, Zn, Pb, monazite
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: wapha
+  field: Commodity
+  raw_value: W, monazite, beryl gems
+  codes:
+  - REE
+  reason: Exact source commodity term/code or reviewed composite; pilot codes shown, with other named
+    commodities retained by resolver.
+- source_id: jasansky
+  field: output
+  raw_value: Cathode nickel and briquettes
+  codes:
+  - Ni
+  reason: Explicit nickel product label in publisher data/processing.csv output field.
+- source_id: jasansky
+  field: output
+  raw_value: Nickel in ferronickel
+  codes:
+  - Ni
+  reason: Explicit nickel product label in publisher data/processing.csv output field.
+- source_id: jasansky
+  field: output
+  raw_value: Nickel in matte
+  codes:
+  - Ni
+  reason: Explicit nickel product label in publisher data/processing.csv output field.
+notes:
+- Pm is intentionally proposed per parent decision to include all17 rare-earth elements; add Pm entry
+  if the current seed has not yet been updated. Sc belongs to REE family under that explicit decision.
+- Value overrides must run on exact raw cells before splitting and on exact resulting tokens; this prevents
+  malformed composite tokens from being lost while leaving unrelated unknown tokens visible.
+- 'Never apply substring matching for pilot codes: COAL/COR are not cobalt; green and fired anode blocks
+  is not REE.'
+- Raw qualifiers such as (?) are retained independently of vocabulary resolution; aliasing a term does
+  not resolve the geological uncertainty.
+- FIPS Place identifiers and lateriteCountryCode are deliberately left to parent special-field policies.
+  These override proposals concern explicit country-name fields only.
+- No occurrence of plain Congo appeared in the audited geological country fields. Future plain Congo should
+  be unresolved without source-specific disambiguating evidence.
+- Unmapped nonpilot source vocabulary remains visible; proposal does not coerce every mineral or industrial
+  product into a listed commodity.
+- 'Additional negative control: MRDS CO2 is carbon dioxide (publisher dictionary), not cobalt; match complete
+  source tokens only.'
+- No canonical observations or normalized data are emitted. These are reviewed terminology proposals only.
+- AidData Status is deliberately omitted from mine-status observations; financing completion never implies
+  an operating mine.
+- OECD mappings reflect product identity, not production or reserves. Positive REE group codes do not
+  assert every group member is present.
+- The complete Jasansky source dictionary, including unused listed pilot codes, is covered by aliases.
+  Dictionary rows are distinct from recorded-production evidence.
+- GA globalREE has no commodity-value column; declared REE source scope must be tracked separately from
+  observed code coverage.
+- WAPHA and ICMM monazite aliases identify an REE-bearing commodity mineral, without inferring grade or
+  elemental proportions.
