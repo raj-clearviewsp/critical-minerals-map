@@ -1,0 +1,422 @@
+source_id,country_iso3,country_name,records
+aiddata_transition_v2,AUS,Australia,70
+aiddata_transition_v2,BRA,Brazil,117
+aiddata_transition_v2,CAN,Canada,16
+aiddata_transition_v2,CHE,Switzerland,29
+aiddata_transition_v2,COD,"Congo, The Democratic Republic of the",310
+aiddata_transition_v2,CUB,Cuba,12
+aiddata_transition_v2,GBR,United Kingdom,93
+aiddata_transition_v2,IDN,Indonesia,311
+aiddata_transition_v2,KAZ,Kazakhstan,15
+aiddata_transition_v2,KOR,"Korea, Republic of",4
+aiddata_transition_v2,LUX,Luxembourg,62
+aiddata_transition_v2,MMR,Myanmar,13
+aiddata_transition_v2,PNG,Papua New Guinea,21
+aiddata_transition_v2,RUS,Russian Federation,69
+aiddata_transition_v2,UGA,Uganda,9
+aiddata_transition_v2,,Unassigned ISO country,12
+aiddata_transition_v2,USA,United States,57
+aiddata_transition_v2,ZAF,South Africa,63
+aiddata_transition_v2,ZMB,Zambia,8
+ga_critical_2025,AUS,Australia,246
+ga_critical_2025_arcgis,AUS,Australia,246
+ga_global_ree,ARG,Argentina,1
+ga_global_ree,AUS,Australia,98
+ga_global_ree,BDI,Burundi,1
+ga_global_ree,BGD,Bangladesh,10
+ga_global_ree,BRA,Brazil,22
+ga_global_ree,CAN,Canada,27
+ga_global_ree,CHN,China,45
+ga_global_ree,COD,"Congo, The Democratic Republic of the",5
+ga_global_ree,DEU,Germany,2
+ga_global_ree,EGY,Egypt,4
+ga_global_ree,FIN,Finland,5
+ga_global_ree,GAB,Gabon,1
+ga_global_ree,GRL,Greenland,5
+ga_global_ree,IND,India,12
+ga_global_ree,KAZ,Kazakhstan,2
+ga_global_ree,KEN,Kenya,2
+ga_global_ree,KGZ,Kyrgyzstan,2
+ga_global_ree,KOR,"Korea, Republic of",7
+ga_global_ree,LKA,Sri Lanka,1
+ga_global_ree,MDG,Madagascar,2
+ga_global_ree,MNG,Mongolia,4
+ga_global_ree,MOZ,Mozambique,7
+ga_global_ree,MRT,Mauritania,1
+ga_global_ree,MWI,Malawi,2
+ga_global_ree,NAM,Namibia,4
+ga_global_ree,NOR,Norway,8
+ga_global_ree,NZL,New Zealand,1
+ga_global_ree,RUS,Russian Federation,4
+ga_global_ree,SAU,Saudi Arabia,5
+ga_global_ree,SWE,Sweden,3
+ga_global_ree,TUR,Türkiye,3
+ga_global_ree,TWN,"Taiwan, Province of China",9
+ga_global_ree,TZA,"Tanzania, United Republic of",1
+ga_global_ree,URY,Uruguay,1
+ga_global_ree,USA,United States,50
+ga_global_ree,UZB,Uzbekistan,1
+ga_global_ree,VNM,Viet Nam,9
+ga_global_ree,ZAF,South Africa,8
+ga_global_ree,ZMB,Zambia,1
+gseu_crm,ALB,Albania,9
+gseu_crm,BIH,Bosnia and Herzegovina,2
+gseu_crm,DEU,Germany,3
+gseu_crm,ESP,Spain,2
+gseu_crm,FIN,Finland,46
+gseu_crm,GBR,United Kingdom,2
+gseu_crm,GRC,Greece,9
+gseu_crm,GRL,Greenland,5
+gseu_crm,ITA,Italy,1
+gseu_crm,MKD,North Macedonia,4
+gseu_crm,NOR,Norway,11
+gseu_crm,POL,Poland,7
+gseu_crm,SRB,Serbia,2
+gseu_crm,SVK,Slovakia,1
+gseu_crm,SWE,Sweden,19
+gseu_crm,UKR,Ukraine,13
+gseu_crm,,Unassigned ISO country,2
+icmm,ALB,Albania,5
+icmm,AUS,Australia,64
+icmm,AZE,Azerbaijan,1
+icmm,BEL,Belgium,1
+icmm,BOL,"Bolivia, Plurinational State of",1
+icmm,BRA,Brazil,10
+icmm,BWA,Botswana,3
+icmm,CAN,Canada,26
+icmm,CHL,Chile,3
+icmm,CHN,China,17
+icmm,COD,"Congo, The Democratic Republic of the",20
+icmm,COL,Colombia,1
+icmm,CUB,Cuba,4
+icmm,DEU,Germany,1
+icmm,DOM,Dominican Republic,2
+icmm,ESP,Spain,2
+icmm,FIN,Finland,11
+icmm,FRA,France,1
+icmm,GBR,United Kingdom,1
+icmm,GHA,Ghana,1
+icmm,GRC,Greece,2
+icmm,GTM,Guatemala,1
+icmm,IDN,Indonesia,7
+icmm,IND,India,1
+icmm,JPN,Japan,5
+icmm,KAZ,Kazakhstan,3
+icmm,KOR,"Korea, Republic of",1
+icmm,MAR,Morocco,2
+icmm,MDG,Madagascar,2
+icmm,MEX,Mexico,1
+icmm,MRT,Mauritania,1
+icmm,NCL,New Caledonia,12
+icmm,NLD,Netherlands,1
+icmm,NOR,Norway,1
+icmm,PER,Peru,1
+icmm,PHL,Philippines,6
+icmm,PNG,Papua New Guinea,1
+icmm,POL,Poland,1
+icmm,RUS,Russian Federation,13
+icmm,SWE,Sweden,2
+icmm,THA,Thailand,1
+icmm,TUR,Türkiye,1
+icmm,UKR,Ukraine,2
+icmm,,Unassigned ISO country,1
+icmm,USA,United States,13
+icmm,VEN,"Venezuela, Bolivarian Republic of",1
+icmm,ZAF,South Africa,25
+icmm,ZMB,Zambia,14
+icmm,ZWE,Zimbabwe,8
+jasansky,AUS,Australia,14
+jasansky,BRA,Brazil,5
+jasansky,CAN,Canada,19
+jasansky,COD,"Congo, The Democratic Republic of the",6
+jasansky,COL,Colombia,1
+jasansky,CUB,Cuba,11
+jasansky,DEU,Germany,1
+jasansky,DOM,Dominican Republic,1
+jasansky,ESP,Spain,2
+jasansky,FIN,Finland,3
+jasansky,IDN,Indonesia,8
+jasansky,MDG,Madagascar,1
+jasansky,NCL,New Caledonia,2
+jasansky,NOR,Norway,1
+jasansky,PHL,Philippines,9
+jasansky,POL,Poland,1
+jasansky,RUS,Russian Federation,12
+jasansky,USA,United States,1
+jasansky,VEN,"Venezuela, Bolivarian Republic of",1
+jasansky,ZAF,South Africa,3
+jasansky,ZMB,Zambia,1
+oecd_export,AGO,Angola,151
+oecd_export,ARG,Argentina,1586
+oecd_export,BDI,Burundi,1998
+oecd_export,BLR,Belarus,216
+oecd_export,BRA,Brazil,240
+oecd_export,BWA,Botswana,3640
+oecd_export,CHL,Chile,476
+oecd_export,CHN,China,6067
+oecd_export,COD,"Congo, The Democratic Republic of the",10058
+oecd_export,COL,Colombia,1032
+oecd_export,ETH,Ethiopia,1574
+oecd_export,GAB,Gabon,560
+oecd_export,GHA,Ghana,406
+oecd_export,GIN,Guinea,420
+oecd_export,GTM,Guatemala,918
+oecd_export,IDN,Indonesia,3626
+oecd_export,IND,India,1632
+oecd_export,ISR,Israel,352
+oecd_export,JAM,Jamaica,511
+oecd_export,JOR,Jordan,156
+oecd_export,KEN,Kenya,546
+oecd_export,KGZ,Kyrgyzstan,240
+oecd_export,MAR,Morocco,886
+oecd_export,MDG,Madagascar,10021
+oecd_export,MEX,Mexico,183
+oecd_export,MMR,Myanmar,4035
+oecd_export,MNG,Mongolia,1900
+oecd_export,MYS,Malaysia,226
+oecd_export,NAM,Namibia,338
+oecd_export,NGA,Nigeria,1310
+oecd_export,OMN,Oman,104
+oecd_export,PHL,Philippines,546
+oecd_export,RUS,Russian Federation,2056
+oecd_export,RWA,Rwanda,406
+oecd_export,SAU,Saudi Arabia,153
+oecd_export,SEN,Senegal,766
+oecd_export,SLE,Sierra Leone,870
+oecd_export,TJK,Tajikistan,806
+oecd_export,TUN,Tunisia,448
+oecd_export,UKR,Ukraine,478
+oecd_export,UZB,Uzbekistan,359
+oecd_export,VNM,Viet Nam,768
+oecd_export,ZAF,South Africa,296
+oecd_export,ZMB,Zambia,2879
+oecd_export,ZWE,Zimbabwe,454
+usgs_global_critical,AUS,Australia,36
+usgs_global_critical,BDI,Burundi,3
+usgs_global_critical,BRA,Brazil,12
+usgs_global_critical,CAN,Canada,28
+usgs_global_critical,CHN,China,14
+usgs_global_critical,CIV,Côte d'Ivoire,1
+usgs_global_critical,CMR,Cameroon,1
+usgs_global_critical,COD,"Congo, The Democratic Republic of the",28
+usgs_global_critical,CUB,Cuba,4
+usgs_global_critical,ESP,Spain,1
+usgs_global_critical,FIN,Finland,12
+usgs_global_critical,GRL,Greenland,2
+usgs_global_critical,GTM,Guatemala,1
+usgs_global_critical,IDN,Indonesia,3
+usgs_global_critical,IND,India,4
+usgs_global_critical,KAZ,Kazakhstan,3
+usgs_global_critical,KEN,Kenya,1
+usgs_global_critical,KGZ,Kyrgyzstan,1
+usgs_global_critical,MAR,Morocco,1
+usgs_global_critical,MDG,Madagascar,3
+usgs_global_critical,MEX,Mexico,1
+usgs_global_critical,MKD,North Macedonia,1
+usgs_global_critical,MRT,Mauritania,1
+usgs_global_critical,MWI,Malawi,1
+usgs_global_critical,MYS,Malaysia,1
+usgs_global_critical,NAM,Namibia,1
+usgs_global_critical,NCL,New Caledonia,6
+usgs_global_critical,NOR,Norway,5
+usgs_global_critical,PHL,Philippines,10
+usgs_global_critical,PNG,Papua New Guinea,3
+usgs_global_critical,PRI,Puerto Rico,2
+usgs_global_critical,RUS,Russian Federation,21
+usgs_global_critical,SLB,Solomon Islands,1
+usgs_global_critical,SRB,Serbia,1
+usgs_global_critical,SWE,Sweden,1
+usgs_global_critical,TUR,Türkiye,3
+usgs_global_critical,TZA,"Tanzania, United Republic of",4
+usgs_global_critical,UGA,Uganda,1
+usgs_global_critical,,Unassigned ISO country,12
+usgs_global_critical,USA,United States,14
+usgs_global_critical,VNM,Viet Nam,1
+usgs_global_critical,ZAF,South Africa,4
+usgs_global_critical,ZMB,Zambia,10
+usgs_global_ree,AFG,Afghanistan,3
+usgs_global_ree,AGO,Angola,9
+usgs_global_ree,ARE,United Arab Emirates,3
+usgs_global_ree,ARG,Argentina,42
+usgs_global_ree,ARM,Armenia,7
+usgs_global_ree,ATA,Antarctica,2
+usgs_global_ree,AUS,Australia,527
+usgs_global_ree,AUT,Austria,12
+usgs_global_ree,BDI,Burundi,14
+usgs_global_ree,BEL,Belgium,2
+usgs_global_ree,BEN,Benin,1
+usgs_global_ree,BGD,Bangladesh,25
+usgs_global_ree,BIH,Bosnia and Herzegovina,1
+usgs_global_ree,BLR,Belarus,1
+usgs_global_ree,BOL,"Bolivia, Plurinational State of",9
+usgs_global_ree,BRA,Brazil,202
+usgs_global_ree,BWA,Botswana,2
+usgs_global_ree,CAF,Central African Republic,1
+usgs_global_ree,CAN,Canada,310
+usgs_global_ree,CHE,Switzerland,2
+usgs_global_ree,CHL,Chile,2
+usgs_global_ree,CHN,China,485
+usgs_global_ree,CMR,Cameroon,2
+usgs_global_ree,COD,"Congo, The Democratic Republic of the",10
+usgs_global_ree,COL,Colombia,4
+usgs_global_ree,CPV,Cabo Verde,2
+usgs_global_ree,CZE,Czechia,8
+usgs_global_ree,DEU,Germany,9
+usgs_global_ree,DNK,Denmark,1
+usgs_global_ree,DZA,Algeria,4
+usgs_global_ree,EGY,Egypt,20
+usgs_global_ree,ESP,Spain,9
+usgs_global_ree,ETH,Ethiopia,1
+usgs_global_ree,FIN,Finland,51
+usgs_global_ree,FRA,France,18
+usgs_global_ree,GAB,Gabon,2
+usgs_global_ree,GBR,United Kingdom,15
+usgs_global_ree,GHA,Ghana,1
+usgs_global_ree,GIN,Guinea,2
+usgs_global_ree,GRC,Greece,32
+usgs_global_ree,GRL,Greenland,36
+usgs_global_ree,GUF,French Guiana,1
+usgs_global_ree,GUY,Guyana,2
+usgs_global_ree,HUN,Hungary,3
+usgs_global_ree,IDN,Indonesia,67
+usgs_global_ree,IND,India,133
+usgs_global_ree,IRL,Ireland,1
+usgs_global_ree,IRN,"Iran, Islamic Republic of",17
+usgs_global_ree,IRQ,Iraq,2
+usgs_global_ree,ITA,Italy,16
+usgs_global_ree,JAM,Jamaica,7
+usgs_global_ree,JPN,Japan,21
+usgs_global_ree,KAZ,Kazakhstan,163
+usgs_global_ree,KEN,Kenya,6
+usgs_global_ree,KGZ,Kyrgyzstan,76
+usgs_global_ree,KOR,"Korea, Republic of",44
+usgs_global_ree,LAO,Lao People's Democratic Republic,3
+usgs_global_ree,LBR,Liberia,1
+usgs_global_ree,LBY,Libya,2
+usgs_global_ree,LKA,Sri Lanka,41
+usgs_global_ree,LVA,Latvia,3
+usgs_global_ree,MAR,Morocco,9
+usgs_global_ree,MDG,Madagascar,17
+usgs_global_ree,MEX,Mexico,34
+usgs_global_ree,MLI,Mali,4
+usgs_global_ree,MMR,Myanmar,13
+usgs_global_ree,MNE,Montenegro,2
+usgs_global_ree,MNG,Mongolia,99
+usgs_global_ree,MOZ,Mozambique,54
+usgs_global_ree,MRT,Mauritania,5
+usgs_global_ree,MWI,Malawi,22
+usgs_global_ree,MYS,Malaysia,61
+usgs_global_ree,NAM,Namibia,18
+usgs_global_ree,NER,Niger,2
+usgs_global_ree,NGA,Nigeria,7
+usgs_global_ree,NOR,Norway,61
+usgs_global_ree,NPL,Nepal,1
+usgs_global_ree,NZL,New Zealand,52
+usgs_global_ree,PER,Peru,13
+usgs_global_ree,PHL,Philippines,8
+usgs_global_ree,POL,Poland,3
+usgs_global_ree,PRK,"Korea, Democratic People's Republic of",3
+usgs_global_ree,PRT,Portugal,2
+usgs_global_ree,PRY,Paraguay,5
+usgs_global_ree,ROU,Romania,15
+usgs_global_ree,RUS,Russian Federation,193
+usgs_global_ree,RWA,Rwanda,2
+usgs_global_ree,SAU,Saudi Arabia,16
+usgs_global_ree,SDN,Sudan,1
+usgs_global_ree,SEN,Senegal,1
+usgs_global_ree,SHN,"Saint Helena, Ascension and Tristan da Cunha",1
+usgs_global_ree,SLE,Sierra Leone,3
+usgs_global_ree,SOM,Somalia,2
+usgs_global_ree,SRB,Serbia,2
+usgs_global_ree,SUR,Suriname,1
+usgs_global_ree,SVK,Slovakia,10
+usgs_global_ree,SWE,Sweden,106
+usgs_global_ree,SWZ,Eswatini,1
+usgs_global_ree,SYR,Syrian Arab Republic,1
+usgs_global_ree,TGO,Togo,1
+usgs_global_ree,THA,Thailand,58
+usgs_global_ree,TJK,Tajikistan,58
+usgs_global_ree,TKM,Turkmenistan,2
+usgs_global_ree,TUN,Tunisia,6
+usgs_global_ree,TUR,Türkiye,25
+usgs_global_ree,TWN,"Taiwan, Province of China",17
+usgs_global_ree,TZA,"Tanzania, United Republic of",11
+usgs_global_ree,UGA,Uganda,10
+usgs_global_ree,UKR,Ukraine,21
+usgs_global_ree,,Unassigned ISO country,2
+usgs_global_ree,URY,Uruguay,10
+usgs_global_ree,USA,United States,170
+usgs_global_ree,UZB,Uzbekistan,83
+usgs_global_ree,VEN,"Venezuela, Bolivarian Republic of",7
+usgs_global_ree,VNM,Viet Nam,57
+usgs_global_ree,ZAF,South Africa,23
+usgs_global_ree,ZMB,Zambia,10
+usgs_global_ree,ZWE,Zimbabwe,10
+usgs_laterites,ALB,Albania,1
+usgs_laterites,AUS,Australia,10
+usgs_laterites,BDI,Burundi,3
+usgs_laterites,BRA,Brazil,15
+usgs_laterites,CIV,Côte d'Ivoire,1
+usgs_laterites,CMR,Cameroon,1
+usgs_laterites,COL,Colombia,1
+usgs_laterites,CUB,Cuba,7
+usgs_laterites,DOM,Dominican Republic,2
+usgs_laterites,ETH,Ethiopia,1
+usgs_laterites,GRC,Greece,3
+usgs_laterites,GTM,Guatemala,3
+usgs_laterites,IDN,Indonesia,10
+usgs_laterites,IND,India,5
+usgs_laterites,KAZ,Kazakhstan,3
+usgs_laterites,MDG,Madagascar,3
+usgs_laterites,MKD,North Macedonia,1
+usgs_laterites,MMR,Myanmar,2
+usgs_laterites,NCL,New Caledonia,10
+usgs_laterites,PHL,Philippines,17
+usgs_laterites,PNG,Papua New Guinea,2
+usgs_laterites,PRI,Puerto Rico,2
+usgs_laterites,RUS,Russian Federation,8
+usgs_laterites,SLB,Solomon Islands,1
+usgs_laterites,SRB,Serbia,3
+usgs_laterites,TUR,Türkiye,1
+usgs_laterites,,Unassigned ISO country,2
+usgs_laterites,USA,United States,1
+usgs_laterites,VEN,"Venezuela, Bolivarian Republic of",1
+usgs_mcs_2026,AUS,Australia,11
+usgs_mcs_2026,AUT,Austria,1
+usgs_mcs_2026,BRA,Brazil,7
+usgs_mcs_2026,CAN,Canada,12
+usgs_mcs_2026,CHL,Chile,1
+usgs_mcs_2026,CHN,China,17
+usgs_mcs_2026,COD,"Congo, The Democratic Republic of the",3
+usgs_mcs_2026,CUB,Cuba,3
+usgs_mcs_2026,DEU,Germany,3
+usgs_mcs_2026,EST,Estonia,1
+usgs_mcs_2026,FIN,Finland,1
+usgs_mcs_2026,GBR,United Kingdom,1
+usgs_mcs_2026,GRL,Greenland,3
+usgs_mcs_2026,IDN,Indonesia,6
+usgs_mcs_2026,IND,India,3
+usgs_mcs_2026,JPN,Japan,3
+usgs_mcs_2026,KOR,"Korea, Republic of",2
+usgs_mcs_2026,MDG,Madagascar,6
+usgs_mcs_2026,MEX,Mexico,1
+usgs_mcs_2026,MMR,Myanmar,3
+usgs_mcs_2026,MYS,Malaysia,4
+usgs_mcs_2026,NCL,New Caledonia,3
+usgs_mcs_2026,NGA,Nigeria,3
+usgs_mcs_2026,NLD,Netherlands,1
+usgs_mcs_2026,NOR,Norway,2
+usgs_mcs_2026,PHL,Philippines,6
+usgs_mcs_2026,PNG,Papua New Guinea,3
+usgs_mcs_2026,RUS,Russian Federation,9
+usgs_mcs_2026,THA,Thailand,3
+usgs_mcs_2026,TUR,Türkiye,3
+usgs_mcs_2026,TZA,"Tanzania, United Republic of",3
+usgs_mcs_2026,,Unassigned ISO country,27
+usgs_mcs_2026,USA,United States,354
+usgs_mcs_2026,VNM,Viet Nam,3
+usgs_mcs_2026,ZAF,South Africa,3
+usgs_mrds,,Unassigned ISO country,4701
+usgs_us_critical,PRI,Puerto Rico,7
+usgs_us_critical,USA,United States,135
+wapha,,Unassigned ISO country,1382

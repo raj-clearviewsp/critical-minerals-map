@@ -1,0 +1,16 @@
+source_id,input_rows,kept_rows,excluded_rows,qualified_pilot_rows,unresolved_country_rows,unassigned_country_rows
+aiddata_transition_v2,4996,1291,3705,0,12,12
+ga_critical_2025,538,246,292,150,0,0
+ga_critical_2025_arcgis,538,246,292,150,0,0
+ga_global_ree,376,376,0,0,0,0
+gseu_crm,842,138,704,0,2,2
+icmm,7104,305,6799,0,1,1
+jasansky,2413,103,2310,0,0,0
+oecd_export,1182793,66693,1116100,0,0,0
+usgs_global_critical,2125,264,1861,0,12,12
+usgs_global_ree,3934,3929,5,226,2,2
+usgs_laterites,120,120,0,0,2,2
+usgs_mcs_2026,8886,515,8371,0,27,27
+usgs_mrds,304388,4701,299687,0,4701,4701
+usgs_us_critical,1271,142,1129,0,0,0
+wapha,171473,1382,170091,0,1382,1382

@@ -1,0 +1,119 @@
+source_id,dimension,code,name,records
+aiddata_transition_v2,commodity,Co,Cobalt,791
+aiddata_transition_v2,commodity,Ni,Nickel,924
+aiddata_transition_v2,commodity,REE,Rare earth elements,71
+aiddata_transition_v2,family,Co,Cobalt,791
+aiddata_transition_v2,family,Ni,Nickel,924
+aiddata_transition_v2,family,REE,Rare earth elements (aggregate or member),71
+ga_critical_2025,commodity,Co,Cobalt,180
+ga_critical_2025,commodity,Ni,Nickel,136
+ga_critical_2025,commodity,REE,Rare earth elements,66
+ga_critical_2025,commodity,Sc,Scandium,11
+ga_critical_2025,family,Co,Cobalt,180
+ga_critical_2025,family,Ni,Nickel,136
+ga_critical_2025,family,REE,Rare earth elements (aggregate or member),77
+ga_critical_2025_arcgis,commodity,Co,Cobalt,180
+ga_critical_2025_arcgis,commodity,Ni,Nickel,136
+ga_critical_2025_arcgis,commodity,REE,Rare earth elements,66
+ga_critical_2025_arcgis,commodity,Sc,Scandium,11
+ga_critical_2025_arcgis,family,Co,Cobalt,180
+ga_critical_2025_arcgis,family,Ni,Nickel,136
+ga_critical_2025_arcgis,family,REE,Rare earth elements (aggregate or member),77
+ga_global_ree,commodity,REE,Rare earth elements,376
+ga_global_ree,family,REE,Rare earth elements (aggregate or member),376
+gseu_crm,commodity,Co,Cobalt,61
+gseu_crm,commodity,Ni,Nickel,58
+gseu_crm,commodity,REE,Rare earth elements,18
+gseu_crm,commodity,Sc,Scandium,1
+gseu_crm,family,Co,Cobalt,61
+gseu_crm,family,Ni,Nickel,58
+gseu_crm,family,REE,Rare earth elements (aggregate or member),19
+icmm,commodity,Co,Cobalt,188
+icmm,commodity,Eu,Europium,1
+icmm,commodity,La,Lanthanum,2
+icmm,commodity,Nd,Neodymium,1
+icmm,commodity,Ni,Nickel,214
+icmm,commodity,Pr,Praseodymium,1
+icmm,commodity,REE,Rare earth elements,17
+icmm,commodity,Sc,Scandium,6
+icmm,commodity,Tb,Terbium,1
+icmm,commodity,Tm,Thulium,1
+icmm,commodity,Y,Yttrium,1
+icmm,family,Co,Cobalt,188
+icmm,family,Ni,Nickel,214
+icmm,family,REE,Rare earth elements (aggregate or member),21
+jasansky,commodity,Co,Cobalt,32
+jasansky,commodity,Ni,Nickel,94
+jasansky,commodity,REE,Rare earth elements,2
+jasansky,family,Co,Cobalt,32
+jasansky,family,Ni,Nickel,94
+jasansky,family,REE,Rare earth elements (aggregate or member),2
+oecd_export,commodity,Ce,Cerium,1134
+oecd_export,commodity,Co,Cobalt,22335
+oecd_export,commodity,Ni,Nickel,40076
+oecd_export,commodity,REE,Rare earth elements,3148
+oecd_export,commodity,Sc,Scandium,3148
+oecd_export,commodity,Y,Yttrium,3148
+oecd_export,family,Co,Cobalt,22335
+oecd_export,family,Ni,Nickel,40076
+oecd_export,family,REE,Rare earth elements (aggregate or member),4282
+usgs_global_critical,commodity,Co,Cobalt,212
+usgs_global_critical,commodity,REE,Rare earth elements,52
+usgs_global_critical,family,Co,Cobalt,212
+usgs_global_critical,family,REE,Rare earth elements (aggregate or member),52
+usgs_global_ree,commodity,Co,Cobalt,37
+usgs_global_ree,commodity,Ni,Nickel,41
+usgs_global_ree,commodity,REE,Rare earth elements,3929
+usgs_global_ree,commodity,Sc,Scandium,77
+usgs_global_ree,family,Co,Cobalt,37
+usgs_global_ree,family,Ni,Nickel,41
+usgs_global_ree,family,REE,Rare earth elements (aggregate or member),3929
+usgs_laterites,commodity,Co,Cobalt,67
+usgs_laterites,commodity,Ni,Nickel,120
+usgs_laterites,family,Co,Cobalt,67
+usgs_laterites,family,Ni,Nickel,120
+usgs_mcs_2026,commodity,Ce,Cerium,5
+usgs_mcs_2026,commodity,Co,Cobalt,102
+usgs_mcs_2026,commodity,Dy,Dysprosium,5
+usgs_mcs_2026,commodity,Er,Erbium,8
+usgs_mcs_2026,commodity,Eu,Europium,5
+usgs_mcs_2026,commodity,Gd,Gadolinium,5
+usgs_mcs_2026,commodity,Ho,Holmium,6
+usgs_mcs_2026,commodity,La,Lanthanum,5
+usgs_mcs_2026,commodity,Lu,Lutetium,6
+usgs_mcs_2026,commodity,Nd,Neodymium,5
+usgs_mcs_2026,commodity,Ni,Nickel,127
+usgs_mcs_2026,commodity,Pr,Praseodymium,5
+usgs_mcs_2026,commodity,REE,Rare earth elements,139
+usgs_mcs_2026,commodity,Sc,Scandium,30
+usgs_mcs_2026,commodity,Sm,Samarium,5
+usgs_mcs_2026,commodity,Tb,Terbium,6
+usgs_mcs_2026,commodity,Y,Yttrium,41
+usgs_mcs_2026,commodity,Yb,Ytterbium,10
+usgs_mcs_2026,family,Co,Cobalt,102
+usgs_mcs_2026,family,Ni,Nickel,127
+usgs_mcs_2026,family,REE,Rare earth elements (aggregate or member),286
+usgs_mrds,commodity,Ce,Cerium,7
+usgs_mrds,commodity,Co,Cobalt,1619
+usgs_mrds,commodity,Ni,Nickel,2798
+usgs_mrds,commodity,REE,Rare earth elements,1387
+usgs_mrds,commodity,Sc,Scandium,11
+usgs_mrds,commodity,Y,Yttrium,4
+usgs_mrds,family,Co,Cobalt,1619
+usgs_mrds,family,Ni,Nickel,2798
+usgs_mrds,family,REE,Rare earth elements (aggregate or member),1400
+usgs_us_critical,commodity,Co,Cobalt,51
+usgs_us_critical,commodity,Ni,Nickel,51
+usgs_us_critical,commodity,REE,Rare earth elements,75
+usgs_us_critical,commodity,Sc,Scandium,4
+usgs_us_critical,commodity,Y,Yttrium,1
+usgs_us_critical,family,Co,Cobalt,51
+usgs_us_critical,family,Ni,Nickel,51
+usgs_us_critical,family,REE,Rare earth elements (aggregate or member),76
+wapha,commodity,Co,Cobalt,739
+wapha,commodity,Ni,Nickel,846
+wapha,commodity,REE,Rare earth elements,20
+wapha,commodity,Sc,Scandium,17
+wapha,family,Co,Cobalt,739
+wapha,family,Ni,Nickel,846
+wapha,family,REE,Rare earth elements (aggregate or member),34

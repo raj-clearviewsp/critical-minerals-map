@@ -1,0 +1,1161 @@
+{
+  "canonical_rows": 0,
+  "count_reports": {
+    "reports/pilot-counts-by-commodity.csv": "8a45ad58a5c0f6b158c1e36bdab2df45ce3e7b3b4ea485e202103dd34be8a535",
+    "reports/pilot-counts-by-country.csv": "1f21114b57860e1fb81af3ae78969b5f3c2a7c3545227c801b1df28b9aaca55a",
+    "reports/pilot-counts-by-kind.csv": "4aa744300685c1576f91be28694b1baabb62380ed34f381ff9cc6657a4608484",
+    "reports/pilot-counts-by-source.csv": "8aa2fa48ee4b11f8572f0c15dd58a42e6a0894bf13de4dab5c2e336a21878aef"
+  },
+  "counting_notes": [
+    "Each retained source record counts once per distinct commodity, family and host country. These categories overlap; their sums are not unique site or mine counts.",
+    "Record kinds keep source groups, finance and country/policy context separate from deposits/facilities.",
+    "UNRESOLVED means no assigned host country. Associated financier/owner countries never assign host geography.",
+    "The review queue counts distinct unresolved evidence entries once per input record, including excluded records.",
+    "Collateral-only commodity evidence does not retain a record. Original source columns are unchanged."
+  ],
+  "counts": {
+    "commodity": {
+      "Ce": 1146,
+      "Co": 26594,
+      "Dy": 5,
+      "Er": 8,
+      "Eu": 6,
+      "Gd": 5,
+      "Ho": 6,
+      "La": 7,
+      "Lu": 6,
+      "Nd": 6,
+      "Ni": 45621,
+      "Pr": 6,
+      "REE": 9366,
+      "Sc": 3316,
+      "Sm": 5,
+      "Tb": 7,
+      "Tm": 1,
+      "Y": 3195,
+      "Yb": 10
+    },
+    "family": {
+      "Co": 26594,
+      "Ni": 45621,
+      "REE": 10702
+    },
+    "host_country": {
+      "AFG": 3,
+      "AGO": 160,
+      "ALB": 15,
+      "ARE": 3,
+      "ARG": 1629,
+      "ARM": 7,
+      "ATA": 2,
+      "AUS": 1322,
+      "AUT": 13,
+      "AZE": 1,
+      "BDI": 2019,
+      "BEL": 3,
+      "BEN": 1,
+      "BGD": 35,
+      "BIH": 3,
+      "BLR": 217,
+      "BOL": 10,
+      "BRA": 630,
+      "BWA": 3645,
+      "CAF": 1,
+      "CAN": 438,
+      "CHE": 31,
+      "CHL": 482,
+      "CHN": 6645,
+      "CIV": 2,
+      "CMR": 4,
+      "COD": 10440,
+      "COL": 1039,
+      "CPV": 2,
+      "CUB": 41,
+      "CZE": 8,
+      "DEU": 19,
+      "DNK": 1,
+      "DOM": 5,
+      "DZA": 4,
+      "EGY": 24,
+      "ESP": 16,
+      "EST": 1,
+      "ETH": 1576,
+      "FIN": 129,
+      "FRA": 19,
+      "GAB": 563,
+      "GBR": 112,
+      "GHA": 408,
+      "GIN": 422,
+      "GRC": 46,
+      "GRL": 51,
+      "GTM": 923,
+      "GUF": 1,
+      "GUY": 2,
+      "HUN": 3,
+      "IDN": 4038,
+      "IND": 1790,
+      "IRL": 1,
+      "IRN": 17,
+      "IRQ": 2,
+      "ISR": 352,
+      "ITA": 17,
+      "JAM": 518,
+      "JOR": 156,
+      "JPN": 29,
+      "KAZ": 189,
+      "KEN": 555,
+      "KGZ": 319,
+      "KOR": 58,
+      "LAO": 3,
+      "LBR": 1,
+      "LBY": 2,
+      "LKA": 42,
+      "LUX": 62,
+      "LVA": 3,
+      "MAR": 898,
+      "MDG": 10055,
+      "MEX": 220,
+      "MKD": 6,
+      "MLI": 4,
+      "MMR": 4066,
+      "MNE": 2,
+      "MNG": 2003,
+      "MOZ": 61,
+      "MRT": 8,
+      "MWI": 25,
+      "MYS": 292,
+      "NAM": 361,
+      "NCL": 33,
+      "NER": 2,
+      "NGA": 1320,
+      "NLD": 2,
+      "NOR": 89,
+      "NPL": 1,
+      "NZL": 53,
+      "OMN": 104,
+      "PER": 14,
+      "PHL": 602,
+      "PNG": 30,
+      "POL": 12,
+      "PRI": 11,
+      "PRK": 3,
+      "PRT": 2,
+      "PRY": 5,
+      "ROU": 15,
+      "RUS": 2385,
+      "RWA": 408,
+      "SAU": 174,
+      "SDN": 1,
+      "SEN": 767,
+      "SHN": 1,
+      "SLB": 2,
+      "SLE": 873,
+      "SOM": 2,
+      "SRB": 8,
+      "SUR": 1,
+      "SVK": 11,
+      "SWE": 131,
+      "SWZ": 1,
+      "SYR": 1,
+      "TGO": 1,
+      "THA": 62,
+      "TJK": 864,
+      "TKM": 2,
+      "TUN": 454,
+      "TUR": 36,
+      "TWN": 26,
+      "TZA": 19,
+      "UGA": 20,
+      "UKR": 514,
+      "UNRESOLVED": 6141,
+      "URY": 11,
+      "USA": 795,
+      "UZB": 443,
+      "VEN": 10,
+      "VNM": 838,
+      "ZAF": 425,
+      "ZMB": 2923,
+      "ZWE": 472
+    },
+    "record_kind": {
+      "country_commodity": 515,
+      "deposit": 9894,
+      "export_restriction": 66693,
+      "facility": 2056,
+      "finance": 1291,
+      "source_group": 2
+    }
+  },
+  "excluded_rows": 1611346,
+  "exclusion_reasons": {
+    "no_commodity_evidence": 649,
+    "no_pilot_association": 1610697
+  },
+  "implementation": {
+    "pipeline/pilot/__main__.py": "71f44e957b8914259c1384360d1637ff948a72416380f3e268b90f7ffe22e929",
+    "pipeline/pilot/core.py": "f6444d838407633053d7303687ce65a56c3da6646e1ceb6440885c794de30870",
+    "pipeline/pilot/countries.py": "c31c43d8e121b0ee5f652c14631d68ef2e640fd46db058bfae7a562fa1455151",
+    "pipeline/pilot/geology.py": "c5fef1d59bce969f2f6c150c5d9645c9dc68d1ce299f6eafe9edbd1792ffc381",
+    "pipeline/pilot/reporting.py": "7757f68f4bea0ff767ec33a011b2d064952b90014e7761c0dd71caca4707b949",
+    "pipeline/pilot/scope_review.py": "e7aeeaeefbca1336bff1ce039f90a05f0397aef8777a0905f01827b56e62139c",
+    "pipeline/pilot/tabular.py": "1385a5a01fe96516a467f1df7f3c98e901226cfb01209f2b5e44542e7d18a8c0",
+    "sources/pilot/expected_counts.yaml": "1c9e110b50bf3826c4db5f54cf53b4768c7a5bfa473649148d532cda8792ac88",
+    "uv.lock": "cd4fe8d1bc077fcac6a467a1ac0b682b56906154dbee726e0837c363618e6ebb"
+  },
+  "input_rows": 1691797,
+  "kept_rows": 80451,
+  "normalization_audit_sha256": "c88734bd30498dfe055234c81011c07ce2e33e9085b21c4346ecda5999185c10",
+  "phase": 0,
+  "published_rows": 0,
+  "qualified_pilot_rows": 526,
+  "review": {
+    "artifact": "review/pilot-unmapped.csv",
+    "distinct_terms": 3818,
+    "record_term_occurrences": 1491462,
+    "sha256": "00c389c61a77b6099483a92673985c92e6f7b28d6803cbaba9c509cf357a4200"
+  },
+  "schema_version": "pilot-audit-v1",
+  "scope_review": {
+    "artifact": "review/pilot-scope-review.csv",
+    "rows": 5,
+    "sha256": "6ecfb7d8e1f429a49aca6ad16d391cb9547e9720b04f10ff2a43125a1f070705"
+  },
+  "sources": [
+    {
+      "artifact": "data/staging/pilot/aiddata_transition_v2.parquet",
+      "counts": {
+        "commodity": {
+          "Co": 791,
+          "Ni": 924,
+          "REE": 71
+        },
+        "family": {
+          "Co": 791,
+          "Ni": 924,
+          "REE": 71
+        },
+        "host_country": {
+          "AUS": 70,
+          "BRA": 117,
+          "CAN": 16,
+          "CHE": 29,
+          "COD": 310,
+          "CUB": 12,
+          "GBR": 93,
+          "IDN": 311,
+          "KAZ": 15,
+          "KOR": 4,
+          "LUX": 62,
+          "MMR": 13,
+          "PNG": 21,
+          "RUS": 69,
+          "UGA": 9,
+          "UNRESOLVED": 12,
+          "USA": 57,
+          "ZAF": 63,
+          "ZMB": 8
+        },
+        "record_kind": {
+          "finance": 1291
+        }
+      },
+      "excluded_rows": 3705,
+      "exclusion_reasons": {
+        "no_commodity_evidence": 540,
+        "no_pilot_association": 3165
+      },
+      "input_artifact": "data/staging/aiddata_transition_v2.parquet",
+      "input_rows": 4996,
+      "input_sha256": "50d1c9d54949df2366175d0668054cf8977ed016b777325085bf5209161079b1",
+      "kept_rows": 1291,
+      "qualified_pilot_rows": 0,
+      "sha256": "9f249f497c7b8ed90d01d0e407f3a4816641c1a030e768ccd55c5ab98c26becf",
+      "source_id": "aiddata_transition_v2",
+      "unresolved_country_rows": 12
+    },
+    {
+      "artifact": "data/staging/pilot/ga_critical_2025.parquet",
+      "counts": {
+        "commodity": {
+          "Co": 180,
+          "Ni": 136,
+          "REE": 66,
+          "Sc": 11
+        },
+        "family": {
+          "Co": 180,
+          "Ni": 136,
+          "REE": 77
+        },
+        "host_country": {
+          "AUS": 246
+        },
+        "record_kind": {
+          "deposit": 196,
+          "facility": 50
+        }
+      },
+      "excluded_rows": 292,
+      "exclusion_reasons": {
+        "no_pilot_association": 292
+      },
+      "input_artifact": "data/staging/ga_critical_2025.parquet",
+      "input_rows": 538,
+      "input_sha256": "99f1ca5d7605c99da75d83ecd697631779725d12e98fcefcc77c89d20f565e08",
+      "kept_rows": 246,
+      "qualified_pilot_rows": 150,
+      "sha256": "7781b6d1a2691e95a43ab1d4becd5e17a7a4320984f4c07f66b3f16f5ed0673f",
+      "source_id": "ga_critical_2025",
+      "unresolved_country_rows": 0
+    },
+    {
+      "artifact": "data/staging/pilot/ga_critical_2025_arcgis.parquet",
+      "counts": {
+        "commodity": {
+          "Co": 180,
+          "Ni": 136,
+          "REE": 66,
+          "Sc": 11
+        },
+        "family": {
+          "Co": 180,
+          "Ni": 136,
+          "REE": 77
+        },
+        "host_country": {
+          "AUS": 246
+        },
+        "record_kind": {
+          "deposit": 196,
+          "facility": 50
+        }
+      },
+      "excluded_rows": 292,
+      "exclusion_reasons": {
+        "no_pilot_association": 292
+      },
+      "input_artifact": "data/staging/ga_critical_2025_arcgis.parquet",
+      "input_rows": 538,
+      "input_sha256": "f5ba0ae7f0c1f3b1bee4b9e7d3ffa34a0e8b6a86fe25de57b993f3d0f56c66e6",
+      "kept_rows": 246,
+      "qualified_pilot_rows": 150,
+      "sha256": "03135f85ab05a98616deae1c958d6bdbf05a9ffb021e7f0c31bea126dd51ef55",
+      "source_id": "ga_critical_2025_arcgis",
+      "unresolved_country_rows": 0
+    },
+    {
+      "artifact": "data/staging/pilot/ga_global_ree.parquet",
+      "counts": {
+        "commodity": {
+          "REE": 376
+        },
+        "family": {
+          "REE": 376
+        },
+        "host_country": {
+          "ARG": 1,
+          "AUS": 98,
+          "BDI": 1,
+          "BGD": 10,
+          "BRA": 22,
+          "CAN": 27,
+          "CHN": 45,
+          "COD": 5,
+          "DEU": 2,
+          "EGY": 4,
+          "FIN": 5,
+          "GAB": 1,
+          "GRL": 5,
+          "IND": 12,
+          "KAZ": 2,
+          "KEN": 2,
+          "KGZ": 2,
+          "KOR": 7,
+          "LKA": 1,
+          "MDG": 2,
+          "MNG": 4,
+          "MOZ": 7,
+          "MRT": 1,
+          "MWI": 2,
+          "NAM": 4,
+          "NOR": 8,
+          "NZL": 1,
+          "RUS": 4,
+          "SAU": 5,
+          "SWE": 3,
+          "TUR": 3,
+          "TWN": 9,
+          "TZA": 1,
+          "URY": 1,
+          "USA": 50,
+          "UZB": 1,
+          "VNM": 9,
+          "ZAF": 8,
+          "ZMB": 1
+        },
+        "record_kind": {
+          "deposit": 376
+        }
+      },
+      "excluded_rows": 0,
+      "exclusion_reasons": {},
+      "input_artifact": "data/staging/ga_global_ree.parquet",
+      "input_rows": 376,
+      "input_sha256": "ea60775e307db416e8c62cb5dc576ab2c8b7625f6ac3c5c2aaf15f83451e9abf",
+      "kept_rows": 376,
+      "qualified_pilot_rows": 0,
+      "sha256": "9d8e202be11b5e6f8237942c29b83a0a374aeef670b1a5145a0d5f07b751811c",
+      "source_id": "ga_global_ree",
+      "unresolved_country_rows": 0
+    },
+    {
+      "artifact": "data/staging/pilot/gseu_crm.parquet",
+      "counts": {
+        "commodity": {
+          "Co": 61,
+          "Ni": 58,
+          "REE": 18,
+          "Sc": 1
+        },
+        "family": {
+          "Co": 61,
+          "Ni": 58,
+          "REE": 19
+        },
+        "host_country": {
+          "ALB": 9,
+          "BIH": 2,
+          "DEU": 3,
+          "ESP": 2,
+          "FIN": 46,
+          "GBR": 2,
+          "GRC": 9,
+          "GRL": 5,
+          "ITA": 1,
+          "MKD": 4,
+          "NOR": 11,
+          "POL": 7,
+          "SRB": 2,
+          "SVK": 1,
+          "SWE": 19,
+          "UKR": 13,
+          "UNRESOLVED": 2
+        },
+        "record_kind": {
+          "deposit": 138
+        }
+      },
+      "excluded_rows": 704,
+      "exclusion_reasons": {
+        "no_pilot_association": 704
+      },
+      "input_artifact": "data/staging/gseu_crm.parquet",
+      "input_rows": 842,
+      "input_sha256": "1ea8fb0dde8ea14a0d3516dad19e52f83741a38b35eb769b1ecd4de11e9ae48f",
+      "kept_rows": 138,
+      "qualified_pilot_rows": 0,
+      "sha256": "7e1c7292c28b2373e6b9ec254adfd8e1268e069602a02b52ea28792642c1e76d",
+      "source_id": "gseu_crm",
+      "unresolved_country_rows": 2
+    },
+    {
+      "artifact": "data/staging/pilot/icmm.parquet",
+      "counts": {
+        "commodity": {
+          "Co": 188,
+          "Eu": 1,
+          "La": 2,
+          "Nd": 1,
+          "Ni": 214,
+          "Pr": 1,
+          "REE": 17,
+          "Sc": 6,
+          "Tb": 1,
+          "Tm": 1,
+          "Y": 1
+        },
+        "family": {
+          "Co": 188,
+          "Ni": 214,
+          "REE": 21
+        },
+        "host_country": {
+          "ALB": 5,
+          "AUS": 64,
+          "AZE": 1,
+          "BEL": 1,
+          "BOL": 1,
+          "BRA": 10,
+          "BWA": 3,
+          "CAN": 26,
+          "CHL": 3,
+          "CHN": 17,
+          "COD": 20,
+          "COL": 1,
+          "CUB": 4,
+          "DEU": 1,
+          "DOM": 2,
+          "ESP": 2,
+          "FIN": 11,
+          "FRA": 1,
+          "GBR": 1,
+          "GHA": 1,
+          "GRC": 2,
+          "GTM": 1,
+          "IDN": 7,
+          "IND": 1,
+          "JPN": 5,
+          "KAZ": 3,
+          "KOR": 1,
+          "MAR": 2,
+          "MDG": 2,
+          "MEX": 1,
+          "MRT": 1,
+          "NCL": 12,
+          "NLD": 1,
+          "NOR": 1,
+          "PER": 1,
+          "PHL": 6,
+          "PNG": 1,
+          "POL": 1,
+          "RUS": 13,
+          "SWE": 2,
+          "THA": 1,
+          "TUR": 1,
+          "UKR": 2,
+          "UNRESOLVED": 1,
+          "USA": 13,
+          "VEN": 1,
+          "ZAF": 25,
+          "ZMB": 14,
+          "ZWE": 8
+        },
+        "record_kind": {
+          "facility": 305
+        }
+      },
+      "excluded_rows": 6799,
+      "exclusion_reasons": {
+        "no_pilot_association": 6799
+      },
+      "input_artifact": "data/staging/icmm.parquet",
+      "input_rows": 7104,
+      "input_sha256": "99299136d7ea9c12fa3147219704111708d176f722cc1929d18f4d73dd258b76",
+      "kept_rows": 305,
+      "qualified_pilot_rows": 0,
+      "sha256": "98ac9f126b5bf27373381b56c6b9af79a2fd3051317b32e0380124fd48ef9292",
+      "source_id": "icmm",
+      "unresolved_country_rows": 1
+    },
+    {
+      "artifact": "data/staging/pilot/jasansky.parquet",
+      "counts": {
+        "commodity": {
+          "Co": 32,
+          "Ni": 94,
+          "REE": 2
+        },
+        "family": {
+          "Co": 32,
+          "Ni": 94,
+          "REE": 2
+        },
+        "host_country": {
+          "AUS": 14,
+          "BRA": 5,
+          "CAN": 19,
+          "COD": 6,
+          "COL": 1,
+          "CUB": 11,
+          "DEU": 1,
+          "DOM": 1,
+          "ESP": 2,
+          "FIN": 3,
+          "IDN": 8,
+          "MDG": 1,
+          "NCL": 2,
+          "NOR": 1,
+          "PHL": 9,
+          "POL": 1,
+          "RUS": 12,
+          "USA": 1,
+          "VEN": 1,
+          "ZAF": 3,
+          "ZMB": 1
+        },
+        "record_kind": {
+          "facility": 101,
+          "source_group": 2
+        }
+      },
+      "excluded_rows": 2310,
+      "exclusion_reasons": {
+        "no_pilot_association": 2310
+      },
+      "input_artifact": "data/staging/jasansky.parquet",
+      "input_rows": 2413,
+      "input_sha256": "624ef178ae8a870b2e56eef9e932ae4aa7d8704c784a75ced0cdf2b8f34b9408",
+      "kept_rows": 103,
+      "qualified_pilot_rows": 0,
+      "sha256": "971b143a843d39c630ee00011852d772e44b553e0cfdc92d3e8e85e556df7b3d",
+      "source_id": "jasansky",
+      "unresolved_country_rows": 0
+    },
+    {
+      "artifact": "data/staging/pilot/oecd_export.parquet",
+      "counts": {
+        "commodity": {
+          "Ce": 1134,
+          "Co": 22335,
+          "Ni": 40076,
+          "REE": 3148,
+          "Sc": 3148,
+          "Y": 3148
+        },
+        "family": {
+          "Co": 22335,
+          "Ni": 40076,
+          "REE": 4282
+        },
+        "host_country": {
+          "AGO": 151,
+          "ARG": 1586,
+          "BDI": 1998,
+          "BLR": 216,
+          "BRA": 240,
+          "BWA": 3640,
+          "CHL": 476,
+          "CHN": 6067,
+          "COD": 10058,
+          "COL": 1032,
+          "ETH": 1574,
+          "GAB": 560,
+          "GHA": 406,
+          "GIN": 420,
+          "GTM": 918,
+          "IDN": 3626,
+          "IND": 1632,
+          "ISR": 352,
+          "JAM": 511,
+          "JOR": 156,
+          "KEN": 546,
+          "KGZ": 240,
+          "MAR": 886,
+          "MDG": 10021,
+          "MEX": 183,
+          "MMR": 4035,
+          "MNG": 1900,
+          "MYS": 226,
+          "NAM": 338,
+          "NGA": 1310,
+          "OMN": 104,
+          "PHL": 546,
+          "RUS": 2056,
+          "RWA": 406,
+          "SAU": 153,
+          "SEN": 766,
+          "SLE": 870,
+          "TJK": 806,
+          "TUN": 448,
+          "UKR": 478,
+          "UZB": 359,
+          "VNM": 768,
+          "ZAF": 296,
+          "ZMB": 2879,
+          "ZWE": 454
+        },
+        "record_kind": {
+          "export_restriction": 66693
+        }
+      },
+      "excluded_rows": 1116100,
+      "exclusion_reasons": {
+        "no_pilot_association": 1116100
+      },
+      "input_artifact": "data/staging/oecd_export.parquet",
+      "input_rows": 1182793,
+      "input_sha256": "955746c40c16ed3c698ce2cd5df152e0b7af3b8bbbd9351fd64bbc2e6489e7d1",
+      "kept_rows": 66693,
+      "qualified_pilot_rows": 0,
+      "sha256": "49064fea61d8c3b1df2961cc78591bdd40d833d39b9e8ef3f699754953eca48f",
+      "source_id": "oecd_export",
+      "unresolved_country_rows": 0
+    },
+    {
+      "artifact": "data/staging/pilot/usgs_global_critical.parquet",
+      "counts": {
+        "commodity": {
+          "Co": 212,
+          "REE": 52
+        },
+        "family": {
+          "Co": 212,
+          "REE": 52
+        },
+        "host_country": {
+          "AUS": 36,
+          "BDI": 3,
+          "BRA": 12,
+          "CAN": 28,
+          "CHN": 14,
+          "CIV": 1,
+          "CMR": 1,
+          "COD": 28,
+          "CUB": 4,
+          "ESP": 1,
+          "FIN": 12,
+          "GRL": 2,
+          "GTM": 1,
+          "IDN": 3,
+          "IND": 4,
+          "KAZ": 3,
+          "KEN": 1,
+          "KGZ": 1,
+          "MAR": 1,
+          "MDG": 3,
+          "MEX": 1,
+          "MKD": 1,
+          "MRT": 1,
+          "MWI": 1,
+          "MYS": 1,
+          "NAM": 1,
+          "NCL": 6,
+          "NOR": 5,
+          "PHL": 10,
+          "PNG": 3,
+          "PRI": 2,
+          "RUS": 21,
+          "SLB": 1,
+          "SRB": 1,
+          "SWE": 1,
+          "TUR": 3,
+          "TZA": 4,
+          "UGA": 1,
+          "UNRESOLVED": 12,
+          "USA": 14,
+          "VNM": 1,
+          "ZAF": 4,
+          "ZMB": 10
+        },
+        "record_kind": {
+          "deposit": 264
+        }
+      },
+      "excluded_rows": 1861,
+      "exclusion_reasons": {
+        "no_pilot_association": 1861
+      },
+      "input_artifact": "data/staging/usgs_global_critical.parquet",
+      "input_rows": 2125,
+      "input_sha256": "160c69575048a4291fc650ca05b3cccf0260a730df72a37536f9ddf8bc932350",
+      "kept_rows": 264,
+      "qualified_pilot_rows": 0,
+      "sha256": "7b9994bdf53ea27114d318f8feed1a542683063b91c80b3e22230094e5dd22a3",
+      "source_id": "usgs_global_critical",
+      "unresolved_country_rows": 12
+    },
+    {
+      "artifact": "data/staging/pilot/usgs_global_ree.parquet",
+      "counts": {
+        "commodity": {
+          "Co": 37,
+          "Ni": 41,
+          "REE": 3929,
+          "Sc": 77
+        },
+        "family": {
+          "Co": 37,
+          "Ni": 41,
+          "REE": 3929
+        },
+        "host_country": {
+          "AFG": 3,
+          "AGO": 9,
+          "ARE": 3,
+          "ARG": 42,
+          "ARM": 7,
+          "ATA": 2,
+          "AUS": 527,
+          "AUT": 12,
+          "BDI": 14,
+          "BEL": 2,
+          "BEN": 1,
+          "BGD": 25,
+          "BIH": 1,
+          "BLR": 1,
+          "BOL": 9,
+          "BRA": 202,
+          "BWA": 2,
+          "CAF": 1,
+          "CAN": 310,
+          "CHE": 2,
+          "CHL": 2,
+          "CHN": 485,
+          "CMR": 2,
+          "COD": 10,
+          "COL": 4,
+          "CPV": 2,
+          "CZE": 8,
+          "DEU": 9,
+          "DNK": 1,
+          "DZA": 4,
+          "EGY": 20,
+          "ESP": 9,
+          "ETH": 1,
+          "FIN": 51,
+          "FRA": 18,
+          "GAB": 2,
+          "GBR": 15,
+          "GHA": 1,
+          "GIN": 2,
+          "GRC": 32,
+          "GRL": 36,
+          "GUF": 1,
+          "GUY": 2,
+          "HUN": 3,
+          "IDN": 67,
+          "IND": 133,
+          "IRL": 1,
+          "IRN": 17,
+          "IRQ": 2,
+          "ITA": 16,
+          "JAM": 7,
+          "JPN": 21,
+          "KAZ": 163,
+          "KEN": 6,
+          "KGZ": 76,
+          "KOR": 44,
+          "LAO": 3,
+          "LBR": 1,
+          "LBY": 2,
+          "LKA": 41,
+          "LVA": 3,
+          "MAR": 9,
+          "MDG": 17,
+          "MEX": 34,
+          "MLI": 4,
+          "MMR": 13,
+          "MNE": 2,
+          "MNG": 99,
+          "MOZ": 54,
+          "MRT": 5,
+          "MWI": 22,
+          "MYS": 61,
+          "NAM": 18,
+          "NER": 2,
+          "NGA": 7,
+          "NOR": 61,
+          "NPL": 1,
+          "NZL": 52,
+          "PER": 13,
+          "PHL": 8,
+          "POL": 3,
+          "PRK": 3,
+          "PRT": 2,
+          "PRY": 5,
+          "ROU": 15,
+          "RUS": 193,
+          "RWA": 2,
+          "SAU": 16,
+          "SDN": 1,
+          "SEN": 1,
+          "SHN": 1,
+          "SLE": 3,
+          "SOM": 2,
+          "SRB": 2,
+          "SUR": 1,
+          "SVK": 10,
+          "SWE": 106,
+          "SWZ": 1,
+          "SYR": 1,
+          "TGO": 1,
+          "THA": 58,
+          "TJK": 58,
+          "TKM": 2,
+          "TUN": 6,
+          "TUR": 25,
+          "TWN": 17,
+          "TZA": 11,
+          "UGA": 10,
+          "UKR": 21,
+          "UNRESOLVED": 2,
+          "URY": 10,
+          "USA": 170,
+          "UZB": 83,
+          "VEN": 7,
+          "VNM": 57,
+          "ZAF": 23,
+          "ZMB": 10,
+          "ZWE": 10
+        },
+        "record_kind": {
+          "deposit": 3929
+        }
+      },
+      "excluded_rows": 5,
+      "exclusion_reasons": {
+        "no_pilot_association": 5
+      },
+      "input_artifact": "data/staging/usgs_global_ree.parquet",
+      "input_rows": 3934,
+      "input_sha256": "fdaad56a0e2c092a11d90cdc0ecd6f344f423326f36b37618d6cde2494745f93",
+      "kept_rows": 3929,
+      "qualified_pilot_rows": 226,
+      "sha256": "f50841d349ac9cfe42445022db0b3ae3e9c0ad4e4b9b6b26c5e5a73ecb80786b",
+      "source_id": "usgs_global_ree",
+      "unresolved_country_rows": 2
+    },
+    {
+      "artifact": "data/staging/pilot/usgs_laterites.parquet",
+      "counts": {
+        "commodity": {
+          "Co": 67,
+          "Ni": 120
+        },
+        "family": {
+          "Co": 67,
+          "Ni": 120
+        },
+        "host_country": {
+          "ALB": 1,
+          "AUS": 10,
+          "BDI": 3,
+          "BRA": 15,
+          "CIV": 1,
+          "CMR": 1,
+          "COL": 1,
+          "CUB": 7,
+          "DOM": 2,
+          "ETH": 1,
+          "GRC": 3,
+          "GTM": 3,
+          "IDN": 10,
+          "IND": 5,
+          "KAZ": 3,
+          "MDG": 3,
+          "MKD": 1,
+          "MMR": 2,
+          "NCL": 10,
+          "PHL": 17,
+          "PNG": 2,
+          "PRI": 2,
+          "RUS": 8,
+          "SLB": 1,
+          "SRB": 3,
+          "TUR": 1,
+          "UNRESOLVED": 2,
+          "USA": 1,
+          "VEN": 1
+        },
+        "record_kind": {
+          "deposit": 120
+        }
+      },
+      "excluded_rows": 0,
+      "exclusion_reasons": {},
+      "input_artifact": "data/staging/usgs_laterites.parquet",
+      "input_rows": 120,
+      "input_sha256": "73e8d8e61b3e0303739bb8ac77e3bf9af4d23a2abe1865defea2b6fc79d79497",
+      "kept_rows": 120,
+      "qualified_pilot_rows": 0,
+      "sha256": "1ae27e4eb2f467829e57de72e64b8680c6073d93f7477080b8500614a7f71641",
+      "source_id": "usgs_laterites",
+      "unresolved_country_rows": 2
+    },
+    {
+      "artifact": "data/staging/pilot/usgs_mcs_2026.parquet",
+      "counts": {
+        "commodity": {
+          "Ce": 5,
+          "Co": 102,
+          "Dy": 5,
+          "Er": 8,
+          "Eu": 5,
+          "Gd": 5,
+          "Ho": 6,
+          "La": 5,
+          "Lu": 6,
+          "Nd": 5,
+          "Ni": 127,
+          "Pr": 5,
+          "REE": 139,
+          "Sc": 30,
+          "Sm": 5,
+          "Tb": 6,
+          "Y": 41,
+          "Yb": 10
+        },
+        "family": {
+          "Co": 102,
+          "Ni": 127,
+          "REE": 286
+        },
+        "host_country": {
+          "AUS": 11,
+          "AUT": 1,
+          "BRA": 7,
+          "CAN": 12,
+          "CHL": 1,
+          "CHN": 17,
+          "COD": 3,
+          "CUB": 3,
+          "DEU": 3,
+          "EST": 1,
+          "FIN": 1,
+          "GBR": 1,
+          "GRL": 3,
+          "IDN": 6,
+          "IND": 3,
+          "JPN": 3,
+          "KOR": 2,
+          "MDG": 6,
+          "MEX": 1,
+          "MMR": 3,
+          "MYS": 4,
+          "NCL": 3,
+          "NGA": 3,
+          "NLD": 1,
+          "NOR": 2,
+          "PHL": 6,
+          "PNG": 3,
+          "RUS": 9,
+          "THA": 3,
+          "TUR": 3,
+          "TZA": 3,
+          "UNRESOLVED": 27,
+          "USA": 354,
+          "VNM": 3,
+          "ZAF": 3
+        },
+        "record_kind": {
+          "country_commodity": 515
+        }
+      },
+      "excluded_rows": 8371,
+      "exclusion_reasons": {
+        "no_pilot_association": 8371
+      },
+      "input_artifact": "data/staging/usgs_mcs_2026.parquet",
+      "input_rows": 8886,
+      "input_sha256": "8adb5f63a8749261b15881a497998e53064242937179f8f3a5403210ca06ef82",
+      "kept_rows": 515,
+      "qualified_pilot_rows": 0,
+      "sha256": "9afff9c8f523f26639a0bfe6868e4a05dc06bd3a76d93178f4fd823f533bf285",
+      "source_id": "usgs_mcs_2026",
+      "unresolved_country_rows": 27
+    },
+    {
+      "artifact": "data/staging/pilot/usgs_mrds.parquet",
+      "counts": {
+        "commodity": {
+          "Ce": 7,
+          "Co": 1619,
+          "Ni": 2798,
+          "REE": 1387,
+          "Sc": 11,
+          "Y": 4
+        },
+        "family": {
+          "Co": 1619,
+          "Ni": 2798,
+          "REE": 1400
+        },
+        "host_country": {
+          "UNRESOLVED": 4701
+        },
+        "record_kind": {
+          "deposit": 4533,
+          "facility": 168
+        }
+      },
+      "excluded_rows": 299687,
+      "exclusion_reasons": {
+        "no_commodity_evidence": 88,
+        "no_pilot_association": 299599
+      },
+      "input_artifact": "data/staging/usgs_mrds.parquet",
+      "input_rows": 304388,
+      "input_sha256": "639de6afaa8e08d0ea8e973acef68bfb430925a7bff2504e76bb347cfce7f989",
+      "kept_rows": 4701,
+      "qualified_pilot_rows": 0,
+      "sha256": "6c96072ffc9dff2635ac1ee12d10378603fe0f82aec96c0431c72e3221949ad7",
+      "source_id": "usgs_mrds",
+      "unresolved_country_rows": 4701
+    },
+    {
+      "artifact": "data/staging/pilot/usgs_us_critical.parquet",
+      "counts": {
+        "commodity": {
+          "Co": 51,
+          "Ni": 51,
+          "REE": 75,
+          "Sc": 4,
+          "Y": 1
+        },
+        "family": {
+          "Co": 51,
+          "Ni": 51,
+          "REE": 76
+        },
+        "host_country": {
+          "PRI": 7,
+          "USA": 135
+        },
+        "record_kind": {
+          "deposit": 142
+        }
+      },
+      "excluded_rows": 1129,
+      "exclusion_reasons": {
+        "no_pilot_association": 1129
+      },
+      "input_artifact": "data/staging/usgs_us_critical.parquet",
+      "input_rows": 1271,
+      "input_sha256": "d2a19a29969e0ce29fe7d89b3c5c59d34a01b0ca35321fa2d1c818a8bf577050",
+      "kept_rows": 142,
+      "qualified_pilot_rows": 0,
+      "sha256": "23ba7fb6242834acd8d15e5b40db89ad8fcac6d3289c523fa10acc0bfcf8e93a",
+      "source_id": "usgs_us_critical",
+      "unresolved_country_rows": 0
+    },
+    {
+      "artifact": "data/staging/pilot/wapha.parquet",
+      "counts": {
+        "commodity": {
+          "Co": 739,
+          "Ni": 846,
+          "REE": 20,
+          "Sc": 17
+        },
+        "family": {
+          "Co": 739,
+          "Ni": 846,
+          "REE": 34
+        },
+        "host_country": {
+          "UNRESOLVED": 1382
+        },
+        "record_kind": {
+          "facility": 1382
+        }
+      },
+      "excluded_rows": 170091,
+      "exclusion_reasons": {
+        "no_commodity_evidence": 21,
+        "no_pilot_association": 170070
+      },
+      "input_artifact": "data/staging/wapha.parquet",
+      "input_rows": 171473,
+      "input_sha256": "0cb728a1ab5f753f4006f51a3f93c4281afdf612c0355107ad1cdce55c07a74d",
+      "kept_rows": 1382,
+      "qualified_pilot_rows": 0,
+      "sha256": "557e5a5e2dd92797acb1429c91cf8db118e4bafb931d072a2ed31e7f807a6232",
+      "source_id": "wapha",
+      "unresolved_country_rows": 1382
+    }
+  ],
+  "stage": "pilot",
+  "status": "pass",
+  "step": 5,
+  "unresolved_country_rows": 6141
+}

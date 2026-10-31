@@ -46,3 +46,10 @@ Remote verification is recorded in `reports/phase0-step01.md` and the matching G
 - Added stable source-content fallback identities, native/physical-row duplicate checks, explicit footnote and coordinate issue accounting, and independent release counts.
 - Added bounded-memory parsing/writing, immutable-output conflict checks, unchanged reruns, failure rollback and local/CI receipt verification.
 - Step 3 passed CI before normalization began; pilot filtering and subsequent steps remain gated on this commit’s checks. No public deployment.
+
+## 2026.10.31 — Phase 0, Step 5 pilot selection
+
+- Added exact, source-aware REE/Ni/Co selection with commodity roles, qualifiers, unresolved terms and host-country evidence appended to unchanged source records.
+- Preserved MRDS linked commodity importance and source pointers; kept financial collateral and waste-only content out of selection. Explicit source-scope fallbacks remain labelled.
+- Added source/mineral/country/kind counts, row reconciliation, full byte verification and human scope-review records for five conflicting REE-compilation entries.
+- Step 4 passed CI before filtering began; linkage and subsequent steps remain gated on this commit’s checks. No canonical sites or published observations.

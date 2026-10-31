@@ -2,7 +2,7 @@
 
 Run date: October 31, 2026, America/Los_Angeles.
 
-**Status: local acceptance passed; remote CI gate required before Step 5.** Step 3 passed [CI for commit 8f0d02e](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41232185905) before this step began. Pilot filtering, site linkage and maturity assignment are not part of this commit.
+**Status: complete.** Commit `1776a83` passed [GitHub CI run 41233471095](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41233471095) before Step 5 began. Step 3 passed [CI for commit 8f0d02e](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41232185905) before this step began. Pilot filtering, site linkage and maturity assignment are not part of this commit.
 
 ## Outputs
 
@@ -56,7 +56,7 @@ Coordinate values are validated for numeric type and range. Invalid, incomplete 
 - The full run passes Pandera/Arrow validation and all fifteen independent release counts: **1,691,797 accepted records and one explained reject**. Output Parquet files total **188,480,649 bytes**.
 - `make normalize-check` verifies every current source manifest, raw checksum, output checksum, Parquet schema and recorded row count. The standalone offline receipt check also passes.
 - A complete second parse/write run reproduces all fifteen Parquet files and the receipt byte-for-byte, preserving their modification times. All 66 local raw files/manifest/marker paths remain byte- and time-identical.
-- The frontend is unchanged from the verified Step 3 redesign. The corresponding pushed commit’s [GitHub Actions workflow](https://github.com/raj-clearviewsp/critical-minerals-map/actions/workflows/ci.yml) must pass before pilot filtering starts; it includes the site build.
+- The frontend is unchanged from the verified Step 3 redesign. [CI run 41233471095](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41233471095) passed, including the site build, before pilot filtering started.
 - Canonical records, published observations and deployed pages remain **zero**.
 
 The writer streams batches, validates them with Pandera/Arrow, and checks native and physical row uniqueness through temporary SQLite indexes. It stages all sources before accepting outputs. Conflicting existing artifacts are preserved, unchanged reruns retain bytes and modification times, and ordinary final-write failures roll back only newly created files. The receipt is written last and is the commit marker; files from an interrupted process without a valid receipt are not accepted inputs.

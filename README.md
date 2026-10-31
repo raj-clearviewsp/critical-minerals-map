@@ -2,7 +2,7 @@
 
 A sourced, static reference for critical mineral deposits, maturity and ownership. The implementation follows [the supplied spec](IMPLEMENTATION_SPEC.md), in numbered order.
 
-**Current status: Phase 0, Steps 1–3 complete; Step 4 normalization passes locally and awaits its remote CI gate.** Step 3 passed [GitHub CI](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41232185905). Sixteen source snapshots are captured. Canonical and published data remain empty, and no website has been deployed. The canonical schema remains provisional.
+**Current status: Phase 0, Steps 1–4 complete; Step 5 pilot filtering passes locally and awaits its remote CI gate.** Step 3 passed [GitHub CI](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41232185905). Sixteen source snapshots are captured. Canonical and published data remain empty, and no website has been deployed. The canonical schema remains provisional.
 
 ## Run locally
 
@@ -61,7 +61,7 @@ Nothing in canonical data is edited by hand. Raw downloads will be immutable and
 
 GitHub Actions separates lint/tests, the data build, and the site build. After Python tests, `make vocab-check` validates the retained terminology audit against the committed vocabularies without downloading raw data. The site job consumes the exact data artifact from the data job. Actions use pinned revisions; uv and npm use committed lockfiles. Dependabot checks uv, npm and action updates weekly. There is no deployment workflow.
 
-A step is complete only when its acceptance checks pass, its report and changelog are written, its commit is pushed, and GitHub CI is green. The next numbered step remains gated until then. Step 3 passed all checks and remote CI; Step 4 has passed local validation and awaits its remote CI gate. Phase 1 requires Raj's Phase 0 sign-off. Public deployment and uncertain-license use require the approvals listed in the spec.
+A step is complete only when its acceptance checks pass, its report and changelog are written, its commit is pushed, and GitHub CI is green. The next numbered step remains gated until then. Step 3 passed all checks and remote CI; Step 4 passed [remote CI](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41233471095), and Step 5 has passed local checks and awaits its remote CI gate. Phase 1 requires Raj's Phase 0 sign-off. Public deployment and uncertain-license use require the approvals listed in the spec.
 
 Raj supplied `raj@satnamenergy.com` for the download User-Agent. Error-report inbox and branding remain owner decisions before launch. Local code is not assigned a new license by this scaffold; downstream source data will retain its own license and attribution requirements.
 
@@ -107,3 +107,13 @@ make normalize-receipt-check   # offline definitions/reconciliation check for CI
 ```
 
 The [Step 4 report](reports/phase0-step04.md) distinguishes deposits, facilities, source groupings, financial records and country/policy observations. All original fields and row provenance are retained. Unlocated records stay unlocated; unknown retrieval times and coordinate accuracy remain explicit. The staging contract is in `pipeline/normalize/core.py`. No pilot filter, inferred maturity, entity merge or published observation is introduced by normalization.
+
+## Filter pilot minerals
+
+```sh
+make pilot                 # normalized records → pilot records with source evidence
+make pilot-check           # validate local source/pilot bytes, schemas and counts
+make pilot-receipt-check   # offline reconciliation and count-report verification
+```
+
+The [Step 5 report](reports/phase0-step05.md) and CSV count reports show records by source, mineral, host country and record kind. A record can list several commodities; source overlap remains until entity resolution. Unranked source associations retain their original status, uncertainty and evidence. Financing collateral and waste-only mineral content do not qualify records. The original normalized tables remain intact.

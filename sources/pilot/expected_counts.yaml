@@ -1,0 +1,18 @@
+schema_version: pilot-counts-v1
+basis: Independently streamed captured normalized releases; non-collateral REE/Ni/Co associations before linkage.
+sources:
+  aiddata_transition_v2: 1291
+  ga_critical_2025: 246
+  ga_critical_2025_arcgis: 246
+  ga_global_ree: 376
+  gseu_crm: 138
+  icmm: 305
+  jasansky: 103
+  oecd_export: 66693
+  usgs_global_critical: 264
+  usgs_global_ree: 3929
+  usgs_laterites: 120
+  usgs_mcs_2026: 515
+  usgs_mrds: 4701
+  usgs_us_critical: 142
+  wapha: 1382
