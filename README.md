@@ -2,7 +2,7 @@
 
 A sourced, static reference for critical mineral deposits, maturity and ownership. The implementation follows [the supplied spec](IMPLEMENTATION_SPEC.md), in numbered order.
 
-**Current status: Phase 0, Steps 1–5 complete; Step 6 has a local 200-pair review packet awaiting human labels.** Step 3 passed [GitHub CI](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41232185905). Sixteen source snapshots are captured. Canonical and published data remain empty, and no website has been deployed. The canonical schema remains provisional.
+**Current status: Phase 0, Steps 1–5 complete; Step 6 has source-aware triage and a focused 20-case review pilot; the first 20 human decisions are preserved.** Step 3 passed [GitHub CI](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41232185905). Sixteen source snapshots are captured. Canonical and published data remain empty, and no website has been deployed. The canonical schema remains provisional.
 
 ## Run locally
 
@@ -118,7 +118,7 @@ make pilot-receipt-check   # offline reconciliation and count-report verificatio
 
 The [Step 5 report](reports/phase0-step05.md) and CSV count reports show records by source, mineral, host country and record kind. A record can list several commodities; source overlap remains until entity resolution. Unranked source associations retain their original status, uncertainty and evidence. Financing collateral and waste-only mineral content do not qualify records. The original normalized tables remain intact.
 
-## Review site identity (Step 6 preparation)
+## Original identity review (retained for provenance)
 
 ```sh
 make link-review                # requires verified local pilot/source data
@@ -127,6 +127,20 @@ make link-review-receipt-check  # aggregate receipt checks only; works in CI
 uv run --locked python -m pipeline.link --labels /absolute/path/to/decisions.csv
 ```
 
-Open `data/review/linkage/index.html` in a browser. Compare each pair, select Same site, Different sites or Uncertain, add your reviewer name, and export a new CSV. Partial exports are supported; add `--partial` to validate them. Uncertain labels need adjudication before tuning. Keep exports separate from the immutable original packet. Browser storage is not a backup, so export progress regularly.
+The original `data/review/linkage/index.html` packet remains unchanged. The active workflow is the focused triage pilot below. Original exports select Same site, Different sites or Uncertain and require a reviewer name. Partial exports are supported; add `--partial` to validate them. Uncertain labels need adjudication before tuning. Keep exports separate from the immutable original packet. Browser storage is not a backup, so export progress regularly.
 
 The detailed packet stays local and Git-ignored because source reuse terms differ. The committed [preparation receipt](reports/linkage-review-audit.json) contains aggregates and checksums only. There are no model predictions, trained scores, merges or new canonical site IDs. The [Step 6 preparation report](reports/phase0-step06-preparation.md) documents scope, sampling and evaluation limits. Steps 7–12 remain gated by Step 6 acceptance.
+
+## Source-aware triage and focused review pilot
+
+```sh
+uv run --locked python -m pipeline.triage --decisions /absolute/path/to/original-review.csv
+make triage                 # rerun using the preserved original CSV
+make triage-check           # rebuild and compare all local evidence and outputs
+make triage-receipt-check   # aggregate/report checks without private inputs
+uv run --locked python -m pipeline.triage --labels /absolute/path/to/new-pilot.csv
+```
+
+Open `data/review/triage-v2/index.html` for the active 20-case pilot. Its local map, entity-level distinctions, typed aliases, source notes and record references support six explicit identity/relationship answers. Six structurally flagged prior cases retain their original answers read-only, and fourteen cases are new. New decisions start blank and export separately. The original CSV and all twenty prior labels, reviewer names and notes are preserved exactly under `data/review/triage-v2/`.
+
+The [triage report](reports/phase0-step06-triage.md), [count export](reports/triage-counts.csv) and [audit receipt](reports/triage-audit.json) explain all routes. Verified GA publisher views share reviewer questions while retaining every source observation and original candidate pair. Private evidence, source records and reviewer notes stay Git-ignored. The 20-case usability pilot is not the formal 200-pair gold evaluation, and triage rules do not fit a model or authorize automatic merges.

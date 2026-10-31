@@ -10,7 +10,7 @@ export npm_config_cache ?= $(CURDIR)/.cache/npm
 RUN = $(UV) run --locked
 PIPELINE = $(RUN) python -m pipeline --root . --release-tag $(RELEASE_TAG)
 
-.PHONY: link-review link-review-check link-review-receipt-check all setup setup-python setup-site hooks lint test check data fetch sources vocab vocab-check pilot pilot-check pilot-receipt-check normalize-check normalize-receipt-check normalize harmonize link enrich qa publish site preview
+.PHONY: triage triage-check triage-receipt-check link-review link-review-check link-review-receipt-check all setup setup-python setup-site hooks lint test check data fetch sources vocab vocab-check pilot pilot-check pilot-receipt-check normalize-check normalize-receipt-check normalize harmonize link enrich qa publish site preview
 
 all: setup check data site
 
@@ -69,6 +69,15 @@ link-review-check:
 
 link-review-receipt-check:
 	$(RUN) python -m pipeline.link --root . --check
+
+triage:
+	$(RUN) python -m pipeline.triage --root . $(TRIAGE_FLAGS)
+
+triage-check:
+	$(RUN) python -m pipeline.triage --root . --check --raw
+
+triage-receipt-check:
+	$(RUN) python -m pipeline.triage --root . --check
 
 normalize-check:
 	$(RUN) python -m pipeline.normalize --root . --check --raw

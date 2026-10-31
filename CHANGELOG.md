@@ -61,3 +61,13 @@ Remote verification is recorded in `reports/phase0-step01.md` and the matching G
 - Added a private, self-contained review page with readable desktop/mobile comparisons, expandable provenance, reviewer notes and CSV export. Original precision uncertainty remains visible.
 - Added strict exported-label validation and aggregate-only receipts; detailed source/pair artifacts stay local and Git-ignored.
 - Documented unsampled strata, unknown coordinate precision and evaluation limits. No matching model, tuning, automatic merges, canonical site IDs or later numbered steps have run. Step 6 awaits the spec's human-label gate.
+
+## 2026.10.31 — Step 6 source-aware triage and focused pilot
+
+- Preserved the user's original CSV and all twenty decisions, reviewer names and notes without changing their meanings.
+- Added evidence-backed record scope, subsite names, contextual versus identity aliases, placeholder handling, geological compatibility and coordinate-reuse checks.
+- Routed all 39,148 original candidates into explained queues; 17,718 are lower-priority likely-distinct audits. No candidate was silently deleted or merged.
+- Verified 246 GA publisher-view correspondences and consolidated 985 redundant comparisons for reviewer workload while retaining both provenance trails.
+- Added a 20-case local pilot with geographic reference maps, neighboring records, direct source evidence, preserved prior answers and explicit containment/uncertainty choices.
+- Added separate pilot-export validation, reproducible local artifacts and aggregate-only CI receipts. Original linkage, raw and staging artifacts remain unchanged.
+- Validation: 581 Python tests pass; browser checks cover responsive layout, read-only prior answers, separate CSV export and saved progress using synthetic cases.

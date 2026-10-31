@@ -45,6 +45,8 @@ jobs:
         run: make pilot-receipt-check
       - name: Verify private review preparation receipt
         run: make link-review-receipt-check
+      - name: Verify triage and preserved-decision receipt
+        run: make triage-receipt-check
 
   build-data:
     name: Build empty data pipeline

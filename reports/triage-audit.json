@@ -1,0 +1,476 @@
+{
+  "artifacts": {
+    "data/review/triage-v2/README.txt": {
+      "bytes": 1274,
+      "sha256": "ecfd599b2903ef4db15850b34ba8102fca5268605881f786d8e2328adae5b182"
+    },
+    "data/review/triage-v2/index.html": {
+      "bytes": 423182,
+      "sha256": "ca28aef88b080322d5c4278f03af7c7a20fc20d8c531f8815fbd1fd5a85d996a"
+    },
+    "data/review/triage-v2/original-decisions.csv": {
+      "bytes": 54741,
+      "sha256": "2c6846bf095271193e8ae023f6d7e72dc7134be3615444d7cb599e0aa31cf015"
+    },
+    "data/review/triage-v2/pilot-blank.csv": {
+      "bytes": 5037,
+      "sha256": "22f3305ff3690d8ca0d6ed4d4b7f4edcc812b7c0dc63b51ee853ea67611a8195"
+    },
+    "data/review/triage-v2/pilot.json": {
+      "bytes": 370675,
+      "sha256": "d11e80050bf0dbd6ffdfd8916b9d044912bfaf9e3bc0459de9fcbce174ca59b1"
+    },
+    "data/review/triage-v2/preserved-decisions.json": {
+      "bytes": 9651,
+      "sha256": "56b3d415921ff7343e73b5206b645ab53065fc76a9f20a721d7b890923abac14"
+    },
+    "data/review/triage-v2/prior-decision-checks.json": {
+      "bytes": 15478,
+      "sha256": "7a5cdec043d2c75a6b4b08d8e1048f4ae2a3e806fb46fd04102e5cb79609e224"
+    },
+    "data/review/triage-v2/records.json": {
+      "bytes": 63404879,
+      "sha256": "c9f296a904e6ecaa274ea1d75a1e07080ea321469ae3667ad2a7bd418145add7"
+    },
+    "data/review/triage-v2/review-units.json": {
+      "bytes": 37654257,
+      "sha256": "4037a2b293e963b6ec30426cb34518235fdacfd0239eb956a7cb4118b8ad7a86"
+    },
+    "data/review/triage-v2/source-views.json": {
+      "bytes": 265794,
+      "sha256": "a9ae823d3b3e6094018015f1401011060f4527e363d7b086df744370a41909ba"
+    },
+    "data/review/triage-v2/triage-pairs.csv": {
+      "bytes": 19804934,
+      "sha256": "4b055428c11ae370f68a531f5f8175343d723e7b8d45974a535d4058a6500d1b"
+    },
+    "data/review/triage-v2/triage-pairs.json": {
+      "bytes": 118845145,
+      "sha256": "ca82a8875bc86a7f16204900af7d9320e4916ce478a5027d61242ee7c700e00b"
+    },
+    "reports/phase0-step06-triage.md": {
+      "bytes": 7626,
+      "sha256": "5fd86f55b7ec8ac1db0d08b9dbce5a98ad05b164e178206dc912adf6bb36639d"
+    },
+    "reports/triage-counts.csv": {
+      "bytes": 1281,
+      "sha256": "af7d7d599344504469b727c27b59ac7a5847128c72fe9658fcccea1dab9f2532"
+    }
+  },
+  "auto_merges": 0,
+  "candidate_pairs": 39148,
+  "canonical_rows_added": 0,
+  "disposition_counts": {
+    "audit_likely_distinct": 17718,
+    "audit_likely_match": 6,
+    "identifier_conflict_review": 4715,
+    "identity_review": 10232,
+    "relationship_scope_review": 2698,
+    "scope_review": 3533,
+    "source_view_duplicate": 246
+  },
+  "eligible_records": 10788,
+  "entity_levels": {
+    "district_area": 1437,
+    "operation_complex": 612,
+    "site": 1573,
+    "subsite": 16,
+    "unknown": 7150
+  },
+  "human_labels_created": 0,
+  "implementation": {
+    "pipeline/triage/__init__.py": "bd226af59b2a7e2ac9c925d0208276a3c5af8f95ca65fa466f4b92dc2fc8267a",
+    "pipeline/triage/__main__.py": "fe2d6e59f80d090251a402c505717f9856ecfaa61eeaacceee595851bbfc96da",
+    "pipeline/triage/core.py": "c276c3e54e130cd26cae946463b58bc08b931012ea18074d3f32854af4f3b59c",
+    "pipeline/triage/features.py": "6427bd011fb473c85551f7d2e6baf9564cfae1e2b03981896821f2264bf9c07f",
+    "pipeline/triage/labels.py": "0946dae3aad3c6082f79388eb8d3e87c80fe8e01887ad5617fd8541411295475",
+    "pipeline/triage/reporting.py": "ac4c06b4a40bf329b9084c487c0ff5bfe75ebd40aaf5c979ad9249d3c51ae8fa",
+    "pipeline/triage/review_page.py": "22d463a3899fd2ef4f7a8362368436d72e2e53becdb8e44e16fb2eb3094ccf60",
+    "pipeline/triage/rules.py": "3e806f72de37c8cd53d380614d4695844ae1ab6fe38728b8240f6339fd0966f6",
+    "pipeline/triage/units.py": "ec466fb0af9457c8d516d31c332fad83ea3f3117bafa4562c55e15d7a206fc5f",
+    "uv.lock": "cd4fe8d1bc077fcac6a467a1ac0b682b56906154dbee726e0837c363618e6ebb"
+  },
+  "import": {
+    "counts": {
+      "blank": 180,
+      "different_sites": 5,
+      "same_site": 11,
+      "uncertain": 4
+    },
+    "csv_rows": 200,
+    "original_csv_sha256": "2c6846bf095271193e8ae023f6d7e72dc7134be3615444d7cb599e0aa31cf015",
+    "original_sample_sha256": "e9b54bf0479727ef7741aa790775ec601a6133347f67f6fbb6fde56899253738",
+    "reviewed_rows": 20
+  },
+  "informative_deposit_type_records": 3557,
+  "limits": [
+    "Queues are provisional rules, not truth labels or probabilities.",
+    "Original 10 km candidate universe is retained; no blocking-recall claim is made.",
+    "Missing geology is neutral; uncertain source granularity remains visible.",
+    "The 20-case pilot cannot establish 97% auto-merge precision or complete the 200-pair gate."
+  ],
+  "model_fitted": false,
+  "original_candidates": 39148,
+  "original_review_audit_sha256": "f9cedb9d2d348a3d7b51b0730ac0a51f6cb916a1163378433fbf2ba5f34ad929",
+  "original_sample_sha256": "e9b54bf0479727ef7741aa790775ec601a6133347f67f6fbb6fde56899253738",
+  "phase": 0,
+  "prior_clarification_flags": 14,
+  "prior_decision_queues": {
+    "ambiguous": 11,
+    "likely_distinct": 5,
+    "likely_match": 1,
+    "relationship": 3
+  },
+  "privacy": "Detailed records, reviewer names and notes remain local and unpublished.",
+  "published_rows_added": 0,
+  "queue_counts": {
+    "ambiguous": 18480,
+    "likely_distinct": 17718,
+    "likely_match": 252,
+    "relationship": 2698
+  },
+  "reason_counts": {
+    "broader_than_individual_site": 2698,
+    "close_distinctive_name_agreement": 6,
+    "coordinates_reused_for_different_names": 1651,
+    "different_numbered_identifiers": 4508,
+    "directional_qualifier_difference": 1064,
+    "distant_without_meaningful_name_agreement": 17718,
+    "individual_site_scope_unconfirmed": 27189,
+    "insufficient_joint_identity_evidence": 127,
+    "opposing_directional_identifiers": 207,
+    "reported_deposit_types_differ": 55,
+    "source_scope_requires_review": 3533,
+    "verified_publisher_source_views": 246,
+    "weak_alias_or_context_agreement": 2714
+  },
+  "record_scope_flags": {
+    "entity_level_unresolved": 7150,
+    "geological_complex_not_necessarily_operating_complex": 612,
+    "name_suggests_broad_scope": 345,
+    "name_suggests_processing_facility": 26,
+    "placeholder_primary_name": 320,
+    "publisher_cluster_record": 216,
+    "qualified_entity_level": 541
+  },
+  "sample_sha256": "385ac3aa20eaaacf0e5de23315025622df10d6987da5d232d7dccfb288053b64",
+  "schema_version": "triage-audit-v2",
+  "selection": {
+    "excluded_from_pilot": "Verified source-view representations need no entity-review vote.",
+    "new_cases": 14,
+    "new_labels": 0,
+    "previous_decisions_shown": 6,
+    "purpose": "Usability and ambiguity pilot; not the formal 200-pair evaluation set.",
+    "queue_quotas": {
+      "ambiguous": 7,
+      "likely_distinct": 3,
+      "likely_match": 3,
+      "relationship": 7
+    },
+    "seed": "atlas-triage-pilot-v2",
+    "selection": "Six structurally flagged prior cases where available; diverse new cases fill quotas.",
+    "size": 20
+  },
+  "source_pair_queues": {
+    "ga_critical_2025 | ga_critical_2025": {
+      "ambiguous": 15,
+      "likely_distinct": 40
+    },
+    "ga_critical_2025 | ga_critical_2025_arcgis": {
+      "ambiguous": 30,
+      "likely_distinct": 80,
+      "likely_match": 246
+    },
+    "ga_critical_2025 | ga_global_ree": {
+      "ambiguous": 26,
+      "likely_distinct": 4
+    },
+    "ga_critical_2025 | icmm": {
+      "ambiguous": 50
+    },
+    "ga_critical_2025 | jasansky": {
+      "ambiguous": 7,
+      "likely_distinct": 1,
+      "likely_match": 1
+    },
+    "ga_critical_2025 | usgs_global_critical": {
+      "ambiguous": 18,
+      "likely_distinct": 12
+    },
+    "ga_critical_2025 | usgs_global_ree": {
+      "ambiguous": 25,
+      "likely_distinct": 11,
+      "likely_match": 2,
+      "relationship": 55
+    },
+    "ga_critical_2025 | usgs_laterites": {
+      "ambiguous": 8,
+      "likely_distinct": 6
+    },
+    "ga_critical_2025 | usgs_mrds": {
+      "ambiguous": 53,
+      "likely_distinct": 82
+    },
+    "ga_critical_2025 | wapha": {
+      "ambiguous": 159,
+      "likely_distinct": 300
+    },
+    "ga_critical_2025_arcgis | ga_critical_2025_arcgis": {
+      "ambiguous": 15,
+      "likely_distinct": 40
+    },
+    "ga_critical_2025_arcgis | ga_global_ree": {
+      "ambiguous": 26,
+      "likely_distinct": 4
+    },
+    "ga_critical_2025_arcgis | icmm": {
+      "ambiguous": 50
+    },
+    "ga_critical_2025_arcgis | jasansky": {
+      "ambiguous": 7,
+      "likely_distinct": 1,
+      "likely_match": 1
+    },
+    "ga_critical_2025_arcgis | usgs_global_critical": {
+      "ambiguous": 18,
+      "likely_distinct": 12
+    },
+    "ga_critical_2025_arcgis | usgs_global_ree": {
+      "ambiguous": 25,
+      "likely_distinct": 11,
+      "likely_match": 2,
+      "relationship": 55
+    },
+    "ga_critical_2025_arcgis | usgs_laterites": {
+      "ambiguous": 8,
+      "likely_distinct": 6
+    },
+    "ga_critical_2025_arcgis | usgs_mrds": {
+      "ambiguous": 53,
+      "likely_distinct": 82
+    },
+    "ga_critical_2025_arcgis | wapha": {
+      "ambiguous": 159,
+      "likely_distinct": 300
+    },
+    "ga_global_ree | ga_global_ree": {
+      "ambiguous": 37,
+      "likely_distinct": 8
+    },
+    "ga_global_ree | gseu_crm": {
+      "ambiguous": 11,
+      "likely_distinct": 2
+    },
+    "ga_global_ree | icmm": {
+      "ambiguous": 3
+    },
+    "ga_global_ree | jasansky": {
+      "ambiguous": 1
+    },
+    "ga_global_ree | usgs_global_critical": {
+      "ambiguous": 39,
+      "likely_distinct": 2
+    },
+    "ga_global_ree | usgs_global_ree": {
+      "ambiguous": 167,
+      "likely_distinct": 46,
+      "relationship": 324
+    },
+    "ga_global_ree | usgs_mrds": {
+      "ambiguous": 223,
+      "likely_distinct": 139
+    },
+    "ga_global_ree | usgs_us_critical": {
+      "ambiguous": 45,
+      "likely_distinct": 13
+    },
+    "gseu_crm | gseu_crm": {
+      "ambiguous": 3,
+      "likely_distinct": 28
+    },
+    "gseu_crm | icmm": {
+      "ambiguous": 35
+    },
+    "gseu_crm | jasansky": {
+      "ambiguous": 5
+    },
+    "gseu_crm | usgs_global_critical": {
+      "ambiguous": 13,
+      "likely_distinct": 3
+    },
+    "gseu_crm | usgs_global_ree": {
+      "ambiguous": 22,
+      "likely_distinct": 7,
+      "relationship": 14
+    },
+    "gseu_crm | usgs_laterites": {
+      "ambiguous": 7,
+      "likely_distinct": 4
+    },
+    "gseu_crm | usgs_mrds": {
+      "ambiguous": 30,
+      "likely_distinct": 27
+    },
+    "gseu_crm | wapha": {
+      "ambiguous": 21,
+      "likely_distinct": 18
+    },
+    "icmm | icmm": {
+      "ambiguous": 27
+    },
+    "icmm | jasansky": {
+      "ambiguous": 65
+    },
+    "icmm | usgs_global_critical": {
+      "ambiguous": 71
+    },
+    "icmm | usgs_global_ree": {
+      "ambiguous": 5,
+      "relationship": 7
+    },
+    "icmm | usgs_laterites": {
+      "ambiguous": 16
+    },
+    "icmm | usgs_mrds": {
+      "ambiguous": 670
+    },
+    "icmm | usgs_us_critical": {
+      "ambiguous": 15
+    },
+    "icmm | wapha": {
+      "ambiguous": 632
+    },
+    "jasansky | jasansky": {
+      "ambiguous": 12,
+      "likely_distinct": 10
+    },
+    "jasansky | usgs_global_critical": {
+      "ambiguous": 8,
+      "likely_distinct": 5
+    },
+    "jasansky | usgs_global_ree": {
+      "relationship": 6
+    },
+    "jasansky | usgs_laterites": {
+      "ambiguous": 9,
+      "likely_distinct": 4
+    },
+    "jasansky | usgs_mrds": {
+      "ambiguous": 134,
+      "likely_distinct": 289
+    },
+    "jasansky | usgs_us_critical": {
+      "ambiguous": 1
+    },
+    "jasansky | wapha": {
+      "ambiguous": 97,
+      "likely_distinct": 213
+    },
+    "usgs_global_critical | usgs_global_critical": {
+      "ambiguous": 1,
+      "likely_distinct": 29
+    },
+    "usgs_global_critical | usgs_global_ree": {
+      "ambiguous": 37,
+      "likely_distinct": 7,
+      "relationship": 54
+    },
+    "usgs_global_critical | usgs_laterites": {
+      "ambiguous": 64,
+      "likely_distinct": 16
+    },
+    "usgs_global_critical | usgs_mrds": {
+      "ambiguous": 178,
+      "likely_distinct": 138
+    },
+    "usgs_global_critical | usgs_us_critical": {
+      "ambiguous": 16,
+      "likely_distinct": 11
+    },
+    "usgs_global_critical | wapha": {
+      "ambiguous": 75,
+      "likely_distinct": 123
+    },
+    "usgs_global_ree | usgs_global_ree": {
+      "ambiguous": 406,
+      "likely_distinct": 214,
+      "relationship": 1427
+    },
+    "usgs_global_ree | usgs_laterites": {
+      "relationship": 3
+    },
+    "usgs_global_ree | usgs_mrds": {
+      "ambiguous": 183,
+      "likely_distinct": 156,
+      "relationship": 706
+    },
+    "usgs_global_ree | usgs_us_critical": {
+      "ambiguous": 24,
+      "likely_distinct": 22,
+      "relationship": 37
+    },
+    "usgs_global_ree | wapha": {
+      "ambiguous": 17,
+      "likely_distinct": 2,
+      "relationship": 10
+    },
+    "usgs_laterites | usgs_laterites": {
+      "ambiguous": 1,
+      "likely_distinct": 10
+    },
+    "usgs_laterites | usgs_mrds": {
+      "ambiguous": 78,
+      "likely_distinct": 42
+    },
+    "usgs_laterites | usgs_us_critical": {
+      "ambiguous": 4,
+      "likely_distinct": 5
+    },
+    "usgs_laterites | wapha": {
+      "ambiguous": 75,
+      "likely_distinct": 97
+    },
+    "usgs_mrds | usgs_mrds": {
+      "ambiguous": 6017,
+      "likely_distinct": 9079
+    },
+    "usgs_mrds | usgs_us_critical": {
+      "ambiguous": 432,
+      "likely_distinct": 629
+    },
+    "usgs_mrds | wapha": {
+      "ambiguous": 2996,
+      "likely_distinct": 3700
+    },
+    "usgs_us_critical | usgs_us_critical": {
+      "ambiguous": 30,
+      "likely_distinct": 33
+    },
+    "usgs_us_critical | wapha": {
+      "ambiguous": 40,
+      "likely_distinct": 30
+    },
+    "wapha | wapha": {
+      "ambiguous": 4630,
+      "likely_distinct": 1565
+    }
+  },
+  "source_view_groups": 246,
+  "source_view_pairs": 246,
+  "status": "focused_pilot_ready",
+  "step": 6,
+  "workload": {
+    "duplicate_comparisons_collapsed": 985,
+    "input_candidate_count": 39148,
+    "policy": "Reviewer workload only: verified publisher source views share a comparison unit; all original source and candidate observations remain unchanged.",
+    "review_units": 37917,
+    "source_view_internal_pairs": 246,
+    "unit_queue_counts": {
+      "ambiguous": 18089,
+      "likely_distinct": 17182,
+      "likely_match": 3,
+      "relationship": 2643
+    },
+    "units_with_routing_disagreement": 0
+  }
+}
