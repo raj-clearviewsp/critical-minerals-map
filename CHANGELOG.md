@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026.10.31 — Researched development review, first 60 cases
+
+- Prepared the first 60 of the frozen 87 new development comparisons for detailed research-assisted approval, preserving exact source identities and order.
+- Added per-case research interpretations, geographic/scope/geology analysis, alternative explanations, uncertainty, cited evidence with access and independence notes, and a separate second-review record.
+- Added a self-contained approval workspace and a complete searchable/printable dossier. Recommendations never initialize human labels; explicit approval affects only the current case, and exports remain bound to the exact packet.
+- Added immutable acceptance, local reproducibility checks, offline aggregate receipt checks and tests for preservation, approval separation and output safety.
+- Kept all earlier decisions, the other 27 development cases and the 80-case holdout unchanged. No new human labels, model fitting, automatic merges or public observation data.
+- Final proposals: 12 same-site, 17 distinct-site, 5 containment and 26 unresolved. Independent review changed five relationship recommendations and raised one containment confidence; all 60 have a second-review record.
+- Validation: 785 tests pass, local reproducibility and offline receipt checks pass, and browser checks cover the complete dossier, blank decisions, navigation and responsive layout. All 64 previously accepted artifacts retain identical checksums and modification times.
+
 ## 2026.10.31 — Private source-record website and completed adjudication
 
 - Preserved the latest seven adjudications exactly, alongside all 40 previous review events. The latest view contains 34 comparisons; seven relationships remain unresolved.

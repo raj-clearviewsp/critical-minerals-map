@@ -1,0 +1,84 @@
+{
+  "artifacts": {
+    "data/review/development60-v1/analysis.html": {
+      "bytes": 420521,
+      "sha256": "a9f16496440560f384a4b89700c68eeff3b4ca1edade9554256985396001a236"
+    },
+    "data/review/development60-v1/decisions-blank.csv": {
+      "bytes": 14452,
+      "sha256": "2adb8d637fe79d90e281089d6863384db3d816e6d99cba4bf4c29c6fdde5b2ee"
+    },
+    "data/review/development60-v1/index.html": {
+      "bytes": 1571081,
+      "sha256": "22bdfd2fd341b76c543ff20fb403e89a1673b44bf229d851cd1ff53e6fb33ae4"
+    },
+    "data/review/development60-v1/research-input.json": {
+      "bytes": 930096,
+      "sha256": "62e8b3b761eed6562046eed05903a13134b3a6f9ad3fd7446c77278f8172b5fe"
+    },
+    "data/review/development60-v1/sample.json": {
+      "bytes": 1533957,
+      "sha256": "0278ae2e2a5894247ed3751fedd4a923ad55e968ac8d4db8ba481942beffd716"
+    },
+    "reports/development60-review.md": {
+      "bytes": 3548,
+      "sha256": "3f8997542ed64e24670eb0f2ff1d4e80b8e796241a6e53e64995c35ed32d669f"
+    }
+  },
+  "auto_merges": 0,
+  "canonical_rows_added": 0,
+  "implementation": {
+    "pipeline/research_review/__init__.py": "82cb8413d30a29bfe78391707046a51c16f4c75c3d92965add2266bc34815180",
+    "pipeline/research_review/__main__.py": "2e1efe2970e713432dd734d40bd43ed8222d92efdb96f2074ee232b1e443f33d",
+    "pipeline/research_review/core.py": "cda945cb61ec4c7d474c4167e021119145c17108807923a79bdd3f98de340f34",
+    "pipeline/research_review/review_page.py": "2187bf4a7ed5fa1b8b0c024debdc88f9d316ae517ad9741011de52ad2d693806",
+    "uv.lock": "cd4fe8d1bc077fcac6a467a1ac0b682b56906154dbee726e0837c363618e6ebb"
+  },
+  "model_fitted": false,
+  "parent_receipt_sha256": "94b9330d37773c10a8ace75c30ccb6cf5ba9960c9a9f215ca207b5d9b2211662",
+  "parent_sample_sha256": "0ed186b9f620fd17f1e8e4c421810600e193c84ffbac2bcef752fcb56e64f0ff",
+  "preview_receipt_sha256": "111bda98a7839599914e77b1e44bb07fabee1a0848a0f1f92751d2f039a7fdd5",
+  "privacy": "Only aggregate counts and checksums are public; observations and research stay local.",
+  "published_rows_added": 0,
+  "research": {
+    "case_count": 60,
+    "citation_access_counts": {
+      "full_text": 44,
+      "indexed_extract": 59,
+      "local_snapshot": 114
+    },
+    "citation_count": 217,
+    "confidence_counts": {
+      "high": 34,
+      "medium": 26
+    },
+    "independently_reviewed": 60,
+    "recommendation_counts": {
+      "different_sites": 17,
+      "insufficient_evidence": 2,
+      "left_contains_right": 2,
+      "related_scope_unclear": 24,
+      "right_contains_left": 3,
+      "same_site": 12
+    },
+    "recommendations_changed_after_review": 5,
+    "second_review_outcomes": {
+      "agree": 48,
+      "caution": 6,
+      "revise": 6
+    },
+    "unique_citation_urls": 119
+  },
+  "review": {
+    "development_remaining_after_60": 27,
+    "holdout_cases_untouched": 80,
+    "new_human_labels_created": 0,
+    "previous_events_preserved": 47,
+    "previous_unique_pairs": 34,
+    "prior_unresolved": 7
+  },
+  "sample_sha256": "28608548162bf94589d5665481d1901fcfb35993d1255e620f89b128e2850d56",
+  "schema_version": "development60-audit-v1",
+  "selection_policy": "First 60 of 87 frozen new development cases; parent order retained.",
+  "status": "researched_recommendations_pending_human_approval"
+}

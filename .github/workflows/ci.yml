@@ -51,6 +51,8 @@ jobs:
         run: make reconcile-receipt-check
       - name: Verify preserved adjudication and private-preview receipt
         run: make preview-data-receipt-check
+      - name: Verify researched development review receipt
+        run: make research-review-receipt-check
 
   build-data:
     name: Build empty data pipeline

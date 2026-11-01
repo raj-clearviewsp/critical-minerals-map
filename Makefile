@@ -2,6 +2,17 @@ SHELL := /bin/sh
 .DEFAULT_GOAL := all
 .NOTPARALLEL:
 
+.PHONY: research-review research-review-check research-review-receipt-check
+
+research-review:
+	$(RUN) python -m pipeline.research_review --root . $(RESEARCH_FLAGS)
+
+research-review-check:
+	$(RUN) python -m pipeline.research_review --root . --check --local
+
+research-review-receipt-check:
+	$(RUN) python -m pipeline.research_review --root . --check
+
 .PHONY: preview-data preview-data-check preview-data-receipt-check site-private site-private-preview
 
 preview-data:

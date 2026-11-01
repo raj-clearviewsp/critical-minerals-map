@@ -161,3 +161,23 @@ uv run --locked python -m pipeline.reconciliation --labels /absolute/path/to/exp
 Use `--packet development` or `--packet holdout` for those exports; `--complete` checks that every case was answered. Export validation does not import or overwrite decisions. Initial preparation accepts `--decisions` and `--evidence` paths; all subsequent reruns use the preserved copies. Research proposals remain separate from human labels. Unresolved scope and source crosswalks remain explicit.
 
 Whole connected candidate neighborhoods stay within one development/holdout split. The review pages omit automated routing, and the holdout also omits past answers and research proposals. The 200-case review is still pending; no model is fitted, thresholds tuned or sites merged by this checkpoint.
+
+## Researched first 60 development comparisons
+
+At Raj's request, the first 60 new development cases now have detailed agent
+recommendations and a separate second review. Open
+`data/review/development60-v1/index.html` to approve or revise individual proposals,
+or `analysis.html` in that directory to read/print the complete dossier. Each human
+answer starts blank. The packet preserves the original pair order and exact source
+observations. The other 27 development and 80 blinded holdout cases are unchanged.
+
+```sh
+make research-review-check         # reproduce the full local research packet
+make research-review-receipt-check # aggregate receipt validation for CI
+uv run --locked python -m pipeline.research_review --labels /absolute/path/to/export.csv --complete
+```
+
+Omit `--complete` to validate partial progress. Validation does not import answers.
+The [batch report](reports/development60-review.md) explains proposal counts,
+reviewer assistance and the remaining validation work. Detailed research and source
+records remain private; only aggregate counts and checksums are committed.
