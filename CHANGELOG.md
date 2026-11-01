@@ -71,3 +71,11 @@ Remote verification is recorded in `reports/phase0-step01.md` and the matching G
 - Added a 20-case local pilot with geographic reference maps, neighboring records, direct source evidence, preserved prior answers and explicit containment/uncertainty choices.
 - Added separate pilot-export validation, reproducible local artifacts and aggregate-only CI receipts. Original linkage, raw and staging artifacts remain unchanged.
 - Validation: 581 Python tests pass; browser checks cover responsive layout, read-only prior answers, separate CSV export and saved progress using synthetic cases.
+
+### Step 6 — completed pilot reconciliation and validation preparation
+
+- Preserve both review rounds as 40 immutable events and 34 unique pairs, with a separate latest-answer view.
+- Add 30 cited source findings across 13 cases: 7 adjudications, 5 open research questions and 1 corroborated relationship.
+- Freeze 200 comparison units with a 120 development / 80 holdout split, retaining 33 earlier comparisons and excluding 1 direct publisher-view duplicate. Isolate connected candidate neighborhoods between splits.
+- Add local evidence-review and blinded validation pages, separate sample-bound CSV exports, deterministic receipts and CI checks. Human answers and detailed sources stay local; no models or merges run.
+- Validation: 737 tests pass; desktop/mobile browser checks confirm source citations, case navigation, read-only history, blank new decisions and a blinded holdout payload.

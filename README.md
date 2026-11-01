@@ -2,7 +2,7 @@
 
 A sourced, static reference for critical mineral deposits, maturity and ownership. The implementation follows [the supplied spec](IMPLEMENTATION_SPEC.md), in numbered order.
 
-**Current status: Phase 0, Steps 1–5 complete; Step 6 has source-aware triage and a focused 20-case review pilot; the first 20 human decisions are preserved.** Step 3 passed [GitHub CI](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41232185905). Sixteen source snapshots are captured. Canonical and published data remain empty, and no website has been deployed. The canonical schema remains provisional.
+**Current status: Phase 0, Steps 1–5 complete; Step 6 has both review rounds preserved, cited evidence for adjudication and a prepared 200-comparison validation set. Human validation remains pending.** Step 3 passed [GitHub CI](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41232185905). Sixteen source snapshots are captured. Canonical and published data remain empty, and no website has been deployed. The canonical schema remains provisional.
 
 ## Run locally
 
@@ -144,3 +144,18 @@ uv run --locked python -m pipeline.triage --labels /absolute/path/to/new-pilot.c
 Open `data/review/triage-v2/index.html` for the active 20-case pilot. Its local map, entity-level distinctions, typed aliases, source notes and record references support six explicit identity/relationship answers. Six structurally flagged prior cases retain their original answers read-only, and fourteen cases are new. New decisions start blank and export separately. The original CSV and all twenty prior labels, reviewer names and notes are preserved exactly under `data/review/triage-v2/`.
 
 The [triage report](reports/phase0-step06-triage.md), [count export](reports/triage-counts.csv) and [audit receipt](reports/triage-audit.json) explain all routes. Verified GA publisher views share reviewer questions while retaining every source observation and original candidate pair. Private evidence, source records and reviewer notes stay Git-ignored. The 20-case usability pilot is not the formal 200-pair gold evaluation, and triage rules do not fit a model or authorize automatic merges.
+
+## Completed pilot and formal validation preparation
+
+The completed pilot is preserved as a second immutable review round. The [reconciliation report](reports/phase0-step06-reconciliation.md) records the outcomes, primary-source research and frozen 200-comparison design. Open `data/review/reconciliation-v1/index.html` locally for seven evidence adjudications, 87 new development cases and 80 blinded holdout cases. The design retains 33 prior site comparisons; a duplicate publisher-view comparison remains in history.
+
+```sh
+make reconcile                 # deterministic rebuild from preserved local inputs
+make reconcile-check           # rebuild and compare all private artifacts
+make reconcile-receipt-check   # offline code/aggregate verification used in CI
+uv run --locked python -m pipeline.reconciliation --labels /absolute/path/to/export.csv --packet adjudication
+```
+
+Use `--packet development` or `--packet holdout` for those exports; `--complete` checks that every case was answered. Export validation does not import or overwrite decisions. Initial preparation accepts `--decisions` and `--evidence` paths; all subsequent reruns use the preserved copies. Research proposals remain separate from human labels. Unresolved scope and source crosswalks remain explicit.
+
+Whole connected candidate neighborhoods stay within one development/holdout split. The review pages omit automated routing, and the holdout also omits past answers and research proposals. The 200-case review is still pending; no model is fitted, thresholds tuned or sites merged by this checkpoint.

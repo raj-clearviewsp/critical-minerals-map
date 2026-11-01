@@ -1,0 +1,320 @@
+{
+  "artifacts": {
+    "data/review/reconciliation-v1/adjudication-blank.csv": {
+      "bytes": 1562,
+      "sha256": "03610092df4bacffc24c14ad770cefb0492a9c8e2eeb7986d373c522e8cf632c"
+    },
+    "data/review/reconciliation-v1/adjudication.html": {
+      "bytes": 194610,
+      "sha256": "35d5d039c52c0a2a65da0a3fd7c166556750bc136de6d46c6a15dbf4b8aef19e"
+    },
+    "data/review/reconciliation-v1/adjudication.json": {
+      "bytes": 144610,
+      "sha256": "37382cd39120ce915cbd05ce08fd3b646288e7208930ed2d8f8188ba8fcc829f"
+    },
+    "data/review/reconciliation-v1/benchmark.json": {
+      "bytes": 783990,
+      "sha256": "69ac11922d1fae6bd620c615d8877771e57cac198baab42a6ef70fa0b35d49b9"
+    },
+    "data/review/reconciliation-v1/completed-pilot.csv": {
+      "bytes": 5813,
+      "sha256": "faf5585e0813d048e59ca88fff68c8dc691bde67b69aed77cb7536557d3ec8cd"
+    },
+    "data/review/reconciliation-v1/decision-history.json": {
+      "bytes": 27429,
+      "sha256": "5d260a2ec5018e537b5aff9cd97030c9c9061b8edbf23db45337fa161e966590"
+    },
+    "data/review/reconciliation-v1/development-blank.csv": {
+      "bytes": 21530,
+      "sha256": "112636ce5beb69bbe6e00c7225ed52dec32ba52e8cd6e2c60d923664ad287c0a"
+    },
+    "data/review/reconciliation-v1/development.html": {
+      "bytes": 1617105,
+      "sha256": "ea56d7726df3d28977c20b1dd71f208299ae122aaef934e8d0eb092edd8e48b8"
+    },
+    "data/review/reconciliation-v1/development.json": {
+      "bytes": 1456876,
+      "sha256": "a639cac796fc94d595409a6d606e66ea47fe87f6f8466a877281a549fa98eb0f"
+    },
+    "data/review/reconciliation-v1/holdout-blank.csv": {
+      "bytes": 20059,
+      "sha256": "41570b187fa3e092c9076a312188371d1aee565a58cb3aac810d0f41e4aa1442"
+    },
+    "data/review/reconciliation-v1/holdout.html": {
+      "bytes": 1429086,
+      "sha256": "9156d0dd3063d25c9e168097d8bd7dcc8bb7c06f471cbc352cee3c24e935949f"
+    },
+    "data/review/reconciliation-v1/holdout.json": {
+      "bytes": 1325270,
+      "sha256": "1407e711f7b589684e4edc255fd5dec6c24510d354c03f5533861bafdac5ffa8"
+    },
+    "data/review/reconciliation-v1/index.html": {
+      "bytes": 16931,
+      "sha256": "728a708b9ffac0b19b2017a7defba7bbe8e5d8aa02913df26ae2399796839efa"
+    },
+    "data/review/reconciliation-v1/latest-decisions.json": {
+      "bytes": 25207,
+      "sha256": "28cecc3d1770aa3b2283d118eb434774e13ca99542b2036a5e5285cb4d613402"
+    },
+    "data/review/reconciliation-v1/pilot-outcomes.json": {
+      "bytes": 13635,
+      "sha256": "a7985a47b2ea957dff7661ef29da005840f11082400892b713283cd784e1d972"
+    },
+    "data/review/reconciliation-v1/source-research-input.json": {
+      "bytes": 33510,
+      "sha256": "5a92de94e11b78ffc9749188d0c1f2d9841220f3f14614d60e13da37d0cfe415"
+    },
+    "data/review/reconciliation-v1/source-research.json": {
+      "bytes": 37114,
+      "sha256": "c18defa54923ee02b81ff9fa2663bfd7bf5fbc1e628f8986710baf3536f88846"
+    },
+    "reports/phase0-step06-reconciliation.md": {
+      "bytes": 6022,
+      "sha256": "8ee84b3800cfdb654d497d71450388c5bcf30f1cab9fede6d07173e625acf6a3"
+    }
+  },
+  "auto_merges": 0,
+  "benchmark_sha256": "4ea8852858a1e6e45c5bc508e644c7bc61e8316acde9402df96c237ad9bf1b1c",
+  "canonical_rows_added": 0,
+  "formal_gold_set_complete": false,
+  "historical_readiness": {
+    "corroborated": 1,
+    "human_adjudication": 7,
+    "prior_decision_available": 20,
+    "research_open": 5
+  },
+  "human_labels_created": 0,
+  "implementation": {
+    "pipeline/reconciliation/__init__.py": "098ffa7831d0f977f3775c4a5c87ba52e32872f27f7683bc95785e997bb43adc",
+    "pipeline/reconciliation/__main__.py": "3717639931ed3f105f108b95e3a924d077a94533e97420c4fda144d4451feceb",
+    "pipeline/reconciliation/core.py": "20ed990b83f67aebc9a82cdfd46b2fcab32d2288cfbcda01bd3916546d2eabad",
+    "pipeline/reconciliation/evidence.py": "47a6ff8b6ab6a92a3c9e55de19e80ef56fc1b5680b8656351fe195e037bb0b62",
+    "pipeline/reconciliation/ledger.py": "c20e46d3611ab28bf5049f4d3193e2f70e8e53e5215aa856054109184206755f",
+    "pipeline/reconciliation/reporting.py": "d94c57bf7eb30f185a1c86165e637a6e64104ae11dbc15fdd56b7ec7b9a44469",
+    "pipeline/reconciliation/review_page.py": "1da0e039dbea60307a88e04ee209855c7785df1d929a5da8697def520a15bbd5",
+    "pipeline/reconciliation/sampling.py": "d3c543c7263f09407a99886690cdf9605d24d74695bd9bd33223afd75e9c074e",
+    "uv.lock": "cd4fe8d1bc077fcac6a467a1ac0b682b56906154dbee726e0837c363618e6ebb"
+  },
+  "ledger": {
+    "accuracy_metrics_reported": false,
+    "artifacts": {
+      "data/review/reconciliation-v1/completed-pilot.csv": {
+        "bytes": 5813,
+        "sha256": "faf5585e0813d048e59ca88fff68c8dc691bde67b69aed77cb7536557d3ec8cd"
+      },
+      "data/review/reconciliation-v1/decision-history.json": {
+        "bytes": 27429,
+        "sha256": "5d260a2ec5018e537b5aff9cd97030c9c9061b8edbf23db45337fa161e966590"
+      },
+      "data/review/reconciliation-v1/latest-decisions.json": {
+        "bytes": 25207,
+        "sha256": "28cecc3d1770aa3b2283d118eb434774e13ca99542b2036a5e5285cb4d613402"
+      },
+      "data/review/reconciliation-v1/pilot-outcomes.json": {
+        "bytes": 13635,
+        "sha256": "a7985a47b2ea957dff7661ef29da005840f11082400892b713283cd784e1d972"
+      }
+    },
+    "auto_merges": 0,
+    "changed_labels": 1,
+    "completed_csv_sha256": "faf5585e0813d048e59ca88fff68c8dc691bde67b69aed77cb7536557d3ec8cd",
+    "formal_gold_set_complete": false,
+    "history_events": 40,
+    "interpretation": "Targeted pilot agreement diagnoses evidence/routing problems; it does not estimate population precision or recall. Human decisions remain subject to source adjudication.",
+    "latest_label_counts": {
+      "different_sites": 7,
+      "insufficient_evidence": 1,
+      "left_contains_right": 1,
+      "related_scope_unclear": 2,
+      "same_site": 19,
+      "uncertain": 4
+    },
+    "latest_unresolved": 7,
+    "model_fitted": false,
+    "original_csv_sha256": "2c6846bf095271193e8ae023f6d7e72dc7134be3615444d7cb599e0aa31cf015",
+    "original_decisions": 20,
+    "parent_triage_receipt_sha256": "1c5954f3892548feeeb694218c79adf536fe264383ab6a09426e7ac429b3d558",
+    "pilot_decisions": 20,
+    "pilot_label_counts": {
+      "different_sites": 2,
+      "insufficient_evidence": 1,
+      "left_contains_right": 1,
+      "related_scope_unclear": 2,
+      "same_site": 14
+    },
+    "pilot_queue_by_label": {
+      "ambiguous": {
+        "related_scope_unclear": 1,
+        "same_site": 6
+      },
+      "likely_distinct": {
+        "different_sites": 2,
+        "same_site": 1
+      },
+      "likely_match": {
+        "same_site": 3
+      },
+      "relationship": {
+        "insufficient_evidence": 1,
+        "left_contains_right": 1,
+        "related_scope_unclear": 1,
+        "same_site": 4
+      }
+    },
+    "pilot_sample_sha256": "385ac3aa20eaaacf0e5de23315025622df10d6987da5d232d7dccfb288053b64",
+    "pilot_unresolved": 3,
+    "repeated_pairs": 6,
+    "rule_disagreements": 1,
+    "schema_version": "review-ledger-summary-v1",
+    "unchanged_repeated_labels": 5,
+    "unique_reviewed_pairs": 34
+  },
+  "limits": [
+    "Research proposals are not human decisions. Earlier human labels are never silently replaced.",
+    "No numerical thresholds are tuned and no linkage model is fitted before the formal review gate.",
+    "Validation is confined to the existing candidate block; blocking recall is not measured.",
+    "Seeded diversity quotas are not a probability sample; no population-weighted accuracy is claimed.",
+    "All three current likely-match review units were previously exposed and are development-only; that heuristic has no independent holdout test here.",
+    "Source-linked public evidence can still leave exact record boundaries and membership unresolved."
+  ],
+  "model_fitted": false,
+  "packets": {
+    "adjudication": {
+      "cases": 7,
+      "sample_sha256": "fcbcc03747e4bec85d7ea2f876bc33952005eebc35b5a96427185d4cdb38423e"
+    },
+    "development": {
+      "cases": 87,
+      "sample_sha256": "0ed186b9f620fd17f1e8e4c421810600e193c84ffbac2bcef752fcb56e64f0ff"
+    },
+    "holdout": {
+      "cases": 80,
+      "sample_sha256": "2dfa92e1759366193b6c223836a7be3ba0c15b47ca708cd8565b9dbd45c3cef9"
+    }
+  },
+  "parent_receipt_sha256": "1c5954f3892548feeeb694218c79adf536fe264383ab6a09426e7ac429b3d558",
+  "parent_sample_sha256": "385ac3aa20eaaacf0e5de23315025622df10d6987da5d232d7dccfb288053b64",
+  "phase": 0,
+  "privacy": "Human decisions, research links tied to observations and source records remain local and Git-ignored.",
+  "published_rows_added": 0,
+  "research": {
+    "disposition_counts": {
+      "corroborated": 1,
+      "human_adjudication": 7,
+      "research_open": 5
+    },
+    "findings": 30,
+    "human_labels_changed": 0,
+    "proposal_counts": {
+      "different_sites": 4,
+      "insufficient_evidence": 3,
+      "left_contains_right": 2,
+      "related_scope_unclear": 4
+    },
+    "researched_cases": 13,
+    "scope": "Source findings supplement review evidence; proposals never overwrite human decisions."
+  },
+  "schema_version": "reconciliation-audit-v1",
+  "selection": {
+    "candidate_components": 1645,
+    "family_counts": {
+      "Co": 68,
+      "Ni": 80,
+      "REE": 94
+    },
+    "historical_source_view_pairs_excluded": 1,
+    "human_labels_created": 0,
+    "model_fitted": false,
+    "new_units": 167,
+    "queue_counts_by_split": {
+      "development": {
+        "ambiguous": 52,
+        "likely_distinct": 30,
+        "likely_match": 3,
+        "relationship": 35
+      },
+      "holdout": {
+        "ambiguous": 27,
+        "likely_distinct": 26,
+        "relationship": 27
+      }
+    },
+    "retained_historical_units": 33,
+    "sampling_policy": "Fixed queue quotas with seeded source/mineral/distance diversity. Historical cases are retained in development only. This is not a probability sample; do not extrapolate unweighted performance to all candidates.",
+    "seed": "atlas-validation-v1",
+    "selected_components_by_split": {
+      "development": 79,
+      "holdout": 71
+    },
+    "size": 200,
+    "source_pair_counts": {
+      "ga_critical_2025 / ga_critical_2025": 3,
+      "ga_critical_2025 / ga_critical_2025_arcgis": 3,
+      "ga_critical_2025 / ga_global_ree": 3,
+      "ga_critical_2025 / icmm": 1,
+      "ga_critical_2025 / usgs_global_critical": 1,
+      "ga_critical_2025 / usgs_global_ree": 9,
+      "ga_critical_2025 / usgs_laterites": 2,
+      "ga_critical_2025 / usgs_mrds": 3,
+      "ga_critical_2025 / wapha": 4,
+      "ga_critical_2025_arcgis / ga_critical_2025_arcgis": 1,
+      "ga_critical_2025_arcgis / ga_global_ree": 2,
+      "ga_critical_2025_arcgis / icmm": 1,
+      "ga_critical_2025_arcgis / jasansky": 1,
+      "ga_critical_2025_arcgis / usgs_global_ree": 5,
+      "ga_critical_2025_arcgis / usgs_laterites": 1,
+      "ga_critical_2025_arcgis / usgs_mrds": 4,
+      "ga_critical_2025_arcgis / wapha": 5,
+      "ga_global_ree / gseu_crm": 1,
+      "ga_global_ree / usgs_global_critical": 2,
+      "ga_global_ree / usgs_global_ree": 7,
+      "ga_global_ree / usgs_mrds": 2,
+      "ga_global_ree / usgs_us_critical": 1,
+      "gseu_crm / gseu_crm": 1,
+      "gseu_crm / icmm": 1,
+      "gseu_crm / jasansky": 1,
+      "gseu_crm / usgs_global_critical": 1,
+      "gseu_crm / usgs_global_ree": 6,
+      "gseu_crm / usgs_laterites": 3,
+      "gseu_crm / usgs_mrds": 3,
+      "gseu_crm / wapha": 1,
+      "icmm / icmm": 1,
+      "icmm / jasansky": 4,
+      "icmm / usgs_global_ree": 5,
+      "icmm / usgs_laterites": 1,
+      "icmm / usgs_mrds": 3,
+      "icmm / usgs_us_critical": 2,
+      "icmm / wapha": 4,
+      "jasansky / jasansky": 1,
+      "jasansky / usgs_global_critical": 3,
+      "jasansky / usgs_global_ree": 2,
+      "jasansky / usgs_laterites": 4,
+      "jasansky / usgs_mrds": 2,
+      "jasansky / wapha": 2,
+      "usgs_global_critical / usgs_global_critical": 1,
+      "usgs_global_critical / usgs_global_ree": 7,
+      "usgs_global_critical / usgs_mrds": 4,
+      "usgs_global_critical / wapha": 2,
+      "usgs_global_ree / usgs_global_ree": 10,
+      "usgs_global_ree / usgs_laterites": 1,
+      "usgs_global_ree / usgs_mrds": 11,
+      "usgs_global_ree / usgs_us_critical": 6,
+      "usgs_global_ree / wapha": 7,
+      "usgs_laterites / usgs_mrds": 1,
+      "usgs_laterites / wapha": 3,
+      "usgs_mrds / usgs_mrds": 14,
+      "usgs_mrds / usgs_us_critical": 5,
+      "usgs_mrds / wapha": 4,
+      "usgs_us_critical / usgs_us_critical": 3,
+      "usgs_us_critical / wapha": 2,
+      "wapha / wapha": 6
+    },
+    "split_counts": {
+      "development": 120,
+      "holdout": 80
+    },
+    "split_policy": "No connected candidate neighborhood crosses development and holdout. Publisher views are consolidated. Blocking omissions can still cause leakage."
+  },
+  "status": "evidence_and_validation_prepared_human_review_pending",
+  "step": 6
+}
