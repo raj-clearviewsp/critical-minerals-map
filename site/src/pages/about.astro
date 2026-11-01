@@ -1,0 +1,10 @@
+---
+import Page from '../layouts/Page.astro';
+import { loadPreviewDataset } from '../lib/preview-data.mjs';
+const dataset = loadPreviewDataset();
+---
+<Page title="About" active="about"><main id="main" class="prose-page" tabindex="-1"><section class="intro"><div class="preview-details"><p>Record dates vary by source</p><p>{dataset.release_tag}</p></div><h1>A reference you can trace.</h1><p class="lede">The Atlas brings together source records about rare earth elements, nickel and cobalt so they can be found, compared and checked.</p></section>
+<section class="reading-section"><h2>What the preview shows</h2><p>Each point represents an observation from a named source. Several sources may describe the same physical deposit or mine. Those observations remain separate while identity review continues.</p><p>Districts, broader areas and geological or operating complexes are available through a separate filter. Their point coordinates are reference locations, not mapped boundaries. A shared location or similar name does not establish identity.</p></section>
+<section class="reading-section"><h2>Read status in context</h2><p>Source wording and dates are retained. A historical “producer” or “active” label does not establish that a mine is operating today. Maturity rungs, resource classifications, ownership and country production figures will be added when their evidence has been validated.</p></section>
+<section class="reading-section"><h2>Follow the evidence</h2><p>Select a record to see its original identifier, source terms, publication date where known, coordinate precision and citation. Unknown information remains unknown. Downloads preserve source identities and are intended for this private working preview.</p></section>
+<section class="reading-section"><h2>Use and attribution</h2><p>This is a private preview. Public release requires the recorded source permissions and validation checks. Review the <a href="/sources/">sources and reuse terms</a> before sharing any data.</p></section></main></Page>

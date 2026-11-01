@@ -1,8 +1,10 @@
 # Critical Minerals Atlas
 
-A sourced, static reference for critical mineral deposits, maturity and ownership. The implementation follows [the supplied spec](IMPLEMENTATION_SPEC.md), in numbered order.
+A sourced, static reference for critical mineral deposits, maturity and ownership, based on [the supplied spec](IMPLEMENTATION_SPEC.md).
 
-**Current status: Phase 0, Steps 1–5 complete; Step 6 has both review rounds preserved, cited evidence for adjudication and a prepared 200-comparison validation set. Human validation remains pending.** Step 3 passed [GitHub CI](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/41232185905). Sixteen source snapshots are captured. Canonical and published data remain empty, and no website has been deployed. The canonical schema remains provisional.
+**Current status: Steps 1–5 complete; all three review rounds preserved; a functional private source-record website is available.** At Raj's request, site development now proceeds alongside identity validation. The private explorer covers 10,788 observations from 12 sources with map, search, filters, source details and CSV export. Source observations remain separate; canonical and published data remain empty. No website has been deployed. See the [private-preview report](reports/private-preview.md).
+
+For the prepared local copy, double-click **Open Atlas.command**. It opens the built site in your browser and serves only on your computer; keep its Terminal window open. To rebuild it after code changes, run `make site-private`. A fresh checkout has no private observations and requires the verified local source and review artifacts to build this preview.
 
 ## Run locally
 

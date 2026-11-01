@@ -1,0 +1,108 @@
+{
+  "artifacts": {
+    "data/preview/site-v1/dataset.json": {
+      "bytes": 8936537,
+      "sha256": "9022d31f835d83382585e3353cd56bb2720ba1ac075df75e5bd881c2f36c18c4"
+    },
+    "data/preview/site-v1/receipt.json": {
+      "bytes": 1586,
+      "sha256": "a178a8ce6844f4556a953107468868651019bb49e9a2fc6f16386a20bf6439db"
+    },
+    "data/review/adjudication-v1/completed.csv": {
+      "bytes": 1883,
+      "sha256": "74a39e69cc04f99bc02425234ab347c9dcb6910c6c9ce6503a0b108391085296"
+    },
+    "data/review/adjudication-v1/decision-history.json": {
+      "bytes": 32126,
+      "sha256": "04b2ac8f5aa1d451be9c1bd1458445928d28985b8a7e0a56b1d7f6c1afbf9ce5"
+    },
+    "data/review/adjudication-v1/latest-decisions.json": {
+      "bytes": 25744,
+      "sha256": "d1bbf15be6ecc0f00e35433ccd49766bf999a3efbca1626e25fd360244a6584c"
+    }
+  },
+  "auto_merges": 0,
+  "canonical_rows_added": 0,
+  "dataset": {
+    "data_as_of": null,
+    "identity_merges": 0,
+    "known_entity_level_counts": {
+      "district_area": 1437,
+      "operation_complex": 612,
+      "site": 1573,
+      "subsite": 16,
+      "unknown": 7150
+    },
+    "publisher_view_duplicate_pairs_retained": 246,
+    "record_count": 10788,
+    "record_policy": "Source observations; duplicates retained; not unique sites.",
+    "release_tag": "2026.11.01-preview",
+    "source_count": 12,
+    "source_record_counts": {
+      "ga_critical_2025": 246,
+      "ga_critical_2025_arcgis": 246,
+      "ga_global_ree": 365,
+      "gseu_crm": 138,
+      "icmm": 216,
+      "jasansky": 66,
+      "usgs_global_critical": 254,
+      "usgs_global_ree": 3080,
+      "usgs_laterites": 120,
+      "usgs_mrds": 4533,
+      "usgs_us_critical": 142,
+      "wapha": 1382
+    }
+  },
+  "implementation": {
+    "pipeline/preview/__init__.py": "ca914cf2450e9b043423c881888817657572ca7ecdf4c1eb6ff401f1e89f1357",
+    "pipeline/preview/__main__.py": "d3aae0e9cd3f54e8cf86dbbcf1fbed2a7d97078bb477c97d367240f4246ff564",
+    "pipeline/preview/core.py": "a28668292cfc50c7a4e0a1fd310ed9fe02a5505c63958bde62170720e2089803",
+    "uv.lock": "cd4fe8d1bc077fcac6a467a1ac0b682b56906154dbee726e0837c363618e6ebb"
+  },
+  "model_fitted": false,
+  "parent_receipt_sha256": "94b9330d37773c10a8ace75c30ccb6cf5ba9960c9a9f215ca207b5d9b2211662",
+  "privacy": "Public receipt contains aggregate counts and checksums only; data stays local.",
+  "published_rows_added": 0,
+  "review": {
+    "adjudication_csv_sha256": "74a39e69cc04f99bc02425234ab347c9dcb6910c6c9ce6503a0b108391085296",
+    "adjudication_sample_sha256": "fcbcc03747e4bec85d7ea2f876bc33952005eebc35b5a96427185d4cdb38423e",
+    "all_adjudication_cases_reviewed": true,
+    "formal_gold_set_complete": false,
+    "formal_new_cases_remaining": 167,
+    "history_events": 47,
+    "imported_answers": 7,
+    "imported_label_counts": {
+      "different_sites": 4,
+      "left_contains_right": 1,
+      "related_scope_unclear": 2
+    },
+    "latest_label_counts": {
+      "different_sites": 11,
+      "insufficient_evidence": 1,
+      "left_contains_right": 2,
+      "related_scope_unclear": 4,
+      "same_site": 14,
+      "uncertain": 2
+    },
+    "previous_events_preserved": 40,
+    "unique_comparisons": 34,
+    "unresolved_comparisons": 7
+  },
+  "schema_version": "private-preview-audit-v1",
+  "source_registry_sha256": {
+    "sources/ga_critical_2025.yaml": "e25dd63e702762afd22656ecb09a5e4f0e2f1a2db229b78d5594a2639ea63ba9",
+    "sources/ga_critical_2025_arcgis.yaml": "ac0148feba7a82034c8f89b5f6ca6358d58efd978c1b0c881f37114aa949141f",
+    "sources/ga_global_ree.yaml": "8673a7d341df94af8dcadc33dc09b06f4c93e9b7766668076a380682fe211ae2",
+    "sources/gseu_crm.yaml": "da1d83325db7b10d0529512a8a6640c1bcdaba3d9f876381fe809a87acf32d16",
+    "sources/icmm.yaml": "4518f0e904625c5e00f92ef3094e67da315dd64ba4b2bf3176185c65ebded33d",
+    "sources/jasansky.yaml": "35d36bb8b5e1b4d19d2d61c3075282bfbadd5a25e8a7ffdb9947a2d34fec74a2",
+    "sources/usgs_global_critical.yaml": "6dfb1763eef1e06369da68253afdb5080748a89add384eed141ea8ff6dcf9b81",
+    "sources/usgs_global_ree.yaml": "6c695ccdb897e58de119547e22daeb43a4346fcac190f14acc31aa41b0b7b178",
+    "sources/usgs_laterites.yaml": "b58b34740dba574bb0af1efdcbe9e340b8df9a1ec291f3f0440c8f1b2c740245",
+    "sources/usgs_mrds.yaml": "8198122c2171395800d936a6042a0b35c959de5f85d9fa3b6d75bec310206e23",
+    "sources/usgs_us_critical.yaml": "b8b314d74cc535311f1cfeed2a59df7797afe2a98825491305dfe66a0637cc58",
+    "sources/wapha.yaml": "2b5db8edb8d66c19950e4b171b0d065d880b59af195ce52f0dce8e7676d3246c"
+  },
+  "status": "private_preview_ready_identity_validation_pending",
+  "triage_receipt_sha256": "1c5954f3892548feeeb694218c79adf536fe264383ab6a09426e7ac429b3d558"
+}

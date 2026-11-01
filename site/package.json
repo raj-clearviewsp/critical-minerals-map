@@ -7,13 +7,17 @@
     "node": ">=22.19.0"
   },
   "scripts": {
-    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev --host 127.0.0.1",
+    "dev": "ATLAS_PRIVATE_PREVIEW=0 ASTRO_TELEMETRY_DISABLED=1 astro dev --host 127.0.0.1",
     "check": "node --test tests/*.test.mjs && ASTRO_TELEMETRY_DISABLED=1 astro check",
-    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && node scripts/verify-build.mjs",
-    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview --host 127.0.0.1"
+    "build": "ATLAS_PRIVATE_PREVIEW=0 ASTRO_TELEMETRY_DISABLED=1 astro build && ATLAS_PRIVATE_PREVIEW=0 node scripts/verify-build.mjs",
+    "preview": "ATLAS_PRIVATE_PREVIEW=0 ASTRO_TELEMETRY_DISABLED=1 astro preview --host 127.0.0.1",
+    "dev:private": "ATLAS_PRIVATE_PREVIEW=1 ASTRO_TELEMETRY_DISABLED=1 astro dev --host 127.0.0.1",
+    "build:private": "ATLAS_PRIVATE_PREVIEW=1 ASTRO_TELEMETRY_DISABLED=1 astro build && ATLAS_PRIVATE_PREVIEW=1 node scripts/verify-build.mjs",
+    "preview:private": "ATLAS_PRIVATE_PREVIEW=1 ASTRO_TELEMETRY_DISABLED=1 astro preview --host 127.0.0.1"
   },
   "dependencies": {
-    "astro": "7.3.8"
+    "astro": "7.3.8",
+    "maplibre-gl": "6.16.0"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.12",

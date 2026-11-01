@@ -49,6 +49,8 @@ jobs:
         run: make triage-receipt-check
       - name: Verify completed review and validation-design receipt
         run: make reconcile-receipt-check
+      - name: Verify preserved adjudication and private-preview receipt
+        run: make preview-data-receipt-check
 
   build-data:
     name: Build empty data pipeline

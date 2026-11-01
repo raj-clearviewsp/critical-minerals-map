@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026.10.31 — Private source-record website and completed adjudication
+
+- Preserved the latest seven adjudications exactly, alongside all 40 previous review events. The latest view contains 34 comparisons; seven relationships remain unresolved.
+- Added a reproducible private dataset with 10,788 distinct source observations from 12 sources. No records were merged and no maturity or ownership claims were inferred.
+- Built an interactive map and accessible results list with search, mineral/country/source/scope filters, record details, source citations, URL state and filtered CSV export.
+- Added locally bundled MapLibre and a pinned Natural Earth basemap, responsive editorial styling, Sources and About pages, and a double-click local launcher.
+- Kept private data and private builds Git-ignored. Standard builds explicitly contain zero observations; CI verifies the aggregate adjudication receipt and builds only the empty site.
+- Site development proceeds alongside validation at Raj's request. The formal 200-comparison validation still needs 167 new comparisons and resolution of seven earlier relationships before model tuning; this does not block use of the private source-record explorer.
+
 ## 2026.10.31 — Phase 0, Step 3 vocabulary review
 
 - Added source-aware commodity, deposit-type and status vocabularies, ISO country definitions and explained country overrides.

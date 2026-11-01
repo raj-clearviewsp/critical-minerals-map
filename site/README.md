@@ -1,32 +1,41 @@
-# Atlas site scaffold
+# Atlas explorer
 
-This is the static Astro foundation for Phase 0 Step 1. It renders the pipeline's
-empty publish manifest and deliberately refuses nonempty data until ingestion and
-publication are implemented and verified in the later numbered steps.
+The Astro site has a standard empty build and a separate local private build.
+The private explorer shows source observations, not consolidated sites. It supports
+map and list views, search, mineral/country/source/scope filters, source details,
+URL state and filtered CSV export. Explicit district and complex records are
+hidden by default; unknown scope remains labelled. Maturity is unassigned and
+source status is presented as historical wording.
 
-From the repository root, run `make setup` and `make all`. The root pipeline writes
-`data/publish/manifest.json` before the site builds. A missing or malformed manifest
-fails the build rather than substituting sample mineral records.
+From the repository root:
 
-Astro 7.3.8 and the development tools are pinned. A repository-local Node 22.23.4
-runtime is installed by npm and used by npm scripts; the system Node installation
-is unchanged. CI should use Node 22.23.4 or a newer supported LTS.
+```sh
+make setup-site
+make site                 # tests, Astro diagnostics, empty standard build
+make preview-data-check   # verify private data and preserved review history
+make site-private         # verify inputs, test and build private explorer
+make site-private-preview # serve on loopback
+```
 
-Inside `site/`:
+For the prepared local copy, double-click `Open Atlas.command`. It serves the
+already-built private site on a free loopback port and opens the default browser.
+Keep its Terminal window open while using the site; Control-C stops the server.
 
-- `npm ci` installs the exact versions in `package-lock.json`.
-- `npm run check` runs the manifest contract tests and Astro diagnostics.
-- `npm run build` generates `dist/` and verifies the static output.
-- `npm run preview -- --port 4321` serves the build on loopback only.
+Astro, MapLibre GL JS and Node are pinned in package-lock.json. MapLibre is loaded
+as a separate client chunk. The Natural Earth country geometry is local and
+public-domain; provenance is in public/maps/README.txt. There are no remote fonts,
+map tiles, scripts, analytics or automatic network data refreshes. Publisher
+citations are ordinary external links opened only when selected.
 
-The preview page uses plain navigation to real sections, readable type, and a clear
-notice that no records are published. Build diagnostics stay out of the page. It
-includes no client JavaScript, analytics, remote fonts or images.
-Responsive and print styles are self-hosted. Build telemetry is disabled in npm
-scripts. The generated page has `noindex, nofollow`; it is a local development
-artifact, not a public data release or the Phase 0 map application.
+`npm run build` explicitly disables private data and writes `dist/`. CI uploads
+only that empty build. `npm run build:private` explicitly enables the verified
+local dataset and writes the ignored `.preview-dist/` directory. The private
+JSON is read only in that mode, from ../data/preview/site-v1/dataset.json. Build
+verification checks embedded counts, source isolation and local runtime assets.
+The private build must not be uploaded as a public release.
 
-The manifest supplies `release_tag`, `data_as_of`, `status`, `sources` and `tables`.
-The Step 1 contract requires `status: scaffold`, `data_as_of: null`, no sources,
-and zero rows in each declared table. It does not infer a data date from a build
-date. All operational paths remain in build scripts rather than the user flow.
+The private pages include noindex metadata, readable responsive typography,
+keyboard-accessible controls, a list fallback when WebGL is unavailable and print
+styles. JSON is escaped before embedding in HTML. Source and reviewer decisions
+are prepared independently by `pipeline.preview`; reviewer names and notes do
+not enter the site dataset.

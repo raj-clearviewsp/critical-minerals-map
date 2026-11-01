@@ -1,0 +1,16 @@
+---
+import '../styles/global.css';
+interface Props { title: string; active?: string; }
+const { title, active = '' } = Astro.props;
+---
+<!doctype html><html lang="en"><head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" /><meta name="referrer" content="no-referrer" />
+  <meta name="description" content="Explore sourced records of rare earth, nickel and cobalt deposits around the world." />
+  <title>{title} · Critical Minerals Atlas</title>
+</head><body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="masthead"><a class="wordmark" href="/">Critical Minerals Atlas</a>
+    <nav aria-label="Main navigation"><a href="/" aria-current={active === 'explore' ? 'page' : undefined}>Explore</a><a href="/sources/" aria-current={active === 'sources' ? 'page' : undefined}>Sources</a><a href="/about/" aria-current={active === 'about' ? 'page' : undefined}>About</a></nav>
+  </header><slot /><footer><p>Critical Minerals Atlas · Private working preview</p><p>Records retain their source identities.</p></footer>
+</body></html>

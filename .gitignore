@@ -10,6 +10,7 @@ __pycache__/
 !.env.example
 site/node_modules/
 site/dist/
+site/.preview-dist/
 site/.astro/
 site/.npm-cache/
 reports/runs/
@@ -20,4 +21,5 @@ data/staging/**
 data/canonical/**
 data/publish/**
 data/review/**
+data/preview/**
 !data/**/.gitkeep

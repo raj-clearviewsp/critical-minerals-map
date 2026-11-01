@@ -2,6 +2,24 @@ SHELL := /bin/sh
 .DEFAULT_GOAL := all
 .NOTPARALLEL:
 
+.PHONY: preview-data preview-data-check preview-data-receipt-check site-private site-private-preview
+
+preview-data:
+	$(RUN) python -m pipeline.preview --root . $(PREVIEW_FLAGS)
+
+preview-data-check:
+	$(RUN) python -m pipeline.preview --root . --check --local
+
+preview-data-receipt-check:
+	$(RUN) python -m pipeline.preview --root . --check
+
+site-private:
+	$(MAKE) preview-data-check
+	cd site && npm run check && npm run build:private
+
+site-private-preview:
+	cd site && npm run preview:private
+
 UV ?= uv
 RELEASE_TAG ?= 2026.10.28
 export UV_CACHE_DIR ?= $(CURDIR)/.cache/uv
