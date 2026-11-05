@@ -65,6 +65,8 @@ jobs:
         run: make matching-receipt-check
       - name: Verify owner approval of all final researched recommendations
         run: make final-acceptance-receipt-check
+      - name: Verify reviewed site identity release
+        run: make identity-release-receipt-check
       - name: Install isolated locked matching environment
         run: uv sync --project experiments/matching --locked
       - name: Test matching engine with synthetic adversarial cases

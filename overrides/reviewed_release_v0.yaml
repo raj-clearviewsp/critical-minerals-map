@@ -1,0 +1,15 @@
+release: 2026.11.04-v0
+approved_by: Raj Sawhney
+approved_on: '2026-11-04'
+approval: 'Agree, please execute, but ensure that the website doesn''t look "AI-y" is elegant, clean and concise.'
+basis: reports/final47-accepted-audit.json
+identity_method: explicitly_reviewed
+automatic_merging: false
+future_automatic_precision_minimum: 0.97
+scope:
+  - Apply reviewed identity decisions and retain directed containment as a separate relationship.
+  - Keep unresolved comparisons and unadjudicated observations traceable to their source.
+  - Require source evidence for physical site eligibility and selection of its representative point.
+  - Mark single-source physical site entries as provisional identities.
+  - Preserve source views, status dates, evidence grades and location uncertainty.
+  - Prepare the private Atlas for the owner's review.

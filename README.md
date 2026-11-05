@@ -2,7 +2,7 @@
 
 A sourced, static reference for critical mineral deposits, maturity and ownership, based on [the supplied spec](IMPLEMENTATION_SPEC.md).
 
-**Current status: Steps 1–5 complete; all 200 formal comparisons reviewed; final 47 recommendations explicitly approved; automatic merging remains disabled.** The completed review contains 73 unresolved relationships, preserved as such. At Raj's request, site development proceeds alongside identity validation. The private explorer covers 10,788 observations from 12 sources with map, search, filters, source details and CSV export. Source observations remain separate; canonical and published data remain empty. No website has been deployed. See the [latest approval report](reports/final47-accepted.md), [private-preview report](reports/private-preview.md) and [matching test results](reports/matching-experiment.md).
+**Current status.** Phase 0 has a reviewed identity release with 1,222 site entries and 10,788 traceable source observations. Automatic merging is disabled. See the [Step 6 report](reports/phase0-step06-reviewed.md), [review approval](reports/final47-accepted.md) and [matching experiment](reports/matching-experiment.md).
 
 For the prepared local copy, double-click **Open Atlas.command**. It opens the built site in your browser and serves only on your computer; keep its Terminal window open. To rebuild it after code changes, run `make site-private`. A fresh checkout has no private observations and requires the verified local source and review artifacts to build this preview.
 
@@ -264,14 +264,11 @@ snapshots. The frozen matcher and its failed-to-demonstrate precision gate are u
 Review completion is not proof of matching accuracy, and no canonical merges were
 performed during acceptance.
 
-The recommended next release scope is reviewed identities with automatic merging
+The approved v0 release uses reviewed identities with automatic merging
 disabled, unresolved observations kept separate, and containment represented explicitly.
 Some approved identities refer to districts or broader developments. Physical-site
 eligibility and representative coordinates require separate source-backed checks;
 neither an approved group nor an unreviewed source observation is automatically a
 verified individual deposit.
-This is a proposed narrow revision to Step 6's release condition, not a claim that the
-original 97% automatic-merge gate passed. Retain that target for any future automatic
-merging. After agreeing this scope, build the canonical identity layer, then maturity,
-country context, QA, data products and the remaining pages in the specified order.
+The November 4 amendment retains the 97% target for future automatic merging. The versioned reviewed identity release is under `data/releases/2026.11.04-v0/identity/`. Run `make identity-release-check` to verify it.
 Existing authorization to improve the private source-record website remains in force.

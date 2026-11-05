@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026.11.04 — Phase 0, Step 6 reviewed identity release
+
+- Applied the approved v0 manual identity policy and retained the 97% threshold for future automated merging.
+- Built 1,222 stable site entries from 1,239 source memberships, including 17 reviewed physical groups and 1,205 provisional single-source entries. The private archive accounts for all 10,788 located observations. Exported the decision and unresolved-work records with source identifiers.
+- Verified each representative coordinate against its source, checked all 200 formal decisions, preserved broader named identities and quarantined incomplete transitive groups. [Run report](reports/phase0-step06-reviewed.md).
+
 ## 2026.11.04 — Accept final 47 recommendations
 
 - Recorded Raj's explicit chat approval of all final 47 recommendations in a new immutable round, bound to the exact sample, research and approved labels. The administrative CSV is identified as a transcription of chat approval, not a browser export or blind annotation.

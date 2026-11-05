@@ -2,6 +2,14 @@ SHELL := /bin/sh
 .DEFAULT_GOAL := all
 .NOTPARALLEL:
 
+.PHONY: identity-release identity-release-check identity-release-receipt-check
+identity-release:
+	$(RUN) python -m pipeline.release_identity
+identity-release-check:
+	$(RUN) python -m pipeline.release_identity --check --local
+identity-release-receipt-check:
+	$(RUN) python -m pipeline.release_identity --check
+
 .PHONY: final-acceptance-check final-acceptance-receipt-check
 
 final-acceptance-check:

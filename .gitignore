@@ -22,4 +22,6 @@ data/canonical/**
 data/publish/**
 data/review/**
 data/preview/**
+data/releases/**
+overrides/id_registry.parquet
 !data/**/.gitkeep

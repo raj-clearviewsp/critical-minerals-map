@@ -1,0 +1,133 @@
+{
+  "artifacts": {
+    "data/releases/2026.11.04-v0/identity/constraint-conflicts.json": {
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "data/releases/2026.11.04-v0/identity/id_registry.parquet": {
+      "bytes": 35935,
+      "sha256": "449e127b73dc5769e1e7098db938beb0187814b78ce23067ccfc3e0a8bc6d1f7"
+    },
+    "data/releases/2026.11.04-v0/identity/identity-groups.json": {
+      "bytes": 37740,
+      "sha256": "fc62c0658e323efc9458bea59033ffc8896575df7d01c76fd334e9ba0b7c41d9"
+    },
+    "data/releases/2026.11.04-v0/identity/members.json": {
+      "bytes": 284703,
+      "sha256": "1716663a2f3922f9a2bd95d934c844d9cbc131546307ea5ab82e0c647fa50d5c"
+    },
+    "data/releases/2026.11.04-v0/identity/observations.json": {
+      "bytes": 17708998,
+      "sha256": "29b98ff83102ea08147ebfcf386bf7e225c6db8c6daa51c9db4e60c579b160fc"
+    },
+    "data/releases/2026.11.04-v0/identity/registry-input.parquet": {
+      "bytes": 851,
+      "sha256": "fae1b3bbaeee87e0f5562fb594f036fbf87d564ff45b9a90d680cc8db7b6be1f"
+    },
+    "data/releases/2026.11.04-v0/identity/relationships.json": {
+      "bytes": 253808,
+      "sha256": "183b5cb34fc7be7a128da74c0d7008299708a9ad011818b80a56ce1924f58272"
+    },
+    "data/releases/2026.11.04-v0/identity/review-queue.csv": {
+      "bytes": 17603699,
+      "sha256": "58b177ce7f50183e10cfe11df7eb1127f5f9d8335673113b5855e97315a7f930"
+    },
+    "data/releases/2026.11.04-v0/identity/sites.json": {
+      "bytes": 2627248,
+      "sha256": "706bf8c1eb8ef7071de474f942b5d9e0d679bd953d5daac3784c3fae9ef9cd06"
+    },
+    "reports/phase0-step06-reviewed.md": {
+      "bytes": 4340,
+      "sha256": "d67c72729fd89b5fc49b5da19d4c95666a297791b3909fd1a3ee394b18e957ef"
+    }
+  },
+  "auto_merges": 0,
+  "automatic_precision_gate_demonstrated": false,
+  "counts": {
+    "approved_identity_edges": 58,
+    "candidate_dispositions": {
+      "resolved_direct_decision": 124,
+      "reviewed_component_quarantined": 4,
+      "reviewed_unresolved": 73,
+      "unreviewed": 38702,
+      "unreviewed_publisher_view": 245
+    },
+    "candidate_pairs": 39148,
+    "constraint_conflicts": 0,
+    "group_dispositions": {
+      "quarantine": 2,
+      "reviewed_named_identity_only": 37,
+      "reviewed_physical_site": 17
+    },
+    "identity_groups": 56,
+    "latest_labels": {
+      "different_sites": 55,
+      "insufficient_evidence": 9,
+      "left_contains_right": 10,
+      "related_scope_unclear": 62,
+      "right_contains_left": 5,
+      "same_site": 58,
+      "uncertain": 2
+    },
+    "located_observations": 10788,
+    "queue_rows": 39024,
+    "review_events": 214,
+    "site_entries": 1222,
+    "site_members": 1239,
+    "site_states": {
+      "reviewed_physical_site": 17,
+      "single_source_provisional": 1205
+    },
+    "source_only_observations": 9549,
+    "unknown_site_precision": 1222
+  },
+  "implementation": {
+    "pipeline/release_identity/__init__.py": "e67e2aa6cc1f03324dee2a93cefa6ff3e4a105229e472b850b413906b17841e0",
+    "pipeline/release_identity/__main__.py": "63200b10cbfea3f836c22bfd215ad96f2575725a668a8d83f140dad8e8bae0e5",
+    "pipeline/release_identity/constraints.py": "b191a156615ec44b12edaccf3ea0c0ae8a6b9b698750eaca920577615b247243",
+    "pipeline/release_identity/core.py": "56011e7697ea763d2f8d334a0705c6ad2f583b25f556794f5737ef5ef58ebea3",
+    "pipeline/release_identity/identity.py": "ef6e168a4d577f24744f12fd28d578a9a5561c2279b4c4b4aaa4dfc90230ebf9",
+    "pipeline/release_identity/registry.py": "8fbe77183b5476a762ff0c19f5e7052aca13ef9f95ad510860b38728e6d3faba",
+    "pipeline/release_identity/scope_evidence.py": "ad87f09564f38139ac694ae6720c4591b78c7093113a309e04e35518e7ae7e09",
+    "pipeline/release_identity/validation.py": "1c306400713ec5ed4da8ecadc8cb65a228d267370b304014376b77f8fcc122f9",
+    "uv.lock": "cd4fe8d1bc077fcac6a467a1ac0b682b56906154dbee726e0837c363618e6ebb"
+  },
+  "inputs": {
+    "data/preview/site-v1/dataset.json": "9022d31f835d83382585e3353cd56bb2720ba1ac075df75e5bd881c2f36c18c4",
+    "data/review/development60-v1/research-input.json": "62e8b3b761eed6562046eed05903a13134b3a6f9ad3fd7446c77278f8172b5fe",
+    "data/review/final47-approved-v1/decision-history.json": "c30924b35446be48bd30ca2b24e70f5807e400733982e8fcf0b8b1ed3e3d06cc",
+    "data/review/final47-approved-v1/latest-decisions.json": "166427730f51769a010d92aedc9eaa673026ed973c268b51809942f1fb25055d",
+    "data/review/final47-v1/research-input.json": "3c4751c02526c3ea83f7e3a374e0bbe8316dcd2d6ebeee9f429f22a28335d45e",
+    "data/review/next60-v1/research-input.json": "a14d93510df09b2f230f3fec0ead40fc69b5e5a839415455135f59d4e61baa15",
+    "data/review/reconciliation-v1/source-research.json": "c18defa54923ee02b81ff9fa2663bfd7bf5fbc1e628f8986710baf3536f88846",
+    "data/review/triage-v2/records.json": "c9f296a904e6ecaa274ea1d75a1e07080ea321469ae3667ad2a7bd418145add7",
+    "data/review/triage-v2/source-views.json": "a9ae823d3b3e6094018015f1401011060f4527e363d7b086df744370a41909ba",
+    "data/review/triage-v2/triage-pairs.json": "ca82a8875bc86a7f16204900af7d9320e4916ce478a5027d61242ee7c700e00b"
+  },
+  "owner_amendment": {
+    "automatic_merging": false,
+    "basis": "reports/final47-accepted-audit.json",
+    "basis_sha256": "982a256d3f379dc9d6da2008d4c9bce8fdca81ffd13c7cd247e7393d90745dfc",
+    "future_automatic_precision_minimum": 0.97,
+    "path": "overrides/reviewed_release_v0.yaml",
+    "sha256": "5bb1b43258865fc0d386c5a4d73378028459ce0aa22fe4e013ca66d3f863b6cc"
+  },
+  "parents": {
+    "reports/development60-audit.json": "ed769c910b44f8c70279d9555cec8a82fd34555aba39edfc1ac4adaef6084a4a",
+    "reports/final47-accepted-audit.json": "982a256d3f379dc9d6da2008d4c9bce8fdca81ffd13c7cd247e7393d90745dfc",
+    "reports/final47-audit.json": "b150529609eafe88a52e0c2757f1ba1283d90553a8f30a07ef6812de5665befa",
+    "reports/next60-audit.json": "cb7b1573f143b6cae3871ae2cf8518c708a2a58f328e8c80c7dde458d948ca7d",
+    "reports/private-preview-audit.json": "111bda98a7839599914e77b1e44bb07fabee1a0848a0f1f92751d2f039a7fdd5",
+    "reports/reconciliation-audit.json": "94b9330d37773c10a8ace75c30ccb6cf5ba9960c9a9f215ca207b5d9b2211662",
+    "reports/triage-audit.json": "1c5954f3892548feeeb694218c79adf536fe264383ab6a09426e7ac429b3d558"
+  },
+  "release": "2026.11.04-v0",
+  "row_verification": {
+    "joined_edges_checked_against_decisions": 17,
+    "members_checked": 1239,
+    "site_points_checked_against_source": 1222,
+    "source_ids_reconciled": 10788
+  },
+  "schema_version": "reviewed-identity-release-v1",
+  "status": "reviewed_manual_release"
+}
