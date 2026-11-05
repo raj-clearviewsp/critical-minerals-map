@@ -385,7 +385,8 @@ summary:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
 @media(max-width:620px) {
   .results .table-wrap, .profile-table { overflow:visible; }
   .results table, .results tbody, .profile-table table, .profile-table tbody { display:block; }
-  .results thead, .profile-table thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+  .results thead, .profile-table thead { display:block; contain:strict; position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+  .results thead th, .profile-table thead th { width:1px; min-width:0; max-width:1px; padding:0; white-space:normal; overflow-wrap:anywhere; }
   .results tbody tr, .profile-table tbody tr { display:grid; grid-template-columns:1fr 1fr; gap:8px 14px; padding:15px 0; border-bottom:1px solid var(--rule); }
   .results td, .profile-table td { min-width:0!important; width:auto!important; border:0; padding:0; overflow-wrap:anywhere; }
   .results td:first-child, .profile-table td:first-child { grid-column:1/-1; }

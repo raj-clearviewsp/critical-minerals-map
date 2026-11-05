@@ -26,9 +26,17 @@ function browserList() {
 }
 
 async function assertPageWidth(page, expected) {
-  const dimensions=await page.evaluate(()=>[innerWidth,document.documentElement.scrollWidth]);
-  assert.equal(dimensions[0],expected);
-  assert.ok(dimensions[1]<=expected,`Horizontal page overflow at ${page.url()}: ${dimensions}`);
+  const dimensions=await page.evaluate(async()=>{
+    await new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
+    const viewport=innerWidth, width=document.documentElement.scrollWidth;
+    const beyond=width>viewport ? [...document.body.querySelectorAll('*')].map(el=>{
+      const box=el.getBoundingClientRect();
+      return {element:el.localName,id:el.id,class:el.getAttribute('class'),right:Math.round(box.right)};
+    }).filter(el=>el.right>viewport).sort((a,b)=>b.right-a.right).slice(0,8) : [];
+    return {viewport,width,client:document.documentElement.clientWidth,beyond};
+  });
+  assert.equal(dimensions.viewport,expected);
+  assert.ok(dimensions.width<=expected,`Horizontal page overflow at ${page.url()}: ${JSON.stringify(dimensions)}`);
 }
 async function follow(page,selector) {
   await page.waitForSelector(selector,{visible:true});

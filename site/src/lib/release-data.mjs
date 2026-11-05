@@ -94,6 +94,9 @@ export function loadArchive() {
   archiveCache = { path, value };
   return value;
 }
+export function siteEntryCount(count) {
+  return `${count.toLocaleString('en-US')} site ${count === 1 ? 'entry' : 'entries'}`;
+}
 export const siteUrl = id => '/sites/' + encodeURIComponent(id) + '/';
 export const mineralUrl = code => '/minerals/' + encodeURIComponent(code.toLowerCase()) + '/';
 export const countryUrl = code => '/countries/' + encodeURIComponent(code.toLowerCase()) + '/';

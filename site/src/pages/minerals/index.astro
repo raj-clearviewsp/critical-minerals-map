@@ -1,11 +1,11 @@
 ---
 import Page from '../../layouts/Page.astro';
-import { loadRelease, mineralUrl } from '../../lib/release-data.mjs';
+import { loadRelease, mineralUrl, siteEntryCount } from '../../lib/release-data.mjs';
 import { MINERALS } from '../../lib/preview-model.mjs';
 const release = loadRelease();
 ---
 <Page title="Minerals" active="minerals"><main id="main" class="reading-page" tabindex="-1">
   <section class="page-intro"><h1>Minerals</h1><p class="lede">Browse site evidence and reported context for the three pilot minerals.</p></section>
   <div class="directory">{Object.entries(MINERALS).map(([code,name])=><a href={mineralUrl(code)}><span>{name}</span>
-    {release && <span>{release.sites.filter(s=>s.minerals.includes(code)).length.toLocaleString('en-US')} site entries</span>}</a>)}</div>
+    {release && <span>{siteEntryCount(release.sites.filter(s=>s.minerals.includes(code)).length)}</span>}</a>)}</div>
 </main></Page>

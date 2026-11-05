@@ -1,6 +1,6 @@
 ---
 import Page from '../../layouts/Page.astro';
-import { loadRelease, countryUrl } from '../../lib/release-data.mjs';
+import { loadRelease, countryUrl, siteEntryCount } from '../../lib/release-data.mjs';
 const release = loadRelease();
 const counts = new Map<string, number>();
 for (const s of release?.sites || []) for (const country of s.country_iso3s) counts.set(country, (counts.get(country)||0)+1);
@@ -8,5 +8,5 @@ const countries = (release?.countries || []).filter(c=>counts.has(c.code) || c.c
 ---
 <Page title="Countries" active="countries"><main id="main" class="reading-page" tabindex="-1">
   <section class="page-intro"><h1>Countries</h1><p class="lede">Browse sites and source-reported context by country.</p></section>
-  {countries.length ? <div class="directory">{countries.map(c=><a href={countryUrl(c.code)}><span>{c.name}</span><span>{(counts.get(c.code)||0).toLocaleString('en-US')} site entries</span></a>)}</div> : <p class="empty-build">Country profiles are available with the reviewed release.</p>}
+  {countries.length ? <div class="directory">{countries.map(c=><a href={countryUrl(c.code)}><span>{c.name}</span><span>{counts.has(c.code) ? siteEntryCount(counts.get(c.code)) : 'Country data only'}</span></a>)}</div> : <p class="empty-build">Country profiles are available with the reviewed release.</p>}
 </main></Page>

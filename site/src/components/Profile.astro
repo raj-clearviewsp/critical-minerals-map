@@ -2,14 +2,14 @@
 import Page from '../layouts/Page.astro';
 import SiteTable from './SiteTable.astro';
 import { safeSourceUrl } from '../lib/preview-model.mjs';
-import { rungName } from '../lib/release-data.mjs';
+import { rungName, siteEntryCount } from '../lib/release-data.mjs';
 import type { Profile, Release } from '../lib/catalog-types';
 interface Props { profile: Profile; release: Release | null; group: 'country' | 'mineral'; }
 const { profile, release, group } = Astro.props;
 const country = group === 'country';
 const section = country ? 'Countries' : 'Minerals';
 const sites = (release?.sites || []).filter(s=>country ? s.country_iso3s.includes(profile.code) : s.minerals.includes(profile.code));
-const count = sites.length.toLocaleString('en-US');
+const countLabel = siteEntryCount(sites.length);
 const filter = '/?' + new URLSearchParams({[group]:profile.code}).toString();
 const rungs = [5,4,3,2,1,null].map(rung=>({rung,label:rungName(rung),total:sites.filter(s=>s.maturity_rung===rung).length})).filter(row=>row.total);
 const first = sites.toSorted((a,b)=>a.name.localeCompare(b.name) || a.id.localeCompare(b.id)).slice(0,12);
@@ -22,7 +22,7 @@ const contextSources = [...new Set(facts.map(f=>f.source_id).filter((s):s is str
 ---
 <Page title={profile.name} active={country ? 'countries' : 'minerals'}><main id="main" class="reading-page" tabindex="-1">
   <div class="screen-profile"><section class="page-intro"><a class="back-link" href={country ? '/countries/' : '/minerals/'}>← {section}</a><h1>{profile.name}</h1>
-    <p class="lede">{release ? <><a href={filter}>{count} {sites.length === 1 ? 'site entry' : 'site entries'}</a> in this Atlas release.</> : 'Site profiles will appear with the reviewed release.'}</p></section>
+    <p class="lede">{release ? <><a href={filter}>{countLabel}</a> in this Atlas release.</> : 'Site profiles will appear with the reviewed release.'}</p></section>
   {rungs.length > 0 && <section class="editorial-row"><div><h2>Site maturity</h2><p>Each site links to the evidence supporting its stage.</p></div>
     <table class="value-table"><thead><tr><th>Stage</th><th>Site entries</th></tr></thead><tbody>{rungs.map(r=><tr><td>{r.rung ? r.rung + ' · ' : ''}{r.label}</td><td><a href={filter+'&rung='+(r.rung ?? 'unknown')}>{r.total.toLocaleString('en-US')}</a></td></tr>)}</tbody></table></section>}
   {facts.length > 0 && <section class="editorial-row"><div><h2>Reported context</h2><p>Dates, units and sources accompany each observation.</p></div><div class="observations">
@@ -31,18 +31,18 @@ const contextSources = [...new Set(facts.map(f=>f.source_id).filter((s):s is str
       return <article><h3>{f.label}</h3><div class="observation-value">{href ? <a href={href} target={url ? '_blank' : undefined} rel={url ? 'noopener noreferrer' : undefined}>{value}</a> : value}</div>
         <p class="source-line">{[f.year, s?.title || f.source_id, f.grade ? 'Grade '+f.grade : ''].filter(v=>v!==null && v!==undefined && v!=='').join(' · ')}</p>{f.note && <p>{f.note}</p>}</article>;})}
   </div></section>}
-  {sites.length > 0 && <section class="site-list-section"><div class="section-heading"><h2>Site directory</h2><a href={filter}>Explore all {count} entries →</a></div>
+  {sites.length > 0 && <section class="site-list-section"><div class="section-heading"><h2>Site directory</h2><a href={filter}>Explore {countLabel} →</a></div>
     <SiteTable sites={first}/>{sites.length>first.length && <p class="caption">First {first.length} sites in alphabetical order.</p>}</section>}
 
   <p class="print-sources">Release {release?.release_tag || 'preview'}. {contextSources.length ? 'Context sources: '+contextSources.map(id=>sources.get(id)?.title || id).join('; ')+'.' : ''} <a href="/sources/">Source register</a> · <a href="/methods/">Methods</a></p>
 </div><section class="profile-print-brief" data-pagefind-ignore>
-    <h1>{profile.name}</h1><p><a href={filter}>{count} site entries</a> in this release.</p>
+    <h1>{profile.name}</h1><p><a href={filter}>{countLabel}</a> in this release.</p>
     {rungs.length>0 && <><h2>Site maturity</h2><p>{rungs.map((r,i)=><>{i>0 && ' · '}<a href={filter+'&rung='+(r.rung ?? 'unknown')}>{r.label}: {r.total}</a></>)}</p></>}
     {printFacts.length>0 && <><h2>Reported context</h2><table><thead><tr><th>Observation</th><th>Reported value</th><th>Year and source</th></tr></thead><tbody>
       {printFacts.map(f=>{const source=f.source_id ? sources.get(f.source_id) : null; const url=safeSourceUrl(f.url) || safeSourceUrl(source?.url);
         return <tr><td>{f.label}</td><td><a href={url || '/sources/'}>{[f.value,f.unit].filter(v=>v!==null && v!==undefined && v!=='').join(' ')}</a></td>
         <td>{[f.year, source?.title.replace('USGS Mineral Commodity Summaries', 'USGS MCS'), f.grade && 'Grade '+f.grade].filter(Boolean).join(' · ')}</td></tr>;})}</tbody></table></>}
-    {first.length>0 && <><h2>Selected site entries</h2><SiteTable sites={first.slice(0,5)}/></>}
+    {first.length>0 && <><h2>{first.length === 1 ? 'Selected site entry' : 'Selected site entries'}</h2><SiteTable sites={first.slice(0,5)}/></>}
     <p class="brief-source"><strong>Sources</strong> · {printedSources.length ? printedSources.map((source,i)=><>{i>0 && ' · '}<a href={safeSourceUrl(source.url) || '/sources/'}>{source.attribution || source.title}</a></>) : <a href="/sources/">Atlas source register</a>} · Release {release?.release_tag || 'preview'}.</p>
     {facts.length>printFacts.length || sites.length>5 ? <p class="brief-source">Additional records are available in the complete online profile.</p> : null}
   </section></main></Page>

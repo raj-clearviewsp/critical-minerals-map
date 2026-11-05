@@ -20,6 +20,8 @@ All 13 representative templates fit widths of 390, 549 and 1,280 pixels. The aut
 
 The private release was tested in Chrome on macOS and the desktop app's browser. The Windows CI workflow exercises actual Chrome and Edge with synthetic data. Physical iPhone Safari verification is outstanding.
 
+The first Windows run found an 11-pixel overflow on a narrow synthetic country profile. The compact table headers now stay within their allocated space. The test retains its original 390-pixel limit and now reports which elements extend beyond it. The country directory also distinguishes context-only profiles and uses singular site counts where appropriate.
+
 ## Reproduce the private preview
 
 Open `Open Atlas.command` in the prepared repository. The launcher serves the built private site on the local computer. The versioned product manifest and the private build are local release artifacts. CI builds from synthetic fixtures or the empty public input. The [Step 10 report](phase0-step10-products.md) documents the underlying tables and distribution limits.
