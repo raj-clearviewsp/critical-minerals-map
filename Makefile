@@ -2,6 +2,14 @@ SHELL := /bin/sh
 .DEFAULT_GOAL := all
 .NOTPARALLEL:
 
+.PHONY: final-acceptance-check final-acceptance-receipt-check
+
+final-acceptance-check:
+	$(RUN) python -m pipeline.final_acceptance --check --local
+
+final-acceptance-receipt-check:
+	$(RUN) python -m pipeline.final_acceptance --check
+
 .PHONY: review-rounds-check review-rounds-receipt-check final-review-check final-review-receipt-check matching-test matching-receipt-check matching-local-check
 
 review-rounds-check:

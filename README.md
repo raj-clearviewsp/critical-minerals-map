@@ -2,7 +2,7 @@
 
 A sourced, static reference for critical mineral deposits, maturity and ownership, based on [the supplied spec](IMPLEMENTATION_SPEC.md).
 
-**Current status: Steps 1–5 complete; 153 formal comparisons human-reviewed; final 47 researched proposals prepared; experimental matching tested but not approved for automatic merging.** At Raj's request, site development proceeds alongside identity validation. The private explorer covers 10,788 observations from 12 sources with map, search, filters, source details and CSV export. Source observations remain separate; canonical and published data remain empty. No website has been deployed. See the [private-preview report](reports/private-preview.md) and [matching test results](reports/matching-experiment.md).
+**Current status: Steps 1–5 complete; all 200 formal comparisons reviewed; final 47 recommendations explicitly approved; automatic merging remains disabled.** The completed review contains 73 unresolved relationships, preserved as such. At Raj's request, site development proceeds alongside identity validation. The private explorer covers 10,788 observations from 12 sources with map, search, filters, source details and CSV export. Source observations remain separate; canonical and published data remain empty. No website has been deployed. See the [latest approval report](reports/final47-accepted.md), [private-preview report](reports/private-preview.md) and [matching test results](reports/matching-experiment.md).
 
 For the prepared local copy, double-click **Open Atlas.command**. It opens the built site in your browser and serves only on your computer; keep its Terminal window open. To rebuild it after code changes, run `make site-private`. A fresh checkout has no private observations and requires the verified local source and review artifacts to build this preview.
 
@@ -244,3 +244,34 @@ experimental work does not complete Step 6 or advance the canonical-data stages.
 CI runs aggregate receipt checks without private data and synthetic matcher tests
 using `experiments/matching/uv.lock`; the historical root lockfile is unchanged.
 Detailed evidence, model outputs and human labels stay local and Git-ignored.
+
+## Final 47 approved: review complete, release gate still open
+
+Raj approved all final agent recommendations by explicit chat message. The new
+immutable acceptance round preserves that message and all 47 approved labels,
+including the eight unresolved outcomes. History now contains 214 events across
+201 comparisons: all 200 formal units plus the historical publisher-view comparison.
+The formal review contains 57 same-site, 55 distinct-site, 15 containment and 73
+unresolved decisions. The research-assisted 47 do not become independent blind labels.
+
+```sh
+make final-acceptance-check          # exact local reconstruction and preservation
+make final-acceptance-receipt-check  # aggregate CI verification without private data
+```
+
+The [acceptance report](reports/final47-accepted.md) supersedes earlier review-status
+snapshots. The frozen matcher and its failed-to-demonstrate precision gate are unchanged.
+Review completion is not proof of matching accuracy, and no canonical merges were
+performed during acceptance.
+
+The recommended next release scope is reviewed identities with automatic merging
+disabled, unresolved observations kept separate, and containment represented explicitly.
+Some approved identities refer to districts or broader developments. Physical-site
+eligibility and representative coordinates require separate source-backed checks;
+neither an approved group nor an unreviewed source observation is automatically a
+verified individual deposit.
+This is a proposed narrow revision to Step 6's release condition, not a claim that the
+original 97% automatic-merge gate passed. Retain that target for any future automatic
+merging. After agreeing this scope, build the canonical identity layer, then maturity,
+country context, QA, data products and the remaining pages in the specified order.
+Existing authorization to improve the private source-record website remains in force.

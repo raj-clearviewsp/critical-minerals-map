@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026.11.04 — Accept final 47 recommendations
+
+- Recorded Raj's explicit chat approval of all final 47 recommendations in a new immutable round, bound to the exact sample, research and approved labels. The administrative CSV is identified as a transcription of chat approval, not a browser export or blind annotation.
+- Preserved all 167 earlier events. History now contains 214 events across 201 comparisons; the formal 200-case review is complete, with 57 same-site, 55 distinct-site, 15 containment and 73 unresolved outcomes. Unresolved approvals remain unresolved.
+- Retained the original 33 blind submissions and the final 47's research-assisted status. Approval does not alter the frozen matcher, establish independent gold truth, or satisfy the unproven 97% automatic-merge gate.
+- Added approval validation, append-only ledger construction, immutable reconstruction and aggregate CI checks. Detailed answers and evidence remain private; no canonical merge or public deployment occurs.
+- Validation: 934 main-suite tests pass, including 63 acceptance tests; Ruff and independent review pass. Repeated acceptance reproduces identical bytes and modification times, and all 143 earlier accepted artifacts remain unchanged.
+- Recommended a reviewed first-release identity layer with automatic merging disabled. Named-development and district matches still require a separate physical-site eligibility and location check; approval alone does not convert them into individual deposit points. Any change to Step 6's release condition remains a proposal.
+
 ## 2026.11.04 — Complete submitted reviews, research final 47 and test matching
 
 - Preserved the submitted 27 development and 33 blind human answers as exact original exports in a new immutable round. The ledger now has 167 events across 154 comparisons; 153 formal units have human answers and 65 latest relationships remain unresolved.
