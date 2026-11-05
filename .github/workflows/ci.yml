@@ -53,6 +53,10 @@ jobs:
         run: make preview-data-receipt-check
       - name: Verify researched development review receipt
         run: make research-review-receipt-check
+      - name: Verify explicit owner approval of researched recommendations
+        run: make review-acceptance-receipt-check
+      - name: Verify next researched and blind review subsets
+        run: make next-review-receipt-check
 
   build-data:
     name: Build empty data pipeline

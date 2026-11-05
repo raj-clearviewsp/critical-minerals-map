@@ -2,6 +2,23 @@ SHELL := /bin/sh
 .DEFAULT_GOAL := all
 .NOTPARALLEL:
 
+.PHONY: review-acceptance-check review-acceptance-receipt-check next-review next-review-check next-review-receipt-check
+
+review-acceptance-check:
+	$(RUN) python -m pipeline.review_acceptance --root . --check --local
+
+review-acceptance-receipt-check:
+	$(RUN) python -m pipeline.review_acceptance --root . --check
+
+next-review:
+	$(RUN) python -m pipeline.review_next --root . $(RESEARCH_FLAGS)
+
+next-review-check:
+	$(RUN) python -m pipeline.review_next --root . --check --local
+
+next-review-receipt-check:
+	$(RUN) python -m pipeline.review_next --root . --check
+
 .PHONY: research-review research-review-check research-review-receipt-check
 
 research-review:

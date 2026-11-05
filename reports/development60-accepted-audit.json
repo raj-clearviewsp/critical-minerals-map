@@ -1,0 +1,64 @@
+{
+  "approved_on": "2026-11-04",
+  "artifacts": {
+    "data/review/development60-approved-v1/approval.json": {
+      "bytes": 6587,
+      "sha256": "d2ecb2a7b82d23ff24d9bc122fe6f2704c23cd14d2e2cc298ebc9f4e44047c87"
+    },
+    "data/review/development60-approved-v1/completed.csv": {
+      "bytes": 26556,
+      "sha256": "3c474e9fd8c93f02eec3bbeee9092168a40397abf2bf52530d73c8076bbdb449"
+    },
+    "data/review/development60-approved-v1/decision-history.json": {
+      "bytes": 98488,
+      "sha256": "5a185c20c9bd33fcd77389ddf350eaa6968c1a517f2a42ce9f24ee55d114dfd4"
+    },
+    "data/review/development60-approved-v1/latest-decisions.json": {
+      "bytes": 79582,
+      "sha256": "d9b7ec2fb5a10d78044691077834280de255ea0fc5e07f9bfaf03fe8f7e83ac5"
+    },
+    "reports/development60-accepted.md": {
+      "bytes": 1702,
+      "sha256": "e2013f2f402314605966e436c9f6034df4b42f886e9a5ecd08fc5a41b5d5eabf"
+    }
+  },
+  "auto_merges": 0,
+  "formal_gold_set_complete": false,
+  "implementation": {
+    "pipeline/review_acceptance/__init__.py": "b18974db1596969405ff70340316f2624154a94361cb0c2d77cb4dae304c0de0",
+    "pipeline/review_acceptance/__main__.py": "52b9bfe6f1247f70a79ec850db7f7c5484587842d9573fa0a3f7f17541405aa3",
+    "pipeline/review_acceptance/core.py": "a5bf05939468421714309c3df9e15c54ed705f0b1c9c4dd70efaffc24a138f07",
+    "uv.lock": "cd4fe8d1bc077fcac6a467a1ac0b682b56906154dbee726e0837c363618e6ebb"
+  },
+  "model_fitted": false,
+  "parent_receipt_sha256": "ed769c910b44f8c70279d9555cec8a82fd34555aba39edfc1ac4adaef6084a4a",
+  "review": {
+    "approved_counts": {
+      "different_sites": 17,
+      "insufficient_evidence": 2,
+      "left_contains_right": 2,
+      "related_scope_unclear": 24,
+      "right_contains_left": 3,
+      "same_site": 12
+    },
+    "history_events": 107,
+    "latest_counts": {
+      "different_sites": 28,
+      "insufficient_evidence": 3,
+      "left_contains_right": 4,
+      "related_scope_unclear": 28,
+      "right_contains_left": 3,
+      "same_site": 26,
+      "uncertain": 2
+    },
+    "latest_unresolved": 33,
+    "new_approved_decisions": 60,
+    "previous_events_preserved": 47,
+    "unique_comparisons": 94,
+    "unreviewed_development": 27,
+    "unreviewed_holdout": 80
+  },
+  "sample_sha256": "28608548162bf94589d5665481d1901fcfb35993d1255e620f89b128e2850d56",
+  "schema_version": "development60-accepted-v1",
+  "status": "explicit_human_approval_recorded"
+}

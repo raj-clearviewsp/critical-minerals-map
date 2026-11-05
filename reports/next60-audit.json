@@ -1,0 +1,105 @@
+{
+  "accepted_receipt_sha256": "bb12b506fc0c1db24c3ee531eda0b4a687da7e4a003fef0c1593a8ab7fde3120",
+  "artifacts": {
+    "data/review/next60-v1/analysis.html": {
+      "bytes": 210994,
+      "sha256": "ddc1575aaf5a0700753972c5daf1198aebfaed7715ef130fa786c4ea609f0488"
+    },
+    "data/review/next60-v1/development-blank.csv": {
+      "bytes": 7152,
+      "sha256": "2c1493751141411b0164b45ccb1f68e31db0e8f798252b8394dd9377d07f2a41"
+    },
+    "data/review/next60-v1/development.html": {
+      "bytes": 718934,
+      "sha256": "20402b42a4a30aa58075ebc18db0aad3a2caeb9959ca2b4ab21f27dd31796322"
+    },
+    "data/review/next60-v1/development.json": {
+      "bytes": 631825,
+      "sha256": "2bb7d5755be5451c49fd5239f9b1f8de589aa4c30cd587aa4573084bf88784a9"
+    },
+    "data/review/next60-v1/holdout-blank.csv": {
+      "bytes": 7978,
+      "sha256": "6e784328f2decf5b4580a4059b2ec3a8fc88b983ad0b437673f13c6559505257"
+    },
+    "data/review/next60-v1/holdout.html": {
+      "bytes": 589719,
+      "sha256": "cd0dee0b6821f25cecbd638fc813df87ca7f9f30b8a4350198ef26fe41f56e5a"
+    },
+    "data/review/next60-v1/holdout.json": {
+      "bytes": 509739,
+      "sha256": "80c85d1acaa0484fb189688f12d8c09a8222361c5213f6c05aeaf9d0165ab730"
+    },
+    "data/review/next60-v1/index.html": {
+      "bytes": 2616,
+      "sha256": "8dd4ab02a8e46070571cf195a953171bb0710980d3608615365793fc571ddf63"
+    },
+    "data/review/next60-v1/research-input.json": {
+      "bytes": 450322,
+      "sha256": "a14d93510df09b2f230f3fec0ead40fc69b5e5a839415455135f59d4e61baa15"
+    },
+    "reports/next60-review.md": {
+      "bytes": 2527,
+      "sha256": "d8f5cabcbd225fd0ccb60129921b993491993b6f8fa2586b107c9e04202b52ea"
+    }
+  },
+  "auto_merges": 0,
+  "formal_gold_set_complete": false,
+  "holdout_recommendations": 0,
+  "implementation": {
+    "pipeline/review_next/__init__.py": "7b000ccf009cf213bdc315b44ccf7a25f380aebe7c56f100f6eaa7ed1cbfb167",
+    "pipeline/review_next/__main__.py": "58060b70ea061494826ad4de6f01428ca9466d7197eedb3df4addc00d81e07c5",
+    "pipeline/review_next/core.py": "59808a12da074165c7460f9714396bd1d0ab70b2a4f6e012d3a8a5466bac4230",
+    "pipeline/review_next/pages.py": "ec7d1d6f71335c298ea24a8ceedec3c5b6e305c3d6c8112cae909cf3ba743977",
+    "uv.lock": "cd4fe8d1bc077fcac6a467a1ac0b682b56906154dbee726e0837c363618e6ebb"
+  },
+  "model_fitted": false,
+  "new_human_labels_created": 0,
+  "packets": {
+    "development": {
+      "cases": 27,
+      "sample_sha256": "6c6dffaf7dc8db7deee9455046b7027282a9c6f023f45442292c469a13e8b656"
+    },
+    "holdout": {
+      "cases": 33,
+      "sample_sha256": "ff0b727dbd4ca1f4792b9b4b5c7c7b34c32b42635e57fcd83dafdeba7eca0fca"
+    }
+  },
+  "parent_receipt_sha256": "94b9330d37773c10a8ace75c30ccb6cf5ba9960c9a9f215ca207b5d9b2211662",
+  "parent_samples": {
+    "development": "0ed186b9f620fd17f1e8e4c421810600e193c84ffbac2bcef752fcb56e64f0ff",
+    "holdout": "2dfa92e1759366193b6c223836a7be3ba0c15b47ca708cd8565b9dbd45c3cef9"
+  },
+  "research": {
+    "case_count": 27,
+    "citation_access_counts": {
+      "full_text": 31,
+      "indexed_extract": 24,
+      "local_snapshot": 55
+    },
+    "citation_count": 110,
+    "confidence_counts": {
+      "high": 7,
+      "low": 1,
+      "medium": 19
+    },
+    "independently_reviewed": 27,
+    "recommendation_counts": {
+      "different_sites": 9,
+      "insufficient_evidence": 4,
+      "related_scope_unclear": 8,
+      "right_contains_left": 1,
+      "same_site": 5
+    },
+    "recommendations_changed_after_review": 6,
+    "second_review_outcomes": {
+      "agree": 14,
+      "caution": 5,
+      "revise": 8
+    },
+    "unique_citation_urls": 66
+  },
+  "schema_version": "next60-review-v1",
+  "selection": "Frozen development [60:87] plus holdout [0:33]; original order retained.",
+  "status": "next_60_pending_human_review",
+  "unpresented_holdout": 47
+}

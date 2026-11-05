@@ -2,7 +2,7 @@
 
 A sourced, static reference for critical mineral deposits, maturity and ownership, based on [the supplied spec](IMPLEMENTATION_SPEC.md).
 
-**Current status: Steps 1–5 complete; all three review rounds preserved; a functional private source-record website is available.** At Raj's request, site development now proceeds alongside identity validation. The private explorer covers 10,788 observations from 12 sources with map, search, filters, source details and CSV export. Source observations remain separate; canonical and published data remain empty. No website has been deployed. See the [private-preview report](reports/private-preview.md).
+**Current status: Steps 1–5 complete; earlier review rounds and the first 60 approvals preserved; a functional private source-record website is available.** At Raj's request, site development now proceeds alongside identity validation. The private explorer covers 10,788 observations from 12 sources with map, search, filters, source details and CSV export. Source observations remain separate; canonical and published data remain empty. No website has been deployed. See the [private-preview report](reports/private-preview.md).
 
 For the prepared local copy, double-click **Open Atlas.command**. It opens the built site in your browser and serves only on your computer; keep its Terminal window open. To rebuild it after code changes, run `make site-private`. A fresh checkout has no private observations and requires the verified local source and review artifacts to build this preview.
 
@@ -181,3 +181,27 @@ Omit `--complete` to validate partial progress. Validation does not import answe
 The [batch report](reports/development60-review.md) explains proposal counts,
 reviewer assistance and the remaining validation work. Detailed research and source
 records remain private; only aggregate counts and checksums are committed.
+
+## Accepted first 60 and next review batch
+
+Raj approved all 60 final recommendations by explicit chat message on 2026-11-04.
+The [acceptance report](reports/development60-accepted.md) records the new immutable
+round: 107 events, 94 unique comparisons and 33 unresolved relationships. The exact
+approval and its administrative CSV transcription are retained privately under
+`data/review/development60-approved-v1/`; earlier review artifacts remain unchanged.
+
+Open `data/review/next60-v1/index.html` for the next batch: the remaining 27 researched
+development cases and the first 33 blind holdout cases. The two sections have separate
+payloads, browser storage and CSV exports. The other 47 holdout cases remain unpresented.
+The [batch report](reports/next60-review.md) explains the frozen selection and limits.
+
+```sh
+make review-acceptance-check
+make next-review-check
+uv run --locked python -m pipeline.review_next --labels /path/to/export.csv \
+    --packet development --complete
+```
+
+Use `--packet holdout` for the blind section and omit `--complete` for partial progress.
+Validation does not import decisions. Both new receipt checks run in CI without private
+data; no model fitting, canonical merges or public deployment is performed.

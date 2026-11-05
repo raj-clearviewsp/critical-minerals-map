@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026.11.04 — Accept researched decisions and prepare the next 60
+
+- Recorded Raj's explicit chat approval of all 60 final recommendations as a new immutable review round, preserving the exact statement, sample and research checksums, and approved labels.
+- Preserved all 47 earlier events; the new history contains 107 events across 94 comparisons. The 26 newly approved unresolved outcomes remain unresolved alongside seven earlier cases.
+- Prepared the remaining 27 development comparisons with primary-source research and separate agent review, plus the first 33 blind holdout comparisons, as Raj requested. The other 47 holdout cases remain unpresented.
+- Kept research and blind source evidence in separate pages, payloads, storage and exports, with an overview linking both sections. Added immutable acceptance, sample-bound export validation and aggregate CI checks.
+- Final development proposals: five same-site, nine distinct-site, one containment and twelve unresolved. All 27 have a separate second review; six relationship proposals changed after challenge and cross-case calibration. The dossier has 110 citation entries with access and independence notes.
+- Validation: 814 tests pass; both local rebuild and offline receipt checks pass. All 74 prior accepted artifacts retain identical checksums and modification times. Browser checks cover blank decisions, isolated progress, CSV quoting and newlines, navigation, and desktop/narrow layouts.
+- No source data, human decisions or detailed research is committed publicly; no model fitting, automatic merging or deployment occurs.
+
 ## 2026.10.31 — Researched development review, first 60 cases
 
 - Prepared the first 60 of the frozen 87 new development comparisons for detailed research-assisted approval, preserving exact source identities and order.
