@@ -57,6 +57,16 @@ jobs:
         run: make review-acceptance-receipt-check
       - name: Verify next researched and blind review subsets
         run: make next-review-receipt-check
+      - name: Verify completed human review intake
+        run: make review-rounds-receipt-check
+      - name: Verify final researched approval packet
+        run: make final-review-receipt-check
+      - name: Verify experimental matching report and unreleased gate
+        run: make matching-receipt-check
+      - name: Install isolated locked matching environment
+        run: uv sync --project experiments/matching --locked
+      - name: Test matching engine with synthetic adversarial cases
+        run: make matching-test
 
   build-data:
     name: Build empty data pipeline

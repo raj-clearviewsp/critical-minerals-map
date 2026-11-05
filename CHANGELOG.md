@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026.11.04 — Complete submitted reviews, research final 47 and test matching
+
+- Preserved the submitted 27 development and 33 blind human answers as exact original exports in a new immutable round. The ledger now has 167 events across 154 comparisons; 153 formal units have human answers and 65 latest relationships remain unresolved.
+- Reclassified the original final 47 holdout cases as agent-assisted review at Raj's explicit request, preserving their selection, order and source observations. Three agents investigated the cases and each received a separate second review; recommendations remain proposals with blank human answers.
+- Prepared the full cited dossier and approval workspace. Peer challenge changed three relationship proposals: one identity became containment, one became insufficient evidence, and one unresolved case became distinct sites after primary map and tenure checks.
+- Fitted an isolated, locked Splink/RapidFuzz experiment using only resolved human development labels. Froze all 39,148 predictions before evaluating the 33 blind human answers; final 47 agent agreement is a separate assisted audit.
+- Tested grouped cross-validation, fixed sensitivity variants, pair reversal, row order, name/coordinate perturbations, proposed-cluster consistency, wider-distance candidate discovery and exact reproduction. The blind set produced no automatic-match proposals; the 97% precision gate is not demonstrated. No model revision was selected from holdout results.
+- Added aggregate CI receipts and adversarial tests for the matcher, review intake, approval separation and receipt tampering. Preserved the prior pipeline lock, source data, accepted artifacts and human decisions. Detailed evidence and model outputs remain private.
+- Validation: 915 tests pass across the main and isolated matching environments. All 87 pre-existing accepted artifacts retain identical bytes and modification times. Frozen predictions reproduce exactly; final-packet and report checks pass. Browser verification covers blank answers, single-case approval and persistence on synthetic data, the complete dossier, navigation and desktop/narrow layouts.
+- Automatic consolidation remains disabled; canonical and published observation data remain empty. The existing source-record explorer remains usable. Step 6 is not marked complete, and no public deployment occurs.
+
 ## 2026.11.04 — Accept researched decisions and prepare the next 60
 
 - Recorded Raj's explicit chat approval of all 60 final recommendations as a new immutable review round, preserving the exact statement, sample and research checksums, and approved labels.

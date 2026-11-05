@@ -1,0 +1,71 @@
+{
+  "artifacts": {
+    "data/review/next60-completed-v1/decision-history.json": {
+      "bytes": 148790,
+      "sha256": "2c10b753c5d46b7ac0691bda8a1e9ccc441deece4b827f789f86254b274fc6f8"
+    },
+    "data/review/next60-completed-v1/development.csv": {
+      "bytes": 8323,
+      "sha256": "e233be94b0b1edf28e0226193623bc8da221ce0a291aab5cbad22350224f8afd"
+    },
+    "data/review/next60-completed-v1/holdout.csv": {
+      "bytes": 9403,
+      "sha256": "1bdd33d550a98d7ca9c7db84475367bd9ead664ceb7e79241051076540b70a3a"
+    },
+    "data/review/next60-completed-v1/latest-decisions.json": {
+      "bytes": 122827,
+      "sha256": "8b9c994decf655da31bace2437ce05288d631ef0c0068a859e7cf6f11ffd6be2"
+    },
+    "reports/next60-completed.md": {
+      "bytes": 1133,
+      "sha256": "3624c9c20b63f9c8c7ef274f279173c3c5947222a1732854ddc71429605fac9b"
+    }
+  },
+  "auto_merges": 0,
+  "implementation": {
+    "pipeline/review_rounds/__init__.py": "41b083f36ae0d8d65ad2242c3d46cd48619d1b63d2b304ed6705163b7f4b1504",
+    "pipeline/review_rounds/__main__.py": "7190c5a872ceec032009a039c3d0f326de40f01fb8c861cf778e3ec76aaa5502",
+    "pipeline/review_rounds/core.py": "fbd1180327bf2e323b82ed498ead47aa14bf98ecaa4277e8edabe0189d895043",
+    "uv.lock": "cd4fe8d1bc077fcac6a467a1ac0b682b56906154dbee726e0837c363618e6ebb"
+  },
+  "model_fitted": false,
+  "parent_sha256": "cb7b1573f143b6cae3871ae2cf8518c708a2a58f328e8c80c7dde458d948ca7d",
+  "previous_approval_sha256": "bb12b506fc0c1db24c3ee531eda0b4a687da7e4a003fef0c1593a8ab7fde3120",
+  "review": {
+    "counts_by_round": {
+      "development": {
+        "different_sites": 9,
+        "insufficient_evidence": 4,
+        "related_scope_unclear": 8,
+        "right_contains_left": 1,
+        "same_site": 5
+      },
+      "holdout": {
+        "different_sites": 2,
+        "related_scope_unclear": 20,
+        "same_site": 11
+      }
+    },
+    "formal_human_reviewed": 153,
+    "history_events": 167,
+    "latest_counts": {
+      "different_sites": 39,
+      "insufficient_evidence": 7,
+      "left_contains_right": 4,
+      "related_scope_unclear": 56,
+      "right_contains_left": 4,
+      "same_site": 42,
+      "uncertain": 2
+    },
+    "new_human_events": 60,
+    "pending_human_review": 47,
+    "previous_events_preserved": 107,
+    "unique_comparisons": 154,
+    "unresolved": 65
+  },
+  "sample_sha256": {
+    "development": "6c6dffaf7dc8db7deee9455046b7027282a9c6f023f45442292c469a13e8b656",
+    "holdout": "ff0b727dbd4ca1f4792b9b4b5c7c7b34c32b42635e57fcd83dafdeba7eca0fca"
+  },
+  "schema_version": "next60-completed-v1"
+}

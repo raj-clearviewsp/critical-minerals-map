@@ -1,0 +1,537 @@
+{
+  "ablations": {
+    "distance": {
+      "abstentions": 45,
+      "cases": 120,
+      "containment_cases": 8,
+      "fn": 27,
+      "fp": 0,
+      "labels": {
+        "different_sites": 37,
+        "insufficient_evidence": 7,
+        "left_contains_right": 4,
+        "related_scope_unclear": 36,
+        "right_contains_left": 4,
+        "same_site": 30,
+        "uncertain": 2
+      },
+      "population_accuracy_claim": false,
+      "precision": 1.0,
+      "precision_wilson95": [
+        0.4385029682449546,
+        1
+      ],
+      "raw_score_fp": 0,
+      "raw_score_precision": 1.0,
+      "raw_score_tp": 4,
+      "recall_wilson95": [
+        0.03459988874733419,
+        0.25621082579184085
+      ],
+      "recall_within_resolved_sample": 0.1,
+      "resolved_identity_cases": 75,
+      "routes": {
+        "auto_candidate": 3,
+        "keep_separate": 3,
+        "scope_or_evidence_review": 114
+      },
+      "tn": 45,
+      "tp": 3,
+      "unresolved_auto_candidates": 0
+    },
+    "geology": {
+      "abstentions": 45,
+      "cases": 120,
+      "containment_cases": 8,
+      "fn": 27,
+      "fp": 0,
+      "labels": {
+        "different_sites": 37,
+        "insufficient_evidence": 7,
+        "left_contains_right": 4,
+        "related_scope_unclear": 36,
+        "right_contains_left": 4,
+        "same_site": 30,
+        "uncertain": 2
+      },
+      "population_accuracy_claim": false,
+      "precision": 1.0,
+      "precision_wilson95": [
+        0.4385029682449546,
+        1
+      ],
+      "raw_score_fp": 0,
+      "raw_score_precision": 1.0,
+      "raw_score_tp": 16,
+      "recall_wilson95": [
+        0.03459988874733419,
+        0.25621082579184085
+      ],
+      "recall_within_resolved_sample": 0.1,
+      "resolved_identity_cases": 75,
+      "routes": {
+        "auto_candidate": 3,
+        "keep_separate": 3,
+        "scope_or_evidence_review": 114
+      },
+      "tn": 45,
+      "tp": 3,
+      "unresolved_auto_candidates": 0
+    },
+    "name": {
+      "abstentions": 45,
+      "cases": 120,
+      "containment_cases": 8,
+      "fn": 30,
+      "fp": 0,
+      "labels": {
+        "different_sites": 37,
+        "insufficient_evidence": 7,
+        "left_contains_right": 4,
+        "related_scope_unclear": 36,
+        "right_contains_left": 4,
+        "same_site": 30,
+        "uncertain": 2
+      },
+      "population_accuracy_claim": false,
+      "precision": null,
+      "precision_wilson95": null,
+      "raw_score_fp": 0,
+      "raw_score_precision": null,
+      "raw_score_tp": 0,
+      "recall_wilson95": [
+        0,
+        0.11351339317396876
+      ],
+      "recall_within_resolved_sample": 0.0,
+      "resolved_identity_cases": 75,
+      "routes": {
+        "identity_review": 4,
+        "keep_separate": 2,
+        "scope_or_evidence_review": 114
+      },
+      "tn": 45,
+      "tp": 0,
+      "unresolved_auto_candidates": 0
+    },
+    "scope": {
+      "abstentions": 45,
+      "cases": 120,
+      "containment_cases": 8,
+      "fn": 27,
+      "fp": 0,
+      "labels": {
+        "different_sites": 37,
+        "insufficient_evidence": 7,
+        "left_contains_right": 4,
+        "related_scope_unclear": 36,
+        "right_contains_left": 4,
+        "same_site": 30,
+        "uncertain": 2
+      },
+      "population_accuracy_claim": false,
+      "precision": 1.0,
+      "precision_wilson95": [
+        0.4385029682449546,
+        1
+      ],
+      "raw_score_fp": 0,
+      "raw_score_precision": 1.0,
+      "raw_score_tp": 16,
+      "recall_wilson95": [
+        0.03459988874733419,
+        0.25621082579184085
+      ],
+      "recall_within_resolved_sample": 0.1,
+      "resolved_identity_cases": 75,
+      "routes": {
+        "auto_candidate": 3,
+        "keep_separate": 3,
+        "scope_or_evidence_review": 114
+      },
+      "tn": 45,
+      "tp": 3,
+      "unresolved_auto_candidates": 0
+    }
+  },
+  "actual_merges": 0,
+  "agent47": {
+    "abstentions": 8,
+    "cases": 47,
+    "containment_cases": 7,
+    "fn": 16,
+    "fp": 0,
+    "labels": {
+      "different_sites": 16,
+      "insufficient_evidence": 2,
+      "left_contains_right": 6,
+      "related_scope_unclear": 6,
+      "right_contains_left": 1,
+      "same_site": 16
+    },
+    "population_accuracy_claim": false,
+    "precision": null,
+    "precision_wilson95": null,
+    "raw_score_fp": 0,
+    "raw_score_precision": 1.0,
+    "raw_score_tp": 9,
+    "recall_wilson95": [
+      0,
+      0.1936076805344365
+    ],
+    "recall_within_resolved_sample": 0.0,
+    "resolved_identity_cases": 39,
+    "routes": {
+      "keep_separate": 2,
+      "scope_or_evidence_review": 45
+    },
+    "tn": 23,
+    "tp": 0,
+    "unresolved_auto_candidates": 0
+  },
+  "artifacts": {
+    "data/review/matching-experiment-v1/agent-audit.json": {
+      "bytes": 16191,
+      "sha256": "55360a6df484ef2f03e7690897f8a741b9f76178a42a2b104a0eb22e2a385c45"
+    },
+    "data/review/matching-experiment-v1/development-evaluation.json": {
+      "bytes": 75382,
+      "sha256": "2463e6bb64528bd02218b282e4c6e08d256731e130f5bdf8e85c1131a52604da"
+    },
+    "data/review/matching-experiment-v1/features.json": {
+      "bytes": 24395252,
+      "sha256": "894fb2ba9303dc7136e61128d9f5e247f4bdfd3741173153b7ea81a7cdf669b9"
+    },
+    "data/review/matching-experiment-v1/freeze.json": {
+      "bytes": 2514,
+      "sha256": "1a896bf7075d4e9c79ffd790226dfd0e149a290dbd7a99bf672616752c8c5197"
+    },
+    "data/review/matching-experiment-v1/human-evaluation.json": {
+      "bytes": 26057,
+      "sha256": "b1abb628c21368abf4c7322e6868b4a7282dd8a1260d6dfc5f756109980eb193"
+    },
+    "data/review/matching-experiment-v1/model.json": {
+      "bytes": 10935,
+      "sha256": "6acc625271019aab771be87f1c5ac3641cdfef5accfa4002617ee1a0c3eee8d4"
+    },
+    "data/review/matching-experiment-v1/predictions.json": {
+      "bytes": 6088538,
+      "sha256": "4391846fd7dae4d5f73e79469312fe46bba0e97a96fc6bd42e94a3e96c18c4ce"
+    },
+    "data/review/matching-experiment-v1/stress-audit.json": {
+      "bytes": 171565,
+      "sha256": "83303cdee0ea937406d69e91dcaaaed64140187c183423a1fae2de093c56dcc8"
+    },
+    "reports/matching-experiment.md": {
+      "bytes": 7828,
+      "sha256": "612d59f366f77b5f9bf3aeb5b7967307550ead80f638c4343c179ff805956ed0"
+    }
+  },
+  "candidate_pairs": 39148,
+  "canonical_rows_added": 0,
+  "completed_receipt_sha256": "c178681a051aba6e38eb0ebe24437696b3f1162b544a7a3754c7c208eab74608",
+  "development_cv": {
+    "abstentions": 45,
+    "cases": 120,
+    "containment_cases": 8,
+    "fn": 27,
+    "fp": 0,
+    "labels": {
+      "different_sites": 37,
+      "insufficient_evidence": 7,
+      "left_contains_right": 4,
+      "related_scope_unclear": 36,
+      "right_contains_left": 4,
+      "same_site": 30,
+      "uncertain": 2
+    },
+    "population_accuracy_claim": false,
+    "precision": 1.0,
+    "precision_wilson95": [
+      0.4385029682449546,
+      1
+    ],
+    "raw_score_fp": 0,
+    "raw_score_precision": 1.0,
+    "raw_score_tp": 15,
+    "recall_wilson95": [
+      0.03459988874733419,
+      0.25621082579184085
+    ],
+    "recall_within_resolved_sample": 0.1,
+    "resolved_identity_cases": 75,
+    "routes": {
+      "auto_candidate": 3,
+      "keep_separate": 3,
+      "scope_or_evidence_review": 114
+    },
+    "tn": 45,
+    "tp": 3,
+    "unresolved_auto_candidates": 0
+  },
+  "formal_human_gold_complete": false,
+  "full_candidate_routes": {
+    "auto_candidate": 269,
+    "identity_review": 24,
+    "keep_separate": 1076,
+    "scope_or_evidence_review": 37779
+  },
+  "gate_passed": false,
+  "guard_counts": {
+    "country_conflict": 16,
+    "directional_feature_difference": 5516,
+    "explicit_parent_component": 274,
+    "extraction_processing_scope": 114,
+    "incompatible_entity_scope": 739,
+    "missing_or_generic_identity_name": 2398,
+    "numbered_feature_difference": 8792,
+    "publisher_cluster_record": 1646,
+    "qualified_entity_level": 615,
+    "unresolved_entity_scope": 36403
+  },
+  "human33": {
+    "abstentions": 20,
+    "cases": 33,
+    "containment_cases": 0,
+    "fn": 11,
+    "fp": 0,
+    "labels": {
+      "different_sites": 2,
+      "related_scope_unclear": 20,
+      "same_site": 11
+    },
+    "population_accuracy_claim": false,
+    "precision": null,
+    "precision_wilson95": null,
+    "raw_score_fp": 0,
+    "raw_score_precision": 1.0,
+    "raw_score_tp": 3,
+    "recall_wilson95": [
+      0,
+      0.2588329669680317
+    ],
+    "recall_within_resolved_sample": 0.0,
+    "resolved_identity_cases": 13,
+    "routes": {
+      "keep_separate": 2,
+      "scope_or_evidence_review": 31
+    },
+    "tn": 2,
+    "tp": 0,
+    "unresolved_auto_candidates": 0
+  },
+  "human_raw_unresolved_high": 0,
+  "implementation": {
+    "experiments/matching/protocol.json": "abac1bd9af335bd850334dbd9e67430d573b806710867d97305c8770fbc65df3",
+    "experiments/matching/uv.lock": "e64936198aed5cff77433df174ded523751c9eff498cef4d72b7a9386a871d2a",
+    "pipeline/link/candidates.py": "3e7c344de038ce19459f4637391f4cf92c25f5b3543121402ce31fc32b69810d",
+    "pipeline/matching_lab/__init__.py": "58899460dae19a05faf52d36d8030e050c8fb2b8f148991c6e573c1e3627d87c",
+    "pipeline/matching_lab/__main__.py": "d4c35f66ba7df7a5f3a012371660ef0917802c2e61a8c270ba0c5d911ecdb40d",
+    "pipeline/matching_lab/audits.py": "91c51f5344b19b90e506b4fd8dec3bc46fbf84d9640a8dbe3bc5b2eeee30ff70",
+    "pipeline/matching_lab/core.py": "095a75a1f48c362bd8c08799ee8d71cc8935bbfdce36ca0c23d00f88d5889472",
+    "pipeline/matching_lab/features.py": "7c9c8c503e45d71e7e677ae67e033c7292ac98d88ee95fb2e7686ba3531e265c",
+    "pipeline/matching_lab/metrics.py": "b8116d92ac72035388f26fd4b355a4e50d479db7ae44f5106ccc334dff07a570",
+    "pipeline/matching_lab/model.py": "b34a44c8eadf805024c88ea39bad4d11cb874180d0904389df416df2d1eb5eeb",
+    "pipeline/matching_lab/report.py": "921dbc7ea89091cf4d0520eb57d46ef9f16c47933ea85157355f8f4eb78b3514"
+  },
+  "model_frozen_sha256": "1a896bf7075d4e9c79ffd790226dfd0e149a290dbd7a99bf672616752c8c5197",
+  "model_implementation": {
+    "experiments/matching/protocol.json": "abac1bd9af335bd850334dbd9e67430d573b806710867d97305c8770fbc65df3",
+    "experiments/matching/uv.lock": "e64936198aed5cff77433df174ded523751c9eff498cef4d72b7a9386a871d2a",
+    "pipeline/matching_lab/core.py": "095a75a1f48c362bd8c08799ee8d71cc8935bbfdce36ca0c23d00f88d5889472",
+    "pipeline/matching_lab/features.py": "7c9c8c503e45d71e7e677ae67e033c7292ac98d88ee95fb2e7686ba3531e265c",
+    "pipeline/matching_lab/metrics.py": "b8116d92ac72035388f26fd4b355a4e50d479db7ae44f5106ccc334dff07a570",
+    "pipeline/matching_lab/model.py": "b34a44c8eadf805024c88ea39bad4d11cb874180d0904389df416df2d1eb5eeb"
+  },
+  "prior_sensitivity": {
+    "0.01": {
+      "abstentions": 45,
+      "cases": 120,
+      "containment_cases": 8,
+      "fn": 30,
+      "fp": 0,
+      "labels": {
+        "different_sites": 37,
+        "insufficient_evidence": 7,
+        "left_contains_right": 4,
+        "related_scope_unclear": 36,
+        "right_contains_left": 4,
+        "same_site": 30,
+        "uncertain": 2
+      },
+      "population_accuracy_claim": false,
+      "precision": null,
+      "precision_wilson95": null,
+      "raw_score_fp": 0,
+      "raw_score_precision": null,
+      "raw_score_tp": 0,
+      "recall_wilson95": [
+        0,
+        0.11351339317396876
+      ],
+      "recall_within_resolved_sample": 0.0,
+      "resolved_identity_cases": 75,
+      "routes": {
+        "keep_separate": 6,
+        "scope_or_evidence_review": 114
+      },
+      "tn": 45,
+      "tp": 0,
+      "unresolved_auto_candidates": 0
+    },
+    "0.1": {
+      "abstentions": 45,
+      "cases": 120,
+      "containment_cases": 8,
+      "fn": 27,
+      "fp": 0,
+      "labels": {
+        "different_sites": 37,
+        "insufficient_evidence": 7,
+        "left_contains_right": 4,
+        "related_scope_unclear": 36,
+        "right_contains_left": 4,
+        "same_site": 30,
+        "uncertain": 2
+      },
+      "population_accuracy_claim": false,
+      "precision": 1.0,
+      "precision_wilson95": [
+        0.4385029682449546,
+        1
+      ],
+      "raw_score_fp": 0,
+      "raw_score_precision": 1.0,
+      "raw_score_tp": 4,
+      "recall_wilson95": [
+        0.03459988874733419,
+        0.25621082579184085
+      ],
+      "recall_within_resolved_sample": 0.1,
+      "resolved_identity_cases": 75,
+      "routes": {
+        "auto_candidate": 3,
+        "keep_separate": 3,
+        "scope_or_evidence_review": 114
+      },
+      "tn": 45,
+      "tp": 3,
+      "unresolved_auto_candidates": 0
+    },
+    "0.5": {
+      "abstentions": 45,
+      "cases": 120,
+      "containment_cases": 8,
+      "fn": 27,
+      "fp": 0,
+      "labels": {
+        "different_sites": 37,
+        "insufficient_evidence": 7,
+        "left_contains_right": 4,
+        "related_scope_unclear": 36,
+        "right_contains_left": 4,
+        "same_site": 30,
+        "uncertain": 2
+      },
+      "population_accuracy_claim": false,
+      "precision": 1.0,
+      "precision_wilson95": [
+        0.4385029682449546,
+        1
+      ],
+      "raw_score_fp": 0,
+      "raw_score_precision": 1.0,
+      "raw_score_tp": 17,
+      "recall_wilson95": [
+        0.03459988874733419,
+        0.25621082579184085
+      ],
+      "recall_within_resolved_sample": 0.1,
+      "resolved_identity_cases": 75,
+      "routes": {
+        "auto_candidate": 3,
+        "keep_separate": 3,
+        "scope_or_evidence_review": 114
+      },
+      "tn": 45,
+      "tp": 3,
+      "unresolved_auto_candidates": 0
+    }
+  },
+  "research_receipt_sha256": "b150529609eafe88a52e0c2757f1ba1283d90553a8f30a07ef6812de5665befa",
+  "schema_version": "matching-experiment-audit-v1",
+  "source_helper_receipt_sha256": "f9cedb9d2d348a3d7b51b0730ac0a51f6cb916a1163378433fbf2ba5f34ad929",
+  "status": "automatic_merge_gate_not_demonstrated",
+  "stress": {
+    "blocking_counts": {
+      "checked_name_pairs": 4718,
+      "diagnostic": "Exact trusted-name/shared-mineral pairs within 25 km absent from original candidate block",
+      "limit": "These are candidates for inspection, not proven missed matches; non-name matches remain unmeasured.",
+      "measured_blocking_recall": null,
+      "missing_candidates": 245,
+      "missing_cross_source": 177,
+      "missing_within10km": 0,
+      "skipped_large_name_groups": 0
+    },
+    "cluster_counts": {
+      "actual_merges": 0,
+      "largest_component": 3,
+      "proposed_components": 247,
+      "proposed_edges": 269,
+      "quarantined_components": 0
+    },
+    "freeze_sha256": "1a896bf7075d4e9c79ffd790226dfd0e149a290dbd7a99bf672616752c8c5197",
+    "interpretation": "Engineering robustness and sensitivity, not empirical correctness of unreviewed records.",
+    "pair_reversal_cases": 39148,
+    "pair_reversal_failures": 0,
+    "perturbations": {
+      "jitter_0.001_degrees": {
+        "cases": 200,
+        "largest_score_change": 0.22662813502222845,
+        "route_changes": 0,
+        "transitions": {}
+      },
+      "jitter_0.01_degrees": {
+        "cases": 200,
+        "largest_score_change": 0.36219017043843377,
+        "route_changes": 0,
+        "transitions": {}
+      },
+      "punctuation_case": {
+        "cases": 200,
+        "largest_score_change": 1.1102230246251565e-16,
+        "route_changes": 0,
+        "transitions": {}
+      },
+      "remove_aliases": {
+        "cases": 200,
+        "largest_score_change": 1.1102230246251565e-16,
+        "route_changes": 0,
+        "transitions": {}
+      }
+    },
+    "row_reorder_cases": 200,
+    "row_reorder_largest_delta": 1.1102230246251565e-16,
+    "schema_version": "matching-stress-audit-v1",
+    "scope_guard_counts": {
+      "country_conflict": 16,
+      "directional_feature_difference": 5516,
+      "explicit_parent_component": 274,
+      "extraction_processing_scope": 114,
+      "incompatible_entity_scope": 739,
+      "missing_or_generic_identity_name": 2398,
+      "numbered_feature_difference": 8792,
+      "publisher_cluster_record": 1646,
+      "qualified_entity_level": 615,
+      "unresolved_entity_scope": 36403
+    }
+  },
+  "trained_on_agent47": false,
+  "trained_on_holdout": false,
+  "versions": {
+    "duckdb": "2.0.0",
+    "pandas": "2.3.3",
+    "rapidfuzz": "3.14.6",
+    "splink": "4.0.17"
+  }
+}

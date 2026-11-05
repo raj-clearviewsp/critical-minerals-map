@@ -1,0 +1,21 @@
+{
+  "schema_version": "matching-experiment-protocol-v1",
+  "owner_date": "2026-11-04",
+  "owner_instruction": "Let's change it so that the final 47 blind cases are agent recommended, have the agents do a detailed job comparing and recommending options instead. Then, test the matching system yourself, robustly.",
+  "supersedes": "The final 47 are no longer a blind human holdout. Experimental fitting/testing is authorized before those 47 receive human approval; this does not complete the original 200-human-label gate or authorize canonical auto-merges.",
+  "training": "Only resolved human labels from the frozen 120-unit development split; containment is explicitly nonidentity and is separately reported; unresolved is excluded.",
+  "test": "Freeze model, features and routing before evaluating the 33 blind human submissions. Never fit or choose settings using their outcomes. Compare final47 agent proposals separately as assisted audit agreement, not independent human accuracy.",
+  "estimator": "Supervised Fellegi-Sunter categorical likelihood ratios, Laplace alpha=1; m from development same-site, u from development distinct or containment. Splink performs scoring. Training-sample class prior is conditional on the deliberately selected sample, not a calibrated population prior.",
+  "features": ["trusted normalized name similarity via RapidFuzz", "source-point distance", "entity scope compatibility", "mapped deposit type agreement"],
+  "name_levels": ["exact", "ratio>=95", "ratio>=85", "ratio>=65", "other", "missing"],
+  "distance_km_upper_bounds": [0.25, 2, 5, 10, 25],
+  "alpha": 1.0,
+  "auto_candidate_threshold": 0.95,
+  "review_threshold": 0.70,
+  "routing": "Scope, parent/component, publisher-cluster, processing, country, numeric/directional and missing-evidence guards override high scores to manual review. No actual automatic merges in this experiment.",
+  "cross_validation": "Five deterministic folds by frozen connected candidate neighborhood, development only; refit each fold without its labels; report fold counts and pooled held-out outcomes.",
+  "sensitivity": "Report fixed prior values0.01,0.10,0.50 and leave-one-feature-out development cross-validation; do not use holdout outcomes to select a variant.",
+  "tests": "Full-candidate scoring; row/orientation invariance; hostile and incomplete inputs; name/coordinate perturbations; component overlap checks; proposed-cluster diameter and all-pairs guard audit; wider-block discovery diagnostic; exact reproduction.",
+  "limits": "Original stratified diversity sample is not probability representative. CIs are binomial descriptive intervals, not a correction for selection bias or source dependence. Blocking recall remains unknown. With no predicted positives precision is undefined, never 100%. Agent proposals and human abstentions are not gold truth.",
+  "release_gate": "Do not claim the 97% auto-merge target is demonstrated from a tiny denominator, abstentions, assisted labels or development fit. Keep canonical and public outputs unchanged."
+}

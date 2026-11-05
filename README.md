@@ -2,7 +2,7 @@
 
 A sourced, static reference for critical mineral deposits, maturity and ownership, based on [the supplied spec](IMPLEMENTATION_SPEC.md).
 
-**Current status: Steps 1–5 complete; earlier review rounds and the first 60 approvals preserved; a functional private source-record website is available.** At Raj's request, site development now proceeds alongside identity validation. The private explorer covers 10,788 observations from 12 sources with map, search, filters, source details and CSV export. Source observations remain separate; canonical and published data remain empty. No website has been deployed. See the [private-preview report](reports/private-preview.md).
+**Current status: Steps 1–5 complete; 153 formal comparisons human-reviewed; final 47 researched proposals prepared; experimental matching tested but not approved for automatic merging.** At Raj's request, site development proceeds alongside identity validation. The private explorer covers 10,788 observations from 12 sources with map, search, filters, source details and CSV export. Source observations remain separate; canonical and published data remain empty. No website has been deployed. See the [private-preview report](reports/private-preview.md) and [matching test results](reports/matching-experiment.md).
 
 For the prepared local copy, double-click **Open Atlas.command**. It opens the built site in your browser and serves only on your computer; keep its Terminal window open. To rebuild it after code changes, run `make site-private`. A fresh checkout has no private observations and requires the verified local source and review artifacts to build this preview.
 
@@ -122,6 +122,9 @@ The [Step 5 report](reports/phase0-step05.md) and CSV count reports show records
 
 ## Original identity review (retained for provenance)
 
+The sections below record successive historical checkpoints. The current packet and
+matching status are in “Completed human reviews, final 47 and matching experiment” below.
+
 ```sh
 make link-review                # requires verified local pilot/source data
 make link-review-check          # regenerate and compare the private packet
@@ -205,3 +208,39 @@ uv run --locked python -m pipeline.review_next --labels /path/to/export.csv \
 Use `--packet holdout` for the blind section and omit `--complete` for partial progress.
 Validation does not import decisions. Both new receipt checks run in CI without private
 data; no model fitting, canonical merges or public deployment is performed.
+
+## Completed human reviews, final 47 and matching experiment
+
+The submitted 27 development and 33 blind holdout answers are now preserved in a new
+immutable round. The [intake report](reports/next60-completed.md) records 167 events
+across 154 distinct comparisons, including one historical publisher-view comparison
+outside the formal design. Human answers cover 153 of the formal 200 units; 65 latest
+relationships remain unresolved. All earlier decisions and exports remain unchanged.
+
+At Raj's explicit request, the final 47 original holdout cases now have detailed agent
+recommendations and a separate second review. They are **assisted review, no longer
+blind validation**. Open `data/review/final47-v1/index.html` to approve or revise the
+proposals, or `analysis.html` for the complete dossier. Answers start blank. The
+[packet report](reports/final47-review.md) records the evidence and selection; the
+original order and source records are preserved.
+
+```sh
+make review-rounds-check
+make final-review-check
+uv run --locked python -m pipeline.final_review --labels /path/to/export.csv --complete
+make matching-test
+make matching-local-check
+```
+
+The isolated, locked matching experiment uses only resolved human development labels
+for fitting. Predictions were frozen before evaluation against the 33 blind answers;
+agreement with the final 47 agent proposals is reported separately. Its 39,148 pair
+scores, grouped cross-validation, perturbation checks, all-pairs cluster checks and
+wider-distance candidate audit are documented in the [test report](reports/matching-experiment.md).
+The matcher proposed no automatic matches on the 33 blind cases. Its 97% precision
+requirement is **not demonstrated**, and no automatic merge is released. This
+experimental work does not complete Step 6 or advance the canonical-data stages.
+
+CI runs aggregate receipt checks without private data and synthetic matcher tests
+using `experiments/matching/uv.lock`; the historical root lockfile is unchanged.
+Detailed evidence, model outputs and human labels stay local and Git-ignored.

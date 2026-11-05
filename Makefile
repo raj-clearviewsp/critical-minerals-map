@@ -2,6 +2,29 @@ SHELL := /bin/sh
 .DEFAULT_GOAL := all
 .NOTPARALLEL:
 
+.PHONY: review-rounds-check review-rounds-receipt-check final-review-check final-review-receipt-check matching-test matching-receipt-check matching-local-check
+
+review-rounds-check:
+	$(RUN) python -m pipeline.review_rounds --check --local
+
+review-rounds-receipt-check:
+	$(RUN) python -m pipeline.review_rounds --check
+
+final-review-check:
+	$(RUN) python -m pipeline.final_review --check --local
+
+final-review-receipt-check:
+	$(RUN) python -m pipeline.final_review --check
+
+matching-test:
+	uv run --project experiments/matching --locked pytest -c experiments/matching/pyproject.toml experiments/matching/tests
+
+matching-receipt-check:
+	$(RUN) python -m pipeline.matching_lab.report --check
+
+matching-local-check:
+	$(RUN) python -m pipeline.matching_lab.report --check --local
+
 .PHONY: review-acceptance-check review-acceptance-receipt-check next-review next-review-check next-review-receipt-check
 
 review-acceptance-check:
