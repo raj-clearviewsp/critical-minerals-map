@@ -1,7 +1,7 @@
 import argparse
 from pathlib import Path
 
-from .common import PRODUCTS, QA, verify
+from .common import QA, verify
 
 p = argparse.ArgumentParser(description="Build or verify versioned release data")
 p.add_argument("stage", choices=["qa", "products"])
@@ -12,7 +12,12 @@ p.add_argument("--tippecanoe", type=Path)
 a = p.parse_args()
 root = a.root.resolve()
 if a.check:
-    receipt = verify(root, QA if a.stage == "qa" else PRODUCTS, local=a.local)
+    if a.stage == "products":
+        from .products import check
+
+        receipt = check(root, local=a.local)
+    else:
+        receipt = verify(root, QA, local=a.local)
 elif a.stage == "qa":
     from .quality import write
 

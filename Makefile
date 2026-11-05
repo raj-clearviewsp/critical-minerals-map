@@ -33,6 +33,18 @@ release-qa-receipt-check:
 release-qa-test:
 	$(RELEASE_RUN) pytest -q -c tools/release/pyproject.toml tools/release/tests/test_geography.py tools/release/tests/test_qa_receipt.py
 
+.PHONY: release-products release-products-check release-products-receipt-check release-products-test
+release-products:
+	tools/release/install-tippecanoe.sh
+	$(RELEASE_RUN) python -m pipeline.release_products products
+release-products-check:
+	$(RELEASE_RUN) python -m pipeline.release_products products --check --local
+release-products-receipt-check:
+	$(RELEASE_RUN) python -m pipeline.release_products products --check
+release-products-test:
+	tools/release/install-tippecanoe.sh
+	$(RELEASE_RUN) pytest -q -c tools/release/pyproject.toml tools/release/tests
+
 .PHONY: final-acceptance-check final-acceptance-receipt-check
 
 final-acceptance-check:

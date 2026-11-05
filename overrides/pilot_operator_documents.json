@@ -1,0 +1,38 @@
+{
+  "bhp_olympic_dam": {
+    "access": "archived_document",
+    "bytes": 17794667,
+    "final_url": "https://www.sec.gov/Archives/edgar/data/811809/000119312526354647/bhp-20260630.htm",
+    "retrieved_at": "2026-11-05T06:40:50.367930+00:00",
+    "sha256": "dc2aeabeaef28ddf31ccf3a30323eea1ba29804094ed10a0f7aa46cfd53535ab",
+    "source_id": "bhp_olympic_dam",
+    "url": "https://www.sec.gov/Archives/edgar/data/811809/000119312526354647/bhp-20260630.htm"
+  },
+  "lynas_mt_weld": {
+    "access": "archived_document",
+    "bytes": 77458,
+    "final_url": "https://lynasrareearths.com/about-us/about-lynas-rare-earths/",
+    "retrieved_at": "2026-11-05T06:40:03.607261+00:00",
+    "sha256": "ab4110421ea41ba047f0d24de18e4bd4ace63085220399b252e11667e6bcc3e9",
+    "source_id": "lynas_mt_weld",
+    "url": "https://lynasrareearths.com/about-us/about-lynas-rare-earths/"
+  },
+  "mp_materials_q2_2026": {
+    "access": "archived_document",
+    "bytes": 2023290,
+    "final_url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000048/mp-20260630.htm",
+    "retrieved_at": "2026-11-05T06:40:00.531122+00:00",
+    "sha256": "1ade0c4253a5ee32c92c32214734470a39b6fabd6141965487065427f7adff7b",
+    "source_id": "mp_materials_q2_2026",
+    "url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000048/mp-20260630.htm"
+  },
+  "talon_eagle_q2_2026": {
+    "access": "archived_document",
+    "bytes": 132219,
+    "final_url": "https://talonmetals.com/talon-metals-reports-second-quarter-2026-results/",
+    "retrieved_at": "2026-11-05T06:40:14.544696+00:00",
+    "sha256": "0d086f55ab610221f2e99fd25e5069e1681b8f2ff1ee161eb098c2820a821539",
+    "source_id": "talon_eagle_q2_2026",
+    "url": "https://talonmetals.com/talon-metals-reports-second-quarter-2026-results/"
+  }
+}

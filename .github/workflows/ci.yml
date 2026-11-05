@@ -73,6 +73,13 @@ jobs:
         run: make context-receipt-check
       - name: Test geographic and publication gates
         run: make release-qa-test release-qa-receipt-check
+      - name: Cache the pinned tile compiler
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .cache/release-tools/tippecanoe-2.79.0/tippecanoe
+          key: atlas-tippecanoe-2.79.0-${{ runner.os }}-${{ runner.arch }}-b0fd9df4
+      - name: Test release products and verify the accepted manifest
+        run: make release-products-test release-products-receipt-check
       - name: Install isolated locked matching environment
         run: uv sync --project experiments/matching --locked
       - name: Test matching engine with synthetic adversarial cases

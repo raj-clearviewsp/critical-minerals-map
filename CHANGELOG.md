@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026.11.04 — Phase 0, Step 10 versioned release products
+
+- Built all nine versioned canonical Parquet tables, including the 80,451 pilot source records and their original fields. Kept the original schema fixtures separate from the release data.
+- Produced 21 download files, with CSV, typed Parquet, GeoParquet, a PMTiles archive, field dictionary and manifest. The 116,857-byte tile archive contains the distributable site and facility layers.
+- Generated validated private page data for 1,220 geographically checked site entries, 89 countries and three minerals. The separate distribution directory derives its pages from cleared table rows.
+- Checked four archived operator documents against exact source records. MP Materials’ quarterly filing supplies later production evidence for Mountain Pass. The effective private canonical table has 17 operating facilities. [Run report](reports/phase0-step10-products.md).
+
 ## 2026.11.04 — Phase 0, Step 9 geographic and distribution checks
 
 - Checked 1,222 points against pinned Natural Earth country boundaries. The site map includes 1,190 points inside the stated country and 30 within the 25 km tolerance. Two entries are held from the site map and retain their publisher observations in the private archive.
