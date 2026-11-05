@@ -26,6 +26,12 @@ function browserList() {
 }
 
 async function assertPageWidth(page, expected) {
+  const styles=await page.evaluate(()=>({bodyMargin:getComputedStyle(document.body).marginLeft,
+    masthead:getComputedStyle(document.querySelector('.masthead')).display,
+    sheets:[...document.querySelectorAll('link[rel~="stylesheet"]')].map(l=>({href:l.href,loaded:!!l.sheet})),
+  }));
+  assert.ok(styles.bodyMargin==='0px' && styles.masthead==='flex' && styles.sheets.length>0 && styles.sheets.every(s=>s.loaded),
+    `Atlas stylesheet wasn't applied at ${page.url()}: ${JSON.stringify(styles)}`);
   const dimensions=await page.evaluate(async()=>{
     await new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
     const viewport=innerWidth, width=document.documentElement.scrollWidth;
@@ -61,7 +67,7 @@ async function assertPageWidth(page, expected) {
 }
 async function follow(page,selector) {
   await page.waitForSelector(selector,{visible:true});
-  await Promise.all([page.waitForNavigation({waitUntil:'domcontentloaded'}),page.click(selector)]);
+  await Promise.all([page.waitForNavigation({waitUntil:'load'}),page.click(selector)]);
 }
 async function run(label, path) {
   const browser=await puppeteer.launch({executablePath:path,headless:true,
@@ -76,7 +82,7 @@ async function run(label, path) {
       const url=new URL(req.url());
       if (['http:','https:'].includes(url.protocol) && url.origin!==new URL(origin).origin) external.push(url.origin);
     });
-    await page.goto(origin,{waitUntil:'domcontentloaded'});
+    await page.goto(origin,{waitUntil:'load'});
     assert.equal(await page.$eval('h1',x=>x.textContent.trim()),'Critical mineral sites');
     const profile='/sites/fixture-site-a/';
     const result=`#record-rows a[href="${profile}"]`;
@@ -94,11 +100,11 @@ async function run(label, path) {
     assert.equal(await page.$eval('h1',x=>x.textContent.trim()),'United States');
     assert.match(await page.$eval('main',x=>x.innerText),/12,000/);
     await page.setViewport({width:390,height:844});await assertPageWidth(page,390);
-    await page.goto(new URL('search/',origin).href,{waitUntil:'domcontentloaded'});
+    await page.goto(new URL('search/',origin).href,{waitUntil:'load'});
     await page.type('#atlas-query','Fixture outside-China mine');
     await follow(page,`#search-results a[href="${profile}"]`);
     await assertPageWidth(page,390);
-    await page.goto(origin,{waitUntil:'domcontentloaded'});
+    await page.goto(origin,{waitUntil:'load'});
     await page.waitForSelector(result);await assertPageWidth(page,390);
     assert.deepEqual(errors,[],'Uncaught app errors');
     assert.deepEqual(external,[],'Unexpected external runtime requests');

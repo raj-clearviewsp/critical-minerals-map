@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { spawn, spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { cp, mkdir, mkdtemp, readFile, rm, symlink, writeFile } from 'node:fs/promises';
+import { cp, mkdir, mkdtemp, readdir, readFile, rm, symlink, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -53,8 +53,23 @@ async function startLauncher(args=[]) {
     throw new Error('Loopback launcher failed: '+errors);
   } finally { clearTimeout(timeout); reader.close(); }
 }
-async function checkBrowsers(manifest, mode) {
-  // Invoke the same Astro build entry point directly so Windows needs no POSIX env syntax.
+async function validateBrowserFixture(directory) {
+  const home=await readFile(join(directory,'index.html'),'utf8');
+  const payload=JSON.parse(home.match(/<script[^>]*id="atlas-preview-data"[^>]*>(.*?)<\/script>/s)?.[1] || 'null');
+  assert.deepEqual(payload?.records.map(row=>row.id),['fixture-site-a']);
+  const siteDirs=(await readdir(join(directory,'sites'),{withFileTypes:true})).filter(e=>e.isDirectory());
+  assert.deepEqual(siteDirs.map(e=>e.name),['fixture-site-a']);
+  assert.deepEqual((await readdir(join(directory,'downloads'))).sort(),['index.html','sites.csv']);
+  assert.equal(await readFile(join(directory,'downloads','sites.csv'),'utf8'),csv);
+  for (const route of ['', 'sites/fixture-site-a', 'countries/usa', 'search']) {
+    const page=await readFile(join(directory,route,'index.html'),'utf8');
+    const css=[...page.matchAll(/<link rel="stylesheet" href="([^"#?]+)"/g)].map(m=>m[1]);
+    assert.ok(css.length && css.every(h=>/^\/_astro\/[\w.-]+\.css$/.test(h)),`Missing local CSS on /${route}`);
+    const styles=await Promise.all(css.map(h=>readFile(join(directory,h.slice(1)),'utf8')));
+    assert.ok(styles.some(style=>style.includes('.masthead')),`No Atlas layout stylesheet on /${route}`);
+  }
+}
+async function buildBrowserFixture(manifest) {
   const env={...process.env, ATLAS_PRIVATE_PREVIEW:'1', ATLAS_RELEASE_PATH:manifest,
     ASTRO_TELEMETRY_DISABLED:'1'};
   delete env.ATLAS_RECORDS_PATH;
@@ -62,12 +77,14 @@ async function checkBrowsers(manifest, mode) {
     {cwd:site,env,stdio:'inherit',timeout:120000});
   if (build.status!==0) throw build.error || new Error('Synthetic Astro build failed');
   assert.match(await html('sites/fixture-site-a'),/Fixture operator/);
-  assert.equal(await readFile(join(site,'.preview-dist','downloads','sites.csv'),'utf8'),csv);
+  await validateBrowserFixture(join(site,'.preview-dist'));
+}
+async function runBrowsers(mode) {
   const host=await startLauncher();
   try {
     const smoke=join(original,'../tools/browser-qa/windows-smoke.mjs');
     const run=spawnSync(process.execPath,[smoke,host.url,mode],
-      {cwd:original,env,stdio:'inherit',timeout:180000});
+      {cwd:original,env:process.env,stdio:'inherit',timeout:180000});
     if (run.status!==0) throw run.error || new Error('Synthetic browser acceptance failed');
   } finally { await host.stop(); }
 }
@@ -103,7 +120,7 @@ async function checkTransport() {
     }
   } finally { await host.stop(); }
 }
-try {
+async function fromSource() {
   await mkdir(site); await mkdir(join(data,'preview','site-v1'),{recursive:true});
   await mkdir(join(product,'downloads'),{recursive:true});
   for (const name of ['src','public','scripts','package.json','astro.config.mjs','tsconfig.json']) {
@@ -113,9 +130,16 @@ try {
   await writeFile(join(data,'preview','site-v1','dataset.json'),JSON.stringify(archive));
   await writeFile(join(product,'downloads','sites.csv'),csv);
   const manifest=join(product,'atlas.json'); await writeFile(manifest,JSON.stringify(release));
-  const browserMode=process.argv.slice(2).find(a=>a==='--windows-browsers' || a==='--local-browser');
+  const browserMode=process.argv.slice(2).find(a=>['--prepare-browser-bundle','--windows-browsers','--local-browser'].includes(a));
   if (browserMode) {
-    await checkBrowsers(manifest,browserMode);
+    await buildBrowserFixture(manifest);
+    if (browserMode==='--prepare-browser-bundle') {
+      assert.ok(process.env.ATLAS_SYNTHETIC_BUNDLE,'Declare an empty synthetic artifact destination');
+      const destination=resolve(process.env.ATLAS_SYNTHETIC_BUNDLE);
+      await mkdir(destination); // Refuse to overwrite an existing directory.
+      await cp(join(site,'.preview-dist'),destination,{recursive:true});
+      await validateBrowserFixture(destination);
+    } else { await runBrowsers(browserMode); }
   } else {
     build('build',manifest);
     assert.doesNotMatch(await html('',false),/Fixture input observation|Fixture outside-China mine/);
@@ -132,4 +156,16 @@ try {
     console.log('Verified empty standard build, source-only private build, reviewed private routes, and declared download.'+
       (process.argv.includes('--transport')?' Verified free/fixed ports, visible bind errors, PMTiles 206, HEAD, MIME and 416.':''));
   }
+}
+try {
+  const prebuilt=process.argv.includes('--prebuilt-windows') ? '--windows-browsers' : process.argv.includes('--prebuilt-local') ? '--local-browser' : null;
+  if (prebuilt) {
+    assert.ok(process.env.ATLAS_SYNTHETIC_BUNDLE,'Declare the synthetic test artifact');
+    const input=resolve(process.env.ATLAS_SYNTHETIC_BUNDLE);
+    await validateBrowserFixture(input);
+    await mkdir(site);
+    await cp(join(original,'scripts'),join(site,'scripts'),{recursive:true});
+    await cp(input,join(site,'.preview-dist'),{recursive:true});
+    await runBrowsers(prebuilt);
+  } else { await fromSource(); }
 } finally { await rm(sandbox,{recursive:true,force:true}); }
