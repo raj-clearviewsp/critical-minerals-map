@@ -1,0 +1,323 @@
+{
+  "Co": {
+    "bytes": 140201,
+    "columns": [
+      "country",
+      "production_2024",
+      "production_2025_estimate",
+      "reserves_2025"
+    ],
+    "evidence_grade": "B",
+    "file": "mcs2026-cobalt.pdf",
+    "license": "U.S. government public domain",
+    "locator": "Chapter page 2, World Mine Production and Reserves table",
+    "quantity_basis": "Cobalt content",
+    "redistribution_ok": true,
+    "retrieved_at": "2026-11-05T06:37:19Z",
+    "rows": [
+      [
+        "United States",
+        "200",
+        "300",
+        "70000"
+      ],
+      [
+        "Australia",
+        "4780",
+        "3700",
+        "1700000"
+      ],
+      [
+        "Canada",
+        "3350",
+        "3500",
+        "220000"
+      ],
+      [
+        "China",
+        "2000",
+        "2000",
+        "160000"
+      ],
+      [
+        "Congo (Kinshasa)",
+        "226000",
+        "230000",
+        "6000000"
+      ],
+      [
+        "Cuba",
+        "3450",
+        "2000",
+        "500000"
+      ],
+      [
+        "Indonesia",
+        "35000",
+        "44000",
+        "760000"
+      ],
+      [
+        "Madagascar",
+        "3100",
+        "3900",
+        "100000"
+      ],
+      [
+        "Papua New Guinea",
+        "2630",
+        "2800",
+        "84000"
+      ],
+      [
+        "Philippines",
+        "3100",
+        "3700",
+        "260000"
+      ],
+      [
+        "Russia",
+        "8000",
+        "7700",
+        "800000"
+      ],
+      [
+        "Turkey",
+        "2200",
+        "1900",
+        "91000"
+      ],
+      [
+        "Other countries",
+        "7780",
+        "9100",
+        "780000"
+      ],
+      [
+        "World total",
+        "302000",
+        "310000",
+        "12000000"
+      ]
+    ],
+    "sha256": "cdfe86c808872800d8877b8af4a16d67822939a995b73960b419b2ceedb39fb3",
+    "title": "U.S. Geological Survey, Mineral Commodity Summaries 2026, Cobalt",
+    "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-cobalt.pdf"
+  },
+  "Ni": {
+    "bytes": 142529,
+    "columns": [
+      "country",
+      "production_2024",
+      "production_2025_estimate",
+      "reserves_2025"
+    ],
+    "evidence_grade": "B",
+    "file": "mcs2026-nickel.pdf",
+    "license": "U.S. government public domain",
+    "locator": "Chapter page 2, World Mine Production and Reserves table",
+    "quantity_basis": "Nickel content",
+    "redistribution_ok": true,
+    "retrieved_at": "2026-11-05T06:37:19Z",
+    "rows": [
+      [
+        "United States",
+        "7490",
+        "10000",
+        "340000"
+      ],
+      [
+        "Australia",
+        "98000",
+        "45000",
+        "25000000"
+      ],
+      [
+        "Brazil",
+        "67500",
+        "70000",
+        "16000000"
+      ],
+      [
+        "Canada",
+        "125000",
+        "140000",
+        "2200000"
+      ],
+      [
+        "China",
+        "115000",
+        "120000",
+        "4400000"
+      ],
+      [
+        "Indonesia",
+        "2310000",
+        "2600000",
+        "62000000"
+      ],
+      [
+        "New Caledonia",
+        "116000",
+        "140000",
+        "7100000"
+      ],
+      [
+        "Philippines",
+        "354000",
+        "270000",
+        "4800000"
+      ],
+      [
+        "Russia",
+        "205000",
+        "200000",
+        "8300000"
+      ],
+      [
+        "Other countries",
+        "308000",
+        "290000",
+        ">9100000"
+      ],
+      [
+        "World total",
+        "3710000",
+        "3900000",
+        ">140000000"
+      ]
+    ],
+    "sha256": "70aab7644bc8b43fb9eef4d3a3e007186a9be6958dd476e3747a96e3c9d5de3c",
+    "title": "U.S. Geological Survey, Mineral Commodity Summaries 2026, Nickel",
+    "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-nickel.pdf"
+  },
+  "REE": {
+    "bytes": 639984,
+    "columns": [
+      "country",
+      "production_2024",
+      "production_2025_estimate",
+      "reserves_2025"
+    ],
+    "evidence_grade": "B",
+    "file": "mcs2026-rare-earths.pdf",
+    "license": "U.S. government public domain",
+    "locator": "Chapter page 2, World Mine Production and Reserves table",
+    "quantity_basis": "Rare-earth oxide equivalent, including lanthanides and yttrium and excluding most scandium",
+    "redistribution_ok": true,
+    "retrieved_at": "2026-11-05T06:37:19Z",
+    "rows": [
+      [
+        "United States",
+        "45500",
+        "51000",
+        "1900000"
+      ],
+      [
+        "Australia",
+        "29000",
+        "29000",
+        "6300000"
+      ],
+      [
+        "Brazil",
+        "560",
+        "2000",
+        "11000000"
+      ],
+      [
+        "Burma",
+        "27000",
+        "22000",
+        "NA"
+      ],
+      [
+        "Canada",
+        "\u2014",
+        "\u2014",
+        "830000"
+      ],
+      [
+        "China",
+        "270000",
+        "270000",
+        "44000000"
+      ],
+      [
+        "Greenland",
+        "\u2014",
+        "\u2014",
+        "1500000"
+      ],
+      [
+        "India",
+        "2900",
+        "2900",
+        "NA"
+      ],
+      [
+        "Madagascar",
+        "1400",
+        "2700",
+        "NA"
+      ],
+      [
+        "Malaysia",
+        "140",
+        "110",
+        "710000"
+      ],
+      [
+        "Nigeria",
+        "1500",
+        "1500",
+        "NA"
+      ],
+      [
+        "Russia",
+        "2600",
+        "2600",
+        "3800000"
+      ],
+      [
+        "South Africa",
+        "\u2014",
+        "\u2014",
+        "860000"
+      ],
+      [
+        "Tanzania",
+        "\u2014",
+        "\u2014",
+        "890000"
+      ],
+      [
+        "Thailand",
+        "2100",
+        "4800",
+        "NA"
+      ],
+      [
+        "Vietnam",
+        "300",
+        "150",
+        "3500000"
+      ],
+      [
+        "Other countries",
+        "1000",
+        "550",
+        "NA"
+      ],
+      [
+        "World total",
+        "380000",
+        "390000",
+        ">75000000"
+      ]
+    ],
+    "sha256": "0116a192336fec41c38d8e11dad553bb7703308c1fbd1f97dc14b75c7e7d9900",
+    "title": "U.S. Geological Survey, Mineral Commodity Summaries 2026, Rare Earths",
+    "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-rare-earths.pdf"
+  }
+}

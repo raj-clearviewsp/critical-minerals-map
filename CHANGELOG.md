@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026.11.04 — Phase 0, Step 7 maturity and status
+
+- Assigned a sourced maturity rung to every site entry. The blind assessment agreed on 29 of 30, and the original predictions and sample remain available for reproduction.
+- The audit uncovered uncounted historical nickel/cobalt reserve evidence. An independent review of all 46 eligible Jasansky facilities confirmed 11 supporting archive rows at seven sites. The reviewed release applies those seven evidence corrections separately from the measured score.
+- The reviewed distribution is 1,125 occurrences, 77 historical estimates, two code-compliant resource entries, two reserve entries and 16 operating entries. Status and reporting system retain separate provenance. [Run report](reports/phase0-step07-maturity.md).
+
 ## 2026.11.04 — Phase 0, Step 6 reviewed identity release
 
 - Applied the approved v0 manual identity policy and retained the 97% threshold for future automated merging.

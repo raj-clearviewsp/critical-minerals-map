@@ -10,6 +10,12 @@ identity-release-check:
 identity-release-receipt-check:
 	$(RUN) python -m pipeline.release_identity --check
 
+.PHONY: maturity-check maturity-receipt-check
+maturity-check:
+	$(RUN) python -m pipeline.release_enrichment maturity --check --local
+maturity-receipt-check:
+	$(RUN) python -m pipeline.release_enrichment.public_check maturity
+
 .PHONY: final-acceptance-check final-acceptance-receipt-check
 
 final-acceptance-check:

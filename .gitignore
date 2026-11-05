@@ -9,6 +9,8 @@ __pycache__/
 .env.*
 !.env.example
 site/node_modules/
+tools/browser-qa/node_modules/
+pipeline/release_enrichment/site_statements.json
 site/dist/
 site/.preview-dist/
 site/.astro/

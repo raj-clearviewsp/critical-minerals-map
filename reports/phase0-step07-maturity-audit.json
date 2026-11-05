@@ -1,0 +1,127 @@
+{
+  "artifacts": {
+    "data/releases/2026.11.04-v0/maturity/corrections.json": {
+      "bytes": 21540,
+      "sha256": "b58e20da652edf7dcf11f8b6711f1a0de17a986af6c932fc02ffa28e7b5d7313"
+    },
+    "data/releases/2026.11.04-v0/maturity/jasansky-reserve-audit.json": {
+      "bytes": 92204,
+      "sha256": "b0c4e645fcac739a79e049902d2bc194eac7d0d2ae319674659a3a3838528775"
+    },
+    "data/releases/2026.11.04-v0/maturity/mapping.json": {
+      "bytes": 1666,
+      "sha256": "26382221a7b2ee2d7193dec58fa6337579bb3f55e98437ea348ae43d1af60951"
+    },
+    "data/releases/2026.11.04-v0/maturity/primary/arafura-annual-2026.pdf": {
+      "bytes": 4577984,
+      "sha256": "08e89a04922e499832634383f0083fe1d510e02da55a0f765499f589abb981e5"
+    },
+    "data/releases/2026.11.04-v0/maturity/primary/mcs2026-nickel.pdf": {
+      "bytes": 142529,
+      "sha256": "70aab7644bc8b43fb9eef4d3a3e007186a9be6958dd476e3747a96e3c9d5de3c"
+    },
+    "data/releases/2026.11.04-v0/maturity/primary/mcs2026-rare-earths.pdf": {
+      "bytes": 639984,
+      "sha256": "0116a192336fec41c38d8e11dad553bb7703308c1fbd1f97dc14b75c7e7d9900"
+    },
+    "data/releases/2026.11.04-v0/maturity/reserve-independent-review.json": {
+      "bytes": 3429,
+      "sha256": "2e01949a637d7fa08bb34655afe31ad5dc0a5d00fac91a9ae1c17a4678ec0ffe"
+    },
+    "data/releases/2026.11.04-v0/maturity/reviewed-sites.json": {
+      "bytes": 3812891,
+      "sha256": "36ef9c5da683bae2bf61b2760490f0cb26afee1011741ef61bf1997e85da7931"
+    },
+    "data/releases/2026.11.04-v0/maturity/sites.json": {
+      "bytes": 3806430,
+      "sha256": "51abfabad19da1a3bb9c5b41987bca0871bf16934cd2b65db24c277d2826a102"
+    },
+    "data/releases/2026.11.04-v0/maturity/spot-check-assessment.json": {
+      "bytes": 11563,
+      "sha256": "86e777cbdb949c1cf340ef16fb6e5dd05fbbbe3d156604f4a74e526b41765358"
+    },
+    "data/releases/2026.11.04-v0/maturity/spot-check-input.json": {
+      "bytes": 83338,
+      "sha256": "583413eaca421cf941f535d392c5142e33d58e5f99d9484e4efd5638a942a68e"
+    },
+    "data/releases/2026.11.04-v0/maturity/spot-check-results.json": {
+      "bytes": 13106,
+      "sha256": "f2634e6164954f58a0471081c0647a1fef05c14e2cfdc11eccc92f94f04ad44e"
+    },
+    "reports/phase0-step07-maturity.md": {
+      "bytes": 1158,
+      "sha256": "082e3d02d96c44d66565a6ce94cd5bc95d585723d4a22656d95f62af3a7a0656"
+    }
+  },
+  "assessment_sha256": "86e777cbdb949c1cf340ef16fb6e5dd05fbbbe3d156604f4a74e526b41765358",
+  "implementation": {
+    "pipeline/release_enrichment/__init__.py": "0616e01d6688dad3ee901f0f48f6bf3e50755459250aec997ffb37ffb83505ca",
+    "pipeline/release_enrichment/__main__.py": "610434e8c802f710a3088286d0ea1fd948357806d1f00e211b9b0aa5c10460b2",
+    "pipeline/release_enrichment/common.py": "274d15e4f27b6778be8862d53cfa52a7a1382a4eaffde54c47be00bc1307396f",
+    "pipeline/release_enrichment/corrections.py": "6298d36c440b96ecc959bca83851b2bdf434334e9abcf6b55a47137f382fd706",
+    "pipeline/release_enrichment/maturity.py": "f697927e7ce01cc76f72086a5b9586bf18054136c4a6fe0acd38822e6eb45167",
+    "pipeline/release_enrichment/mcs_chapters.json": "d26da98303f4f96415a94179cfd32f1f7388636c032597ffd1c9ec06924e034a",
+    "pipeline/release_enrichment/site_statements.json": "5156008911429f4b4be0abca514db95626c59133c24ff624848e8fd925324e72",
+    "sources/ga_critical_2025.yaml": "e25dd63e702762afd22656ecb09a5e4f0e2f1a2db229b78d5594a2639ea63ba9",
+    "sources/ga_critical_2025_arcgis.yaml": "ac0148feba7a82034c8f89b5f6ca6358d58efd978c1b0c881f37114aa949141f",
+    "sources/ga_global_ree.yaml": "8673a7d341df94af8dcadc33dc09b06f4c93e9b7766668076a380682fe211ae2",
+    "sources/gseu_crm.yaml": "da1d83325db7b10d0529512a8a6640c1bcdaba3d9f876381fe809a87acf32d16",
+    "sources/icmm.yaml": "4518f0e904625c5e00f92ef3094e67da315dd64ba4b2bf3176185c65ebded33d",
+    "sources/jasansky.yaml": "35d36bb8b5e1b4d19d2d61c3075282bfbadd5a25e8a7ffdb9947a2d34fec74a2",
+    "sources/usgs_global_critical.yaml": "6dfb1763eef1e06369da68253afdb5080748a89add384eed141ea8ff6dcf9b81",
+    "sources/usgs_global_ree.yaml": "6c695ccdb897e58de119547e22daeb43a4346fcac190f14acc31aa41b0b7b178",
+    "sources/usgs_laterites.yaml": "b58b34740dba574bb0af1efdcbe9e340b8df9a1ec291f3f0440c8f1b2c740245",
+    "sources/usgs_mrds.yaml": "8198122c2171395800d936a6042a0b35c959de5f85d9fa3b6d75bec310206e23",
+    "sources/usgs_us_critical.yaml": "b8b314d74cc535311f1cfeed2a59df7797afe2a98825491305dfe66a0637cc58",
+    "sources/wapha.yaml": "2b5db8edb8d66c19950e4b171b0d065d880b59af195ce52f0dce8e7676d3246c",
+    "uv.lock": "cd4fe8d1bc077fcac6a467a1ac0b682b56906154dbee726e0837c363618e6ebb"
+  },
+  "parent_receipt_sha256": "4ca47677787abc68970badeb99fb9ff47cedd22979c8c6f960714012399f2749",
+  "pilot_receipt_sha256": "1534ce585878aedda02f7d8f59c8e987f2ea2ea05262f92511746fcaf167785a",
+  "post_assessment_corrections": 7,
+  "reserve_archive_sha256": "40c733543450341ed65abdcf36a34eb0c79a9979cdd09dc56e3b9e68e570dba6",
+  "reserve_review_sha256": "2e01949a637d7fa08bb34655afe31ad5dc0a5d00fac91a9ae1c17a4678ec0ffe",
+  "reviewed_rung_counts": {
+    "1": 1125,
+    "2": 77,
+    "3": 2,
+    "4": 2,
+    "5": 16
+  },
+  "rung_counts": {
+    "1": 1132,
+    "2": 70,
+    "3": 2,
+    "4": 2,
+    "5": 16
+  },
+  "sample_sha256": "fafb4c9c1b08763f9f86c534c21cd8a08b2866d1a45e0d207764722f032ac6d7",
+  "schema_version": "release-maturity-v1",
+  "scored_sites_sha256": "51abfabad19da1a3bb9c5b41987bca0871bf16934cd2b65db24c277d2826a102",
+  "sites": 1222,
+  "spot_check_agreements": 29,
+  "spot_check_cases": 30,
+  "spot_check_passed": true,
+  "status": "accepted",
+  "status_counts": {
+    "abandoned": 1,
+    "care_and_maintenance": 52,
+    "closed": 1,
+    "exploration": 1,
+    "historical_producer": 6,
+    "historically_active": 1,
+    "historically_operating": 1,
+    "no_production_reported": 566,
+    "operating": 15,
+    "past_producer": 23,
+    "production_reported": 1,
+    "under_development": 28,
+    "unknown": 526
+  },
+  "step": 7,
+  "verified_document_sha256": {
+    "arafura-annual-2026.pdf": "08e89a04922e499832634383f0083fe1d510e02da55a0f765499f589abb981e5",
+    "mcs2026-nickel.pdf": "70aab7644bc8b43fb9eef4d3a3e007186a9be6958dd476e3747a96e3c9d5de3c",
+    "mcs2026-rare-earths.pdf": "0116a192336fec41c38d8e11dad553bb7703308c1fbd1f97dc14b75c7e7d9900"
+  }
+}
