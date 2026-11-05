@@ -1,0 +1,80 @@
+{
+  "artifacts": {
+    "data/releases/2026.11.04-v0/context/china_official_finance.json": {
+      "bytes": 328324,
+      "sha256": "652ffd329d7ef1fd91910e5e719005200767d118f984f9c9c8d0048ce2ee43fe"
+    },
+    "data/releases/2026.11.04-v0/context/country_commodity.json": {
+      "bytes": 395421,
+      "sha256": "406dea482e35be0ae9623284bfc72929ad5adf12bd3476586a1a97c5e621a7c3"
+    },
+    "data/releases/2026.11.04-v0/context/export_restrictions.json": {
+      "bytes": 27079759,
+      "sha256": "3e55528f85586f8ac5ef6395164a401a280a2f7849ae793a457fc0d8b5aaf910"
+    },
+    "data/releases/2026.11.04-v0/context/mcs-revisions.json": {
+      "bytes": 330,
+      "sha256": "f9b696fc6dd1d8590278abe2fed11d4c8d50ecae25c6b092d9e0e84469cbe928"
+    },
+    "data/releases/2026.11.04-v0/context/minerals.json": {
+      "bytes": 43008,
+      "sha256": "50aad0d24d023095245f1a147ebe3cc4dff532cf4c166533528b5e6d6a8ed438"
+    },
+    "data/releases/2026.11.04-v0/context/primary/mcs2026-cobalt.pdf": {
+      "bytes": 140201,
+      "sha256": "cdfe86c808872800d8877b8af4a16d67822939a995b73960b419b2ceedb39fb3"
+    },
+    "data/releases/2026.11.04-v0/context/primary/mcs2026-nickel.pdf": {
+      "bytes": 142529,
+      "sha256": "70aab7644bc8b43fb9eef4d3a3e007186a9be6958dd476e3747a96e3c9d5de3c"
+    },
+    "data/releases/2026.11.04-v0/context/primary/mcs2026-rare-earths.pdf": {
+      "bytes": 639984,
+      "sha256": "0116a192336fec41c38d8e11dad553bb7703308c1fbd1f97dc14b75c7e7d9900"
+    },
+    "reports/phase0-step08-context.md": {
+      "bytes": 1204,
+      "sha256": "7085b862b88be2c5f432c8ce5188976f8fef64a661bd4dc84ac0e3a78a44e07c"
+    }
+  },
+  "chapter_sha256": {
+    "Co": "cdfe86c808872800d8877b8af4a16d67822939a995b73960b419b2ceedb39fb3",
+    "Ni": "70aab7644bc8b43fb9eef4d3a3e007186a9be6958dd476e3747a96e3c9d5de3c",
+    "REE": "0116a192336fec41c38d8e11dad553bb7703308c1fbd1f97dc14b75c7e7d9900"
+  },
+  "counts": {
+    "china_official_finance": 150,
+    "country_commodity": 86,
+    "export_restrictions": 4915,
+    "minerals": 3
+  },
+  "finance_site_links": 0,
+  "implementation": {
+    "pipeline/release_enrichment/__init__.py": "0616e01d6688dad3ee901f0f48f6bf3e50755459250aec997ffb37ffb83505ca",
+    "pipeline/release_enrichment/__main__.py": "610434e8c802f710a3088286d0ea1fd948357806d1f00e211b9b0aa5c10460b2",
+    "pipeline/release_enrichment/common.py": "274d15e4f27b6778be8862d53cfa52a7a1382a4eaffde54c47be00bc1307396f",
+    "pipeline/release_enrichment/context.py": "f63a6a568959bd28d888b22a4268c4c6a73bccecf362ce0671df53e8aa4fb291",
+    "pipeline/release_enrichment/mcs_chapters.json": "d26da98303f4f96415a94179cfd32f1f7388636c032597ffd1c9ec06924e034a",
+    "sources/aiddata_transition_v2.yaml": "39ff8aaf9599f452f90937438a61b258848e45bcea4e37661ffe8df1ef90c460",
+    "sources/oecd_export.yaml": "be80cb23e3ef225963a2dc10683f1034a30f7caf65b15a35538beaf4aca22ffc",
+    "sources/usgs_mcs_2026.yaml": "e7f7914066630be961b7a3276d1f14ad7158d73740b2f6f80efda3c060d01274",
+    "uv.lock": "cd4fe8d1bc077fcac6a467a1ac0b682b56906154dbee726e0837c363618e6ebb"
+  },
+  "mcs_revised_observations": 2,
+  "oecd_coverage": [
+    2009,
+    2024
+  ],
+  "oecd_structure_sha256": "35541218a1c481114c188b90cc0199396c06fe279b4b70b9276d18d2cd00ace8",
+  "parent_receipt_sha256": "be162a7290816024d997279f4f6b01e2f6a8fd90a9d406a7881d10d5020c0b6f",
+  "pilot_receipt_sha256": "1534ce585878aedda02f7d8f59c8e987f2ea2ea05262f92511746fcaf167785a",
+  "rounded_share_checks_passed": 6,
+  "schema_version": "release-country-context-v1",
+  "status": "accepted",
+  "step": 8,
+  "top_producers_verified": {
+    "Co": "COD",
+    "Ni": "IDN",
+    "REE": "CHN"
+  }
+}

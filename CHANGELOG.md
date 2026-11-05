@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026.11.04 — Phase 0, Step 8 country and mineral context
+
+- Reconciled 86 MCS country, world and other-country rows against the three mineral chapters. All six commodity/year totals reconcile within the published rounding precision. Two revised rare-earth reserve observations keep both the earlier value and the chapter value.
+- Added 4,915 historical OECD measure/product/year observations and 150 dated AidData contributions at country scope. [Run report](reports/phase0-step08-context.md).
+
 ## 2026.11.04 — Phase 0, Step 7 maturity and status
 
 - Assigned a sourced maturity rung to every site entry. The blind assessment agreed on 29 of 30, and the original predictions and sample remain available for reproduction.

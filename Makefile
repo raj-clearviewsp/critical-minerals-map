@@ -16,6 +16,12 @@ maturity-check:
 maturity-receipt-check:
 	$(RUN) python -m pipeline.release_enrichment.public_check maturity
 
+.PHONY: context-check context-receipt-check
+context-check:
+	$(RUN) python -m pipeline.release_enrichment context --check --local
+context-receipt-check:
+	$(RUN) python -m pipeline.release_enrichment.public_check context
+
 .PHONY: final-acceptance-check final-acceptance-receipt-check
 
 final-acceptance-check:

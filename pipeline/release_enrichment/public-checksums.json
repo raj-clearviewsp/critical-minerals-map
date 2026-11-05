@@ -1,4 +1,5 @@
 {
   "pipeline/release_enrichment/site_statements.json": "5156008911429f4b4be0abca514db95626c59133c24ff624848e8fd925324e72",
-  "reports/phase0-step07-maturity-audit.json": "be162a7290816024d997279f4f6b01e2f6a8fd90a9d406a7881d10d5020c0b6f"
+  "reports/phase0-step07-maturity-audit.json": "be162a7290816024d997279f4f6b01e2f6a8fd90a9d406a7881d10d5020c0b6f",
+  "reports/phase0-step08-context-audit.json": "4aedf1ecf851cbb4cfcb455da55f68506097b035542187ec1eabf880f1ca2b61"
 }
