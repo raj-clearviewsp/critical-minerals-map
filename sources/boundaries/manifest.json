@@ -1,0 +1,12 @@
+{
+  "publisher": "Natural Earth",
+  "scale": "1:50 million",
+  "source": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_50m_admin_0_countries.geojson",
+  "terms": "https://www.naturalearthdata.com/about/terms-of-use/",
+  "license": "Public domain",
+  "retrieved_on": "2026-11-04",
+  "features": 242,
+  "source_sha256": "3e458fc036ad0a66411f2c1e6cac49c5d7bfb81cb1123bc513b22511a2b7fdeb",
+  "geometry_sha256": "40931df2b4ad3edd4c54b4922f8cf79820ba1480e6b496602d506953b8173cb2",
+  "processing": "Preserved WGS84 geometry. Retained original ISO_A3, ISO_A3_EH and ADM0_A3 codes other than -99 for lookup. No inferred administrative assignment."
+}

@@ -22,6 +22,17 @@ context-check:
 context-receipt-check:
 	$(RUN) python -m pipeline.release_enrichment.public_check context
 
+RELEASE_RUN = $(UV) run --project tools/release --locked
+.PHONY: release-qa release-qa-check release-qa-receipt-check release-qa-test
+release-qa:
+	$(RELEASE_RUN) python -m pipeline.release_products qa
+release-qa-check:
+	$(RELEASE_RUN) python -m pipeline.release_products qa --check --local
+release-qa-receipt-check:
+	$(RELEASE_RUN) python -m pipeline.release_products qa --check
+release-qa-test:
+	$(RELEASE_RUN) pytest -q -c tools/release/pyproject.toml tools/release/tests/test_geography.py tools/release/tests/test_qa_receipt.py
+
 .PHONY: final-acceptance-check final-acceptance-receipt-check
 
 final-acceptance-check:

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026.11.04 — Phase 0, Step 9 geographic and distribution checks
+
+- Checked 1,222 points against pinned Natural Earth country boundaries. The site map includes 1,190 points inside the stated country and 30 within the 25 km tolerance. Two entries are held from the site map and retain their publisher observations in the private archive.
+- Checked traceable source membership, field evidence, maturity, table schemas and distribution rights. The downloadable subset has 282 site entries. Retrieval-date and permission holds keep the private catalog and distributable products distinct. [Run report](reports/phase0-step09-qa.md).
+
 ## 2026.11.04 — Phase 0, Step 8 country and mineral context
 
 - Reconciled 86 MCS country, world and other-country rows against the three mineral chapters. All six commodity/year totals reconcile within the published rounding precision. Two revised rare-earth reserve observations keep both the earlier value and the chapter value.
