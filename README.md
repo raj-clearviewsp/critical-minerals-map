@@ -2,9 +2,30 @@
 
 A sourced, static reference for critical mineral deposits, maturity and ownership, based on [the supplied spec](IMPLEMENTATION_SPEC.md).
 
-**Current status.** Phase 0 has a reviewed identity release with 1,222 site entries and 10,788 traceable source observations. Automatic merging is disabled. See the [Step 6 report](reports/phase0-step06-reviewed.md), [review approval](reports/final47-accepted.md) and [matching experiment](reports/matching-experiment.md).
+## Open the prepared Atlas
 
-For the prepared local copy, double-click **Open Atlas.command**. It opens the built site in your browser and serves only on your computer; keep its Terminal window open. To rebuild it after code changes, run `make site-private`. A fresh checkout has no private observations and requires the verified local source and review artifacts to build this preview.
+Double-click **[Open Atlas.command](Open%20Atlas.command)** in the project folder. It starts the prepared private site, chooses an available port on your computer, and opens the map in your browser. Keep its Terminal window open while using the Atlas. Press **Control-C** in that window to stop the server.
+
+The **2026.11.04-v0** catalog contains **1,220 geographically checked site entries**, **89 country profiles**, and pages for rare earths, nickel and cobalt. Use **Records** to explore the 10,788 original source observations. Downloads include 282 site entries and seven mine facilities that cleared the release checks. The [release product report](reports/phase0-step10-products.md) and [geographic and publication checks](reports/phase0-step09-qa.md) explain the differences in coverage.
+
+For a bookmarkable address, run this from the repository root. The launcher opens the Atlas at [127.0.0.1:4321](http://127.0.0.1:4321/). Choose another port if that one is already in use.
+
+```sh
+cd site
+./node_modules/.bin/node scripts/open-preview.mjs --port 4321
+```
+
+## Build the private site
+
+On the prepared local copy, run `make setup-site` to install the pinned site tools if needed. Then run `make site-private` from the repository root. This checks the source archive, verifies the release products when the versioned catalog is present, and builds the private site in `site/.preview-dist/`. Open **Open Atlas.command** after the build completes.
+
+The private catalog lives at `data/releases/2026.11.04-v0/products/atlas.json`. A local copy with only the earlier source archive builds the source explorer. The regular `make site` command builds the public preview into `site/dist/`. The [site guide](site/README.md) explains the build modes, local navigation and search.
+
+The [reviewed identity report](reports/phase0-step06-reviewed.md), [maturity assessment](reports/phase0-step07-maturity.md) and [country context report](reports/phase0-step08-context.md) document how the catalog was assembled. Automatic merging is disabled for this release.
+
+## Earlier pipeline checkpoints
+
+The following sections document the scaffold, source acquisition and successive review rounds. Counts, pending decisions and release labels in these historical notes describe the checkpoint named in each section.
 
 ## Run locally
 

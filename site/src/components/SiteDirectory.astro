@@ -1,0 +1,13 @@
+---
+import Page from '../layouts/Page.astro';
+import SiteTable from './SiteTable.astro';
+import { loadRelease } from '../lib/release-data.mjs';
+const { current = 1 } = Astro.props;
+const sites = (loadRelease()?.sites || []).toSorted((a,b)=>a.name.localeCompare(b.name) || a.id.localeCompare(b.id));
+const totalPages = Math.ceil(sites.length/100);
+const href = (n:number) => n===1 ? '/sites/' : '/sites/page/'+n+'/';
+---
+<Page title="Site directory" active="explore"><main id="main" class="reading-page" tabindex="-1">
+<section class="page-intro"><h1>Site directory</h1><p class="lede">{sites.length ? sites.length.toLocaleString('en-US')+' site entries in this release, listed alphabetically.' : 'Site profiles are available with the reviewed release.'} <a href="/">Explore the map</a>.</p></section>
+{sites.length>0 && <><SiteTable sites={sites.slice((current-1)*100,current*100)}/><nav class="pagination" aria-label="Directory pages">{current>1 && <a href={href(current-1)}>Previous</a>}<span>Page {current} of {totalPages}</span>{current<totalPages && <a href={href(current+1)}>Next</a>}</nav></>}
+</main></Page>

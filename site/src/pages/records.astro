@@ -1,0 +1,9 @@
+---
+import Page from '../layouts/Page.astro';
+import Explorer from '../components/Explorer.astro';
+import { loadRelease, loadArchive, recordExplorer } from '../lib/release-data.mjs';
+const dataset = recordExplorer(loadArchive(), loadRelease());
+---
+<Page title="Source records" active="explore" releaseTag={dataset.private_preview ? dataset.release_tag : undefined} dataDate={dataset.data_as_of}>
+  <Explorer dataset={dataset} archived={true}/>
+</Page>

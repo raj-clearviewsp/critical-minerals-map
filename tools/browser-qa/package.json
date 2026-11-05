@@ -1,0 +1,10 @@
+{
+  "name": "atlas-browser-audit",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "axe-core": "4.14.0",
+    "lighthouse": "13.6.0",
+    "puppeteer-core": "25.16.0"
+  }
+}

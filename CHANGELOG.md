@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026.11.04 — Phase 0, Step 11 private website
+
+- Built the searchable private Atlas with 1,220 mapped entries, 89 country profiles, three mineral profiles and 21 checksum-verified downloads. The home map, site list and evidence pages share direct links.
+- Added mobile navigation, single-page country and mineral print briefs, source titles, a coverage layer for downloadable sites and evidence-specific production labels.
+- Verified the empty standard build and synthetic release on CI fixtures. Local browser measurements and release checks are in the [website report](reports/phase0-step11-site.md).
+
 ## 2026.11.04 — Phase 0, Step 10 versioned release products
 
 - Built all nine versioned canonical Parquet tables, including the 80,451 pilot source records and their original fields. Kept the original schema fixtures separate from the release data.

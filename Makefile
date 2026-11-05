@@ -117,6 +117,9 @@ preview-data-receipt-check:
 
 site-private:
 	$(MAKE) preview-data-check
+	@if test -f data/releases/2026.11.04-v0/products/atlas.json; then \
+		$(MAKE) release-products-check; \
+	fi
 	cd site && npm run check && npm run build:private
 
 site-private-preview:

@@ -1,41 +1,24 @@
-# Atlas explorer
+# Critical Minerals Atlas frontend
 
-The Astro site has a standard empty build and a separate local private build.
-The private explorer shows source observations, not consolidated sites. It supports
-map and list views, search, mineral/country/source/scope filters, source details,
-URL state and filtered CSV export. Explicit district and complex records are
-hidden by default; unknown scope remains labelled. Maturity is unassigned and
-source status is presented as historical wording.
+The standard build produces the empty public preview in `dist/`. The private build writes `.preview-dist/` and reads the versioned release from `../data/releases/2026.11.04-v0/products/atlas.json`. Set `ATLAS_RELEASE_PATH` to select another prepared private release. An explicitly selected missing or malformed release fails the build.
+
+The private home maps reviewed groups and provisional site entries. Site, mineral and country profiles have direct, printable HTML routes. The original source explorer remains at `/records/`. When the default release is absent, the private home uses the earlier source dataset from `../data/preview/site-v1/dataset.json`. Source-only observations keep their original IDs and dates.
 
 From the repository root:
 
 ```sh
 make setup-site
-make site                 # tests, Astro diagnostics, empty standard build
-make preview-data-check   # verify private data and preserved review history
-make site-private         # verify inputs, test and build private explorer
-make site-private-preview # serve on loopback
+make site
+make site-private
+make site-private-preview
 ```
 
-For the prepared local copy, double-click `Open Atlas.command`. It serves the
-already-built private site on a free loopback port and opens the default browser.
-Keep its Terminal window open while using the site; Control-C stops the server.
+From `site/`, run `npm run test:build-modes` to exercise empty, historical and reviewed builds with isolated synthetic inputs. Add `-- --transport` to check PMTiles byte ranges and direct site routes through the actual loopback launcher. The test script removes its synthetic builds on completion.
 
-Astro, MapLibre GL JS and Node are pinned in package-lock.json. MapLibre is loaded
-as a separate client chunk. The Natural Earth country geometry is local and
-public-domain; provenance is in public/maps/README.txt. There are no remote fonts,
-map tiles, scripts, analytics or automatic network data refreshes. Publisher
-citations are ordinary external links opened only when selected.
+The home starts with a local geographic overview. Pan and zoom loads MapLibre and its worker. A URL with an explicit viewport restores the interactive map. The searchable result list includes entries without eligible coordinates. Filters, selection and viewport state are linkable. The resource-or-better REE query uses `/?mineral=REE&exclude=CHN&minimum=3` and requires resolved geography outside China. The optional PMTiles outline shows features from the smaller downloadable subset at closer zoom. Pagefind generates the full-text index locally. The citation links open the publisher only when selected.
 
-`npm run build` explicitly disables private data and writes `dist/`. CI uploads
-only that empty build. `npm run build:private` explicitly enables the verified
-local dataset and writes the ignored `.preview-dist/` directory. The private
-JSON is read only in that mode, from ../data/preview/site-v1/dataset.json. Build
-verification checks embedded counts, source isolation and local runtime assets.
-The private build must not be uploaded as a public release.
+The release adapter accepts `atlas-private-release-v1` with site summaries, source records, country and mineral context and declared downloads. Source evidence retains its publisher ID, reference URL, date, grade and note. Production families identify explicitly documented pilot production. The build copies only declared files below `products/downloads/` after checking their SHA-256 digests. The ordinary build explicitly disables private inputs.
 
-The private pages include noindex metadata, readable responsive typography,
-keyboard-accessible controls, a list fallback when WebGL is unavailable and print
-styles. JSON is escaped before embedding in HTML. Source and reviewer decisions
-are prepared independently by `pipeline.preview`; reviewer names and notes do
-not enter the site dataset.
+Double-click `Open Atlas.command` to serve the prepared private build on an available loopback port. Keep its Terminal window open during use. The launcher serves PMTiles range requests and local WASM, map, search and download assets. The Natural Earth basemap attribution is in `public/maps/README.txt`.
+
+To bind a specific local port, run `node scripts/open-preview.mjs --no-open --port 4387` from `site/`. An occupied port produces a visible error. The double-click launcher continues to select a free port.

@@ -1,0 +1,55 @@
+{
+  "release": "2026.11.04-v0",
+  "browser": "Chrome/156.0.8078.80",
+  "templates": 13,
+  "tested_widths_px": [
+    390,
+    549,
+    1280
+  ],
+  "axe_violations": 0,
+  "external_runtime_requests": 0,
+  "single_page_briefs": 92,
+  "mobile_performance": [
+    {
+      "name": "home",
+      "score": 98,
+      "fcp_ms": 1351.5016,
+      "lcp_ms": 2252.2524000000003
+    },
+    {
+      "name": "home",
+      "score": 98,
+      "fcp_ms": 1352.3023,
+      "lcp_ms": 2253.4534500000004
+    },
+    {
+      "name": "home",
+      "score": 98,
+      "fcp_ms": 1351.7916999999998,
+      "lcp_ms": 2252.6875499999996
+    },
+    {
+      "name": "site",
+      "score": 100,
+      "fcp_ms": 751.2610999999999,
+      "lcp_ms": 751.2610999999999
+    },
+    {
+      "name": "mineral",
+      "score": 100,
+      "fcp_ms": 751.2612999999999,
+      "lcp_ms": 751.2612999999999
+    },
+    {
+      "name": "country",
+      "score": 100,
+      "fcp_ms": 751.1467,
+      "lcp_ms": 751.1467
+    }
+  ],
+  "home_initial_js_gzip_bytes": 8859,
+  "static_pages": 1334,
+  "internal_references_checked": 40641,
+  "verified_downloads": 21
+}

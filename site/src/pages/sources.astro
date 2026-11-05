@@ -1,9 +1,15 @@
 ---
 import Page from '../layouts/Page.astro';
-import { loadPreviewDataset } from '../lib/preview-data.mjs';
+import { loadRelease, loadArchive } from '../lib/release-data.mjs';
 import { safeSourceUrl } from '../lib/preview-model.mjs';
-const dataset = loadPreviewDataset();
+import type { Source } from '../lib/catalog-types';
+const release = loadRelease();
+const sources:Source[] = release?.sources || loadArchive().sources;
 ---
-<Page title="Sources" active="sources"><main id="main" class="prose-page" tabindex="-1"><section class="intro"><div class="preview-details"><p>Record dates vary by source</p><p>{dataset.release_tag}</p></div><h1>Sources and provenance.</h1><p class="lede">Every observation retains its source identity. Publication dates, retrieval dates and reuse terms describe the source, not a claim that every record is current.</p></section>
-<section class="source-list" aria-label="Sources in this preview">{dataset.sources.length ? dataset.sources.map(source => <article class="source-entry"><h2>{source.title}</h2><dl><div><dt>License or terms</dt><dd>{source.license || 'See publisher terms'}</dd></div><div><dt>Retrieved</dt><dd>{source.retrieved_at || 'Not recorded'}</dd></div><div><dt>Public redistribution</dt><dd>{source.redistribution_ok ? 'Permitted under the recorded terms and attribution requirements' : 'Not cleared for public redistribution'}</dd></div></dl>{safeSourceUrl(source.url) && <a href={source.url} target="_blank" rel="noopener noreferrer">Open the publisher source</a>}</article>) : <p>No source records are loaded in this build.</p>}</section>
-<section class="reading-section"><h2>Map background</h2><p>The low-resolution country boundaries are from <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth</a>, a public-domain cartographic dataset. Boundaries are for geographic orientation and do not establish jurisdiction over a mineral asset.</p></section></main></Page>
+<Page title="Sources" active="sources"><main id="main" class="reading-page" tabindex="-1">
+<section class="page-intro"><h1>Sources</h1><p class="lede">Publisher records, dates, attribution and reuse terms for the Atlas.</p></section>
+{sources.length ? <div class="source-register">{sources.map(s=><article id={s.id} class="register-row"><div><h2>{s.title}</h2>{safeSourceUrl(s.url) && <a href={safeSourceUrl(s.url)} target="_blank" rel="noopener noreferrer">Publisher source ↗</a>}</div>
+  <dl class="facts-table">{[['License',s.license || 'See publisher terms'],['Attribution',s.attribution],['Source currency',s.currency],['Retrieved',s.retrieved_at || 'Date unrecorded'],['Evidence grade',s.grade],['Public redistribution',s.redistribution_ok === true ? 'Permitted under the recorded terms' : 'Clearance required']].filter(([,value])=>value).map(([label,value])=><div><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
+</article>)}</div> : <p class="empty-build">The public preview has no source catalog.</p>}
+<section class="editorial-row"><h2>Map background</h2><p>Country boundaries are from <a href="https://www.naturalearthdata.com/about/terms-of-use/">Natural Earth</a>, a public-domain cartographic dataset. They provide geographic orientation.</p></section>
+</main></Page>

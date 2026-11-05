@@ -1,0 +1,49 @@
+---
+import Page from '../../layouts/Page.astro';
+import EvidenceEntry from '../../components/EvidenceEntry.astro';
+import { loadRelease, countryUrl, mineralUrl, rungName } from '../../lib/release-data.mjs';
+import { MINERALS, canPlot, reviewName, statusName } from '../../lib/preview-model.mjs';
+import type { Site } from '../../lib/catalog-types';
+export function getStaticPaths() {
+  return (loadRelease()?.sites || []).map(site=>({params:{id:site.id},props:{site}}));
+}
+const site = Astro.props.site as Site;
+const release = loadRelease()!;
+const sources = new Map(release.sources.map(s=>[s.id,s]));
+const countries = new Map(release.countries.map(c=>[c.code,c.name]));
+const operatorEvidence = Array.isArray(site.operator_evidence) ? site.operator_evidence : site.operator_evidence ? [site.operator_evidence] : [];
+const evidence = site.evidence || [];
+const href = '/?record='+encodeURIComponent(site.id);
+const stage = site.maturity_rung ? site.maturity_rung+' · '+rungName(site.maturity_rung) : 'Unassigned';
+const facts = [
+  ['Identity review',reviewName(site.review_state)], ['Record type',site.kind],
+  ['Reported status',site.status && (site.status!=='unknown' || site.status_as_of) ? statusName(site.status)+(site.status_as_of ? ' · '+site.status_as_of : ' · date unconfirmed') : null],
+  ['Reporting system',site.national_system ? ['National classification',site.reporting_system].filter(Boolean).join(' · ') : site.reporting_system], ['Deposit type',site.deposit_type],
+  ['Reported operator',site.operator || 'Unconfirmed'],
+  ['Documented pilot production',site.production_families?.map(c=>MINERALS[c as keyof typeof MINERALS] || c).join(', ')],
+  ['Other names',site.aliases?.join('; ')],
+  ['Coordinates',site.lat != null && site.lon != null ? site.lat+', '+site.lon : 'No supported map point'],
+  ['Location precision',site.location_precision || 'Not stated by source'],
+].filter(([,value])=>value);
+---
+<Page title={site.name} active="explore"><main id="main" class="reading-page" tabindex="-1">
+  <section class="page-intro"><a class="back-link" href="/sites/">← Site directory</a><h1>{site.name}</h1>
+    <p class="profile-locations">{site.country_iso3s.length ? site.country_iso3s.map((code,i)=><>{i>0 && ', '}<a href={countryUrl(code)}>{countries.get(code)||code}</a></>) : 'Country unresolved'}</p>
+    <p class="associated-minerals">Associated minerals · {site.minerals.map((code,i)=><>{i>0 && ', '}<a href={mineralUrl(code)}>{MINERALS[code as keyof typeof MINERALS]}</a></>)}</p></section>
+  <section class="editorial-row"><div><h2>Maturity</h2><p><a href="/methods/#maturity">How stages are assigned</a></p></div>
+    <div><p class="stage-name"><a href="#evidence">{stage}</a></p>
+    <p>{site.maturity_reason || 'The release has no assigned maturity evidence for this entry.'}</p></div></section>
+  <section class="editorial-row"><div><h2>Site record</h2>{canPlot(site) && <p><a href={href}>View on map →</a></p>}</div>
+    <div><dl class="facts-table">{facts.map(([label,value])=><div><dt>{label}</dt><dd>{label==='Reported operator' && operatorEvidence.length ? <a href="#operator-evidence">{value}</a> : value}</dd></div>)}</dl>
+    {(site.coincident_named_entries || 0)>1 && <p class="caption"><a href={'/?q='+encodeURIComponent(site.name)}>{site.coincident_named_entries} entries</a> share this name and coordinates to five decimal places.</p>}
+    {site.has_unreviewed_candidates && <p class="caption">Additional candidate matches await identity review.</p>}
+    <details class="reference-details"><summary>Site identifier</summary><code>{site.id}</code></details>
+    {!!site.publisher_view_counterparts?.length && <details class="reference-details"><summary>Related publisher record references</summary>{site.publisher_view_counterparts.map(id=><code>{id}</code>)}</details>}</div></section>
+  {operatorEvidence.length>0 && <section class="editorial-row" id="operator-evidence"><h2>Operator evidence</h2><div class="evidence-list">
+    {operatorEvidence.map(e=><EvidenceEntry evidence={e} source={sources.get(e.source_id)}/>)}</div></section>}
+  <section class="editorial-row" id="evidence"><div><h2>Source evidence</h2></div><div class="evidence-list">
+    {evidence.map(e=><EvidenceEntry evidence={e} source={sources.get(e.source_id)}/>)}
+    {!evidence.length && <p>Detailed evidence is unavailable for this release.</p>}
+    <p class="caption">{site.source_ids.map((id,i)=><>{i>0 && ' · '}<a href={'/sources/#'+id}>{sources.get(id)?.title || id}</a></>)}</p>
+  </div></section>
+</main></Page>

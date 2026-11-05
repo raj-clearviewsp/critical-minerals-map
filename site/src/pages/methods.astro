@@ -1,0 +1,19 @@
+---
+import Page from '../layouts/Page.astro';
+const stages = [
+  ['1 · Occurrence','Presence is reported. The evidence supplies no tonnage or grade.'],
+  ['2 · Historical or non-compliant estimate','The source reports tonnage and grade under a historical or non-compliant classification.'],
+  ['3 · Code-compliant resource','A current measured, indicated or inferred resource is reported under a recognized reporting code.'],
+  ['4 · Reserve','The source reports a current proven or probable reserve under a recognized code.'],
+  ['5 · Operating','Recent production or dated operating evidence supports this stage.'],
+];
+const grades = [['A','Primary official document, such as a securities filing, technical report or government register.'],['B','Official compilation, such as a geological survey inventory.'],['C','Reputable secondary source, such as a peer-reviewed dataset.'],['D','Press or media report.']];
+---
+<Page title="Methods" active="methods"><main id="main" class="reading-page" tabindex="-1">
+<section class="page-intro"><h1>Methods</h1><p class="lede">How to read site identities, maturity, location and source evidence.</p></section>
+<section class="editorial-row" id="identity"><h2>Site identity</h2><div><p>A site groups source observations when the release has evidence that they refer to the same physical deposit or mine. Reviewed groups and provisional single-source entries have persistent site IDs. A provisional entry retains its separate identity while evidence is reviewed. Nearby points, shared names and shared minerals can also describe distinct assets.</p><p>Broader districts and complexes are available through a separate filter. Their coordinates represent reference locations. <a href="/records/">Browse original source records</a>.</p></div></section>
+<section class="editorial-row" id="maturity"><h2>Maturity</h2><div><p>Each site carries the highest stage supported by its evidence. An unassigned stage means the available evidence was insufficient for a ruling.</p><dl class="explained-list">{stages.map(([name,rule])=><div><dt>{name}</dt><dd>{rule}</dd></div>)}</dl></div></section>
+<section class="editorial-row"><h2>Status and reporting systems</h2><div><p>Status records whether a source described an asset as operating, suspended, closed or under care and maintenance on its reference date. Historical producer labels and undated activity remain historical evidence.</p><p>Reporting systems are recorded separately. A national classification can describe a substantial deposit. The original source supplies the basis for comparing it with a CRIRSCO-family resource or reserve.</p></div></section>
+<section class="editorial-row" id="evidence-grades"><h2>Evidence grades</h2><dl class="explained-list">{grades.map(([grade,meaning])=><div><dt>Grade {grade}</dt><dd>{meaning}</dd></div>)}</dl></section>
+<section class="editorial-row"><h2>Location and coverage</h2><div><p>The map uses source coordinates. Unknown precision stays unknown. Lists can include entries without eligible map points. Country centroids and missing coordinates are excluded from the map. Grouped map points separate as you zoom.</p><p>Coverage varies by source, country and mineral. An empty result can reflect missing evidence. Country production and reserves use the source’s stated year, mineral form and unit.</p></div></section>
+</main></Page>

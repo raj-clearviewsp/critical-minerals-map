@@ -1,16 +1,27 @@
 ---
 import '../styles/global.css';
-interface Props { title: string; active?: string; }
-const { title, active = '' } = Astro.props;
+import { loadRelease } from '../lib/release-data.mjs';
+interface Props { title: string; active?: string; releaseTag?: string; dataDate?: string | null; }
+const { title, active = '', releaseTag, dataDate } = Astro.props;
+const release = loadRelease();
+const tag = releaseTag ?? release?.release_tag;
+const date = dataDate === undefined ? release?.data_as_of : dataDate;
+const navigation = [['Explore','/','explore'], ['Minerals','/minerals/','minerals'], ['Countries','/countries/','countries'],
+  ['Sources','/sources/','sources'], ['Methods','/methods/','methods'], ['Downloads','/downloads/','downloads'], ['Search','/search/','search']];
 ---
 <!doctype html><html lang="en"><head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" /><meta name="referrer" content="no-referrer" />
-  <meta name="description" content="Explore sourced records of rare earth, nickel and cobalt deposits around the world." />
+  <meta name="description" content="Explore evidence about rare earth, nickel and cobalt deposits and mines." />
   <title>{title} · Critical Minerals Atlas</title>
 </head><body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="masthead"><a class="wordmark" href="/">Critical Minerals Atlas</a>
-    <nav aria-label="Main navigation"><a href="/" aria-current={active === 'explore' ? 'page' : undefined}>Explore</a><a href="/sources/" aria-current={active === 'sources' ? 'page' : undefined}>Sources</a><a href="/about/" aria-current={active === 'about' ? 'page' : undefined}>About</a></nav>
-  </header><slot /><footer><p>Critical Minerals Atlas · Private working preview</p><p>Records retain their source identities.</p></footer>
+    <nav class="desktop-navigation" aria-label="Main navigation">{navigation.map(([label,href,key]) => <a href={href} aria-current={active === key ? 'page' : undefined}>{label}</a>)}</nav>
+    <details class="mobile-navigation"><summary>Menu</summary><nav aria-label="Main navigation">{navigation.map(([label,href,key]) => <a href={href} aria-current={active === key ? 'page' : undefined}>{label}</a>)}</nav></details>
+  </header>
+  <div class="edition"><span>{tag ? 'Release ' + tag : 'Atlas preview'}</span><span>{date ? 'Data as of ' + date : 'Source dates vary'}</span></div>
+  <slot />
+  <footer><p>Critical Minerals Atlas</p><div><a href="/records/">Source records</a><a href="/about/">About</a><a href="/about/#corrections">Report an error</a><button id="print-page" class="text-button" type="button" hidden>Print or save PDF</button></div></footer>
+  <script>const printButton = document.getElementById('print-page'); if (printButton) { printButton.hidden = false; printButton.addEventListener('click', () => window.print()); }</script>
 </body></html>

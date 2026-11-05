@@ -30,3 +30,7 @@ missing ISO code is represented as null. Compact UTF-8 JSON serialization.
 This generalized world basemap is for display context, not facility location
 verification. Natural Earth depicts boundaries according to de facto status.
 The map is bundled locally; no third-party runtime requests are required.
+
+world.svg is the local overview background. Its outlines derive from countries.geojson
+using an equirectangular projection in a 960 by 480 viewBox. The interactive map
+uses the same Natural Earth geometry. The overview plots release coordinates separately.

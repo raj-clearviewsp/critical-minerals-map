@@ -1,0 +1,9 @@
+---
+import SiteDirectory from '../../../components/SiteDirectory.astro';
+import { loadRelease } from '../../../lib/release-data.mjs';
+export function getStaticPaths() {
+  const pages = Math.ceil((loadRelease()?.sites.length || 0)/100);
+  return Array.from({length:Math.max(0,pages-1)},(_,i)=>({params:{page:String(i+2)},props:{current:i+2}}));
+}
+---
+<SiteDirectory current={Astro.props.current}/>

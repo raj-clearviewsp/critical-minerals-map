@@ -1,0 +1,13 @@
+---
+import { safeSourceUrl } from '../lib/preview-model.mjs';
+import type { Evidence, Source } from '../lib/catalog-types';
+interface Props { evidence: Evidence; source?: Source; }
+const { evidence:e, source } = Astro.props;
+const url = safeSourceUrl(e.url) || safeSourceUrl(source?.url);
+const title = source?.title || e.source_id || 'Publisher source';
+const meta = [e.grade && 'Grade '+e.grade, e.date].filter(Boolean).join(' · ');
+---
+<article><h3>{url ? <a href={url} target="_blank" rel="noopener noreferrer">{title}</a> : title}</h3>
+{meta && <p class="source-line">{meta}</p>}{e.note && <p>{e.note}</p>}
+{e.record_id && <details class="reference-details"><summary>Source record reference</summary><code>{e.record_id}</code></details>}
+</article>

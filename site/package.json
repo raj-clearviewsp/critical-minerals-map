@@ -13,15 +13,19 @@
     "preview": "ATLAS_PRIVATE_PREVIEW=0 ASTRO_TELEMETRY_DISABLED=1 astro preview --host 127.0.0.1",
     "dev:private": "ATLAS_PRIVATE_PREVIEW=1 ASTRO_TELEMETRY_DISABLED=1 astro dev --host 127.0.0.1",
     "build:private": "ATLAS_PRIVATE_PREVIEW=1 ASTRO_TELEMETRY_DISABLED=1 astro build && ATLAS_PRIVATE_PREVIEW=1 node scripts/verify-build.mjs",
-    "preview:private": "ATLAS_PRIVATE_PREVIEW=1 ASTRO_TELEMETRY_DISABLED=1 astro preview --host 127.0.0.1"
+    "preview:private": "ATLAS_PRIVATE_PREVIEW=1 ASTRO_TELEMETRY_DISABLED=1 astro preview --host 127.0.0.1",
+    "test:build-modes": "node scripts/check-build-modes.mjs"
   },
   "dependencies": {
     "astro": "7.3.8",
-    "maplibre-gl": "6.16.0"
+    "maplibre-gl": "6.16.0",
+    "pmtiles": "4.5.0"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.12",
+    "es-module-lexer": "3.0.4",
     "node": "22.23.4",
+    "pagefind": "1.6.0",
     "typescript": "5.9.3"
   }
 }

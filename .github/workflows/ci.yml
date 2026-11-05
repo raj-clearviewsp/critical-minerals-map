@@ -136,6 +136,9 @@ jobs:
         run: make setup-site
       - name: Check and build the static site
         run: make site
+      - name: Check isolation between public, source-only and reviewed private builds
+        working-directory: site
+        run: npm run test:build-modes
       - name: Save local-preview build artifact
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:

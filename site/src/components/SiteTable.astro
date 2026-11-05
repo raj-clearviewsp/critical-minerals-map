@@ -1,0 +1,11 @@
+---
+import { siteUrl, rungName } from '../lib/release-data.mjs';
+import { MINERALS } from '../lib/preview-model.mjs';
+import type { Site } from '../lib/catalog-types';
+interface Props { sites: Site[]; }
+const { sites } = Astro.props;
+---
+<div class="table-wrap profile-table" role="region" aria-label="Sites and evidence" tabindex="0"><table role="table">
+<thead><tr><th>Site</th><th>Country</th><th>Minerals</th><th>Maturity</th></tr></thead>
+<tbody>{sites.map(site=><tr><td><a href={siteUrl(site.id)}>{site.name}</a></td><td><span class="mobile-cell-label" aria-hidden="true">Country</span>{site.country_iso3s.join(', ') || 'Unresolved'}</td><td><span class="mobile-cell-label" aria-hidden="true">Minerals</span>{site.minerals.map(code=>MINERALS[code as keyof typeof MINERALS]).join(', ')}</td><td><span class="mobile-cell-label" aria-hidden="true">Maturity</span><a href={siteUrl(site.id)+'#evidence'}>{rungName(site.maturity_rung)}</a></td></tr>)}</tbody>
+</table></div>

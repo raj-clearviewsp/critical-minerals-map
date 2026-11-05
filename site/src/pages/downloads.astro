@@ -1,0 +1,15 @@
+---
+import Page from '../layouts/Page.astro';
+import { loadRelease } from '../lib/release-data.mjs';
+const release = loadRelease();
+const files = release?.downloads || [];
+const siteFile = files.find(f=>f.table==='site' && f.format.toLowerCase()==='csv');
+const size = (n:number|undefined)=>n == null ? '' : n>=1048576 ? (n/1048576).toFixed(1)+' MiB' : Math.max(1, Math.round(n/1024))+' KiB';
+---
+<Page title="Downloads" active="downloads"><main id="main" class="reading-page" tabindex="-1">
+<section class="page-intro"><h1>Downloads</h1><p class="lede">Versioned files for this release. Cite the release tag and follow the attribution requirements in the <a href="/sources/">source register</a>.</p></section>
+{siteFile && <section class="editorial-row"><h2>Bulk site coverage</h2><p><a href={'/'+siteFile.path}>{siteFile.rows?.toLocaleString('en-US')} downloadable site entries</a> passed the geographic, source-permission, retrieval-date and provenance checks. The private map includes a broader inventory. The map’s coverage outline identifies the bulk subset.</p></section>}
+{files.length ? <div class="downloads-list">{files.map(f=><article class="download-row"><div><h2><a download href={'/'+f.path}>{f.label}</a></h2>
+<p>{[f.format, f.rows == null ? '' : f.rows.toLocaleString('en-US')+' rows', size(f.bytes)].filter(Boolean).join(' · ')}</p>{f.description && <p>{f.description}</p>}</div><details><summary>File checksum</summary><code>{f.sha256}</code></details></article>)}</div> : <p class="empty-build">Bulk files are available with a reviewed release. Use the explorer’s CSV export for the current filtered list.</p>}
+<section class="editorial-row"><h2>Using the files</h2><div><p>CSV tables can be opened in a spreadsheet. GeoParquet files retain geographic geometry and its coordinate system. PMTiles packages contain tiled map features.</p><p>Keep source identifiers, units, dates and evidence grades with any extract you cite.</p></div></section>
+</main></Page>

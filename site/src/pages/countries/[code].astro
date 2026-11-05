@@ -1,0 +1,10 @@
+---
+import Profile from '../../components/Profile.astro';
+import { loadRelease } from '../../lib/release-data.mjs';
+export function getStaticPaths() {
+  const release = loadRelease();
+  return (release?.countries || []).map(profile=>({params:{code:profile.code.toLowerCase()},props:{profile}}));
+}
+const { profile } = Astro.props;
+---
+<Profile profile={profile} release={loadRelease()} group="country"/>

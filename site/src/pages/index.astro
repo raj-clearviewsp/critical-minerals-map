@@ -1,39 +1,10 @@
 ---
 import Page from '../layouts/Page.astro';
-import { loadPreviewDataset, escapeJson } from '../lib/preview-data.mjs';
-const dataset = loadPreviewDataset();
-const countries = [...new Map(dataset.records.map(record => [record.country || 'unknown', record.country_name || record.country || 'Not stated'])).entries()].sort((a, b) => String(a[1]).localeCompare(String(b[1])));
+import Explorer from '../components/Explorer.astro';
+import { loadRelease, loadArchive, releaseExplorer, recordExplorer } from '../lib/release-data.mjs';
+const release = loadRelease();
+const dataset = release ? releaseExplorer(release) : recordExplorer(loadArchive(), null);
 ---
-<Page title="Explore" active="explore">
-<main id="main" tabindex="-1">
-  <section class="intro"><div class="preview-details"><p>Private working preview</p><p>Record dates vary by source · {dataset.release_tag}</p></div>
-    <h1>Explore critical mineral records.</h1><p class="lede">Rare earth elements, nickel and cobalt. Find the records, see their locations and follow the evidence.</p>
-  </section>
-  <section class="explorer" aria-label="Mineral record explorer">
-    <form id="filters" class="filters" role="search">
-      <div class="search-field"><label for="search">Search names and places</label><input id="search" name="q" type="search" placeholder="A deposit, mine, country or source…" autocomplete="off" /></div>
-      <div><label for="mineral">Mineral</label><select id="mineral" name="mineral"><option value="">All three minerals</option><option value="REE">Rare earth elements</option><option value="Ni">Nickel</option><option value="Co">Cobalt</option></select></div>
-      <div><label for="country">Country</label><select id="country" name="country"><option value="">All countries</option>{countries.map(([code, name]) => <option value={code}>{name}</option>)}</select></div>
-      <div><label for="source">Source</label><select id="source" name="source"><option value="">All sources</option>{dataset.sources.map(source => <option value={source.id}>{source.title}</option>)}</select></div>
-    </form>
-    <div class="filter-options"><label class="check"><input id="context" type="checkbox" /> Include districts and complexes</label><button id="clear-filters" class="text-button" type="button">Clear filters</button><p id="result-summary" role="status" aria-live="polite"></p></div>
-    {!dataset.records.length && <p class="empty-build">No source records are loaded in this build. The explorer will display them when a private dataset is available.</p>}
-    <div class="workspace">
-      <div class="map-panel"><div class="map-topline"><h2>Source locations</h2><button id="fit-map" type="button">Fit results</button></div>
-        <div id="map" aria-label="Interactive map of source locations" role="region"><p id="map-loading">Loading the map…</p></div>
-        <div class="map-caption"><div class="legend" aria-label="Map legend"><span><i class="dot ree"></i> Rare earths</span><span><i class="dot ni"></i> Nickel</span><span><i class="dot co"></i> Cobalt</span><span><i class="dot grouped"></i> Grouped records</span></div><p>Points show source coordinates, whose precision may be unknown. Select a group to zoom in. Basemap: <a href="https://www.naturalearthdata.com/about/terms-of-use/" target="_blank" rel="noopener noreferrer">Natural Earth</a>.</p></div>
-      </div>
-      <aside id="record-detail" class="record-detail" aria-label="Selected source record"><div class="detail-empty"><p class="eyebrow">Source record</p><h2>Select a record</h2><p>Choose a point on the map or a name in the results to read the source evidence.</p><p class="muted">Records may describe the same asset. Identity review is in progress; this preview keeps each source observation separate.</p></div></aside>
-    </div>
-    <section class="results" aria-labelledby="results-heading"><div class="results-header"><div><h2 id="results-heading">Matching records</h2><p id="list-summary" role="status" aria-live="polite"></p></div><div class="results-actions"><label class="check"><input id="visible-only" type="checkbox" /> Limit list to map area</label><button id="export-csv" type="button">Download this list</button></div></div>
-      <div class="table-wrap" role="region" aria-label="Matching source records" tabindex="0"><table><thead><tr><th scope="col">Record</th><th scope="col">Minerals</th><th scope="col">Country</th><th scope="col">Source</th></tr></thead><tbody id="record-rows"></tbody></table></div>
-      <p id="no-results" class="empty-results" hidden>No records match these filters. Try a broader search or include districts and complexes.</p>
-      <div class="pagination"><button id="previous-page" type="button">Previous</button><span id="page-status"></span><button id="next-page" type="button">Next</button></div>
-    </section>
-    <p class="method-note">This preview shows source records, not a count of unique sites. Reported status is retained as written; a current operating status or maturity rung has not been inferred. <a href="/about/">Read the methods</a>.</p>
-  </section>
-  <noscript><p class="empty-build">The interactive explorer needs JavaScript. Sources and methods remain available without it.</p></noscript>
-</main>
-<script id="atlas-preview-data" type="application/json" set:html={escapeJson(dataset)}></script>
-<script>import '../lib/explorer.mjs';</script>
+<Page title="Explore" active="explore" releaseTag={dataset.private_preview === false ? undefined : dataset.release_tag} dataDate={dataset.data_as_of}>
+  <Explorer dataset={dataset}/>
 </Page>

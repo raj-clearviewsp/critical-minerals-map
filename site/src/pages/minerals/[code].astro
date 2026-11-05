@@ -1,0 +1,11 @@
+---
+import Profile from '../../components/Profile.astro';
+import { MINERALS } from '../../lib/preview-model.mjs';
+import { loadRelease } from '../../lib/release-data.mjs';
+export function getStaticPaths() {
+  const release = loadRelease();
+  return Object.entries(MINERALS).map(([code,name])=>({params:{code:code.toLowerCase()},props:{profile:release?.minerals.find(m=>m.code===code) || {code,name}}}));
+}
+const { profile } = Astro.props;
+---
+<Profile profile={profile} release={loadRelease()} group="mineral"/>

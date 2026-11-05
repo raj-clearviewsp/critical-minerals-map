@@ -1,0 +1,80 @@
+---
+import { escapeJson } from '../lib/preview-data.mjs';
+import { MINERALS, statusName } from '../lib/preview-model.mjs';
+import { RUNG_LABELS } from '../lib/release-data.mjs';
+interface Props { dataset: any; archived?: boolean; }
+const { dataset, archived = false } = Astro.props;
+const reviewed = dataset.mode === 'sites';
+const countryNames = new Map<string,string>();
+for (const record of dataset.records) {
+  for (const [i, code] of (record.countries || [record.country || 'unknown']).entries()) {
+    const name = (record.country_name || '').split('; ')[i];
+    countryNames.set(code, name || (code === 'unknown' ? 'Country unresolved' : code));
+  }
+  if (record.countries?.length === 0) countryNames.set('unknown', 'Country unresolved');
+}
+const countries = [...countryNames].sort((a,b) => a[1].localeCompare(b[1]));
+const excluded = countries.filter(([code])=>code!=='unknown');
+if (!excluded.some(([code])=>code==='CHN')) excluded.push(['CHN','China']);
+const statuses = [...new Set<string>(dataset.records.map((r:any) => r.status).filter(Boolean))].sort();
+const kinds = [...new Set<string>(dataset.records.map((r:any) => r.kind).filter(Boolean))].sort();
+const populated = dataset.records.length > 0;
+---
+<main id="main" tabindex="-1">
+  <section class="explorer-intro">
+    <div><h1>{reviewed ? 'Critical mineral sites' : archived ? 'Source records' : 'Critical mineral records'}</h1>
+    <p class="lede">{reviewed ? 'Explore nickel, cobalt and rare earth sites, their maturity and source evidence.' : 'Explore nickel, cobalt and rare earth observations from the original sources.'}</p></div>
+    <div class="view-links">{reviewed && <a href="/sites/">Site directory</a>}<a href="#results-heading">View list ↓</a></div>
+  </section>
+  <section class="explorer" aria-label="Atlas explorer">
+    <form id="filters" class="filters" role="search">
+      <div class="search-field"><label for="search">Search</label><input id="search" name="q" type="search" placeholder="Name, place or source" autocomplete="off" /></div>
+      <div id="primary-filters" class="filter-core">
+        <div><label for="mineral">Mineral</label><select id="mineral" name="mineral"><option value="">All minerals</option>{Object.entries(MINERALS).map(([code,name]) => <option value={code}>{name}</option>)}</select></div>
+        <div><label for="country">Country</label><select id="country" name="country"><option value="">All countries</option>{countries.map(([code, name]) => <option value={code}>{name}</option>)}</select></div>
+        {reviewed && <div><label for="maturity">Maturity</label><select id="maturity"><option value="">All stages</option>
+          <optgroup label="Minimum stage">{Object.entries(RUNG_LABELS).map(([r,n])=><option value={'minimum-'+r}>{n} or better</option>)}</optgroup>
+          <optgroup label="Exact stage">{Object.entries(RUNG_LABELS).map(([r,n])=><option value={'rung-'+r}>{r} · {n}</option>)}<option value="rung-unknown">Unassigned</option></optgroup>
+        </select></div>}
+      </div>
+      <details id="filter-panel" class="filter-disclosure"><summary><span id="filter-label">More filters</span><span id="filter-count"></span></summary>
+        <div id="secondary-filters" class="filter-options">
+          <div><label for="source">Source</label><select id="source" name="source"><option value="">All sources</option>{dataset.sources.map((source:any) => <option value={source.id}>{source.title}</option>)}</select></div>
+          <div><label for="exclude">Exclude country</label><select id="exclude"><option value="">None</option>{excluded.map(([code,name])=><option value={code}>{name}</option>)}</select></div>
+          {reviewed && <><div><label for="status">Status</label><select id="status"><option value="">All statuses</option>{statuses.map(s=><option value={s}>{statusName(s)}</option>)}</select></div>
+            <div><label for="kind">Type</label><select id="kind"><option value="">All types</option>{kinds.map(k=><option value={k}>{k}</option>)}</select></div></>}
+          {!reviewed && <label class="check"><input id="context" type="checkbox" /> Include districts and complexes</label>}
+        </div>
+      </details>
+    </form>
+    <div class="explorer-meta">
+      {reviewed && <a class="example-query" href="/?mineral=REE&exclude=CHN&minimum=3">REE outside China, resource or better →</a>}
+      <div id="active-filters" class="active-filters" hidden><span id="active-criteria"></span><button id="clear-filters" class="text-button" type="button">Clear filters</button></div>
+      <p id="result-summary" role="status" aria-live="polite"></p>
+    </div>
+    {!populated && <p class="empty-build">The public preview has no published records.</p>}
+    <div class="workspace"><div class="map-panel">
+      <div class="map-topline"><h2>{reviewed ? 'Site locations' : 'Source locations'}</h2><button id="fit-map" type="button">Pan and zoom</button></div>
+      <div id="map" aria-label="Interactive map of mineral locations" role="region"><p id="map-loading">World overview</p></div>
+      <div class="map-caption">
+        <div class="legend" aria-label="Map legend">{reviewed ? <>
+          {Object.entries(RUNG_LABELS).map(([r,label])=><span><i class={'dot rung-' + r}></i>{r} · {r === '2' ? 'Historical estimate' : r === '3' ? 'Resource' : label}</span>)}<span><i class="dot unassigned"></i>Unassigned</span><span><i class="diamond"></i>Mine or facility</span>
+        </> : <><span><i class="dot ree"></i> Rare earths</span><span><i class="dot ni"></i> Nickel</span><span><i class="dot co"></i> Cobalt</span></>}<span><i class="dot grouped"></i> Grouped points</span></div>
+        {reviewed && dataset.tile_path && <label class="check coverage-switch"><input id="coverage" type="checkbox" /> Outline bulk-download coverage</label>}
+        <p id="coverage-status" role="status" aria-live="polite" hidden></p>
+        <p>Coordinates may have unknown precision. Basemap by <a href="https://www.naturalearthdata.com/about/terms-of-use/" target="_blank" rel="noopener noreferrer">Natural Earth</a>.</p>
+      </div>
+    </div><aside id="record-detail" class="record-detail" aria-label="Selected record" hidden></aside></div>
+    <section class="results" aria-labelledby="results-heading">
+      <div class="results-header"><div><h2 id="results-heading">{reviewed ? 'Site list' : 'Record list'}</h2><p id="list-summary" role="status" aria-live="polite"></p></div>
+      <div class="results-actions"><label class="check"><input id="visible-only" type="checkbox" /> Within map area</label><button id="export-csv" type="button">Export list as CSV</button></div></div>
+      <div class="table-wrap" role="region" aria-label="Filtered results" tabindex="0"><table role="table"><thead><tr><th scope="col">{reviewed ? 'Site' : 'Record'}</th><th scope="col">Minerals</th><th scope="col">Country</th><th scope="col">{reviewed ? 'Maturity' : 'Source'}</th>{reviewed && <th scope="col">Reported operator</th>}</tr></thead><tbody id="record-rows"></tbody></table></div>
+      <p id="no-results" class="empty-results" hidden>No results match these filters. Clear a filter or broaden the search.</p>
+      <div class="pagination"><button id="previous-page" type="button">Previous</button><span id="page-status"></span><button id="next-page" type="button">Next</button></div>
+    </section>
+    <p class="method-note">{reviewed ? 'Maturity describes the strongest supported stage. Read each site’s evidence for the reporting system, date and status.' : 'Source observations retain their original identities and dates. Several observations can describe one site.'} <a href="/methods/">Read the methods</a>.</p>
+  </section>
+  <noscript><p class="empty-build">The interactive map and filters use JavaScript. <a href="/sites/">Browse the site directory</a>, <a href="/countries/">countries</a> or <a href="/minerals/">minerals</a>.</p></noscript>
+</main>
+<script id="atlas-preview-data" type="application/json" set:html={escapeJson(dataset)}></script>
+<script>import '../lib/explorer.mjs';</script>

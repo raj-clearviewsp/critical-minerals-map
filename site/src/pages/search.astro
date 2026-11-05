@@ -1,0 +1,10 @@
+---
+import Page from '../layouts/Page.astro';
+---
+<Page title="Search" active="search"><main id="main" class="reading-page" tabindex="-1">
+<section class="page-intro"><h1>Search the Atlas</h1><p class="lede">Find site profiles, countries, minerals and source evidence.</p></section>
+<form class="search-form" role="search" action="/search/"><label for="atlas-query">Search term</label><div><input id="atlas-query" type="search" name="q" autocomplete="off" maxlength="200"/><button type="submit">Search</button></div></form>
+<p id="search-status" class="source-line" role="status" aria-live="polite"></p>
+<ol id="search-results" class="search-results"></ol><button type="button" id="search-more" hidden>More results</button>
+<noscript><p>Search uses JavaScript. <a href="/sites/">Browse the site directory</a> or <a href="/countries/">country profiles</a>.</p></noscript>
+</main><script>import '../lib/search.mjs';</script></Page>
