@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026.11.05 — Phase 0, Step 12 private demo and handoff
+
+- Timed five questions in the built Atlas. Each answer was visible in under ten seconds in the scripted walkthrough. Verified the served site GeoParquet against its release checksum.
+- Packaged the private site and recorded its checksum and the candidate schema for owner review. The [demo report](reports/phase0-step12-demo.md) includes the answers, how to open the preview, and outstanding hosting and sign-off steps.
+
 ## 2026.11.04 — Phase 0, Step 11 private website
 
 - Built the searchable private Atlas with 1,220 mapped entries, 89 country profiles, three mineral profiles and 21 checksum-verified downloads. The home map, site list and evidence pages share direct links.

@@ -23,6 +23,8 @@ The private catalog lives at `data/releases/2026.11.04-v0/products/atlas.json`. 
 
 The [reviewed identity report](reports/phase0-step06-reviewed.md), [maturity assessment](reports/phase0-step07-maturity.md) and [country context report](reports/phase0-step08-context.md) document how the catalog was assembled. Automatic merging is disabled for this release.
 
+See the [five-question demo and handoff](reports/phase0-step12-demo.md) for the tested research paths and private preview status.
+
 ## Earlier pipeline checkpoints
 
 The following sections document the scaffold, source acquisition and successive review rounds. Counts, pending decisions and release labels in these historical notes describe the checkpoint named in each section.

@@ -1,0 +1,38 @@
+{
+  "timing": "Agent-operated production browser, warm loaded home to observed answer",
+  "release": "2026.11.04-v0",
+  "questions": [
+    {
+      "question": "Rare earth deposits outside China",
+      "seconds": 5.233
+    },
+    {
+      "question": "Nolans Bore reserve",
+      "seconds": 9.742
+    },
+    {
+      "question": "Indonesia nickel production and world share",
+      "seconds": 0.459
+    },
+    {
+      "question": "Cobalt world output and leading producer",
+      "seconds": 0.425
+    },
+    {
+      "question": "Find downloadable geospatial sites and coverage",
+      "seconds": 0.148
+    }
+  ],
+  "workflow": "local private Atlas",
+  "complete_walkthroughs_under_60_seconds": 5,
+  "staffer_session": "pending",
+  "schema_freeze": "pending owner sign-off",
+  "protected_online_preview": "awaiting project and audience",
+  "private_bundle_sha256": "e94a9be10b8aaf58a49c78622e9fef2048be2f90d739096f4d3f814d0c5c9d80",
+  "step11_commit": "3ac21bf2da12f17cd19f66eb049e82fab079b986",
+  "schema_candidate_sha256": {
+    "pipeline/release_products/canonical.py": "6324a3c4bd4383a7dfcedbe09bd4e2022d21cf855d1b128c7c540f7bb001256d",
+    "pipeline/release_products/downloads.py": "d3f9f040bb85b4aa32adc189e1ea86d342807c226daf9fc5463567a3f7f0c14e",
+    "schemas/release-page.schema.json": "7fa14ab8a27226f62d63c245f5f7de523779d10f9f41921ac44c194c83542790"
+  }
+}

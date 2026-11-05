@@ -18,9 +18,9 @@ Mobile Lighthouse rated the home page 98/100 on three cold runs. The site, miner
 
 All 13 representative templates fit widths of 390, 549 and 1,280 pixels. The automated WCAG 2.1 A/AA checks reported zero violations. The pages made zero external runtime requests. Chrome printed all 89 country and three mineral briefs on one A4 page each. Printed tables identify their sources by title. Other page types retain longer paginated lists where needed. See the [aggregate browser measurements](phase0-step11-site-audit.json).
 
-The private release was tested in Chrome on macOS and the desktop app's browser. The Windows CI workflow exercises actual Chrome and Edge with synthetic data. Physical iPhone Safari verification is outstanding.
+The private release was tested in Chrome on macOS and the desktop app's browser. Windows Chrome 156.0.8078.80 and Edge 156.0.4314.56 both passed the home, filter, profile, full-text search and 390-pixel layout checks on a compiled synthetic fixture. [Windows verification](https://github.com/raj-clearviewsp/critical-minerals-map/actions/runs/42040198731). Physical iPhone Safari verification is outstanding.
 
-The first Windows run found an 11-pixel overflow on a narrow synthetic country profile. The compact table headers now stay within their allocated space. The test retains its original 390-pixel limit and now reports which elements extend beyond it. The country directory also distinguishes context-only profiles and uses singular site counts where appropriate.
+The initial Windows run measured a synthetic country page before its stylesheet was active. The verification workflow now checks that the compiled stylesheet is applied before measuring the page. The 390-pixel limit is enforced. Compact table headers stay within their allocated space, and the country directory identifies context-only profiles and uses singular counts where appropriate.
 
 ## Reproduce the private preview
 
