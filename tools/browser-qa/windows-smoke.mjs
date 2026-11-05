@@ -29,11 +29,32 @@ async function assertPageWidth(page, expected) {
   const dimensions=await page.evaluate(async()=>{
     await new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
     const viewport=innerWidth, width=document.documentElement.scrollWidth;
-    const beyond=width>viewport ? [...document.body.querySelectorAll('*')].map(el=>{
-      const box=el.getBoundingClientRect();
-      return {element:el.localName,id:el.id,class:el.getAttribute('class'),right:Math.round(box.right)};
-    }).filter(el=>el.right>viewport).sort((a,b)=>b.right-a.right).slice(0,8) : [];
-    return {viewport,width,client:document.documentElement.clientWidth,beyond};
+    if (width<=viewport) return {viewport,width,client:document.documentElement.clientWidth};
+    const path=el=>[el.localName,el.id?`#${el.id}`:'',el.classList.length?'.'+[...el.classList].join('.'):''].join('');
+    const box=el=>{
+      const rect=el.getBoundingClientRect(),style=getComputedStyle(el);
+      return {element:path(el),left:Math.round(rect.left),right:Math.round(rect.right),
+        width:Math.round(rect.width),display:style.display,position:style.position,
+        overflowX:style.overflowX,whiteSpace:style.whiteSpace};
+    };
+    const beyond=[...document.body.querySelectorAll('*')].filter(el=>el.getBoundingClientRect().right>viewport);
+    const offenders=beyond.slice(0,12).map(el=>{
+      const ancestors=[];
+      for (let x=el.parentElement; x && x!==document.body && ancestors.length<6; x=x.parentElement) ancestors.push(box(x));
+      return {...box(el),text:el.textContent.trim().slice(0,100),href:el.getAttribute('href'),ancestors};
+    });
+    const probes={};
+    for (const [name,rule] of Object.entries({
+      closedNavigation:'.mobile-navigation:not([open]) nav {display:none!important}',
+      footerLinks:'footer a {display:none!important}',
+      sourceLinks:'.print-sources a,.brief-source a {display:none!important}',
+      cardLinks:'.profile-table a {display:none!important}',
+      wrappedLinks:'main a,footer a {overflow-wrap:anywhere!important;white-space:normal!important}',
+    })) {
+      const style=document.createElement('style');style.textContent=rule;document.head.append(style);
+      probes[name]=document.documentElement.scrollWidth;style.remove();
+    }
+    return {viewport,width,client:document.documentElement.clientWidth,offenders,probeWidths:probes};
   });
   assert.equal(dimensions.viewport,expected);
   assert.ok(dimensions.width<=expected,`Horizontal page overflow at ${page.url()}: ${JSON.stringify(dimensions)}`);
